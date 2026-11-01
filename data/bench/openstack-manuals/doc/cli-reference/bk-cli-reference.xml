@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="openstack-cli-reference">
+
+    <title>OpenStack Command-Line Interface Reference</title>
+    <?rax title.font.size="28px" subtitle.font.size="28px"?>
+    <titleabbrev>CLI Reference</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>OpenStack Foundation</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2014</year>
+            <holder>OpenStack Foundation</holder>
+        </copyright>
+        <releaseinfo>current</releaseinfo>
+        <productname>OpenStack</productname>
+        <pubdate/>
+        <legalnotice role="cc-by">
+            <annotation>
+                <remark>Remaining licensing details are filled in by
+                    the template.</remark>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This guide documents the OpenStack command-line
+                clients.</para>
+        </abstract>
+        <revhistory>
+            <!-- ... continue adding more revisions here as you
+                 change this document using the markup shown
+                 below... -->
+            <revision>
+                <date>2014-10-15</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              For the Juno release, this guide has
+                              been updated for all integrated
+                              command-line clients. The additional
+                              chapters for the Juno release include
+                              the OpenStack client, the Data processing
+                              client, and the trove-manage command.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-09-06</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Document OpenStack client.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-04-16</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>For the Icehouse release, updated
+                                documentation for clients, add trove
+                                options, document neutron-debug,
+                                document Image Service property
+                                keys.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-01-29</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Initial version.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-03-14</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added documentation for the
+                                neutron-debug command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
+    </info>
+    <xi:include href="../common/ch_preface.xml"/>
+    <xi:include href="ch_cli.xml"/>
+    <xi:include href="generated/ch_cli_cinder_commands.xml"/>
+    <xi:include href="generated/ch_cli_nova_commands.xml"/>
+    <xi:include href="generated/ch_cli_keystone_commands.xml"/>
+    <xi:include href="generated/ch_cli_glance_commands.xml"/>
+    <xi:include href="ch_cli_glance_property_keys.xml"/>
+    <xi:include href="generated/ch_cli_neutron_commands.xml"/>
+    <xi:include href="ch_cli_neutron-debug_commands.xml"/>
+    <xi:include href="generated/ch_cli_swift_commands.xml"/>
+    <xi:include href="generated/ch_cli_heat_commands.xml"/>
+    <xi:include href="generated/ch_cli_ceilometer_commands.xml"/>
+    <xi:include href="generated/ch_cli_trove_commands.xml"/>
+    <xi:include href="generated/ch_cli_trove-manage_commands.xml"/>
+    <xi:include href="generated/ch_cli_sahara_commands.xml"/>
+    <xi:include href="generated/ch_cli_openstack_commands.xml"/>
+    <xi:include href="../common/app_support.xml"/>
+   </book>

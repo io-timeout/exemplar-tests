@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/community/newsgroups.xml
+     %SRCID%	1.5
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>Hírcsoportok</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.community">
+
+    <p>Létezik pár FreeBSD-vel foglalkozó <a href="./../doc/hu/books/handbook/eresources-news.html">hírcsoport</a>,
+      és sok más egyéb olyan hírcsoport is,
+      amelyek érdekesek lehetnek a FreeBSD
+      felhasználói számára.  Mindezek
+      ellenére a levelezési listák jelentik a
+      legmegbízhatóbb módját, hogy
+      felvegyük a kapcsolatot a FreeBSD fejlesztőivel.  A
+      különféle FreeBSD-vel kapcsolatos
+      megbeszéléseket a <a href="news:comp.unix.bsd.freebsd.misc">comp.unix.bsd.freebsd.misc</a>
+      hírcsoportban találjuk.  A fontos
+      bejelentéseket lásd a <a href="news:comp.unix.bsd.freebsd.announce">comp.unix.bsd.freebsd.announce</a>
+      hírcsoportban.</p>
+
+  </body>
+</html>

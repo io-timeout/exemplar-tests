@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.10
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Les pages web de l'équipe FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+<ol>
+
+</ol>
+
+<p><a href="internal.html">Les coulisses de FreeBSD</a></p>
+</body>
+</html>

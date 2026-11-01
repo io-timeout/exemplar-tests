@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.16
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="refresh" content="5;url=./platforms/amd64.html"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+      <title>Projet FreeBSD/x86-64</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+      </head>
+
+  <body class="navinclude.developers">
+    <p>Le portage FreeBSD x86-64 a été renommé <a href="./platforms/amd64.html">amd64</a>. Vous devriez être
+      automatiquement redirigé vers la nouvelle page du projet dans quelques
+      secondes. Sinon, veuillez suivre le lien et mettre à jour vos
+      signets.</p>
+
+    <p>Veuillez nous excuser pour la gêne occasionnée.</p>
+  </body>
+</html>

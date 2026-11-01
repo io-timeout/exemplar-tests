@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $FreeBSD$ -->
+<!-- Original revision: r53726 -->
+<sitemap>
+  <term>
+    <text>Applications</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Hittinger, Mark</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>WinNet Communications</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Internet services</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>X Windows workstation</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Networking</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Software development</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Net surfing</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>Education and research</text>
+    <destination>./applications.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD Art</text>
+    <destination>./../art.html</destination>
+  </term>
+
+  <term>
+    <text>Art, FreeBSD</text>
+    <destination>./../art.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial Vendors</text>
+    <destination>./../commercial/commercial.html</destination>
+  </term>
+
+  <term>
+    <text>Vendors, commercial</text>
+    <destination>./../commercial/commercial.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial Vendors, Consulting</text>
+    <destination>./../commercial/consult_bycat.html</destination>
+  </term>
+
+  <term>
+    <text>Consulting, Commercial Vendors</text>
+    <destination>./../commercial/consult_bycat.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial Vendors, Hardware</text>
+    <destination>./../commercial/hardware.html</destination>
+  </term>
+
+  <term>
+    <text>Hardware, Commercial Vendors</text>
+    <destination>./../commercial/hardware.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial Vendors, Software</text>
+    <destination>./../commercial/software.html</destination>
+  </term>
+
+  <term>
+    <text>Software, Commercial Vendors</text>
+    <destination>./../commercial/software.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial Vendors, Miscellaneous</text>
+    <destination>./../commercial/misc.html</destination>
+  </term>
+
+  <term>
+    <text>Miscellaneous, Commercial Vendors</text>
+    <destination>./../commercial/misc.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>non-English mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Brazilian Portuguese</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Simplified Chinese</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Czech</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, German</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, French</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Hungarian</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Indonesian</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Italian</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Japanese</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Korean</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Netherlands</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Polish</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Portuguese</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Russian</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Slovakian</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Spanish</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Swedish</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Mailing lists, Turkish</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Simplified Chinese mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Czech mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>German mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>French mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Hungarian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Polish mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Portuguese mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Japanese mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Hungarian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Indonesian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Russian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Indonesian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Italian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Japanese mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Dutch mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Polish mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Portuguese mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Russian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Slovakian mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Spanish mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Swedish mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Turkish mailing lists</text>
+    <destination>./community/mailinglists.html</destination>
+  </term>
+
+  <term>
+    <text>Newsgroups</text>
+    <destination>./community/newsgroups.html</destination>
+  </term>
+
+  <term>
+    <text>Web Resources, mirrors</text>
+    <destination>./community/webresources.html</destination>
+  </term>
+
+  <term>
+    <text>BSD Daemon</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>Daemon, BSD</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>Nemeth, Evi</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>Lassiter, John</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>Hosokawa, Tatsumi</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>McKusick, Marshall Kirk</text>
+    <destination>./copyright/daemon.html</destination>
+  </term>
+
+  <term>
+    <text>Copyright</text>
+    <destination>./copyright/license.html</destination>
+  </term>
+
+  <term>
+    <text>License</text>
+    <destination>./copyright/license.html</destination>
+  </term>
+
+  <term>
+    <text>Trademark legend</text>
+    <destination>./copyright/trademarks.html</destination>
+  </term>
+
+  <term>
+    <text>Source Code Repository</text>
+    <destination>./developers/cvs.html</destination>
+  </term>
+
+  <term>
+    <text>CTM</text>
+    <destination>./developers/cvs.html</destination>
+  </term>
+
+  <term>
+    <text>CVSup</text>
+    <destination>./developers/cvs.html</destination>
+  </term>
+
+  <term>
+    <text>Subversion Repository</text>
+    <destination>./developers/cvs.html</destination>
+  </term>
+
+  <term>
+    <text>anoncvs</text>
+    <destination>./developers/cvs.html</destination>
+  </term>
+
+  <term>
+    <text>Japanese Handbook</text>
+    <destination>./doc/ja_JP.eucJP/books/handbook/index.html</destination>
+  </term>
+
+  <term>
+    <text>Handbook, Japanese</text>
+    <destination>./doc/ja_JP.eucJP/books/handbook/index.html</destination>
+  </term>
+
+  <term>
+    <text>Frequently Asked Questions (FAQ)</text>
+    <destination>./doc/en_US.ISO8859-1/books/faq/index.html</destination>
+  </term>
+
+  <term>
+    <text>FAQ</text>
+    <destination>./doc/en_US.ISO8859-1/books/faq/index.html</destination>
+  </term>
+
+  <term>
+    <text>Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Project, Documentation</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Goals, documentation</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>FAQ, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Handbook, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Contributing, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Submitting corrections, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Submitting new material, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>SGML, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Linuxdoc, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Docbook, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Guidelines, Documentation Project</text>
+    <destination>./docproj/docproj.html</destination>
+  </term>
+
+  <term>
+    <text>Documentation</text>
+    <destination>./docs.html</destination>
+  </term>
+
+  <term>
+    <text>Handbook</text>
+    <destination>./docs.html</destination>
+  </term>
+
+  <term>
+    <text>Books</text>
+    <destination>./docs/books.html</destination>
+  </term>
+
+  <term>
+    <text>Manual Pages</text>
+    <destination>//www.FreeBSD.org/cgi/man.cgi</destination>
+  </term>
+
+  <term>
+    <text>Donations</text>
+    <destination>./../donations/index.html</destination>
+  </term>
+
+  <term>
+    <text>Events</text>
+    <destination>./events/events.html</destination>
+  </term>
+
+  <term>
+    <text>Features</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>4.4BSD, A complete operating system</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Berkeley, University of California</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>UCB</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Computer Systems Research Group</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>CSRG</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Compatibility, System V Release 4</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Compatibility, Linux</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Linux, Compatibility</text>
+    <destination>./features.html</destination>
+  </term>
+
+  <term>
+    <text>Fieber, John</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>Apache http server</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>http server</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>WWW server www.FreeBSD.org</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>BSDi, network connection</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>Network connection, BSDi</text>
+    <destination>./internal/about.html</destination>
+  </term>
+
+  <term>
+    <text>Core Bylaws</text>
+    <destination>./../internal/bylaws.html</destination>
+  </term>
+
+  <term>
+    <text>Bylaws, Core</text>
+    <destination>./../internal/bylaws.html</destination>
+  </term>
+
+  <term>
+    <text>Charter, Doceng Team</text>
+    <destination>./../internal/doceng.html</destination>
+  </term>
+
+  <term>
+    <text>Doceng Team Charter</text>
+    <destination>./../internal/doceng.html</destination>
+  </term>
+
+  <term>
+    <text>Documentation Project, doceng</text>
+    <destination>./../internal/doceng.html</destination>
+  </term>
+
+  <term>
+    <text>Mirroring the FreeBSD Web Pages</text>
+    <destination>./internal/mirror.html</destination>
+  </term>
+
+  <term>
+    <text>rsync</text>
+    <destination>./internal/mirror.html</destination>
+  </term>
+
+  <term>
+    <text>IPv6 in FreeBSD</text>
+    <destination>./../ipv6/index.html</destination>
+  </term>
+
+  <term>
+    <text>World IPv6 Day</text>
+    <destination>./../ipv6/w6d.html</destination>
+  </term>
+
+  <term>
+    <text>IPv6 Day, World</text>
+    <destination>./../ipv6/w6d.html</destination>
+  </term>
+
+  <term>
+    <text>Contact us</text>
+    <destination>./mailto.html</destination>
+  </term>
+
+  <term>
+    <text>Questions about this WWW server</text>
+    <destination>./mailto.html</destination>
+  </term>
+
+  <term>
+    <text>Questions about the contents of this WWW server</text>
+    <destination>./mailto.html</destination>
+  </term>
+
+  <term>
+    <text>Questions about FreeBSD</text>
+    <destination>./mailto.html</destination>
+  </term>
+
+  <term>
+    <text>News flash</text>
+    <destination>./news/newsflash.html</destination>
+  </term>
+
+  <term>
+    <text>Press releases, News</text>
+    <destination>./news/newsflash.html</destination>
+  </term>
+
+  <term>
+    <text>Bi-monthly status reports</text>
+    <destination>./../news/status/status.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD Status Reports</text>
+    <destination>./../news/status/status.html</destination>
+  </term>
+
+  <term>
+    <text>Status Reports</text>
+    <destination>./../news/status/status.html</destination>
+  </term>
+
+  <term>
+    <text>AMD64</text>
+    <destination>./platforms/amd64.html</destination>
+  </term>
+
+  <term>
+    <text>Athlon64</text>
+    <destination>./platforms/amd64.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/amd64</text>
+    <destination>./platforms/amd64.html</destination>
+  </term>
+
+  <term>
+    <text>Opteron</text>
+    <destination>./platforms/amd64.html</destination>
+  </term>
+
+  <term>
+    <text>x86-64</text>
+    <destination>./platforms/amd64.html</destination>
+  </term>
+
+  <term>
+    <text>ARM</text>
+    <destination>./platforms/arm.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/ARM</text>
+    <destination>./platforms/arm.html</destination>
+  </term>
+
+  <term>
+    <text>StrongARM</text>
+    <destination>./platforms/arm.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/ia64</text>
+    <destination>./platforms/ia64/index.html</destination>
+  </term>
+
+  <term>
+    <text>IA-64</text>
+    <destination>./platforms/ia64/index.html</destination>
+  </term>
+
+  <term>
+    <text>Itanium</text>
+    <destination>./platforms/ia64/index.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/MIPS</text>
+    <destination>./platforms/mips.html</destination>
+  </term>
+
+  <term>
+    <text>MIPS, FreeBSD</text>
+    <destination>./platforms/mips.html</destination>
+  </term>
+
+  <term>
+    <text>SGI MIPS, FreeBSD</text>
+    <destination>./platforms/mips.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/pc98</text>
+    <destination>./platforms/pc98.html</destination>
+  </term>
+
+  <term>
+    <text>NEC PC-98x1</text>
+    <destination>./platforms/pc98.html</destination>
+  </term>
+
+  <term>
+    <text>PC-98</text>
+    <destination>./platforms/pc98.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/PowerPC</text>
+    <destination>./platforms/ppc.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/ppc</text>
+    <destination>./platforms/ppc.html</destination>
+  </term>
+
+  <term>
+    <text>PowerPC</text>
+    <destination>./platforms/ppc.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/sparc64</text>
+    <destination>./platforms/sparc.html</destination>
+  </term>
+
+  <term>
+    <text>Sparc64</text>
+    <destination>./platforms/sparc.html</destination>
+  </term>
+
+  <term>
+    <text>Sparc</text>
+    <destination>./platforms/sparc.html</destination>
+  </term>
+
+  <term>
+    <text>UltraSparc</text>
+    <destination>./platforms/sparc.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/sun4v</text>
+    <destination>./../platforms/sun4v.html</destination>
+  </term>
+
+  <term>
+    <text>sun4v</text>
+    <destination>./../platforms/sun4v.html</destination>
+  </term>
+
+  <term>
+    <text>UltraSparc-T1</text>
+    <destination>./../platforms/sun4v.html</destination>
+  </term>
+
+  <term>
+    <text>xbox</text>
+    <destination>./../platforms/xbox.html</destination>
+  </term>
+
+  <term>
+    <text>FreeBSD/xbox</text>
+    <destination>./../platforms/xbox.html</destination>
+  </term>
+
+  <term>
+    <text>Ports Collection</text>
+    <destination>./ports/index.html</destination>
+  </term>
+
+  <term>
+    <text>Press, in the</text>
+    <destination>./news/press.html</destination>
+  </term>
+
+  <term>
+    <text>Press Releases, Official</text>
+    <destination>./news/pressreleases.html</destination>
+  </term>
+
+  <term>
+    <text>Privacy Policy</text>
+    <destination>./../privacy.html</destination>
+  </term>
+
+  <term>
+    <text>Java</text>
+    <destination>./java/index.html</destination>
+  </term>
+
+  <term>
+    <text>GNOME</text>
+    <destination>./../gnome/index.html</destination>
+  </term>
+
+  <term>
+    <text>Newbies Project</text>
+    <destination>./projects/newbies.html</destination>
+  </term>
+
+  <term>
+    <text>Retail Outlets for FreeBSD</text>
+    <destination>./../doc/ja_JP.eucJP/books/handbook/mirrors.html</destination>
+  </term>
+
+  <term>
+    <text>Project ideas</text>
+    <destination>https://wiki.FreeBSD.org/IdeasPage</destination>
+  </term>
+
+  <term>
+    <text>C99 &amp; POSIX Conformance Project</text>
+    <destination>./../projects/c99/index.html</destination>
+  </term>
+
+  <term>
+    <text>POSIX Conformance</text>
+    <destination>./../projects/c99/index.html</destination>
+  </term>
+
+  <term>
+    <text>Related Publications</text>
+    <destination>./publish.html</destination>
+  </term>
+
+  <term>
+    <text>Publications, Related</text>
+    <destination>./publish.html</destination>
+  </term>
+
+  <term>
+    <text>Covers, Publications</text>
+    <destination>./publish.html</destination>
+  </term>
+
+  <term>
+    <text>Daemon, Covers</text>
+    <destination>./publish.html</destination>
+  </term>
+
+  <term>
+    <text>Recent announcements about FreeBSD Releases</text>
+    <destination>./releases/index.html</destination>
+  </term>
+
+  <term>
+    <text>Release Information</text>
+    <destination>./releases/index.html</destination>
+  </term>
+
+  <term>
+    <text>Release Engineering Information</text>
+    <destination>./../releng/index.html</destination>
+  </term>
+
+  <term>
+    <text>Charter, Release Engineering Team</text>
+    <destination>./../releng/charter.html</destination>
+  </term>
+
+  <term>
+    <text>Release Engineering Team Charter</text>
+    <destination>./../releng/charter.html</destination>
+  </term>
+
+  <term>
+    <text>Release Documentation</text>
+    <destination>./relnotes.html</destination>
+  </term>
+
+  <term>
+    <text>Search Services</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Ports Changes, Search</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Search, Ports Changes</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Message-ID, Search</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Search, Message-ID</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Usenet News, Search</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Newsgroups, Search</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Search, Usenet News</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Cross reference of the FreeBSD kernel</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>XR, Cross reference of the FreeBSD kernel</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Kernel, Cross reference</text>
+    <destination>search.html</destination>
+  </term>
+
+  <term>
+    <text>Searching Hints</text>
+    <destination>searchhints.html</destination>
+  </term>
+
+  <term>
+    <text>Security Guide</text>
+    <destination>./security/security.html</destination>
+  </term>
+
+  <term>
+    <text>Submit a FreeBSD problem report</text>
+    <destination>https://bugs.freebsd.org/bugzilla/enter_bug.cgi</destination>
+  </term>
+
+  <term>
+    <text>Bug report, submit</text>
+    <destination>https://bugs.freebsd.org/bugzilla/enter_bug.cgi</destination>
+  </term>
+
+  <term>
+    <text>Support</text>
+    <destination>./support.html </destination>
+  </term>
+
+  <term>
+    <text>Problem Report Database</text>
+    <destination>./support/bugreports.html</destination>
+  </term>
+
+  <term>
+    <text>Bug reports, view</text>
+    <destination>./support/bugreports.html</destination>
+  </term>
+
+  <term>
+    <text>Bug reports, search</text>
+    <destination>./support/bugreports.html</destination>
+  </term>
+
+  <term>
+    <text>User Groups</text>
+    <destination>./usergroups.html</destination>
+  </term>
+
+  <term>
+    <text>Getting FreeBSD</text>
+    <destination>./where.html</destination>
+  </term>
+
+  <term>
+    <text>Commercial software</text>
+    <destination>./where.html</destination>
+  </term>
+
+  <term>
+    <text>4.4BSD Documents</text>
+    <destination>https://docs.freebsd.org/44doc/</destination>
+  </term>
+
+  <term>
+    <text>BSD Documents</text>
+    <destination>https://docs.freebsd.org/44doc/</destination>
+  </term>
+
+  <term>
+    <text>Documents, 4.4BSD</text>
+    <destination>https://docs.freebsd.org/44doc/</destination>
+  </term>
+
+  <term>
+    <text>Info Documents</text>
+    <destination>https://docs.freebsd.org/info/</destination>
+  </term>
+
+  <term>
+    <text>GNU Info Documents</text>
+    <destination>https://docs.freebsd.org/info/</destination>
+  </term>
+
+  <term>
+    <text>Logo</text>
+    <destination>./../logo.html</destination>
+  </term>
+
+  <term>
+    <text>Security Advisories</text>
+    <destination>https://security.freebsd.org</destination>
+  </term>
+
+  <term>
+    <text>Advisories, security</text>
+    <destination>https://security.freebsd.org</destination>
+  </term>
+
+  <term>
+    <text>SA</text>
+    <destination>https://security.freebsd.org</destination>
+  </term>
+
+  <term>
+    <text>Source Code</text>
+    <destination>http://fxr.watson.org/</destination>
+  </term>
+
+  <term>
+    <text>German web pages</text>
+    <destination>./../de/index.html</destination>
+  </term>
+
+  <term>
+    <text>Spanish web pages</text>
+    <destination>./../es/index.html</destination>
+  </term>
+
+  <term>
+    <text>Russian web pages</text>
+    <destination>./../ru/index.html</destination>
+  </term>
+
+  <term>
+    <text>French web pages</text>
+    <destination>./../fr/index.html</destination>
+  </term>
+
+  <term>
+    <text>Italian web pages</text>
+    <destination>./../it/index.html</destination>
+  </term>
+
+  <term>
+    <text>Japanese web pages</text>
+    <destination>./../ja/index.html</destination>
+  </term>
+
+  <term>
+    <text>Project Staff</text>
+    <destination>./../administration.html</destination>
+  </term>
+
+  <term>
+    <text>Staff, Project</text>
+    <destination>./../administration.html</destination>
+  </term>
+
+  <term>
+    <text>Who's Who</text>
+    <destination>./../administration.html</destination>
+  </term>
+
+  <term>
+    <text>Officers, Project</text>
+    <destination>./../administration.html</destination>
+  </term>
+
+  <category name="FreeBSD について">
+    <item>
+      <text>特徴</text>
+      <destination>./features.html</destination>
+    </item>
+
+    <item>
+      <text>リリース情報</text>
+      <destination>./releases/index.html</destination>
+    </item>
+
+    <item>
+      <text>インストール</text>
+      <destination>./../doc/en_US.ISO8859-1/books/handbook/install.html</destination>
+    </item>
+
+    <item>
+      <text>ハードウェアノート</text>
+      <destination>./../releases/12.0R/hardware.html</destination>
+    </item>
+
+    <item>
+      <text>ミラー</text>
+      <destination>./../doc/ja_JP.eucJP/books/handbook/mirrors.html</destination>
+    </item>
+
+    <item>
+      <text>アプリケーション</text>
+      <destination>./applications.html</destination>
+    </item>
+
+    <item>
+      <text>Java</text>
+      <destination>./java/index.html</destination>
+    </item>
+
+    <item>
+      <text>GNOME</text>
+      <destination>./../gnome/index.html</destination>
+    </item>
+
+    <item>
+      <text>Ports</text>
+      <destination>./ports/index.html</destination>
+    </item>
+
+    <item>
+      <text>商用ベンダ</text>
+      <destination>./commercial/commercial.html</destination>
+    </item>
+
+    <item>
+      <text>アドミニストレーション</text>
+      <destination>./../administration.html</destination>
+    </item>
+  </category>
+
+  <category name="FreeBSD の入手">
+    <item>
+      <text>FreeBSD の入手</text>
+      <destination>./where.html</destination>
+    </item>
+
+    <item>
+      <text>リリース情報</text>
+      <destination>./releases/index.html</destination>
+    </item>
+
+    <item>
+      <text>スナップショットリリース</text>
+      <destination>./snapshots/index.html</destination>
+    </item>
+
+    <item>
+      <text>Ports</text>
+      <destination>./ports/index.html</destination>
+    </item>
+  </category>
+
+  <category name="ドキュメント">
+    <item>
+      <text>Books</text>
+      <destination>./docs/books.html</destination>
+    </item>
+
+    <item>
+      <text>ハンドブック</text>
+      <destination>./../doc/ja_JP.eucJP/books/handbook/index.html</destination>
+    </item>
+
+    <item>
+      <text>FAQ</text>
+      <destination>./../doc/en_US.ISO8859-1/books/faq/index.html</destination>
+    </item>
+
+    <item>
+      <text>マニュアルページ</text>
+      <destination>//www.FreeBSD.org/cgi/man.cgi</destination>
+    </item>
+
+    <item>
+      <text>その他の文書</text>
+      <destination>https://docs.freebsd.org/</destination>
+    </item>
+
+    <item>
+      <text>出版物</text>
+      <destination>./publish.html</destination>
+    </item>
+
+    <item>
+      <text>翻訳</text>
+      <destination>./docproj/translations.html</destination>
+    </item>
+
+    <item>
+      <text>参考図書</text>
+      <destination>./../doc/en_US.ISO8859-1/books/handbook/bibliography.html</destination>
+    </item>
+  </category>
+
+  <category name="コミュニティ">
+    <item>
+      <text>メーリングリスト</text>
+      <destination>./community/mailinglists.html</destination>
+    </item>
+
+    <item>
+      <text>IRC</text>
+      <destination>./community/irc.html</destination>
+    </item>
+
+    <item>
+      <text>ニュースグループ</text>
+      <destination>./community/newsgroups.html</destination>
+    </item>
+
+    <item>
+      <text>ユーザグループ</text>
+      <destination>./usergroups.html</destination>
+    </item>
+
+    <item>
+      <text>ウェブ上の情報</text>
+      <destination>./community/webresources.html</destination>
+    </item>
+  </category>
+
+  <category name="開発">
+    <item>
+      <text>開発者のためのハンドブック</text>
+      <destination>./../doc/en_US.ISO8859-1/books/developers-handbook/index.html</destination>
+    </item>
+
+    <item>
+      <text>port 作成者のためのハンドブック</text>
+      <destination>./../doc/ja_JP.eucJP/books/porters-handbook/</destination>
+    </item>
+
+    <item>
+      <text>ソースコードリポジトリ</text>
+      <destination>./developers/cvs.html</destination>
+    </item>
+
+    <item>
+      <text>リリースエンジニアリング</text>
+      <destination>./../releng/index.html</destination>
+    </item>
+
+    <item>
+      <text>プラットフォーム</text>
+      <destination>./platforms/index.html</destination>
+    </item>
+
+    <item>
+      <text>プロジェクトアイディア</text>
+      <destination>https://wiki.freebsd.org/IdeasPage</destination>
+    </item>
+
+    <item>
+      <text>貢献</text>
+      <destination>./../doc/ja_JP.eucJP/articles/contributing/index.html</destination>
+    </item>
+  </category>
+
+  <category name="サポート">
+    <item>
+      <text>商用ベンダ</text>
+      <destination>./commercial/commercial.html</destination>
+    </item>
+
+    <item>
+      <text>セキュリティ情報</text>
+      <destination>./security/security.html</destination>
+    </item>
+
+    <item>
+      <text>バグの報告</text>
+      <destination>./support/bugreports.html</destination>
+    </item>
+
+    <item>
+      <text>ウェブ上の情報</text>
+      <destination>./support/webresources.html</destination>
+    </item>
+  </category>
+
+  <category name="財団">
+    <item>
+      <text>FreeBSD Foundation</text>
+      <destination>https://www.freebsdfoundation.org/</destination>
+    </item>
+    
+    <item>
+      <text>ニュースおよびイベント</text>
+      <destination>https://www.freebsdfoundation.org/news-and-events/</destination>
+    </item>
+  </category>
+
+  <category name="ニュース">
+    <item>
+      <text>最新ニュース</text>
+      <destination>./news/newsflash.html</destination>
+    </item>
+
+    <item>
+      <text>プレスリリース</text>
+      <destination>./news/pressreleases.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD に関連したニュース記事</text>
+      <destination>./news/press.html</destination>
+    </item>
+
+    <item>
+      <text>イベント</text>
+      <destination>./events/events.html</destination>
+    </item>
+
+    <item>
+      <text>進捗レポート</text>
+      <destination>./../news/status/status.html</destination>
+    </item>
+  </category>
+
+  <category name="プラットフォーム">
+    <item>
+      <text>FreeBSD/amd64</text>
+      <destination>./platforms/amd64.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/ARM</text>
+      <destination>./platforms/arm.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/i386</text>
+      <destination>./../platforms/i386.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/ia64</text>
+      <destination>./platforms/ia64/index.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/MIPS</text>
+      <destination>./platforms/mips.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/pc98</text>
+      <destination>./platforms/pc98.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/ppc</text>
+      <destination>./platforms/ppc.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/sparc64</text>
+      <destination>./platforms/sparc.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/sunv4</text>
+      <destination>./../platforms/sun4v.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/xbox</text>
+      <destination>./../platforms/xbox.html</destination>
+    </item>
+  </category>
+
+  <category name="プロジェクト">
+    <item>
+      <text>ACPI</text>
+      <destination>https://wiki.freebsd.org/ACPI</destination>
+    </item>
+
+    <item>
+      <text>Busdma および SMPng ドライバの書き換え</text>
+      <destination>./../projects/busdma/index.html</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD プロジェクトアイディア</text>
+      <destination>https://wiki.freebsd.org/IdeasPage</destination>
+    </item>
+
+    <item>
+      <text>FreeBSD/MIPS</text>
+      <destination>./projects/mips/index.html</destination>
+    </item>
+
+    <item>
+      <text>Network Performance (netperf)</text>
+      <destination>./../projects/netperf/index.html</destination>
+    </item>
+  </category>
+</sitemap>

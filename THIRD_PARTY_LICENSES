@@ -1,0 +1,286 @@
+Third-party licences
+
+The test suites in data/conformance and the datasets in data/bench are the
+work of others, committed as published unless a "Changed" line below says
+otherwise. Each is listed with its source, its copyright holders and the
+licence it is used under; the licence texts follow the list. XMark is
+generated locally and never committed.
+
+- The W3C XML Conformance Test Suite, xmlts20130923, is not committed. Its
+  collections may be redistributed only as their authors publish them, so
+  it is downloaded from https://www.w3.org/XML/Test/xmlts20130923.tar.gz on
+  first use, into data/conformance/xmlts, which git ignores.
+
+- W3C XInclude Test Suite, XIncl20060927, in data/conformance/xinclude.
+  Source: https://www.w3.org/XML/Test/XInclude/XIncl20060927.tar.gz
+  Copyright (c) 2006 World Wide Web Consortium, (MIT, ERCIM, Keio, Beihang)
+  and others. All Rights Reserved.
+  https://www.w3.org/copyright/test-suites-licenses/
+  Used under the W3C Test Suite License, 2008 version, below.
+
+- W3C xml:id Test Suite, in data/conformance/xml-id.
+  Source: https://www.w3.org/XML/2005/01/xml-id/
+  Copyright (c) 2005 World Wide Web Consortium, (MIT, ERCIM, Keio, Beihang)
+  and others. All Rights Reserved.
+  https://www.w3.org/copyright/test-suites-licenses/
+  Used under the W3C Test Suite License, 2008 version, below.
+
+- W3C DOM Conformance Test Suite, ECMAScript tests, in data/conformance/dom.
+  Source: https://www.w3.org/2004/04/ecmascript/
+  Copyright (c) 2001-2004 World Wide Web Consortium, (Massachusetts
+  Institute of Technology, Institut National de Recherche en Informatique et
+  en Automatique, Keio University). All Rights Reserved.
+  Distributed under the W3C Software License, whose notice each file
+  carries: https://www.w3.org/copyright/software-license-2002/
+
+- FreeBSD documentation, tag release/12.2.0, in data/bench/freebsd-doc-source,
+  and the datasets made from it: data/bench/freebsd-doc,
+  data/bench/freebsd-doc-simplified and data/bench/dtd.
+  Source: https://github.com/freebsd/freebsd-doc
+  Copyright 1994-2020 The FreeBSD Project. All rights reserved.
+  Used under the FreeBSD Documentation License, below.
+  Changed: freebsd-doc has its LF line endings turned into CRLF;
+  freebsd-doc-simplified has every entity resolved and the DOCTYPE removed,
+  by xmllint; dtd copies the DocBook 5.0 DTD and FreeBSD's authors.ent and
+  man-refs.ent, and adds a generated all.dtd and documents that refer to it.
+
+- DocBook DTDs: DocBook 5.0, in data/bench/freebsd-doc-source/share/xml and
+  data/bench/dtd/share/xml, and DocBook XML 4.5, in
+  data/bench/postgresql-doc-source/docbook-4.5.
+  Copyright 1992-2006 HaL Computer Systems, Inc., O'Reilly & Associates,
+  Inc., ArborText, Inc., Fujitsu Software Corporation, Norman Walsh, Sun
+  Microsystems, Inc., and the Organization for the Advancement of
+  Structured Information Standards (OASIS).
+  Used under the DocBook DTD notice, below.
+
+- xmlcharent 0.3, the ISO character entity sets, in
+  data/bench/freebsd-doc-source and data/bench/dtd/xmlcharent.
+  Copyright (C) 2001, 2002 Organization for the Advancement of Structured
+  Information Standards (OASIS); derived in part from entity sets
+  (C) International Organization for Standardization 1986.
+  Used under the notice each file carries, below.
+
+- The W3C XML Entity Definitions for Characters in
+  data/bench/postgresql-doc-source/docbook-4.5/ent carry, in each file, the
+  notice of the ISO 8879 entity sets they derive from, below.
+
+- PostgreSQL documentation, tag REL_18_0, in data/bench/postgresql-doc-source,
+  and the book made from it, in data/bench/postgresql-book.
+  Source: https://github.com/postgres/postgres
+  Portions Copyright (c) 1996-2025, PostgreSQL Global Development Group.
+  Portions Copyright (c) 1994, The Regents of the University of California.
+  Used under the PostgreSQL Licence, below.
+  Changed: postgresql-book is the book assembled from those sources by
+  xmllint, as PostgreSQL's own build assembles it.
+
+- OpenStack manuals, tag juno-eol, in data/bench/openstack-manuals.
+  Source: https://opendev.org/openstack/openstack-manuals
+  Copyright the OpenStack Foundation and the manuals' contributors.
+  Each book gives its licence in its own legal notice: five under the
+  Apache License 2.0, whose text is this repository's LICENSE file; five
+  under the Creative Commons Attribution 3.0 Unported License
+  (https://creativecommons.org/licenses/by/3.0/); and three, the cloud
+  administrator guide, the architecture design guide and the networking
+  guide, under the Creative Commons Attribution-ShareAlike 3.0 Unported
+  License (https://creativecommons.org/licenses/by-sa/3.0/).
+
+- Expat's large test files, ns_att_test.xml and recset.xml, from libexpat at
+  commit b8fedbbfd826c220dca5cd758816cc8be1b68897, in
+  data/bench/expat-largefiles.
+  Source: https://github.com/libexpat/libexpat
+  Copyright (c) 1998-2000 Thai Open Source Software Center Ltd and Clark
+  Cooper. Copyright (c) 2001-2025 Expat maintainers.
+  Used under the MIT License, below.
+
+================================================================================
+
+W3C TEST SUITE LICENSE - 2008 VERSION
+
+https://www.w3.org/copyright/test-suite-license-2008/
+
+This document, test suites and other documents that link to this statement
+are provided by the copyright holders under the following license.
+
+By using and/or copying this document, or the W3C document from which this
+statement is linked, you (the licensee) agree that you have read,
+understood, and will comply with the following terms and conditions:
+
+Permission to copy, and distribute the contents of this document, or the W3C
+document from which this statement is linked, in any medium for any purpose
+and without fee or royalty is hereby granted, provided that you include the
+following on ALL copies of the document, or portions thereof, that you use:
+
+- A link or URL to the original W3C document.
+
+- The pre-existing copyright notice of the original author, or if it doesn't
+  exist, a notice (hypertext is preferred, but a textual representation is
+  permitted) of the form: "Copyright (c) [$date-of-document] World Wide Web
+  Consortium, (MIT, ERCIM, Keio, Beihang) and others. All Rights Reserved.
+  https://www.w3.org/copyright/test-suites-licenses/"
+
+- If it exists, the STATUS of the W3C document.
+
+When space permits, inclusion of the full text of this NOTICE should be
+provided. We request that authorship attribution be provided in any
+software, documents, or other items or products that you create pursuant to
+the implementation of the contents of this document, or any portion thereof.
+
+No right to create modifications or derivatives of W3C documents is granted
+pursuant to this license. However, if additional requirements (documented in
+the Copyright FAQ) are satisfied, the right to create modifications or
+derivatives is sometimes granted by the W3C to individuals complying with
+those requirements.
+
+If a test suite distinguishes the test harness (or, framework for
+navigation) and the actual tests, permission is given to remove or alter the
+harness or navigation if the Test Suite in question allows to do so. The
+tests themselves shall NOT be changed in any way.
+
+The name and trademarks of W3C and other copyright holders may NOT be used
+in advertising or publicity pertaining to this document or other documents
+that link to this statement without specific, written prior permission.
+Title to copyright in this document will at all times remain with copyright
+holders. Permission is given to use the trademarked string W3C within claims
+of performance concerning W3C Specifications or features described therein,
+and there only, if the test suite so authorizes.
+
+THIS WORK IS PROVIDED BY W3C, MIT, ERCIM, KEIO, BEIHANG, THE COPYRIGHT
+HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL W3C, MIT,
+ERCIM, KEIO, BEIHANG, THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+================================================================================
+
+FREEBSD DOCUMENTATION LICENSE
+
+Copyright 1994-2020 The FreeBSD Project. All rights reserved.
+
+Redistribution and use in source (SGML DocBook) and 'compiled' forms (SGML,
+HTML, PDF, PostScript, RTF and so forth) with or without modification, are
+permitted provided that the following conditions are met:
+
+1. Redistributions of source code (SGML DocBook) must retain the above
+   copyright notice, this list of conditions and the following disclaimer as
+   the first lines of this file unmodified.
+
+2. Redistributions in compiled form (transformed to other DTDs, converted to
+   PDF, PostScript, RTF and other formats) must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS DOCUMENTATION IS PROVIDED BY THE FREEBSD DOCUMENTATION PROJECT "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE FREEBSD DOCUMENTATION PROJECT BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+OF THE USE OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+================================================================================
+
+DOCBOOK DTD NOTICE
+
+Copyright 1992-2006 HaL Computer Systems, Inc., O'Reilly & Associates, Inc.,
+ArborText, Inc., Fujitsu Software Corporation, Norman Walsh, Sun
+Microsystems, Inc., and the Organization for the Advancement of Structured
+Information Standards (OASIS).
+
+Permission to use, copy, modify and distribute the DocBook XML DTD and its
+accompanying documentation for any purpose and without fee is hereby granted
+in perpetuity, provided that the above copyright notice and this paragraph
+appear in all copies. The copyright holders make no representation about the
+suitability of the DTD for any purpose. It is provided "as is" without
+expressed or implied warranty.
+
+If you modify the DocBook DTD in any way, except for declaring and
+referencing additional sets of general entities and declaring additional
+notations, label your DTD as a variant of DocBook. See the maintenance
+documentation for more information.
+
+================================================================================
+
+XMLCHARENT ENTITY SETS NOTICE
+
+Copyright (C) 2001, 2002 Organization for the Advancement of Structured
+Information Standards (OASIS).
+
+Permission to use, copy, modify and distribute this entity set and its
+accompanying documentation for any purpose and without fee is hereby granted
+in perpetuity, provided that the above copyright notice and this paragraph
+appear in all copies. The copyright holders make no representation about the
+suitability of the entities for any purpose. It is provided "as is" without
+expressed or implied warranty.
+
+================================================================================
+
+ISO 8879 ENTITY SETS NOTICE
+
+(C) International Organization for Standardization 1986
+
+Permission to copy in any form is granted for use with conforming SGML
+systems and applications as defined in ISO 8879, provided this notice is
+included in all copies.
+
+================================================================================
+
+POSTGRESQL LICENCE
+
+PostgreSQL Database Management System
+(also known as Postgres, formerly known as Postgres95)
+
+Portions Copyright (c) 1996-2025, PostgreSQL Global Development Group
+
+Portions Copyright (c) 1994, The Regents of the University of California
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose, without fee, and without a written agreement
+is hereby granted, provided that the above copyright notice and this
+paragraph and the following two paragraphs appear in all copies.
+
+IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR
+DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING
+LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION,
+EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN
+AS-IS BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE
+MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+================================================================================
+
+MIT LICENSE (EXPAT)
+
+Copyright (c) 1998-2000 Thai Open Source Software Center Ltd and Clark Cooper
+Copyright (c) 2001-2025 Expat maintainers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.

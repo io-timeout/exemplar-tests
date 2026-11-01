@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Οδηγός Γρήγορης Εκκίνησης του FreeBSD για χρήστες Linux
+
+  The FreeBSD Greek Documentation Project
+
+  %SOURCE%	en_US.ISO8859-1/articles/linux-users/article.xml
+  %SRCID%	1.8
+
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:lang="el">
+  <info><title>Οδηγός Γρήγορης Εκκίνησης του FreeBSD για Χρήστες <trademark class="registered">Linux</trademark></title>
+    
+
+    <authorgroup>
+      <author><personname><firstname>John</firstname><surname>Ferrell</surname></personname></author>
+    </authorgroup>
+
+    <copyright>
+      <year>2008</year>
+      <holder>Η Ομάδα Τεκμηρίωσης του FreeBSD</holder>
+    </copyright>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <releaseinfo>$FreeBSD$</releaseinfo>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>Το FreeBSD είναι ένα κατοχυρωμένο εμπορικό
+  σύμβολο του FreeBSD Foundation.</para>
+      <para>Το Linux είναι ένα κατοχυρωμένα εμπορικό
+  σύμβολο του Linus Torvalds στις Ηνωμένες Πολιτείες.</para>
+      <para>Οι λέξεις Intel, Celeron, EtherExpress,
+  i386, i486, Itanium, Pentium, και Xeon είναι εμπορικά σύμβολα ή
+  κατοχυρωμένα εμπορικά σύμβολα της Intel Corporation και των θυγατρικών
+  της στις Ηνωμένες Πολιτείες και σε άλλες χώρες.</para>
+      <para>Οι λέξεις ή φράσεις Red Hat, και RPM είναι
+  εμπορικά σύμβολα ή κατοχυρωμένα εμπορικά σύμβολα της Red Hat, Inc. στις
+  Ηνωμένες Πολιτείες και σε άλλες χώρες.</para>
+      <para>Η λέξη UNIX είναι κατοχυρωμένο εμπορικό
+  σύμβολο του Open Group στις Ηνωμένες Πολιτείες και σε άλλες
+  χώρες.</para>
+      <para>Πολλές από τις λέξεις ή φράσεις οι οποίες
+  χρησιμοποιούνται από τους κατασκευαστές ή τους πωλητές τους για να
+  διακρίνουν τα προϊόντα τους θεωρούνται εμπορικά σύμβολα.  Όπου αυτές
+  εμφανίζονται σε αυτό το κείμενο και για όσες από αυτές γνωρίζει η Ομάδα
+  Ανάπτυξης του FreeBSD ότι είναι πιθανόν να είναι εμπορικά σύμβολα, θα δείτε
+  ένα από τα σύμβολα: <quote>™</quote> ή <quote>®</quote>.</para>
+    </legalnotice>
+
+    <abstract>
+      <para>Το κείμενο αυτό έχει σκοπό να βοηθήσει στη γρήγορη εξοικείωση
+	χρηστών <trademark class="registered">Linux</trademark> μέσου / προχωρημένου επιπέδου με τις βασικές έννοιες
+	του FreeBSD</para>
+    </abstract>
+  </info>
+
+  <sect1 xml:id="intro">
+    <title>Εισαγωγή</title>
+
+    <para>Το κείμενο αυτό τονίζει τις διαφορές μεταξύ του FreeBSD και του <trademark class="registered">Linux</trademark>
+      ώστε μέσοι ή προχωρημένοι χρήστες του <trademark class="registered">Linux</trademark> να μπορούν γρήγορα να
+      προσαρμοστούν στις βασικές έννοιες του FreeBSD.  Πρόκειται για μια τεχνική
+      εισαγωγή στο FreeBSD, και δεν θα αναφερθούμε σε τυχόν
+      <quote>φιλοσοφικές</quote> διαφορές μεταξύ των δύο συστημάτων.</para>
+
+    <para>Το κείμενο αυτό υποθέτει ότι έχετε ήδη εγκαταστήσει το FreeBSD.  Αν δεν
+      έχετε εγκαταστήσει το FreeBSD ή χρειάζεστε βοήθεια με την διαδικασία
+      εγκατάστασης του, παρακαλούμε να διαβάσετε το κεφάλαιο <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/install.html">Εγκαθιστώντας το FreeBSD</link> στο Εγχειρίδιο του FreeBSD.</para>
+  </sect1>
+
+  <sect1 xml:id="shells">
+    <title>Κελύφη: Δεν υπάρχει Bash;</title>
+
+    <para>Όσοι έρχονται από το <trademark class="registered">Linux</trademark> συχνά εκπλήσσονται όταν ανακαλύπτουν
+      ότι το <application>Bash</application> δεν είναι το προεπιλεγμένο
+      κέλυφος στο FreeBSD.  Στην πραγματικότητα, το
+      <application>Bash</application> δεν υπάρχει καν στην βασική διανομή του
+      FreeBSD.  Αντίθετα, το FreeBSD χρησιμοποιεί το <citerefentry><refentrytitle>tcsh</refentrytitle><manvolnum>1</manvolnum></citerefentry> ως το
+      προεπιλεγμένο κέλυφος.  Το <application>Bash</application> καθώς και
+      άλλα κελύφη που ίσως θέλετε να εγκαταστήσετε, είναι διαθέσιμα στη <link xlink:href="article.html#SOFTWARE">Συλλογή Πακέτων και Ports</link> του
+      FreeBSD.</para>
+
+    <para>Αν εγκαταστήσετε διαφορετικά κελύφη, μπορείτε να χρησιμοποιήσετε
+      την εντολή <citerefentry><refentrytitle>chsh</refentrytitle><manvolnum>1</manvolnum></citerefentry> για να αλλάξετε το προεπιλεγμένο κέλυφος
+      κάποιου χρήστη.  Σας συνιστούμε ωστόσο να αφήσετε το κέλυφος του
+      <systemitem class="username">root</systemitem> στο προεπιλεγμένο.  Ο λόγος για αυτό είναι
+      ότι τα κελύφη που δεν περιλαμβάνονται στην βασική διανομή του FreeBSD,
+      εγκαθίστανται στην τοποθεσία <filename>/usr/local/bin</filename> ή
+      <filename>/usr/bin</filename>.  Σε περίπτωση προβλήματος, είναι πιθανόν
+      τα συστήματα αρχείων όπου βρίσκονται τα
+      <filename>/usr/local/bin</filename> και <filename>/usr/bin</filename>
+      να μην μπορούν να προσαρτηθούν.  Στην περίπτωση αυτή, ο
+      <systemitem class="username">root</systemitem> δεν θα είχε πρόσβαση στο προεπιλεγμένο του
+      κέλυφος, εμποδίζοντας έτσι και την είσοδο του στο σύστημα.  Για το λόγο
+      αυτό, υπάρχει ένας δεύτερος λογαριασμός όμοιος με τον
+      <systemitem class="username">root</systemitem>, ο <systemitem class="username">toor</systemitem>, ο οποίος
+      δημιουργήθηκε ειδικά για να χρησιμοποιείται με κάποιο άλλο κέλυφος.
+      Δείτε τις Συχνές Ερωτήσεις Ασφαλείας σχετικά με τον <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/faq/security.html#TOOR-ACCOUNT">λογαριασμό toor</link>.</para>
+  </sect1>
+
+  <sect1 xml:id="software">
+    <title>Πακέτα και Ports: Προσθέτοντας λογισμικό στο FreeBSD</title>
+
+    <para>Εκτός από την παραδοσιακή μέθοδο εγκατάστασης λογισμικού του
+      <trademark class="registered">UNIX</trademark> (κατέβασμα του πηγαίου κώδικα, αποσυμπίεση του αρχείου,
+      επεξεργασία και μεταγλώττιση), το FreeBSD προσφέρει δύο ακόμα μεθόδους για
+      την εγκατάσταση εφαρμογών: τα πακέτα και τα ports.  Για μια πλήρη λίστα
+      όλων των διαθέσιμων πακέτων και ports, δείτε <link xlink:href="http://www.freebsd.org/ports/master-index.html">εδώ</link>.</para>
+
+    <sect2 xml:id="packages">
+      <title>Πακέτα</title>
+
+      <para>Τα πακέτα είναι προ-μεταγλωττισμένες εφαρμογές, θα λέγαμε το
+	αντίστοιχο για το FreeBSD των αρχείων <filename>.deb</filename> σε
+	συστήματα Debian/Ubuntu και των αρχείων <filename>.rpm</filename> σε
+	συστήματα Red Hat/Fedora.  Τα πακέτα εγκαθίστανται
+	χρησιμοποιώντας την εντολή <citerefentry><refentrytitle>pkg_add</refentrytitle><manvolnum>1</manvolnum></citerefentry>.  Για παράδειγμα, η
+	ακόλουθη εντολή εγκαθιστά τον
+	<application>Apache 2.2</application>:</para>
+
+      <screen><prompt>#</prompt> <userinput>pkg_add /tmp/apache-2.2.6_2.tbz</userinput></screen>
+
+      <para>Η χρήση της παραμέτρου <option>-r</option> οδηγεί την
+	<citerefentry><refentrytitle>pkg_add</refentrytitle><manvolnum>1</manvolnum></citerefentry> να κατεβάσει αυτόματα τόσο το πακέτο, όσο και τις
+	εξαρτήσεις του, και να το εγκαταστήσει:</para>
+
+      <screen><prompt>#</prompt> <userinput>pkg_add -r apache22</userinput>
+Fetching ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-6.2-release/Latest/apache22.tbz... Done.
+Fetching ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-6.2-release/All/expat-2.0.0_1.tbz... Done.
+Fetching ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-6.2-release/All/perl-5.8.8_1.tbz... Done.
+[snip]
+
+To run apache www server from startup, add apache22_enable="YES"
+in your /etc/rc.conf. Extra options can be found in startup script.</screen>
+
+      <note>
+	<para>Αν χρησιμοποιείτε μια <quote>επίσημη</quote> έκδοση του FreeBSD
+	  (6.2, 6.3, 7.0, κλπ. που γενικά μπορείτε να εγκαταστήσετε από
+	  CD-ROM) η εντολή <command>pkg_add -r</command> θα κατεβάσει τα
+	  πακέτα που φτιάχτηκαν για αυτή τη συγκεκριμένη έκδοση.  Τα πακέτα
+	  αυτά <emphasis>ίσως δεν περιέχουν</emphasis> τις πλέον τελευταίες
+	  εκδόσεις των εφαρμογών.  Μπορείτε να χρησιμοποιήσετε την μεταβλητή
+	  περιβάλλοντος <envar>PACKAGESITE</envar> για να παρακάμψετε αυτή
+	  την προεπιλεγμένη συμπεριφορά.  Για παράδειγμα, θέτοντας την
+	  <envar>PACKAGESITE</envar> στην τιμή
+	  <uri xlink:href="ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-6-stable/Latest/">ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-6-stable/Latest/</uri>
+	  θα κατεβάσετε τα πιο πρόσφατα πακέτα που υπάρχουν για τη σειρά
+	  6.X.</para>
+      </note>
+
+      <para>Για περισσότερες πληροφορίες σχετικά με τα πακέτα, παρακαλούμε
+	διαβάστε την ενότητα 4.4 στο Εγχειρίδιο του FreeBSD: <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/packages-using.html">Χρησιμοποιώντας το Σύστημα Packages</link>.</para>
+    </sect2>
+
+    <sect2 xml:id="ports">
+      <title>Ports</title>
+
+      <para>Η δεύτερη μέθοδος για την εγκατάσταση εφαρμογών στο FreeBSD είναι η
+	Συλλογή των Ports.  Η Συλλογή των Ports είναι ένα πλαίσιο λειτουργιών
+	που αποτελείται από <filename>Makefiles</filename> και αρχεία διαφορών
+	(patches) τα οποία έχουν δημιουργηθεί ειδικά, ώστε να είναι δυνατή η
+	εγκατάσταση διάφορων εφαρμογών στο FreeBSD από τον πηγαίο κώδικα τους.
+	Όταν εγκαθιστάτε ένα port, το σύστημα θα κατεβάσει τον πηγαίο κώδικα,
+	θα εφαρμόσει όλες τις απαιτούμενες αλλαγές χρησιμοποιώντας τα patches,
+	θα μεταγλωττίσει τον κώδικα, και τέλος θα εγκαταστήσει την εφαρμογή.
+	Θα ακολουθήσει την ίδια διαδικασία και για οποιαδήποτε τυχόν
+	εξαρτώμενα προγράμματα.</para>
+
+      <para>Μπορείτε να βρείτε την Συλλογή των Ports (η οποία μερικές φορές
+	αναφέρεται και ως <quote>δέντρο των ports</quote>), στον κατάλογο
+	<filename>/usr/ports</filename>.  Αυτό βέβαια προϋποθέτει ότι
+	εγκαταστήσατε την Συλλογή των Ports κατά τη διάρκεια της εγκατάστασης
+	του FreeBSD.  Αν δεν το έχετε κάνει, μπορείτε να την προσθέσετε από το
+	CD εγκατάστασης με την βοήθεια του <citerefentry><refentrytitle>sysinstall</refentrytitle><manvolnum>8</manvolnum></citerefentry> ή να την
+	κατεβάσετε από τους εξυπηρετητές του FreeBSD χρησιμοποιώντας την εντολή
+	<citerefentry><refentrytitle>csup</refentrytitle><manvolnum>1</manvolnum></citerefentry> ή την εντολή <citerefentry><refentrytitle>portsnap</refentrytitle><manvolnum>8</manvolnum></citerefentry>.  Μπορείτε να βρείτε
+	λεπτομερείς οδηγίες για την εγκατάσταση της Συλλογής των Ports στην
+	<link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/ports-using.html">ενότητα 4.5.1</link>
+	του εγχειριδίου.</para>
+
+      <para>Η εγκατάσταση ενός port είναι γενικά τόσο απλή όσο το να εισέλθετε
+	στον κατάλογο του και να ξεκινήσετε την διαδικασία μεταγλώττισης.  Στο
+	ακόλουθο παράδειγμα γίνεται εγκατάσταση του
+	<application>Apache 2.2</application> από την Συλλογή των
+	Ports:</para>
+
+      <screen><prompt>#</prompt> <userinput>cd /usr/ports/www/apache22</userinput>
+<prompt>#</prompt> <userinput>make install clean</userinput></screen>
+
+      <para>Ένα σημαντικό πλεονέκτημα της χρήσης ports στην εγκατάσταση
+	λογισμικού είναι η ικανότητα προσαρμογής των επιλογών εγκατάστασης.
+	Για παράδειγμα, όταν εγκαθιστάτε τον
+	<application>Apache 2.2</application> από τα ports μπορείτε να
+	ενεργοποιήσετε την επιλογή <application>mod_ldap</application>
+	θέτοντας απλώς τιμή στη μεταβλητή <varname>WITH_LDAP</varname> του
+	<citerefentry><refentrytitle>make</refentrytitle><manvolnum>1</manvolnum></citerefentry>:</para>
+
+      <screen><prompt>#</prompt> <userinput>cd /usr/ports/www/apache22</userinput>
+<prompt>#</prompt> <userinput>make WITH_LDAP="YES" install clean</userinput></screen>
+
+      <para>Διαβάστε την ενότητα 4.5 του Εγχειριδίου του FreeBSD, <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/ports-using.html">Χρησιμοποιώντας την Ports Collection</link>, για περισσότερες πληροφορίες
+	σχετικά με τη Συλλογή των Ports.</para>
+    </sect2>
+
+    <sect2 xml:id="which">
+      <title>Ports ή πακέτα, τι πρέπει να χρησιμοποιήσω;</title>
+
+      <para>Τα πακέτα είναι στην πραγματικότητα απλώς προ-μεταγλωττισμένα
+	ports, άρα είναι περισσότερο θέμα επιλογής αν είναι επιθυμητή η
+	εγκατάσταση από τον πηγαίο κώδικα ή από έτοιμα εκτελέσιμα.  Κάθε
+	μέθοδος έχει τα πλεονεκτήματα της:</para>
+
+      <itemizedlist>
+	<title>Πακέτα (έτοιμα εκτελέσιμα)</title>
+
+	<listitem><simpara>Πιο γρήγορη εγκατάσταση (η μεταγλώττιση μεγάλων
+	  εφαρμογών μπορεί να διαρκέσει αρκετή ώρα).</simpara></listitem>
+
+	<listitem><simpara>Δεν χρειάζεται να κατανοείτε πως γίνεται η
+	  μεταγλώττιση του λογισμικού.</simpara></listitem>
+
+	<listitem><simpara>Δεν χρειάζεται να εγκαταστήσετε μεταγλωττιστές στο
+	  σύστημα σας.</simpara></listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+	<title>Ports (πηγαίος κώδικας)</title>
+
+	<listitem><simpara>Ικανότητα προσαρμογής των επιλογών εγκατάστασης.
+	  (Τα πακέτα συνήθως μεταγλωττίζονται με τις προεπιλεγμένες επιλογές).
+	  Με τα ports μπορείτε να προσαρμόσετε διάφορες επιλογές, όπως την
+	  μεταγλώττιση πρόσθετων αρθρωμάτων, ή αλλαγή της προεπιλεγμένης
+	  θέσης εγκατάστασης.</simpara></listitem>
+
+	<listitem><simpara>Μπορείτε να βάλετε τις δικές σας αλλαγές (patches)
+	  αν το επιθυμείτε.</simpara></listitem>
+      </itemizedlist>
+
+      <para>Αν δεν έχετε ειδικές απαιτήσεις, τα πακέτα πιθανόν θα σας
+	καλύψουν μια χαρά.  Αν ωστόσο χρειάζεται να προσαρμόσετε κάποιες
+	επιλογές, τότε η μέθοδος των ports είναι η καλύτερη.  (Και θυμηθείτε,
+	αν χρειάζεστε προσαρμογή αλλά προτιμάτε τα πακέτα, μπορείτε μέσω της
+	συλλογής των ports να φτιάξετε τα δικά σας προσαρμοσμένα πακέτα
+	χρησιμοποιώντας την εντολή <command>make</command>
+	<buildtarget>package</buildtarget> και αντιγράφοντας τα πακέτα που
+	δημιουργήσατε σε άλλα μηχανήματα.)</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="startup">
+    <title>Εκκίνηση του Συστήματος: Που είναι τα run-levels;</title>
+
+    <para>Το <trademark class="registered">Linux</trademark> χρησιμοποιεί το σύστημα εκκίνησης SysV, ενώ το FreeBSD
+      χρησιμοποιεί το παραδοσιακό σύστημα εκκίνησης BSD.  Στο σύστημα
+      <citerefentry><refentrytitle>init</refentrytitle><manvolnum>8</manvolnum></citerefentry> τύπου BSD, δεν υπάρχουν run-levels, ούτε το αρχείο
+      <filename>/etc/inittab</filename>.  Αντί για αυτά, η εκκίνηση ελέγχεται
+      από ένα script εκκίνησης, το <citerefentry><refentrytitle>rc</refentrytitle><manvolnum>8</manvolnum></citerefentry>.  To script
+      <filename>/etc/rc</filename> διαβάζει το αρχείο
+      <filename>/etc/defaults/rc.conf</filename> και το αρχείο
+      <filename>/etc/rc.conf</filename> για να καθορίσει ποιες υπηρεσίες
+      πρόκειται να ξεκινήσουν.  Οι υπηρεσίες αυτές ξεκινάνε με την εκτέλεση
+      των αντίστοιχων script εκκίνησης που βρίσκονται στους καταλόγους
+      <filename>/etc/rc.d/</filename> και
+      <filename>/usr/local/etc/rc.d/</filename>.  Τα scripts αυτά είναι
+      παρόμοια με τα scripts που βρίσκονται στον κατάλογο
+      <filename>/etc/init.d/</filename> σε συστήματα <trademark class="registered">Linux</trademark>.</para>
+
+    <sidebar>
+      <para><emphasis>Γιατί υπάρχουν δύο τοποθεσίες για τα scripts εκκίνησης
+	των υπηρεσιών;</emphasis>  Τα scripts που βρίσκονται στον κατάλογο
+	<filename>/etc/rc.d/</filename> είναι για εφαρμογές που ανήκουν στο
+	<quote>βασικό</quote> σύστημα.  (Για παράδειγμα, τις
+	<citerefentry><refentrytitle>cron</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>sshd</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>syslog</refentrytitle><manvolnum>3</manvolnum></citerefentry>, και άλλες.)  Τα scripts
+	που βρίσκονται στον κατάλογο <filename>/usr/local/etc/rc.d/</filename>
+	είναι για εφαρμογές που έχουν εγκατασταθεί από τους χρήστες, όπως για
+	παράδειγμα ο <application>Apache</application>, το
+	<application>Squid</application>, κ.λ.π.</para>
+
+      <para><emphasis>Ποια είναι η διαφορά μεταξύ του <quote>βασικού</quote>
+	συστήματος και των εφαρμογών χρήστη;</emphasis>  Το FreeBSD αναπτύσσεται
+	ως ένα πλήρες λειτουργικό σύστημα.  Με άλλα λόγια, ο πυρήνας, οι
+	βιβλιοθήκες του συστήματος, οι βασικές εντολές (userland, τα
+	προγράμματα όπως το <citerefentry><refentrytitle>ls</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>cat</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>cp</refentrytitle><manvolnum>1</manvolnum></citerefentry> κλπ.),
+	αναπτύσσονται και δημοσιεύονται μαζί, ως σύνολο.  Αυτό αναφέρεται και
+	ως <quote>βασικό</quote> σύστημα.  Οι εφαρμογές που εγκαθίστανται από
+	τους χρήστες, δεν ανήκουν στο <quote>βασικό</quote> σύστημα, και
+	τέτοιες είναι για παράδειγμα ο <application>Apache</application>,
+	το <application>X11</application>, ο
+	<application>Mozilla Firefox</application>, κλπ.  Αυτού του
+	είδους οι εφαρμογές, γενικά εγκαθίστανται με τη χρήση της <link xlink:href="article.html#SOFTWARE">Συλλογής Πακέτων και Ports</link> του
+	FreeBSD.  Για να ξεχωρίζουν από το υπόλοιπο <quote>βασικό</quote>
+	σύστημα, οι εφαρμογές χρήστη συνήθως εγκαθίστανται σε υποκαταλόγους
+	του <filename>/usr/local/</filename>.  Έτσι τα εκτελέσιμα προγράμματα
+	των χρηστών βρίσκονται συνήθως στον κατάλογο
+	<filename>/usr/local/bin/</filename>, τα αντίστοιχα αρχεία ρυθμίσεων
+	τους στον κατάλογο  <filename>/usr/local/etc/</filename>,
+	κ.ο.κ.</para>
+    </sidebar>
+
+    <para>Οι υπηρεσίες ενεργοποιούνται με την προσθήκη μιας εγγραφής τύπου
+      <literal>ΌνομαΥπηρεσίας_enable="YES"</literal> στο αρχείο
+      <filename>/etc/rc.conf</filename> (<citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>).  Ρίξτε μια ματιά
+      στο αρχείο <filename>/etc/defaults/rc.conf</filename> για να δείτε τις
+      προεπιλογές του συστήματος.  Οι ρυθμίσεις που κάνουμε στο αρχείο
+      <filename>/etc/rc.conf</filename> υπερισχύουν έναντι των προεπιλογών
+      αυτών.  Επίσης, κατά την εγκατάσταση πρόσθετων εφαρμογών, βεβαιωθείτε
+      ότι διαβάσατε την αντίστοιχη τεκμηρίωση για να βρείτε πως να
+      ενεργοποιήσετε τυχόν σχετικές υπηρεσίες.</para>
+
+    <para>Το ακόλουθο απόσπασμα από το αρχείο
+      <filename>/etc/rc.conf</filename> ενεργοποιεί την υπηρεσία
+      <citerefentry><refentrytitle>sshd</refentrytitle><manvolnum>8</manvolnum></citerefentry> και τον <application>Apache 2.2</application>.  Επίσης
+      καθορίζει ότι ο <application>Apache</application> θα ξεκινήσει με
+      ενεργοποιημένη τη δυνατότητα SSL.</para>
+
+    <programlisting># enable SSHD
+sshd_enable="YES"
+# enable Apache with SSL
+apache22_enable="YES"
+apache22_flags="-DSSL"</programlisting>
+
+    <para>Από τη στιγμή που μια υπηρεσία ενεργοποιηθεί στο αρχείο
+      <filename>/etc/rc.conf</filename>, μπορείτε να την ξεκινήσετε απευθείας
+      από τη γραμμή εντολών (χωρίς να χρειάζεται να επανεκκινήσετε το σύστημα
+      σας):</para>
+
+    <screen><prompt>#</prompt> <userinput>/etc/rc.d/sshd start</userinput></screen>
+
+    <para>Αν μια υπηρεσία δεν έχει ενεργοποιηθεί στο αρχείο αυτό, μπορείτε
+      να εξαναγκάσετε την εκκίνηση της από την γραμμή εντολών με την επιλογή
+      <option>forcestart</option>:</para>
+
+    <screen><prompt>#</prompt> <userinput>/etc/rc.d/sshd forcestart</userinput></screen>
+  </sect1>
+
+  <sect1 xml:id="network">
+    <title>Ρύθμιση Δικτύου</title>
+
+    <sect2 xml:id="interfaces">
+      <title>Διεπαφές Δικτύου</title>
+
+      <para>Αντί για το γενικό αναγνωριστικό τύπου <emphasis>ethX</emphasis>
+	που χρησιμοποιεί το <trademark class="registered">Linux</trademark> για την αναγνώριση μιας διεπαφής δικτύου,
+	το FreeBSD χρησιμοποιεί ως αναγνωριστικό το όνομα του προγράμματος
+	οδήγησης ακολουθούμενο από ένα αριθμό.  Η ακόλουθη έξοδος από την
+	εντολή <citerefentry><refentrytitle>ifconfig</refentrytitle><manvolnum>8</manvolnum></citerefentry> δείχνει δύο κάρτες δικτύου
+	<trademark class="registered">Intel</trademark> Pro 1000 (με αναγνωριστικά em0 and em1):</para>
+
+      <screen><prompt>%</prompt> <userinput>ifconfig</userinput>
+em0: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        options=b&lt;RXCSUM,TXCSUM,VLAN_MTU&gt;
+        inet 10.10.10.100 netmask 0xffffff00 broadcast 10.10.10.255
+        ether 00:50:56:a7:70:b2
+        media: Ethernet autoselect (1000baseTX &lt;full-duplex&gt;)
+        status: active
+em1: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        options=b&lt;RXCSUM,TXCSUM,VLAN_MTU&gt;
+        inet 192.168.10.222 netmask 0xffffff00 broadcast 192.168.10.255
+        ether 00:50:56:a7:03:2b
+        media: Ethernet autoselect (1000baseTX &lt;full-duplex&gt;)
+        status: active</screen>
+    </sect2>
+
+    <sect2 xml:id="ipaddress">
+      <title>Ρυθμίσεις Διευθύνσεων IP</title>
+
+      <para>Μπορείτε να αναθέσετε μια διεύθυνση IP σε μια διεπαφή δικτύου με
+	τη χρήση της εντολής <citerefentry><refentrytitle>ifconfig</refentrytitle><manvolnum>8</manvolnum></citerefentry>.  Για να γίνει μόνιμη ωστόσο
+	αυτή η αλλαγή, και να μην χάνεται σε κάθε επανεκκίνηση, θα πρέπει να
+	την περιλάβετε στο αρχείο <filename>/etc/rc.conf</filename>.  Στο
+	ακόλουθο παράδειγμα φαίνεται η καταχώρηση που περιλαμβάνει το όνομα
+	του υπολογιστή (hostname), την διεύθυνση IP, καθώς και την
+	προεπιλεγμένη πύλη (defaultrouter):</para>
+
+      <programlisting>hostname="server1.example.com"
+ifconfig_em0="inet 10.10.10.100  netmask 255.255.255.0"
+defaultrouter="10.10.10.1"</programlisting>
+
+      <para>Χρησιμοποιήστε την ακόλουθη καταχώρηση για να καθορίσετε ότι
+	μια διεπαφή θα λαμβάνει ρυθμίσεις μέσω DHCP:</para>
+
+      <programlisting>hostname="server1.example.com"
+ifconfig_em0="DHCP"</programlisting>
+
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="firewall">
+    <title>Firewall</title>
+
+    <para>Στο <trademark class="registered">Linux</trademark> χρησιμοποιείται το  <application>IPTABLES</application>
+      το οποίο παρέχει υπηρεσίες firewall σε επίπεδο πυρήνα.  Το  FreeBSD παρέχει
+      επίσης firewall μέσω του πυρήνα.  Για την ακρίβεια, το FreeBSD παρέχει
+      τρία firewalls:</para>
+
+    <itemizedlist>
+      <listitem><simpara><link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/firewalls-ipfw.html">IPFIREWALL</link></simpara></listitem>
+      <listitem><simpara><link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/firewalls-ipf.html">IPFILTER</link></simpara></listitem>
+      <listitem><simpara><link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/firewalls-pf.html">PF</link></simpara></listitem>
+    </itemizedlist>
+
+    <para>Το <application>IPFIREWALL</application> ή
+      <application>IPFW</application> (η εντολή χειρισμού των κανόνων του
+      <application>IPFW</application> είναι η <citerefentry><refentrytitle>ipfw</refentrytitle><manvolnum>8</manvolnum></citerefentry>) είναι το
+      firewall που έχει αναπτυχθεί και συντηρείται από την ομάδα ανάπτυξης του
+      FreeBSD.  Το  <application>IPFW</application> μπορεί να συνδυαστεί με το
+      <citerefentry><refentrytitle>dummynet</refentrytitle><manvolnum>4</manvolnum></citerefentry> για να παρέχει δυνατότητες διαμόρφωσης της κίνησης
+      πακέτων (traffic shaping) και να εξομοιώνει διαφορετικούς τύπους
+      συνδέσεων δικτύου.</para>
+
+    <para>Παράδειγμα ενός κανόνα του <application>IPFW</application> που
+      επιτρέπει εισερχόμενα δεδομένα προς την υπηρεσία
+      <application>SSH</application>:</para>
+
+    <programlisting>ipfw add allow tcp from any to me 22 in via $ext_if</programlisting>
+
+    <para>Το <application>IPFILTER</application> είναι μια εφαρμογή firewall
+      που αναπτύσσεται από τον Darren Reed.  Δεν έχει φτιαχτεί ειδικά
+      για το  FreeBSD, και έχει μεταφερθεί και σε άλλα λειτουργικά,
+      συμπεριλαμβανομένων των NetBSD, OpenBSD, SunOS, HP/UX, και
+      Solaris.</para>
+
+    <para>Παράδειγμα ενός κανόνα για το <application>IPFILTER</application>
+      που επιτρέπει εισερχόμενα δεδομένα προς την υπηρεσία
+      <application>SSH</application>:</para>
+
+    <programlisting>pass in on $ext_if proto tcp from any to any port = 22</programlisting>
+
+    <para>Η τελευταία εφαρμογή firewall, το <application>PF</application>,
+      αναπτύσσεται από το OpenBSD project.  Το <application>PF</application>
+      δημιουργήθηκε ως αντικαταστάτης του <application>IPFILTER</application>,
+      και έτσι η σύνταξη του <application>PF</application> είναι αρκετά
+      παρόμοια με αυτή του <application>IPFILTER</application>.  Το
+      <application>PF</application> μπορεί να συνδυαστεί με το <citerefentry><refentrytitle>altq</refentrytitle><manvolnum>4</manvolnum></citerefentry>
+      για να παρέχει υπηρεσίες τύπου QoS.</para>
+
+     <para>Παράδειγμα κανόνα του <application>PF</application> που επιτρέπει
+       εισερχόμενα δεδομένα προς την υπηρεσία
+       <application>SSH</application>:</para>
+
+     <programlisting>pass in on $ext_if inet proto tcp from any to ($ext_if) port 22</programlisting>
+  </sect1>
+
+  <sect1 xml:id="updates">
+    <title>Αναβαθμίζοντας το FreeBSD</title>
+
+    <para>Υπάρχουν τρεις μέθοδοι για την αναβάθμιση ενός συστήματος FreeBSD: Μέσω
+      του πηγαίου κώδικα, μέσω έτοιμων (binary) αναβαθμίσεων, και μέσω των
+      CD εγκατάστασης.</para>
+
+    <para>Η εγκατάσταση μέσω του πηγαίου κώδικα είναι η πιο πολύπλοκη, αλλά
+      προσφέρει και τη μεγαλύτερη δυνατή ευελιξία.  Η διαδικασία αυτή
+      περιλαμβάνει το συγχρονισμό του τοπικού αντιγράφου του πηγαίου κώδικα
+      του FreeBSD με τον κώδικα του FreeBSD που βρίσκεται στους εξυπηρετητές
+      <application>CVS</application> (Concurrent Versioning System).  Από
+      τη στιγμή που το τοπικό αντίγραφο πηγαίου κώδικα είναι ανανεωμένο,
+      μπορείτε να μεταγλωττίσετε νέες εκδόσεις του πυρήνα και των βασικών
+      προγραμμάτων.  Για περισσότερες πληροφορίες σχετικά με το σύστημα
+      αναβάθμισης μέσω πηγαίου κώδικα, δείτε το κεφάλαιο
+      <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/updating-upgrading.html">Ενημέρωση και Αναβάθμιση</link>
+      στο Εγχειρίδιο του FreeBSD.</para>
+
+    <para>Οι έτοιμες (binary) αναβαθμίσεις, είναι παρόμοιες με τη χρήση της
+      εντολής <command>yum</command> ή <command>apt-get</command> για την
+      αναβάθμιση ενός συστήματος <trademark class="registered">Linux</trademark>.  Η εντολή <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+      θα κατεβάσει τις αναβαθμίσεις και θα τις εγκαταστήσει.  Μπορείτε να
+      καθορίσετε την αυτόματη, ανά τακτά διαστήματα εκτέλεση της, με τη χρήση
+      του <citerefentry><refentrytitle>cron</refentrytitle><manvolnum>8</manvolnum></citerefentry>.</para>
+
+    <note>
+      <para>Αν πρόκειται να χρησιμοποιήσετε το <citerefentry><refentrytitle>cron</refentrytitle><manvolnum>8</manvolnum></citerefentry> για
+	προγραμματισμένες αναβαθμίσεις, βεβαιωθείτε ότι χρησιμοποιείτε την
+	εντολή <command>freebsd-update cron</command> στο αρχείο
+	<citerefentry><refentrytitle>crontab</refentrytitle><manvolnum>1</manvolnum></citerefentry> για να ελαχιστοποιηθεί η πιθανότητα να γίνεται
+	ανανέωση την ίδια στιγμή από ένα μεγάλο αριθμό μηχανημάτων.</para>
+
+      <programlisting>0 3 * * * root /usr/sbin/freebsd-update cron</programlisting>
+    </note>
+
+    <para>Η τελευταία επιλογή αναβάθμισης, μέσω των CD εγκατάστασης, είναι
+      αρκετά ξεκάθαρη.  Απλώς εκκινήστε από το CD εγκατάστασης και επιλέξτε
+      την αντίστοιχη επιλογή αναβάθμισης (upgrade).</para>
+  </sect1>
+
+  <sect1 xml:id="procfs">
+    <title>procfs: Περασμένο αλλά όχι Ξεχασμένο</title>
+
+    <para>Στο  <trademark class="registered">Linux</trademark>, θα χρειαστεί να δείτε το
+      <filename>/proc/sys/net/ipv4/ip_forward</filename> για να καθορίσετε αν
+      είναι ενεργοποιημένη η προώθηση IP (IP forwarding).  Στο FreeBSD θα πρέπει
+      να χρησιμοποιήσετε το <citerefentry><refentrytitle>sysctl</refentrytitle><manvolnum>8</manvolnum></citerefentry> για να δείτε αυτή και άλλες
+      ρυθμίσεις του συστήματος, καθώς το <citerefentry><refentrytitle>procfs</refentrytitle><manvolnum>5</manvolnum></citerefentry> θεωρείται παρωχημένο
+      σε πρόσφατες εκδόσεις του λειτουργικού.  (Αν και η εντολή
+      <command>sysctl</command> είναι επίσης διαθέσιμη και στο
+      <trademark class="registered">Linux</trademark>).</para>
+
+    <para>Στο παράδειγμα της προώθησης IP, θα χρησιμοποιούσαμε την ακόλουθη
+      εντολή για να καθορίσουμε αν η δυνατότητα αυτή είναι ενεργοποιημένη σε
+      ένα FreeBSD σύστημα:</para>
+
+    <screen><prompt>%</prompt> <userinput>sysctl net.inet.ip.forwarding</userinput>
+net.inet.ip.forwarding: 0</screen>
+
+    <para>Η επιλογή <option>-a</option> χρησιμοποιείται για να πάρουμε μια
+      λίστα με όλες τις ρυθμίσεις του συστήματος:</para>
+
+    <screen><prompt>%</prompt> <userinput>sysctl -a</userinput>
+kern.ostype: FreeBSD
+kern.osrelease: 6.2-RELEASE-p9
+kern.osrevision: 199506
+kern.version: FreeBSD 6.2-RELEASE-p9 #0: Thu Nov 29 04:07:33 UTC 2007
+    root@i386-builder.daemonology.net:/usr/obj/usr/src/sys/GENERIC
+
+kern.maxvnodes: 17517
+kern.maxproc: 1988
+kern.maxfiles: 3976
+kern.argmax: 262144
+kern.securelevel: -1
+kern.hostname: server1
+kern.hostid: 0
+kern.clockrate: { hz = 1000, tick = 1000, profhz = 666, stathz = 133 }
+kern.posix1version: 200112
+...</screen>
+
+    <note>
+      <para>Κάποιες από τις τιμές που δείχνει η εντολή
+	<command>sysctl</command> είναι μόνο για ανάγνωση.</para></note>
+
+    <para>Υπάρχουν περιπτώσεις όπου απαιτείται το procfs, όπως για παράδειγμα
+      όταν εκτελείτε παλιότερο λογισμικό, το οποίο κάνει χρήση της εντολής
+      <citerefentry><refentrytitle>truss</refentrytitle><manvolnum>1</manvolnum></citerefentry> για την ανίχνευση των κλήσεων συστήματος, και για την
+      <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/linuxemu.html">Συμβατότητα με Εκτελέσιμα του <trademark class="registered">Linux</trademark></link>.
+      (Αν και η Συμβατότητα με Εκτελέσιμα του <trademark class="registered">Linux</trademark> χρησιμοποιεί το δικό
+      της procfs, το <citerefentry><refentrytitle>linprocfs</refentrytitle><manvolnum>5</manvolnum></citerefentry>).  Αν χρειάζεται να προσαρτήσετε το
+      procfs, μπορείτε να προσθέσετε την ακόλουθη εγγραφή στο αρχείο
+      <filename>/etc/fstab</filename>:</para>
+
+    <screen>proc                /proc           procfs  rw,noauto       0       0</screen>
+
+    <note>
+      <para>Η επιλογή <option>noauto</option> θα εμποδίσει την αυτόματη
+	προσάρτηση του <filename>/proc</filename> κατά την εκκίνηση του
+	συστήματος.</para></note>
+
+    <para>Προσαρτήστε κατόπιν την procfs χρησιμοποιώντας την ακόλουθη
+      εντολή:</para>
+
+    <screen><prompt>#</prompt> <userinput>mount /proc</userinput></screen>
+  </sect1>
+
+  <sect1 xml:id="commands">
+    <title>Συνηθισμένες Εντολές</title>
+
+    <sect2 xml:id="packageCommands">
+      <title>Διαχείριση Πακέτων</title>
+
+      <para>
+	<informaltable frame="none" pgwide="1">
+	  <tgroup cols="3">
+	    <thead>
+	      <row>
+		<entry>Εντολή του <trademark class="registered">Linux</trademark> (Red Hat/Debian)</entry>
+		<entry>Αντίστοιχη εντολή FreeBSD</entry>
+		<entry>Σκοπός</entry>
+	      </row>
+	    </thead>
+
+	    <tbody>
+	      <row>
+		<entry><command>yum install package</command> / <command>apt-get install package</command></entry>
+		<entry><command>pkg_add -r package</command></entry>
+		<entry>Εγκατάσταση πακέτου από απομακρυσμένο εξυπηρετητή</entry>
+	      </row>
+
+	      <row>
+		<entry><command>rpm -ivh package</command> / <command>dpkg -i package</command></entry>
+		<entry><command>pkg_add -v package</command></entry>
+		<entry>Εγκατάσταση πακέτου</entry>
+	      </row>
+
+	      <row>
+		<entry><command>rpm -qa</command> / <command>dpkg -l</command></entry>
+		<entry><command>pkg_info</command></entry>
+		<entry>Λίστα εγκατεστημένων πακέτων</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </sect2>
+
+    <sect2 xml:id="systemCommands">
+      <title>Διαχείριση Συστήματος</title>
+
+      <para>
+	<informaltable frame="none" pgwide="1">
+	  <tgroup cols="3">
+	    <thead>
+	      <row>
+		<entry>Εντολή <trademark class="registered">Linux</trademark></entry>
+		<entry>Αντίστοιχη εντολή FreeBSD</entry>
+		<entry>Σκοπός</entry>
+	      </row>
+	    </thead>
+
+	    <tbody>
+	      <row>
+		<entry><command>lspci</command></entry>
+		<entry><command>pciconf</command></entry>
+		<entry>Λίστα συσκευών PCI</entry>
+	      </row>
+
+	      <row>
+		<entry><command>lsmod</command></entry>
+		<entry><command>kldstat</command></entry>
+		<entry>Λίστα φορτωμένων αρθρωμάτων πυρήνα</entry>
+	      </row>
+
+	      <row>
+		<entry><command>modprobe</command></entry>
+		<entry><command>kldload</command> / <command>kldunload</command></entry>
+		<entry>Φόρτωση/Αποφόρτωση αρθρωμάτων πυρήνα</entry>
+	      </row>
+
+	      <row>
+		<entry><command>strace</command></entry>
+		<entry><command>truss</command></entry>
+		<entry>Ανίχνευση κλήσεων συστήματος</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="conclusion">
+    <title>Συμπεράσματα</title>
+
+    <para>Ευελπιστούμε ότι αυτό το κείμενο σας παρείχε αρκετές πληροφορίες
+      για να ξεκινήσετε με το FreeBSD.  Για περισσότερες και πιο λεπτομερείς
+      πληροφορίες, παρακαλούμε να διαβάσετε το <link xlink:href="@@URL_RELPREFIX@@/doc/el_GR.ISO8859-7/books/handbook/index.html">Εγχειρίδιο του FreeBSD</link>
+      το οποίο επίσης περιέχει και πολλά θέματα που δεν καλύφθηκαν καθόλου στο
+      παρόν κείμενο.</para>
+  </sect1>
+</article>

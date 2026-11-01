@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>Newsgroups</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.community">
+
+    <p>Neben einigen FreeBSD-spezifischen <a href="./../doc/de_DE.ISO8859-1/books/handbook/eresources-news.html">
+      Newsgroups</a> gibt es auch zahlreiche andere Gruppen, die für
+      FreeBSD-Anwender ebenfalls von Interesse sein könnten.
+      Der zuverlässigste Weg, um mit FreeBSD-Entwicklern in Kontakt
+      zu kommen, bleibt aber die Nutzung der Mailinglisten.  Allgemeine
+      Diskussion zu FreeBSD werden beispielsweise in der Newsgroup <a href="news:comp.unix.bsd.freebsd.misc">comp.unix.bsd.freebsd.misc</a>
+      geführt, während wichtige Ankündigungen unter
+      anderem über die Newsgroup <a href="news:comp.unix.bsd.freebsd.announce">comp.unix.bsd.freebsd.announce</a>
+      verbreitet werden.</p>
+
+  </body>
+</html>

@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:lang="en">
+
+  <info>
+    <title>FreeBSD Release Engineering</title>
+
+    <authorgroup>
+      <author>
+	<personname>
+	  <firstname>Glen</firstname>
+	  <surname>Barber</surname>
+	</personname>
+	<affiliation>
+	  <orgname class="nonprofit"> <link xlink:href="https://www.freebsdfoundation.org">The
+	      FreeBSD Foundation</link></orgname>
+	</affiliation>
+	<affiliation>
+	  <orgname> <link xlink:href="https://www.netgate.com">Rubicon
+	      Communications, LLC (Netgate)</link></orgname>
+	  <address><email>gjb@FreeBSD.org</email></address>
+	</affiliation>
+      </author>
+    </authorgroup>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>FreeBSD is a registered trademark of
+  the FreeBSD Foundation.</para>
+      <para>Intel, Celeron, Centrino, Core, EtherExpress, i386,
+  i486, Itanium, Pentium, and Xeon are trademarks or registered
+  trademarks of Intel Corporation or its subsidiaries in the United
+  States and other countries.</para>
+      <para>Many of the designations used by
+  manufacturers and sellers to distinguish their products are claimed
+  as trademarks.  Where those designations appear in this document,
+  and the FreeBSD Project was aware of the trademark claim, the
+  designations have been followed by the <quote>™</quote> or the
+  <quote>®</quote> symbol.</para>
+    </legalnotice>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <abstract>
+      <para>This article describes the release engineering process of
+	the FreeBSD Project.</para>
+    </abstract>
+  </info>
+
+  <sect1 xml:id="introduction">
+    <title>Introduction to the FreeBSD Release Engineering
+      Process</title>
+
+    <para>Development of FreeBSD has a very specific workflow.  In
+      general, all changes to the FreeBSD base system are committed to
+      the <literal>head/</literal> branch, which reflects the top of the source
+      tree.</para>
+
+    <para>After a reasonable testing period, changes can then be
+      merged to the <literal>stable/</literal> branches.  The default minimum
+      timeframe before merging to <literal>stable/</literal> branches is three
+      (3) days.</para>
+
+    <para>Although a general rule to wait a minimum of three days
+      before merging from <literal>head/</literal>, there are a few special
+      circumstances where an immediate merge may be necessary, such as
+      a critical security fix, or a bug fix that directly inhibits the
+      release build process.</para>
+
+    <para>After several months, and the number of changes in the
+      <literal>stable/</literal> branch have grown significantly, it is time to
+      release the next version of FreeBSD.  These releases have been
+      historically referred to as <quote>point</quote>
+      releases.</para>
+
+    <para>In between releases from the <literal>stable/</literal> branches,
+      approximately every two (2) years, a release will be cut
+      directly from <literal>head/</literal>.  These releases have been
+      historically referred to as <quote>dot-zero</quote>
+      releases.</para>
+
+    <para>This article will highlight the workflow and
+      responsibilities of the FreeBSD Release Engineering Team for both
+      <quote>dot-zero</quote> and <quote>point</quote>'
+      releases.</para>
+
+    <para>The following sections of this article describe:</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><xref linkend="releng-prep"/></term>
+
+	<listitem>
+	  <para>General information and preparation before
+	    starting the release cycle.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-website"/></term>
+
+	<listitem>
+	  <para>Website Changes During the Release Cycle</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-terms"/></term>
+
+	<listitem>
+	  <para>Terminology and general information, such as the
+	    <quote>code slush</quote> and <quote>code
+	      freeze</quote>, used throughout this document.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-head"/></term>
+
+	<listitem>
+	  <para>The Release Engineering process for a
+	    <quote>dot-zero</quote> release.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-stable"/></term>
+
+	<listitem>
+	  <para>The Release Engineering process for a
+	    <quote>point</quote> release.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-building"/></term>
+
+	<listitem>
+	  <para>Information related to the specific procedures to
+	    build installation medium.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-mirrors"/></term>
+
+	<listitem>
+	  <para>Procedures to publish installation medium.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><xref linkend="releng-wrapup"/></term>
+
+	<listitem>
+	  <para>Wrapping up the release cycle.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 xml:id="releng-prep">
+    <title>General Information and Preparation</title>
+
+    <para>Approximately two months before the start of the release
+      cycle, the FreeBSD Release Engineering Team decides on a schedule for the release.
+      The schedule includes the various milestone points of the
+      release cycle, such as freeze dates, branch dates, and build
+      dates.  For example:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>Milestone</entry>
+	    <entry>Anticipated Date</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><literal>head/</literal> slush:</entry>
+	    <entry>May 27, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>head/</literal> freeze:</entry>
+	    <entry>June 10, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>head/</literal> KBI freeze:</entry>
+	    <entry>June 24, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>doc/</literal> tree slush [1]:</entry>
+	    <entry>June 24, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>Ports quarterly branch [2]:</entry>
+	    <entry>July 1, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>stable/<replaceable>12</replaceable>/</literal> branch:</entry>
+	    <entry>July 8, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>doc/</literal> tree tag [3]:</entry>
+	    <entry>July 8, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>BETA1 build starts:</entry>
+	    <entry>July 8, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>head/</literal> thaw:</entry>
+	    <entry>July 9, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>BETA2 build starts:</entry>
+	    <entry>July 15, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>BETA3 build starts [*]:</entry>
+	    <entry>July 22, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>releng/<replaceable>12.0</replaceable>/</literal> branch:</entry>
+	    <entry>July 29, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>RC1 build starts:</entry>
+	    <entry>July 29, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry><literal>stable/<replaceable>12</replaceable>/</literal> thaw:</entry>
+	    <entry>July 30, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>RC2 build starts:</entry>
+	    <entry>August 5, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>Final Ports package builds [4]:</entry>
+	    <entry>August 6, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>Ports release tag:</entry>
+	    <entry>August 12, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>RC3 build starts [*]:</entry>
+	    <entry>August 12, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>RELEASE build starts:</entry>
+	    <entry>August 19, 2016</entry>
+	  </row>
+
+	  <row>
+	    <entry>RELEASE announcement:</entry>
+	    <entry>September 2, 2016</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <note>
+      <para>Items marked with "[*]" are "as
+	needed".</para>
+    </note>
+
+    <orderedlist>
+      <listitem>
+	<para>The <literal>doc/</literal> tree slush is coordinated by
+	  the FreeBSD Documentation Engineering Team.</para>
+      </listitem>
+
+      <listitem>
+	<para>The Ports quarterly branch used is determined by when
+	  the final <literal>RC</literal> build is planned.  A new
+	  quarterly branch is created on the first day of the quarter,
+	  so this metric should be used when taking the release cycle
+	  milestones into account.  The quarterly branch is created by
+	  the FreeBSD Ports Management Team.</para>
+      </listitem>
+
+      <listitem>
+	<para>The <literal>doc/</literal> tree is tagged by the
+	  FreeBSD Documentation Engineering Team.</para>
+      </listitem>
+
+      <listitem>
+	<para>The final Ports package build is done by the
+	  FreeBSD Ports Management Team after the final (or what is expected to be
+	  final) <literal>RC</literal> build.</para>
+      </listitem>
+    </orderedlist>
+
+    <note>
+      <para>If the release is being created from an existing
+	<literal>stable/</literal> branch, the <acronym>KBI</acronym>
+	freeze date can be excluded, since the <acronym>KBI</acronym>
+	is already considered frozen on established
+	<literal>stable/</literal> branches.</para>
+    </note>
+
+    <para>When writing the release cycle schedule, a number of things
+      need to be taken into consideration, in particular milestones
+      where the target date depends on predefined milestones upon
+      which there is a dependency.  For example, the Ports Collection
+      release tag originates from the active quarterly branch at the
+      time of the last <literal>RC</literal>.  This in part defines
+      which quarterly branch is used, when the release tag can happen,
+      and what revision of the ports tree is used for the final
+      <literal>RELEASE</literal> build.</para>
+
+    <para>After general agreement on the schedule, the FreeBSD Release Engineering Team
+      emails the schedule to the FreeBSD Developers.</para>
+
+    <para>It is somewhat typical that many developers will inform
+      the FreeBSD Release Engineering Team about various works-in-progress.  In some cases,
+      an extension for the in-progress work will be requested, and
+      in other cases, a request for <quote>blanket approval</quote>
+      to a particular subset of the tree will be made.</para>
+
+    <para>When such requests are made, it is important to make sure
+      timelines (even if estimated) are discussed.  For blanket
+      approvals, the length of time for the blanket approval should
+      be made clear.  For example, a FreeBSD developer may request
+      blanket approvals from the start of the code slush until the
+      start of the <literal>RC</literal> builds.</para>
+
+    <note>
+      <para>In order to keep track of blanket approvals, the FreeBSD Release Engineering Team
+	uses an internal repository to keep a running log of such
+	requests, which defines the area upon which a blanket approval
+	was granted, the author(s), when the blanket approval expires,
+	and the reason the approval was granted.  One example of this
+	is granting blanket approval to <filename class="directory">release/doc/</filename> to all FreeBSD Release Engineering Team
+	members until the final <literal>RC</literal> to update the
+	release notes and other release-related documentation.</para>
+    </note>
+
+    <note>
+      <para>The FreeBSD Release Engineering Team also uses this repository to track pending
+	approval requests that are received just prior to starting
+	various builds during the release cycle, which the Release
+	Engineer specifies the cutoff period with an email to the FreeBSD
+	developers.</para>
+    </note>
+
+    <para>Depending on the underlying set of code in question, and
+      the overall impact the set of code has on FreeBSD as a whole, such
+      requests may be approved or denied by the FreeBSD Release Engineering Team.</para>
+
+    <para>The same applies to work-in-progress extensions.  For
+      example, in-progress work for a new device driver that is
+      otherwise isolated from the rest of the tree may be granted
+      an extension.  A new scheduler, however, may not be feasible,
+      especially if such dramatic changes do not exist in another
+      branch.</para>
+
+    <para>The schedule is also added to the Project website, in the
+      <literal>doc/</literal> repository, in
+      <filename>head/en_US.ISO8859-1/htdocs/releases/<replaceable>12.0</replaceable>R/schedule.xml</filename>.
+      This file is continuously updated as the release cycle
+      progresses.</para>
+
+    <note>
+      <para>In most cases, the <filename>schedule.xml</filename> can
+	be copied from a prior release and updated accordingly.</para>
+    </note>
+
+    <para>In addition to adding <filename>schedule.xml</filename> to
+      the website, <filename>head/share/xml/navibar.ent</filename> and
+      <filename>head/share/xml/release.ent</filename> are also updated
+      to add the link to the schedule to various subpages, as well as
+      enabling the link to the schedule on the Project website index
+      page.</para>
+
+    <para>The schedule is also linked from
+      <filename>head/en_US.ISO8859-1/htdocs/releng/index.xml</filename>.</para>
+
+    <para>Approximately one month prior to the scheduled <quote>code
+	slush</quote>, the FreeBSD Release Engineering Team sends a reminder email to the
+      FreeBSD Developers.</para>
+
+    <para>Once the first builds of the release cycle are available,
+      update the <literal>beta.local.where</literal> entity in
+      <filename>head/en_US.ISO8859-1/htdocs/releases/<replaceable>12.0</replaceable>R/schedule.xml</filename>.
+      replacing <literal>IGNORE</literal> with
+      <literal>INCLUDE</literal>.</para>
+
+    <note>
+      <para>If two parallel release cycles are happening at once, the
+	<literal>beta2.local.where</literal> entity may be used
+	instead.</para>
+    </note>
+  </sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-terms">
+  <title>Release Engineering Terminology</title>
+
+  <para>This section describes some of the terminology used throughout
+    the rest of this document.</para>
+
+  <sect2 xml:id="releng-terms-code-slush">
+    <title>The Code Slush</title>
+
+    <para>Although the code slush is not a hard freeze on the tree,
+      the FreeBSD Release Engineering Team requests that bugs in the existing code base take
+      priority over new features.</para>
+
+    <para>The code slush does not enforce commit approvals to the
+      branch.</para>
+  </sect2>
+
+  <sect2 xml:id="releng-terms-code-freeze">
+    <title>The Code Freeze</title>
+
+    <para>The code freeze marks the point in time where all commits to
+      the branch require explicit approval from the FreeBSD Release Engineering Team.</para>
+
+    <para>The FreeBSD <application>Subversion</application> repository
+      contains several hooks to perform sanity checks before any
+      commit is actually committed to the tree.  One of these hooks
+      will evaluate if committing to a particular branch requires
+      specific approval.</para>
+
+    <para>To enforce commit approvals by the FreeBSD Release Engineering Team, the Release
+      Engineer updates
+      <filename>base/svnadmin/conf/approvers</filename>, and commits
+      the change back to the repository.  Once this is done, any
+      change to the branch must include an <quote>Approved by:</quote>
+      line in the commit message.</para>
+
+    <para>The <quote>Approved by:</quote> line must match the second
+      column in <filename>base/svnadmin/conf/approvers</filename>,
+      otherwise the commit will be rejected by the repository
+      hooks.</para>
+
+    <note>
+      <para>During the code freeze, FreeBSD committers are urged to
+	follow the <link xlink:href="https://wiki.freebsd.org/Releng/ChangeRequestGuidelines">Change
+	  Request Guidelines</link>.</para>
+    </note>
+  </sect2>
+
+  <sect2 xml:id="releng-terms-kbi-freeze">
+    <title>The <acronym>KBI</acronym>/<acronym>KPI</acronym>
+      Freeze</title>
+
+    <para><acronym>KBI</acronym>/<acronym>KPI</acronym> stability
+      implies that the caller of a function across two different
+      releases of software that implement the function results in the
+      same end state.  The caller, whether it is a process, thread, or
+      function, expects the function to operate in a certain way,
+      otherwise the <acronym>KBI</acronym>/<acronym>KPI</acronym>
+      stability on the branch is broken.</para>
+  </sect2>
+</sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-website">
+  <title>Website Changes During the Release Cycle</title>
+
+  <para>This section describes the changes to the website that should
+    occur as the release cycle progresses.</para>
+
+  <note>
+    <para>The files specified throughout this section are relative to
+      the <literal>head/</literal> branch of the
+      <literal>doc</literal> repository in
+      <application>Subversion</application>.</para>
+  </note>
+
+  <sect2 xml:id="releng-website-prerelease">
+    <title>Website Changes Before the Release Cycle Begins</title>
+
+    <para>When the release cycle schedule is available, these files
+      need to be updated to enable various different functionalities
+      on the FreeBSD Project website:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>share/xml/release.ent</filename></entry>
+	    <entry>Change <literal>beta.upcoming</literal>
+	      from <literal>IGNORE</literal> to
+	      <literal>INCLUDE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>share/xml/release.ent</filename></entry>
+	    <entry>Change <literal>% beta.upcoming</literal>
+	      from <literal>IGNORE</literal> to
+	      <literal>INCLUDE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>share/xml/release.ent</filename></entry>
+	    <entry>Change <literal>beta.testing</literal>
+	      from <literal>IGNORE</literal> to
+	      <literal>INCLUDE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>share/xml/release.ent</filename></entry>
+	    <entry>Change <literal>% beta.testing</literal>
+	      from <literal>IGNORE</literal> to
+	      <literal>INCLUDE</literal></entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+  </sect2>
+
+  <sect2 xml:id="releng-website-beta-rc">
+    <title>Website Changes During <literal>BETA</literal> or
+      <literal>RC</literal></title>
+
+    <para>When transitioning from <literal>PRERELEASE</literal> to
+      <literal>BETA</literal>, these files need to be updated to
+      enable the "Help Test" block on the download page.
+      All files are relative to <filename class="directory">head/</filename> in the
+      <literal>doc</literal> repository:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>en_US.ISO8859-1/htdocs/releases/12.0R/schedule.xml</filename></entry>
+	    <entry>Change <literal>% beta.local.where</literal>
+	      <literal>IGNORE</literal> to
+	      <literal>INCLUDE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>share/xml/release.ent</filename></entry>
+	    <entry>Update <literal>% betarel.vers</literal> to
+	      <literal>BETA<replaceable>1</replaceable></literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>share/xml/news.xml</filename></entry>
+	    <entry>Add an entry announcing the
+	      <literal>BETA</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>en_US.ISO8859-1/htdocs/security/advisory-template.txt</filename></entry>
+	    <entry>Add the new <literal>BETA</literal>,
+	      <literal>RC</literal>, or final
+	      <literal>RELEASE</literal> to the template</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>en_US.ISO8859-1/htdocs/security/errata-template.txt</filename></entry>
+	    <entry>Add the new <literal>BETA</literal>,
+	      <literal>RC</literal>, or final
+	      <literal>RELEASE</literal> to the template</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>Once the <literal>releng/<replaceable>12.0</replaceable>/</literal> branch is created, the various
+      release-related documents need to be generated and manually
+      added to the <literal>doc/</literal> repository.</para>
+
+    <para>Within <filename class="directory">release/doc</filename>,
+      invoke <citerefentry><refentrytitle>make</refentrytitle><manvolnum>1</manvolnum></citerefentry> to generate
+      <filename>errata.html</filename>,
+      <filename>hardware.html</filename>,
+      <filename>readme.html</filename>, and
+      <filename>relnotes.html</filename> pages, which are then added
+      to <filename class="directory">doc/head/en_US.ISO8859-1/htdocs/releases/<replaceable>X.Y</replaceable>R/</filename>,
+      where <replaceable>X.Y</replaceable> represents the major and
+      minor version number of the release.</para>
+
+    <para>The <literal>fbsd:nokeywords</literal> property must be set
+      to <literal>on</literal> on the newly-added files before the
+      pre-commit hooks will allow them to be added to the
+      repository.</para>
+
+    <note>
+      <para>The relevant release-related documents exist in the
+	<filename class="directory">doc</filename> repository for
+	FreeBSD 12.x and later.</para>
+    </note>
+  </sect2>
+
+  <sect2 xml:id="releng-ports-beta-rc">
+    <title>Ports Changes During <literal>BETA</literal>,
+      <literal>RC</literal>, and the Final
+      <literal>RELEASE</literal></title>
+
+    <para>For each build during the release cycle, the
+      <literal>MANIFEST</literal> files containing the
+      <literal>SHA256</literal> of the various distribution sets, such
+      as <literal>base.txz</literal>, <literal>kernel.txz</literal>,
+      and so on, are added to the
+      <package>misc/freebsd-release-manifests</package> port.  This
+      allows utilities other than <citerefentry><refentrytitle>bsdinstall</refentrytitle><manvolnum>8</manvolnum></citerefentry>, such as
+      <package>ports-mgmt/poudriere</package>, to safely use these
+      distribution sets by providing a mechanism through which the
+      checksums can be verified.</para>
+  </sect2>
+</sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-head">
+  <title>Release from <literal>head/</literal></title>
+
+
+  <para>This section describes the general procedures of the FreeBSD
+    release cycle from the <literal>head/</literal> branch.</para>
+
+  <sect2 xml:id="releng-head-builds-alpha">
+    <title>FreeBSD <quote><literal>ALPHA</literal></quote> Builds</title>
+
+    <para>Starting with the FreeBSD 10.0-RELEASE cycle, the notion
+      of <quote><literal>ALPHA</literal></quote> builds was
+      introduced.  Unlike the <literal>BETA</literal> and
+      <literal>RC</literal> builds, <literal>ALPHA</literal> builds
+      are not included in the FreeBSD Release schedule.</para>
+
+    <para>The idea behind <literal>ALPHA</literal> builds is to
+      provide regular FreeBSD-provided builds before the creation of the
+      <literal>stable/</literal> branch.</para>
+
+    <para>FreeBSD <literal>ALPHA</literal> snapshots should be built
+      approximately once a week.</para>
+
+    <para>For the first <literal>ALPHA</literal> build, the
+      <varname>BRANCH</varname> value in
+      <filename>sys/conf/newvers.sh</filename> needs to be changed
+      from <literal>CURRENT</literal> to <literal>ALPHA1</literal>.
+      For subsequent <literal>ALPHA</literal> builds, increment each
+      <literal>ALPHA<replaceable>N</replaceable></literal> value by
+      one.</para>
+
+    <para>See <xref linkend="releng-building"/> for information on
+      building the <literal>ALPHA</literal> images.</para>
+  </sect2>
+
+  <sect2 xml:id="releng-head-branching">
+    <title>Creating the <literal>stable/<replaceable>12</replaceable>/</literal> Branch</title>
+
+    <para>When creating the <literal>stable/</literal> branch, several changes
+      are required in both the new <literal>stable/</literal> branch and the
+      <literal>head/</literal> branch.  The files listed are relative to the
+      repository root.  To create the new <literal>stable/<replaceable>12</replaceable>/</literal> branch
+      in Subversion:</para>
+
+    <screen><prompt>%</prompt> <userinput>svn cp ^/head <literal>stable/<replaceable>12</replaceable>/</literal></userinput></screen>
+
+    <para>Once the <literal>stable/<replaceable>12</replaceable>/</literal> branch has been committed, make
+      the following edits:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/UPDATING</filename></entry>
+	    <entry>Update the FreeBSD version, and remove the notice
+	      about <literal>WITNESS</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/contrib/jemalloc/include/jemalloc/jemalloc_FreeBSD.h</filename></entry>
+	    <entry><screen>#ifndef MALLOC_PRODUCTION
+#define MALLOC_PRODUCTION
+#endif</screen></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/lib/clang/llvm.build.mk</filename></entry>
+	    <entry>Uncomment <literal>-DNDEBUG</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/*/conf/GENERIC*</filename></entry>
+	    <entry>Remove debugging support</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/*/conf/MINIMAL</filename></entry>
+	    <entry>Remove debugging support</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/release/release.conf.sample</filename></entry>
+	    <entry>Update <varname>SRCBRANCH</varname></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/*/conf/GENERIC-NODEBUG</filename></entry>
+	    <entry>Remove these kernel configurations</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/arm/conf/std.arm*</filename></entry>
+	    <entry>Remove debugging options</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/conf/newvers.sh</filename></entry>
+	    <entry>Update the <varname>BRANCH</varname> value to
+	      reflect <literal>BETA1</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/share/mk/src.opts.mk</filename></entry>
+	    <entry>Move <varname>REPRODUCIBLE_BUILD</varname> from
+	      <literal>__DEFAULT_NO_OPTIONS</literal> to
+	      <literal>__DEFAULT_YES_OPTIONS</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/share/mk/src.opts.mk</filename></entry>
+	    <entry>Move <varname>LLVM_ASSERTIONS</varname> from
+	      <literal>__DEFAULT_YES_OPTIONS</literal> to
+	      <literal>__DEFAULT_NO_OPTIONS</literal> (FreeBSD 13.x
+		and later only)</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/libexec/rc/rc.conf</filename></entry>
+	    <entry>Set <literal>dumpdev</literal> from
+	      <literal>AUTO</literal> to <literal>NO</literal> (it is
+	      configurable via <citerefentry><refentrytitle>bsdinstall</refentrytitle><manvolnum>8</manvolnum></citerefentry> for those that want
+	      it enabled by default)</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/release/Makefile</filename></entry>
+	    <entry>Remove the
+	      <literal>debug.witness.trace</literal> entries</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>Then in the <literal>head/</literal> branch, which will now become
+      a new major version:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>head/UPDATING</filename></entry>
+	    <entry>Update the FreeBSD version</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/sys/conf/newvers.sh</filename></entry>
+	    <entry>Update the <varname>BRANCH</varname> value to
+	      reflect <literal>CURRENT</literal>, and increment
+	      <literal>REVISION</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/Makefile.inc1</filename></entry>
+	    <entry>Update <literal>TARGET_TRIPLE</literal> and
+	      <literal>MACHINE_TRIPLE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/sys/sys/param.h</filename></entry>
+	    <entry>Update <literal>__FreeBSD_version</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/gnu/usr.bin/cc/cc_tools/freebsd-native.h</filename></entry>
+	    <entry>Update <literal>FBSD_MAJOR</literal> and
+	      <literal>FBSD_CC_VER</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/contrib/gcc/config.gcc</filename></entry>
+	    <entry>Append the
+	      <literal>freebsd&lt;version&gt;.h</literal>
+	      section</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/lib/clang/llvm.build.mk</filename></entry>
+	    <entry>Update the value of
+	      <literal>OS_VERSION</literal></entry>
+	  </row>
+
+	  <?ignore <row>
+	    <entry><filename>head/release/doc/en_US.ISO8859-1/readme/article.xml</filename></entry>
+	    <entry>Replace &amp;a.current; with &amp;a.stable;</entry>
+	  </row>
+
+	  ?>
+
+	  <?ignore <row>
+	    <entry><filename>head/release/doc/share/xml/release.ent</filename></entry>
+	    <entry></entry>
+	  </row>
+
+	  ?>
+
+	  <row>
+	    <entry><filename>head/lib/clang/freebsd_cc_version.h</filename></entry>
+	    <entry>Update
+	      <literal>FREEBSD_CC_VERSION</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/lib/clang/include/lld/Common/Version.inc</filename></entry>
+	    <entry>Update
+	      <literal>LLD_REVISION_STRING</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>head/Makefile.libcompat</filename></entry>
+	    <entry>Update <literal>LILB32CPUFLAGS</literal></entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+  </sect2>
+</sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-stable">
+  <title>Release from <literal>stable/</literal></title>
+
+  <para>This section describes the general procedures of the FreeBSD
+    release cycle from an extablished <literal>stable/</literal> branch.</para>
+
+  <sect2 xml:id="releng-stable-slush">
+    <title>FreeBSD <literal>stable</literal> Branch Code Slush</title>
+
+    <para>In preparation for the code freeze on
+      a <literal>stable</literal> branch, several files need to be
+      updated to reflect the release cycle is officially in
+      progress.  These files are all relative to the top-most level of
+      the stable branch:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>sys/conf/newvers.sh</filename></entry>
+	    <entry>Update the <varname>BRANCH</varname> value to
+	      reflect <literal>PRERELEASE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>Makefile.inc1</filename></entry>
+	    <entry>Update <varname>TARGET_TRIPLE</varname></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>lib/clang/llvm.build.mk</filename></entry>
+	    <entry>Update <varname>OS_VERSION</varname></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>Makefile.libcompat</filename></entry>
+	    <entry>Update <literal>LIB32CPUFLAGS</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>gnu/usr.bin/groff/tmac/mdoc.local.in</filename></entry>
+	    <entry>Add a new <literal>.ds</literal> entry for the FreeBSD
+	      version, and update
+	      <varname>doc-default-operating-system</varname>
+	      (FreeBSD 11.x and earlier only)</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>In the <literal>doc</literal> repository, also update
+      <filename>head/en_US.ISO8859-1/htdocs/releases/<replaceable>12.0</replaceable>R/Makefile.hardware</filename>,
+      switching the value of <varname>_BRANCH</varname> to
+      <literal>BETA<replaceable>X</replaceable></literal>,
+      <literal>RC<replaceable>X</replaceable></literal>, or
+      <literal>RELEASE</literal>, respectively.</para>
+
+  </sect2>
+
+  <sect2 xml:id="releng-stable-builds-beta">
+    <title>FreeBSD <literal>BETA</literal> Builds</title>
+
+    <para>Following the code slush, the next phase of the release
+      cycle is the code freeze.  This is the point at which all
+      commits to the stable branch require explicit approval from
+      the FreeBSD Release Engineering Team.  This is enforced by pre-commit hooks in the
+      Subversion repository by editing
+      <filename>base/svnadmin/conf/approvers</filename> to include
+      a regular expression matching the <literal>stable/<replaceable>12</replaceable>/</literal> branch for
+      the release:</para>
+
+    <programlisting>^/<literal>stable/<replaceable>12</replaceable>/</literal>	re
+^/<literal>releng/<replaceable>12.0</replaceable>/</literal>	re</programlisting>
+
+    <note>
+      <para>There are two general exceptions to requiring commit
+	approval during the release cycle.  The first is any change
+	that needs to be committed by the Release Engineer in order
+	to proceed with the day-to-day workflow of the release cycle,
+	the other is security fixes that may occur during the release
+	cycle.</para>
+    </note>
+
+    <para>Once the code freeze is in effect, the next build from the
+      branch is labeled <literal>BETA1</literal>.  This is done by
+      updating the <varname>BRANCH</varname> value in
+      <filename>sys/conf/newvers.sh</filename> from
+      <literal>PRERELEASE</literal> to
+      <literal>BETA1</literal>.</para>
+
+    <para>Once this is done, the first set of <literal>BETA</literal>
+      builds are started.  Subsequent <literal>BETA</literal> builds
+      do not require updates to any files other than
+      <filename>sys/conf/newvers.sh</filename>, incrementing the
+      <literal>BETA</literal> build number.</para>
+  </sect2>
+
+  <sect2 xml:id="releng-stable-branching">
+    <title>Creating the <literal>releng/<replaceable>12.0</replaceable>/</literal> Branch</title>
+
+    <para>When the first <literal>RC</literal> (Release Candidate)
+      build is ready to begin, the <literal>releng/</literal> branch is created.
+      This is a multi-step process that must be done in a specific
+      order, in order to avoid anomalies such as overlaps with
+      <varname>__FreeBSD_version</varname> values, for example.  The
+      paths listed below are relative to the repository root.  The
+      order of commits and what to change are:</para>
+
+    <screen><prompt>%</prompt> <userinput>svn cp ^/<literal>stable/<replaceable>12</replaceable>/</literal> <literal>releng/<replaceable>12.0</replaceable>/</literal></userinput></screen>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>releng/<replaceable>12.0</replaceable>/sys/conf/newvers.sh</filename></entry>
+	    <entry>Change
+	      <literal>BETA<replaceable>X</replaceable></literal>
+	      to <literal>RC1</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>releng/<replaceable>12.0</replaceable>/sys/sys/param.h</filename></entry>
+	    <entry>Update <varname>__FreeBSD_version</varname></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>releng/<replaceable>12.0</replaceable>/etc/pkg/FreeBSD.conf</filename></entry>
+	    <entry>Replace <literal>latest</literal> with
+	      <literal>quarterly</literal> as the default package
+	      repository location</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>releng/<replaceable>12.0</replaceable>/release/pkg_repos/release-dvd.conf</filename></entry>
+	    <entry>Replace <literal>latest</literal> with
+	      <literal>quarterly</literal> as the default package
+	      repository location</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/conf/newvers.sh</filename></entry>
+	    <entry>Update
+	      <literal>BETA<replaceable>X</replaceable></literal> with
+	      <literal>PRERELEASE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>stable/<replaceable>12</replaceable>/sys/sys/param.h</filename></entry>
+	    <entry>Update <varname>__FreeBSD_version</varname></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>svnadmin/conf/approvers</filename></entry>
+	    <entry>Add a new approvers line for the releng
+	      branch as was done for the stable branch</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <screen><prompt>%</prompt> <userinput>svn propdel -R svn:mergeinfo <literal>releng/<replaceable>12.0</replaceable>/</literal></userinput>
+<prompt>%</prompt> <userinput>svn commit <literal>releng/<replaceable>12.0</replaceable>/</literal></userinput>
+<prompt>%</prompt> <userinput>svn commit <literal>stable/<replaceable>12</replaceable>/</literal></userinput></screen>
+
+    <para>Now that two new <varname>__FreeBSD_version</varname> values
+      exist, also update
+      <filename>head/en_US.ISO8859-1/books/porters-handbook/versions/chapter.xml</filename>
+      in the Documentation Project repository.</para>
+
+    <para>After the first <literal>RC</literal> build has completed
+      and tested, the <literal>stable/</literal> branch can be
+      <quote>thawed</quote> by removing (or commenting) the
+      ^/<literal>stable/<replaceable>12</replaceable>/</literal> entry in
+      <filename>svnadmin/conf/approvers</filename>.</para>
+
+    <para>Following the availability of the first
+      <literal>RC</literal>, FreeBSD Bugmeister Team should be emailed to
+      add the new FreeBSD <literal>-RELEASE</literal> to the
+      <literal>versions</literal> available in the drop-down menu
+      shown in the bug tracker.</para>
+  </sect2>
+</sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-building">
+  <title>Building FreeBSD Installation Media</title>
+
+  <para>This section describes the general procedures producing FreeBSD
+    development snapshots and releases.</para>
+
+  <sect2 xml:id="releng-build-scripts">
+    <title>Release Build Scripts</title>
+
+    <para>This section describes the build scripts used by FreeBSD Release Engineering Team
+      to produce development snapshots and releases.</para>
+
+    <sect3 xml:id="releng-build-scripts-single">
+      <title>The <filename>release.sh</filename> Script</title>
+
+      <para>Prior to FreeBSD 9.0-RELEASE,
+	<filename>src/release/Makefile</filename> was updated to
+	support <citerefentry><refentrytitle>bsdinstall</refentrytitle><manvolnum>8</manvolnum></citerefentry>, and the
+	<filename>src/release/generate-release.sh</filename> script
+	was introduced as a wrapper to automate invoking the
+	<citerefentry><refentrytitle>release</refentrytitle><manvolnum>7</manvolnum></citerefentry> targets.</para>
+
+      <para>Prior to FreeBSD 9.2-RELEASE,
+	<filename>src/release/release.sh</filename> was introduced,
+	which heavily based on
+	<filename>src/release/generate-release.sh</filename> included
+	support to specify configuration files to override various
+	options and environment variables.  Support for configuration
+	files provided support for cross building each architecture
+	for a release by specifying a separate configuration file for
+	each invocation.</para>
+
+      <para>As a brief example of using
+	<filename>src/release/release.sh</filename> to build a single
+	release in <filename class="directory">/scratch</filename>:</para>
+
+      <screen><prompt>#</prompt> <userinput>/bin/sh /usr/src/release/release.sh</userinput></screen>
+
+      <para>As a brief example of using
+	<filename>src/release/release.sh</filename> to build a single,
+	cross-built release using a different target directory, create
+	a custom <filename>release.conf</filename> containing:</para>
+
+      <programlisting># release.sh configuration for powerpc/powerpc64
+CHROOTDIR="/scratch-powerpc64"
+TARGET="powerpc"
+TARGET_ARCH="powerpc64"
+KERNEL="GENERIC64"</programlisting>
+
+      <para>Then invoke <filename>src/release/release.sh</filename>
+	as:</para>
+
+      <screen><prompt>#</prompt> <userinput>/bin/sh /usr/src/release/release.sh -c <replaceable>$HOME/release.conf</replaceable></userinput></screen>
+
+      <para>See <citerefentry><refentrytitle>release</refentrytitle><manvolnum>7</manvolnum></citerefentry> and
+	<filename>src/release/release.conf.sample</filename> for more
+	details and example usage.</para>
+    </sect3>
+
+    <sect3 xml:id="releng-build-scripts-multiple">
+      <title>The <filename>thermite.sh</filename> Wrapper
+	Script</title>
+
+      <para>In order to make cross building the full set of
+	architectures supported on a given branch faster, easier, and
+	reduce human error factors, a wrapper script around
+	<filename>src/release/release.sh</filename> was written to
+	iterate through the various combinations of architectures and
+	invoke <filename>src/release/release.sh</filename> using
+	a configuration file specific to that architecture.</para>
+
+      <para>The wrapper script is called
+	<filename>thermite.sh</filename>, which is available in the
+	FreeBSD Subversion repository at
+	<literal>svn://svn.freebsd.org/base/user/gjb/thermite/</literal>,
+	in addition to configuration files used to build
+	<literal>head/</literal> and <literal>stable/<replaceable>12</replaceable>/</literal> development
+	snapshots.</para>
+
+      <para>Using <filename>thermite.sh</filename> is covered in <xref linkend="releng-build-snapshot"/> and <xref linkend="releng-build-release"/>.</para>
+
+      <para>Each architecture and individual kernel have their own
+	configuration file used by <filename>release.sh</filename>.
+	Each branch has its own <filename>defaults-X.conf</filename>
+	configuration which contains entries common throughout each
+	architecture, where overrides or special variables are set
+	and/or overridden in the per-build files.</para>
+
+      <para>The per-build configuration file naming scheme is in the
+	form of
+	<filename>${revision}-${TARGET_ARCH}-${KERNCONF}-${type}.conf</filename>,
+	where the uppercase variables are equivalent to what
+	<citerefentry><refentrytitle>make</refentrytitle><manvolnum>1</manvolnum></citerefentry> uses in the build system, and lowercase variables
+	are set within the configuration files, mapping to the major
+	version of the respective branch.</para>
+
+      <para>Each branch also has its own
+	<filename>builds-X.conf</filename> configuration, which is
+	used by <filename>thermite.sh</filename>.  The
+	<filename>thermite.sh</filename> script iterates through each
+	${revision}, ${TARGET_ARCH},
+	${KERNCONF}, and ${type} value, creating
+	a master list of what to build.  However, a given
+	combination from the list will only be built if the
+	respective configuration file exists, which is where the
+	naming scheme above is relevant.</para>
+
+      <para>There are two paths of file sourcing:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para><filename>builds-<replaceable>12</replaceable>.conf</filename>
+	    -&gt; <filename>main.conf</filename></para>
+	  <para>This controls <filename>thermite.sh</filename>
+	    behavior</para>
+	</listitem>
+
+	<listitem>
+	  <para><filename><replaceable>12</replaceable>-<replaceable>amd64</replaceable>-<replaceable>GENERIC</replaceable>-<replaceable>snap</replaceable>.conf</filename>
+	    -&gt;
+	    <filename>defaults-<replaceable>12</replaceable>.conf</filename>
+	    -&gt; <filename>main.conf</filename></para>
+	  <para>This controls <filename>release/release.sh</filename>
+	    behavior within the build <citerefentry><refentrytitle>chroot</refentrytitle><manvolnum>8</manvolnum></citerefentry></para>
+	</listitem>
+      </itemizedlist>
+
+      <note>
+	<para>The
+	  <filename>builds-<replaceable>12</replaceable>.conf</filename>,
+	  <filename>defaults-<replaceable>12</replaceable>.conf</filename>,
+	  and <filename>main.conf</filename> configuration files exist
+	  to reduce repetition between the various per-build
+	  files.</para>
+      </note>
+    </sect3>
+  </sect2>
+
+  <sect2 xml:id="releng-build-snapshot">
+    <title>Building FreeBSD Development Snapshots</title>
+
+    <para>The official release build machines have a specific
+      filesystem layout, which using <acronym>ZFS</acronym>,
+      <filename>thermite.sh</filename> takes heavy advantage of with
+      clones and snapshots, ensuring a pristine build
+      environment.</para>
+
+    <para>The build scripts reside in <filename class="directory">/releng/scripts-snapshot/scripts</filename>
+      or <filename class="directory">/releng/scripts-release/scripts</filename>
+      respectively, to avoid collisions between an
+      <literal>RC</literal> build from a releng branch versus
+      a <literal>STABLE</literal> snapshot from the respective stable
+      branch.</para>
+
+    <para>A separate dataset exists for the final build images,
+      <filename class="directory">/snap/ftp</filename>.  This
+      directory contains both snapshots and releases directories.
+      They are only used if the <literal>EVERYTHINGISFINE</literal>
+      variable is defined in <filename>main.conf</filename>.</para>
+
+    <note>
+      <para>The <literal>EVERYTHINGISFINE</literal> variable name was
+	chosen to avoid colliding with a variable that might be
+	possibly set in the user environment, accidentally enabling
+	the behavior that depends on it being defined.</para>
+    </note>
+
+    <para>As <filename>thermite.sh</filename> iterates through the
+      master list of combinations and locates the per-build
+      configuration file, a <acronym>ZFS</acronym> dataset is created
+      under <filename class="directory">/releng</filename>, such as
+      <filename class="directory">/releng/12-amd64-GENERIC-snap</filename>.
+      The <literal>src/</literal>, <literal>ports/</literal>, and
+      <literal>doc/</literal> trees are checked out to separate
+      <acronym>ZFS</acronym> datasets, such as <filename class="directory">/releng/12-src-snap</filename>, which are
+      then cloned and mounted into the respective build datasets.
+      This is done to avoid checking out a given tree more than
+      once.</para>
+
+    <para>Assuming these filesystem paths,
+      <filename>thermite.sh</filename> would be invoked as:</para>
+
+    <screen><prompt>#</prompt> <userinput>cd /releng/scripts-snapshot/scripts</userinput>
+<prompt>#</prompt> <userinput>./setrev.sh -b <literal>stable/<replaceable>12</replaceable>/</literal></userinput>
+<prompt>#</prompt> <userinput>./zfs-cleanup.sh -c ./builds-<replaceable>12</replaceable>.conf</userinput>
+<prompt>#</prompt> <userinput>./thermite.sh -c ./builds-<replaceable>12</replaceable>.conf</userinput></screen>
+
+    <para>Once the builds have completed, additional helper scripts
+      are available to generate development snapshot emails which are
+      sent to the <literal>freebsd-snapshots@freebsd.org</literal>
+      mailing list:</para>
+
+    <screen><prompt>#</prompt> <userinput>cd /releng/scripts-snapshot/scripts</userinput>
+<prompt>#</prompt> <userinput>./get-checksums.sh -c ./builds-<replaceable>12</replaceable>.conf | ./generate-email.pl &gt; snapshot-<replaceable>12</replaceable>-mail</userinput></screen>
+
+    <note>
+      <para>The generated output should be double-checked for
+	correctness, and the email itself should be PGP signed,
+	in-line.</para>
+    </note>
+
+    <note>
+      <para>These helper scripts only apply to development snapshot
+	builds.  Announcements during the release cycle (excluding the
+	final release announcement) are created from an email
+	template.  A sample of the email template currently used can
+	be found <link xlink:href="https://svn.freebsd.org/base/user/gjb/thermite/non-release-template-mail.txt">here</link>.</para>
+    </note>
+  </sect2>
+
+  <sect2 xml:id="releng-build-release">
+    <title>Building FreeBSD Releases</title>
+
+    <para>Similar to building FreeBSD development snapshots,
+      <filename>thermite.sh</filename> would be invoked the same way.
+      The difference between development snapshots and release builds,
+      <literal>BETA</literal> and <literal>RC</literal> included, is
+      that the <citerefentry><refentrytitle>chroot</refentrytitle><manvolnum>8</manvolnum></citerefentry> configuration files must be named with
+      <literal>release</literal> instead of <literal>snap</literal> as
+      the "type", as mentioned above.</para>
+
+    <para>In addition, the <literal>BUILDTYPE</literal> and
+      <literal>types</literal> must be changed from
+      <literal>snap</literal> to <literal>release</literal> in
+      <filename>defaults-<replaceable>12</replaceable>.conf</filename>
+      and
+      <filename>builds-<replaceable>12</replaceable>.conf</filename>,
+      respectively.</para>
+
+    <para>When building <literal>BETA</literal>,
+      <literal>RC</literal>, and the final <literal>RELEASE</literal>,
+      also statically set <literal>BUILDSVNREV</literal> to the
+      revision on the branch reflecting the name change,
+      <literal>BUILDDATE</literal> to the date the builds are started
+      in <literal>YYYYMMDD</literal> format.  If the
+      <literal>doc/</literal> and <literal>ports/</literal> trees have
+      been tagged, also set <literal>PORTBRANCH</literal> and
+      <literal>DOCBRANCH</literal> to the relevant tag path in the
+      Subversion repository, replacing <literal>HEAD</literal> with
+      the last changed revision.  Also set
+      <literal>releasesrc</literal> in
+      <filename>builds-<replaceable>12</replaceable>.conf</filename>
+      to the relevant branch, such as <literal>stable/<replaceable>12</replaceable>/</literal> or
+      <literal>releng/<replaceable>12.0</replaceable>/</literal>.</para>
+
+    <para>During the release cycle, a copy of
+      <filename>CHECKSUM.SHA512</filename> and
+      <filename>CHECKSUM.SHA256</filename> for each architecture are
+      stored in the FreeBSD Release Engineering Team internal repository in addition to being
+      included in the various announcement emails.  Each
+      <filename>MANIFEST</filename> containing the hashes of
+      <filename>base.txz</filename>, <filename>kernel.txz</filename>,
+      etc. are added to
+      <package>misc/freebsd-release-manifests</package> in the Ports
+      Collection, as well.</para>
+
+    <para>In preparation for the release build, several files need to
+      be updated:</para>
+
+    <informaltable frame="none" pgwide="0">
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>File to Edit</entry>
+	    <entry>What to Change</entry>
+	  </row>
+	</thead>
+
+	<tbody>
+	  <row>
+	    <entry><filename>sys/conf/newvers.sh</filename></entry>
+	    <entry>Update the <varname>BRANCH</varname> value to
+	      <literal>RELEASE</literal></entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>UPDATING</filename></entry>
+	    <entry>Add the anticipated announcement date</entry>
+	  </row>
+
+	  <row>
+	    <entry><filename>lib/csu/common/crtbrand.c</filename></entry>
+	    <entry>Replace <literal>__FreeBSD_version</literal> with
+	      the value in
+	      <filename>sys/sys/param.h</filename></entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>After building the final <literal>RELEASE</literal>, the
+      <literal>releng/<replaceable>12.0</replaceable>/</literal> branch is tagged as <literal>release/<replaceable>12.0.0</replaceable>/</literal> using the
+      revision from which the <literal>RELEASE</literal> was built.
+      Similar to creating the <literal>stable/<replaceable>12</replaceable>/</literal> and <literal>releng/<replaceable>12.0</replaceable>/</literal>
+      branches, this is done with <command>svn cp</command>.  From the
+      repository root:</para>
+
+    <screen><prompt>%</prompt> <userinput>svn cp ^/<literal>releng/<replaceable>12.0</replaceable>/</literal>@r<replaceable>306420</replaceable> <literal>release/<replaceable>12.0.0</replaceable>/</literal></userinput>
+<prompt>%</prompt> <userinput>svn commit <literal>release/<replaceable>12.0.0</replaceable>/</literal></userinput></screen>
+  </sect2>
+</sect1>
+
+  
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="releng-mirrors">
+  <title>Publishing FreeBSD Installation Media to Project Mirrors</title>
+
+  <para>This section describes the procedure to publish FreeBSD
+    development snapshots and releases to the Project mirrors.</para>
+
+  <sect2 xml:id="releng-mirrors-staging">
+    <title>Staging FreeBSD Installation Media Images</title>
+
+    <para>Staging FreeBSD snapshots and releases is a two part
+      process:</para>
+
+    <itemizedlist>
+      <listitem>
+	<para>Creating the directory structure to match the hierarchy
+	  on <systemitem>ftp-master</systemitem></para>
+
+	<para>If <literal>EVERYTHINGISFINE</literal> is defined in the
+	  build configuration files, <filename>main.conf</filename> in
+	  the case of the build scripts referenced above, this happens
+	  automatically in the <citerefentry><refentrytitle>chroot</refentrytitle><manvolnum>8</manvolnum></citerefentry> after the build is
+	  complete, creating the directory structure in <filename class="directory">${DESTDIR}/R/ftp-stage</filename>
+	  with a path structure matching what is expected on
+	  <systemitem>ftp-master</systemitem>.  This is equivalent to
+	  running the following in the <citerefentry><refentrytitle>chroot</refentrytitle><manvolnum>8</manvolnum></citerefentry> directly:</para>
+
+	<screen><prompt>#</prompt> <userinput>make -C /usr/src/release -f Makefile.mirrors EVERYTHINGISFINE=1 ftp-stage</userinput></screen>
+
+	<para>After each architecture is built,
+	  <filename>thermite.sh</filename> will
+	  <application>rsync</application> the <filename class="directory">${DESTDIR}/R/ftp-stage</filename>
+	  from the build <citerefentry><refentrytitle>chroot</refentrytitle><manvolnum>8</manvolnum></citerefentry> to <filename class="directory">/snap/ftp/snapshots</filename> or
+	  <filename class="directory">/snap/ftp/releases</filename> on
+	  the build host, respectively.</para>
+      </listitem>
+
+      <listitem>
+	<para>Copying the files to a staging directory on
+	  <systemitem>ftp-master</systemitem> before moving the files
+	  into <filename class="directory">pub/</filename> to begin
+	  propagation to the Project mirrors</para>
+
+	<para>Once all builds have finished, <filename class="directory">/snap/ftp/snapshots</filename>, or
+	  <filename class="directory">/snap/ftp/releases</filename>
+	  for a release, is polled by
+	  <systemitem>ftp-master</systemitem> using
+	  <application>rsync</application> to <filename class="directory">/archive/tmp/snapshots</filename> or
+	  <filename class="directory">/archive/tmp/releases</filename>,
+	  respectively.</para>
+
+	<note>
+	  <para>On <systemitem>ftp-master</systemitem> in the FreeBSD
+	    Project infrastructure, this step requires
+	    <literal>root</literal> level access, as this step must
+	    be executed as the <literal>archive</literal> user.</para>
+	</note>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+
+  <sect2 xml:id="releng-mirrors-publishing">
+    <title>Publishing FreeBSD Installation Media</title>
+
+    <para>Once the images are staged in <filename class="directory">/archive/tmp/</filename>, they are ready to
+      be made public by putting them in <filename class="directory">/archive/pub/FreeBSD</filename>.  In order
+      to reduce propagation time, <citerefentry><refentrytitle>pax</refentrytitle><manvolnum>1</manvolnum></citerefentry> is used to create hard
+      links from <filename class="directory">/archive/tmp</filename>
+      to <filename class="directory">/archive/pub/FreeBSD</filename>.</para>
+
+    <note>
+      <para>In order for this to be effective, both <filename class="directory">/archive/tmp</filename> and <filename class="directory">/archive/pub</filename> must reside on the
+	same logical filesystem.</para>
+    </note>
+
+    <para>There is a caveat, however, where
+      <application>rsync</application> must be used after <citerefentry><refentrytitle>pax</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      in order to correct the symbolic links in <filename class="directory">pub/FreeBSD/<replaceable>snapshots</replaceable>/ISO-IMAGES</filename>
+      which <citerefentry><refentrytitle>pax</refentrytitle><manvolnum>1</manvolnum></citerefentry> will replace with a hard link, increasing the
+      propagation time.</para>
+
+    <note>
+      <para>As with the staging steps, this requires
+	<literal>root</literal> level access, as this step must be
+	executed as the <literal>archive</literal> user.</para>
+    </note>
+
+    <para>As the <literal>archive</literal> user:</para>
+
+    <screen><prompt>%</prompt> <userinput>cd /archive/tmp/<replaceable>snapshots</replaceable></userinput>
+<prompt>%</prompt> <userinput>pax -r -w -l . /archive/pub/FreeBSD/<replaceable>snapshots</replaceable></userinput>
+<prompt>%</prompt> <userinput>/usr/local/bin/rsync -avH /archive/tmp/<replaceable>snapshots</replaceable>/* /archive/pub/FreeBSD/<replaceable>snapshots</replaceable>/</userinput></screen>
+
+    <para>Replace <replaceable>snapshots</replaceable> with
+      <replaceable>releases</replaceable> as appropriate.</para>
+  </sect2>
+</sect1>
+
+
+  <sect1 xml:id="releng-wrapup">
+    <title>Wrapping up the Release Cycle</title>
+
+    <para>This section describes general post-release tasks.</para>
+
+    <sect2 xml:id="releng-wrapup-en">
+      <title>Post-Release Errata Notices</title>
+
+      <para>As the release cycle approaches conclusion, it is common
+	to have several <acronym>EN</acronym> (Errata Notice)
+	candidates to address issues that were discovered late in the
+	cycle.  Following the release, the FreeBSD Release Engineering Team and the
+	FreeBSD Security Team revisit changes that were not approved prior to
+	the final release, and depending on the scope of the change in
+	question, may issue an <acronym>EN</acronym>.</para>
+
+      <note>
+	<para>The actual process of issuing <acronym>EN</acronym>s is
+	  handled by the FreeBSD Security Team.</para>
+      </note>
+
+      <para>To request an Errata Notice after a release cycle has
+	completed, a developer should fill out the <link xlink:href="https://www.freebsd.org/security/errata-template.txt">Errata
+	  Notice template</link>, in particular the
+	<literal>Background</literal>, <literal>Problem
+	  Description</literal>, <literal>Impact</literal>, and if
+	applicable, <literal>Workaround</literal> sections.</para>
+
+      <para>The completed Errata Notice template should be emailed
+	together with either a patch against the <literal>releng/</literal>
+	branch or a list of revisions from the <literal>stable/</literal>
+	branch.</para>
+
+      <para>For Errata Notice requests immediately following the
+	release, the request should be emailed to both the FreeBSD Release Engineering Team and
+	the FreeBSD Security Team.  Once the <literal>releng/</literal> branch has been
+	handed over to the FreeBSD Security Team as described in <xref linkend="releng-wrapup-handoff"/>, Errata Notice requests
+	should be sent to the FreeBSD Security Team.</para>
+    </sect2>
+
+    <sect2 xml:id="releng-wrapup-handoff">
+      <title>Handoff to the FreeBSD Security Team</title>
+
+      <para>Roughly two weeks following the release, the Release
+	Engineer updates <filename>svnadmin/conf/approvers</filename>
+	changing the approver column from <literal>re</literal> to
+	<literal>(so|security-officer)</literal> for the
+	<literal>releng/<replaceable>12.0</replaceable>/</literal> branch.</para>
+    </sect2>
+  </sect1>
+
+</article>

@@ -1,0 +1,2 @@
+# The suites and datasets are kept byte for byte: line ends and encodings are part of what they test.
+data/** -text -diff

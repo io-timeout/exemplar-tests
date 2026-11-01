@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   The FreeBSD French Documentation Project
+   Original revision: 1.7
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Logo FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+    <ul>
+      <li><a href="#guideline">Recommandations concernant l'utilisation</a></li>
+      <li><a href="#resource">Ressources</a></li>
+      <li><a href="#sample">Exemples</a></li>
+    </ul>
+
+    <p/>
+
+    <h2 id="guideline">Recommandations concernant l'utilisation</h2>
+					      <p>FreeBSD est une
+						marque
+						déposée de
+						la fondation FreeBSD.
+						Le logo FreeBSD et
+						l'expression "The
+						Power To Serve" sont
+						également des
+						marques
+						déposées de
+						la fondation
+						FreeBSD.</p>
+
+					      <p>Toutes les images
+						présentées
+						dans la section
+						"Ressources" sont
+						disponibles à
+						l'utilisation sous
+						licence de la
+						fondation FreeBSD.</p>
+
+					      <p>Pour plus
+						d'information
+						concernant les droits
+						d'utilisation du logo,
+						veuillez consulter les
+						recommandations
+						d'utilisation du logo
+						FreeBSD auprès
+						de la <a href="http://www.freebsdfoundation.org/documents/Guidelines.shtml">fondation
+						FreeBSD</a>.</p>
+
+    <h2 id="resource">Ressources</h2>
+						<h3>Logo standard (en couleur)</h3>
+						<!-- p>
+							Format:	<a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a>
+						</p -->
+						<p><a href="./../logo/logo-full.png"><img src="./../logo/logo-full-thumb.png" alt=""/></a></p>
+						<h3>Logo standard (en couleur pour fonds sombres)</h3>
+						<!-- p>
+							Format:	<a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a>
+						</p -->
+						<p><a href="./../logo/logo-reverse.png"><img src="./../logo/logo-reverse-thumb.png" alt=""/></a></p>
+						<!-- h3>Standard Logo (grayscaled)</h3 -->
+						<!-- p>
+							Format:	<a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a>
+						</p -->
+						<h3>Logo standard (noir et blanc)</h3>
+						<!-- p>
+							Format:	<a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a>
+						</p -->
+						<p><a href="./../logo/logo-bw.png"><img src="./../logo/logo-bw-thumb.png" alt=""/></a></p>
+
+						<h3>Formats vectoriels</h3>
+						<p>
+							Format: <a href="./../logo/logo-basic.ai">Adobe(r) Illustrator(r)</a>, <a href="./../logo/logo-basic.svg">SVG</a>
+						</p>
+						<p><a href="./../logo/logo-basic.png"><img src="./../logo/logo-basic-thumb.png" alt=""/></a></p>
+
+    <h2 id="sample">Exemples</h2>
+						<p>NOTE: Le mot
+						  "free<font color="red">BSD</font>"
+						  dans ces images
+						  provient d'une version
+						  préliminaire du
+						  concours de logos.
+						  Une
+						  représentation
+						  correcte de ce mot
+						  doit utiliser une
+						  seule couleur, et non
+						  pas deux couleurs, de
+						  plus le "f" devrait
+						  être
+						  remplacé par un
+						  "F" majuscule.</p>
+
+						<h3>Boîtier de CD/DVD</h3>
+						<p><a href="./../logo/cd.jpg"><img src="./../logo/cd-thumb.jpg" alt=""/></a></p>
+						<h3>Cartes postales</h3>
+						<div><a href="./../logo/postcard1.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard1-thumb.jpg" alt=""/></a></div>
+						<div style="float:left;"><a href="./../logo/postcard2.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard2-thumb.jpg" alt=""/></a></div>
+						<div style="float:left;"><a href="./../logo/postcard3.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard3-thumb.jpg" alt=""/></a></div>
+						<div style="float:left;"><a href="./../logo/postcard4.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard4-thumb.jpg" alt=""/></a></div>
+						<div style="clear:left;"> </div>
+						<h3>Fonds d'écran</h3>
+						<p>Quelques exemples de fonds d'écran:</p>
+						<p><a href="./../logo/wall1.jpg"><img src="./../logo/wall1-thumb.jpg" alt=""/></a></p>
+						<p><a href="./../logo/wall2.jpg"><img src="./../logo/wall2-thumb.jpg" alt=""/></a></p>
+						<p><a href="./../logo/wall3.jpg"><img src="./../logo/wall3-thumb.jpg" alt=""/></a></p>
+
+  </body>
+</html>

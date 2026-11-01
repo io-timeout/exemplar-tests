@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     Original revision: 1.7
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Логотип FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <ul>
+    <li><a href="#guideline">Указания по использованию</a></li>
+    <li><a href="#resource">Ресурсы</a></li>
+    <li><a href="#sample">Примеры</a></li>
+  </ul>
+
+  <p/>
+
+  <h2 id="guideline">Указания по использованию</h2>
+
+  <p>Знак FreeBSD является зарегистрированным товарным знаком фонда FreeBSD.
+    Логотип FreeBSD и The Power to Serve являются зарегистрированными
+    товарными знаками фонда FreeBSD.</p>
+
+  <p>Все изображения, приведённые в разделе "Ресурсы", могут быть использованы
+    на основе лицензии фонда FreeBSD.</p>
+
+  <p>Для более подробной информации о том, как получить разрешение на
+    использование логотипа, смотрите указания по использованию логотипа
+    FreeBSD на сайте <a href="http://www.freebsdfoundation.org/documents/Guidelines.shtml">
+    фонда FreeBSD.</a></p>
+
+  <h2 id="resource">Ресурсы</h2>
+
+  <h3>Стандартный логотип (полноцветный)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-full.png"><img src="./../logo/logo-full-thumb.png" alt=""/></a></p>
+
+  <h3>Стандартный логотип (полноцветный для темного фона)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-reverse.png"><img src="./../logo/logo-reverse-thumb.png" alt=""/></a></p>
+
+  <!-- h3>Standard Logo (grayscaled)</h3 -->
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <h3>Стандартный логотип (черно-белый)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-bw.png"><img src="./../logo/logo-bw-thumb.png" alt=""/></a></p>
+
+  <h3>Векторные форматы</h3>
+
+  <p>Format: <a href="./../logo/logo-basic.ai">Adobe(r) Illustrator(r)</a>,
+    <a href="./../logo/logo-basic.svg">SVG</a></p>
+
+  <p><a href="./../logo/logo-basic.png"><img src="./../logo/logo-basic-thumb.png" alt=""/></a></p>
+
+  <h2 id="sample">Примеры</h2>
+
+  <p>ЗАМЕЧАНИЕ: текст "free<font color="red">BSD</font>" в приведённых
+    изображениях был создан на основе черновой версии логотипа, отправленной
+    на конкурс. Правильное изображение данного текста должно быть нанесено
+    только чёрным цветом, а не двумя, и первую букву "f" следует заменить
+    на заглавную "F".</p>
+
+  <h3>CD/DVD упаковка</h3>
+
+  <p><a href="./../logo/cd.jpg"><img src="./../logo/cd-thumb.jpg" alt=""/></a></p>
+
+  <h3>Открытки</h3>
+
+  <div><a href="./../logo/postcard1.jpg"><img style="margin:0.5em;     border:2px solid black;" src="./../logo/postcard1-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard2.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard2-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard3.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard3-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard4.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard4-thumb.jpg" alt=""/></a></div>
+
+  <div style="clear:left;"> </div>
+
+  <h3>Обои</h3>
+
+  <p>Несколько примеров обоев.</p>
+
+  <p><a href="./../logo/wall1.jpg"><img src="./../logo/wall1-thumb.jpg" alt=""/></a></p>
+
+  <p><a href="./../logo/wall2.jpg"><img src="./../logo/wall2-thumb.jpg" alt=""/></a></p>
+
+  <p><a href="./../logo/wall3.jpg"><img src="./../logo/wall3-thumb.jpg" alt=""/></a></p>
+
+  </body>
+</html>

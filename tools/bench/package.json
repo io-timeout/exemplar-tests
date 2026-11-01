@@ -1,0 +1,25 @@
+{
+  "name": "@exemplarjs/bench",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean:output": "rimraf .turbo",
+    "typecheck": "tsc --noEmit",
+    "bench": "node --expose-gc --max-old-space-size=16384 src/index.ts",
+    "bench:remote": "node src/remote.ts",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "@exemplarjs/adapters": "workspace:*",
+    "@exemplarjs/conformance": "workspace:*",
+    "@exemplarjs/sax": "catalog:",
+    "@exemplarjs/xml": "catalog:"
+  },
+  "devDependencies": {
+    "@exemplarjs/build-config": "workspace:*",
+    "vega": "catalog:",
+    "vega-lite": "catalog:"
+  }
+}

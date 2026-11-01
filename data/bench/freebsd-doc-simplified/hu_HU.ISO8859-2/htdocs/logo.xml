@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Peter Terbe <sncdev@gmail.com>
+     %SOURCE%	en/logo.xml
+     %SRCID%	1.7
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>A FreeBSD logó</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <ul>
+    <li><a href="#guideline">Felhasználási
+      útmutató</a></li>
+    <li><a href="#resource">Források</a></li>
+    <li><a href="#sample">Példák</a></li>
+  </ul>
+
+  <p/>
+
+  <h2 id="guideline">Felhasználási
+    útmutató</h2>
+
+  <p>A FreeBSD márkanév a FreeBSD Alapítvány
+    bejegyzett védjegye.  A FreeBSD logó és a "Power
+    To Serve" szlogen a FreeBSD Alapítvány bejegyzett
+    márkaneve.</p>
+
+  <p>Minden — a Források részben
+    található — kép a FreeBSD
+    Alapítvány engedélye szerint
+    használható.</p>
+
+  <p>A logó használatára vonatkozóan
+    egyéb tudnivalókkal kapcsolatban a <a href="http://www.freebsdfoundation.org/documents/Guidelines.shtml">A
+    FreeBSD Alapítvány</a> honlapján
+    található felhasználási
+    útmutatót olvassuk el.</p>
+
+  <h2 id="resource">Források</h2>
+
+  <h3>Általános logó (színes)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-full.png"><img src="./../logo/logo-full-thumb.png" alt=""/></a>
+    </p>
+
+  <h3>Általános logó (színes,
+     sötét háttérhez)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-reverse.png"><img src="./../logo/logo-reverse-thumb.png" alt=""/></a>
+    </p>
+
+  <!-- h3>Standard Logo (grayscaled)</h3 -->
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <h3>Általános logó (fekete-fehér)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-bw.png"><img src="./../logo/logo-bw-thumb.png" alt=""/></a>
+    </p>
+
+  <h3>Vektoros formátumok</h3>
+
+  <p>Formátum: <a href="./../logo/logo-basic.ai">Adobe(r) Illustrator(r)</a>,
+    <a href="./../logo/logo-basic.svg">SVG</a></p>
+
+  <p><a href="./../logo/logo-basic.png"><img src="./../logo/logo-basic-thumb.png" alt=""/></a>
+    </p>
+
+  <h2 id="sample">Minta</h2>
+
+  <p>Megjegyzés: Az itt található képek
+    "free<font color="red">BSD</font>" szövegrészei a
+    logópályázat vázlatai alapján
+    készültek.  A szöveg helyes
+    megjelenítéséhez csak egy szín
+    szükséges és az első "f" nagybetűs:
+    "F".</p>
+
+  <h3>CD/DVD csomag</h3>
+
+  <p><a href="./../logo/cd.jpg"><img src="./../logo/cd-thumb.jpg" alt=""/></a></p>
+
+  <h3>Levelezőlap</h3>
+
+  <div><a href="./../logo/postcard1.jpg"><img style="margin:0.5em;     border:2px solid black;" src="./../logo/postcard1-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard2.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard2-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard3.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard3-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard4.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard4-thumb.jpg" alt=""/></a></div>
+
+  <div style="clear:left;"> </div>
+
+  <h3>Háttérkép</h3>
+
+  <p>Itt néhány minta háttérkép
+    található.</p>
+
+  <p><a href="./../logo/wall1.jpg"><img src="./../logo/wall1-thumb.jpg" alt=""/></a>
+    </p>
+
+  <p><a href="./../logo/wall2.jpg"><img src="./../logo/wall2-thumb.jpg" alt=""/></a>
+    </p>
+
+  <p><a href="./../logo/wall3.jpg"><img src="./../logo/wall3-thumb.jpg" alt=""/></a>
+    </p>
+
+  </body>
+</html>

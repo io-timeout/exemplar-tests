@@ -1,0 +1,11 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+  <public publicId="-//PS//DTD Outer//EN" uri="outer.dtd"/>
+  <group prefer="public">
+    <public publicId="-//PS//DTD Inner//EN" uri="inner.dtd"/>
+  </group>
+  <group prefer="nonsense">
+    <public publicId="-//PS//DTD Nonsense//EN" uri="nonsense.dtd"/>
+  </group>
+  <public publicId="-//PS//DTD Twice//EN" uri="twice-system.dtd"/>
+  <group prefer="public"><public publicId="-//PS//DTD Twice//EN" uri="twice-public.dtd"/></group>
+</catalog>

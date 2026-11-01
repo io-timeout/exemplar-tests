@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Original revision: r39632
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <title>Обновление портов FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+
+<form method="get" action="http://www.FreeBSD.org/cgi/ports.cgi">
+Поиск портов:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">Все</option>
+<option value="name">Название пакета</option>
+<option value="text">Описание</option>
+<option value="pkgdescr">Полное описание</option>
+<option value="maintainer">Сопровождающий</option>
+<option value="requires">Зависимости</option>
+</select>
+<input type="submit" value="Искать"/>
+</form>
+
+<hr/>
+
+<p>
+Представленные здесь порты находятся в состоянии постоянного обновления.
+Настоятельно рекомендуется обновлять всю коллекцию целиком, поскольку
+многие порты зависят от других частей дерева, даже там, где это может
+показаться противоестественным (например, <tt>russian/</tt>.)
+</p>
+
+<p>Изменения, затрагивающие всю систему портов, описываются в файле
+<a href="http://cvsweb.FreeBSD.org/ports/CHANGES">CHANGES</a>.
+Изменения, касающиеся отдельных портов, описываются в файле
+<a href="http://cvsweb.FreeBSD.org/ports/UPDATING">UPDATING</a>.
+</p>
+
+<p>Для получения дополнительной информации о новых, изменённых или удалённых
+портах/пакетах, или в том случае, когда вы хотите найти конкретное
+приложение в виде порта/пакета, вы можете использовать расположенную выше
+форму; также вы можете посетить сайт
+<a href="http://www.FreshPorts.org">FreshPorts.org</a>
+и посмотреть там либо подписаться на расположенные там же списки рассылки.
+</p>
+
+<p>Для получения дополнительной информации по установке и сопровождению
+портов смотрите главу
+<a href="./../doc/ru_RU.KOI8-R/books/handbook/ports.html">Установка
+Приложений: порты и пакеты</a> <a href="./../doc/ru_RU.KOI8-R/books/handbook/index.html">Руководства
+FreeBSD</a>; главу Руководства по созданию портов
+<a href="./../doc/ru_RU.KOI8-R/books/porters-handbook/keeping-up.html">
+Актуализация</a>;
+<a href="./../cgi/man.cgi?query=ports"><tt>страницу справочника ports</tt></a>.
+</p>
+
+</body>
+</html>

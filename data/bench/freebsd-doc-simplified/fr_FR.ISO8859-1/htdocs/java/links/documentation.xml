@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.5
+
+  Version francaise : Mickael Maindron <mike@iskream.com>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Projet Java® pour FreeBSD : Documentations</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+    <ul>
+      <li><a href="http://www.blackdown.org/java-linux/docs/faq/FAQ-java-linux.html">FAQ JavaLinux</a></li>
+      <li><a href="http://www.eckelobjects.com/TIJ2/index.html">"Thinking in Java", seconde édition</a><br/>
+	Un livre gratuit sur Java, désormais disponible dans sa seconde édition.
+	Il peut être téléchargé aux formats Word97, HTML ou PDF.<br/>
+	La <a href="http://www.eckelobjects.com/javabook.html">précédente version</a>
+	du livre est toujours disponible.</li>
+    </ul>
+</body>
+</html>

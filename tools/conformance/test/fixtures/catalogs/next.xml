@@ -1,0 +1,6 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://example.com/next.dtd" uri="next.dtd"/>
+  <system systemId="http://example.com/a.dtd" uri="a-from-next.dtd"/>
+  <uri name="http://example.com/next-u.xml" uri="next-u.xml"/>
+  <nextCatalog catalog="next-nested.xml"/>
+</catalog>

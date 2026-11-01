@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Japanese Documentation Project -->
+<!-- Original revision: r46874 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD/ia64 プロジェクト</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+  <body class="navinclude.developers">
+		<img align="right" alt="McKinley die" src="./../platforms/ia64/mckinley-die.png"/>
+
+		<h3><a name="toc">目次</a></h3>
+
+		<ul>
+		  <li>
+		    <a href="#intro">はじめに</a>
+		  </li>
+		  <li>
+		    <a href="#status">現在の状況</a>
+		  </li>
+		  <li>
+		    <a href="machines.html">ハードウェアリスト</a>
+		  </li>
+		  <li>
+		    <a href="refs.html">参考文献</a>
+		  </li>
+		</ul>
+
+		<h3><a name="intro">はじめに</a></h3>
+
+		<p>FreeBSD/ia64 プロジェクトのページには、公式には Intel
+		  Itanium® プロセッサファミリ (IPF) として知られている Intel
+		  の IA-64 アーキテクチャへの FreeBSD の移植に関する情報が掲載されています。
+		  移植そのものと同じく、このページはまだ大部分が作成中です。</p>
+
+		<h3><a name="status">現在の状況</a></h3>
+
+		<p>ia64 版 FreeBSD は、FreeBSD 10 までは
+		  tier 2 プラットフォームです。
+		  それ以降は、サポートされない予定です。</p>
+  </body>
+</html>

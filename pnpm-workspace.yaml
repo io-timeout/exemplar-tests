@@ -1,0 +1,64 @@
+packages:
+  - configs/*
+  - tools/*
+
+# Every external dependency's version; packages refer to it with `catalog:`.
+catalog:
+  # exemplar's packages: the latest published release, or the sibling ../exemplar checkout (.pnpmfile.mjs).
+  '@exemplarjs/canonical': latest
+  '@exemplarjs/catalog': latest
+  '@exemplarjs/dom': latest
+  '@exemplarjs/encodings-cjk': latest
+  '@exemplarjs/sax': latest
+  '@exemplarjs/validation': latest
+  '@exemplarjs/writer': latest
+  '@exemplarjs/xinclude': latest
+  '@exemplarjs/xml': latest
+  '@fast-check/vitest': 0.5.0
+  '@types/node': 24.19.2
+  '@vitest/browser-playwright': 5.0.5
+  '@xmldom/xmldom': 0.9.12
+  eslint-plugin-sonarjs: 4.2.2
+  eslint-plugin-turbo: 2.11.10
+  fast-check: 4.10.2
+  fast-xml-parser: 5.11.2
+  htmlparser2: 12.0.0
+  lefthook: 2.2.1
+  libxmljs2: 0.37.0
+  oxfmt: 0.74.0
+  oxlint: 1.89.0
+  oxlint-tsgolint: 7.0.2005
+  playwright: 1.64.1
+  rimraf: 6.1.3
+  sax: 1.6.1
+  saxen: 11.2.0
+  saxes: 6.0.0
+  saxon-js: 2.7.0
+  stax-xml: 1.1.2
+  tsdown: 0.23.0
+  turbo: 2.11.10
+  txml: 6.0.3
+  typescript: 7.0.2
+  vega: 6.4.0
+  vega-lite: 6.5.0
+  vite: 8.3.5
+  vitest: 5.0.5
+
+# New dependencies must go through the catalog, at exact versions.
+catalogMode: strict
+cleanupUnusedCatalogs: true
+saveExact: true
+strictDepBuilds: true
+
+# Supply-chain checks: no version younger than a week, none published with weaker provenance than an earlier one, and no transitive git or tarball dependencies.
+minimumReleaseAge: 10080
+# exemplar's own releases are tested as soon as they are published.
+minimumReleaseAgeExclude:
+  - '@exemplarjs/*'
+trustPolicy: no-downgrade
+blockExoticSubdeps: true
+
+# Only these packages may run install scripts; any other fails the install.
+allowBuilds:
+  lefthook: true
+  libxmljs2: true

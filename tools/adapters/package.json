@@ -1,0 +1,42 @@
+{
+  "name": "@exemplarjs/adapters",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "exemplar-source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean:output": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "compile": "tsdown",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "@exemplarjs/canonical": "catalog:",
+    "@exemplarjs/dom": "catalog:",
+    "@exemplarjs/encodings-cjk": "catalog:",
+    "@exemplarjs/sax": "catalog:",
+    "@exemplarjs/validation": "catalog:",
+    "@exemplarjs/writer": "catalog:",
+    "@exemplarjs/xml": "catalog:",
+    "@xmldom/xmldom": "catalog:",
+    "fast-xml-parser": "catalog:",
+    "htmlparser2": "catalog:",
+    "libxmljs2": "catalog:",
+    "sax": "catalog:",
+    "saxen": "catalog:",
+    "saxes": "catalog:",
+    "saxon-js": "catalog:",
+    "stax-xml": "catalog:",
+    "txml": "catalog:"
+  },
+  "devDependencies": {
+    "@exemplarjs/build-config": "workspace:*"
+  }
+}

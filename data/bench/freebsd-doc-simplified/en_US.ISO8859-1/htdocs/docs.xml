@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>FreeBSD Documentation</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <img src="gifs/doc.jpg" alt="BSD Daemon reading documentation" align="right" border="0" width="274" height="163"/>
+
+    <p>A wide variety of <a href="./doc/en_US.ISO8859-1/books/handbook/index.html">documentation</a>
+      is available for FreeBSD, on this web site, on other web sites,
+      and available over the counter.</p>
+
+  </body>
+</html>

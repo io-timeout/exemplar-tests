@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD 10.4 Release Process</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+  <h1>Introduction</h1>
+
+  <p>This is the release schedule for FreeBSD 10.4.  For more
+    information about the release engineering process, please see the <a href="./releng/index.html">Release Engineering</a> section of the
+    web site.</p>
+
+  <p>General discussions about the pending release and known issues should be
+    sent to the public
+    <a href="mailto:FreeBSD-stable@FreeBSD.org">freebsd-stable</a> mailing list.
+    <a href="./doc/en_US.ISO8859-1/books/handbook/freebsd-glossary.html#mfc-glossary">MFC</a>
+    <?ignore requests should be sent to
+    <a href="mailto:re@FreeBSD.org">re@FreeBSD.org</a>.
+    ?>
+    requests are no longer being accepted.
+  </p>
+
+  
+  
+
+  <h1>Schedule</h1>
+
+  <table class="tblbasic">
+    <tr class="heading">
+      <td>Action</td>
+      <td>Expected</td>
+      <td>Actual</td>
+      <td>Description</td>
+    </tr>
+
+    <tr>
+      <td>Initial release schedule announcement</td>
+      <td>-</td>
+      <td>29 May 2017</td>
+      <td>Release Engineers send announcement email to developers with
+	a rough schedule.</td>
+    </tr>
+
+    <tr>
+      <td>Release schedule reminder</td>
+      <td>28 June 2017</td>
+      <td>28 June 2017</td>
+      <td>Release Engineers send reminder announcement e-mail to
+	developers with updated schedule.</td>
+    </tr>
+
+    <tr>
+      <td>Code slush begins</td>
+      <td>28 July 2017</td>
+      <td>31 July 2017</td>
+      <td>Release Engineers announce that all further commits to the
+	stable/10 branch will not require explicit
+	approval, however new features should be avoided.</td>
+    </tr>
+
+    <tr>
+      <td>Code freeze begins</td>
+      <td>11 August 2017</td>
+      <td>11 August 2017</td>
+      <td>Release Engineers announce that all further commits to the
+	stable/10 branch will require explicit approval.
+	Certain blanket approvals will be granted for narrow areas of
+	development, documentation improvements, etc.</td>
+    </tr>
+
+    <tr>
+      <td>BETA1 builds begin</td>
+      <td>18 August 2017</td>
+      <td>18 August 2017</td>
+      <td>First beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>BETA2 builds begin</td>
+      <td>25 August 2017</td>
+      <td>25 August 2017</td>
+      <td>Second beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>BETA3 builds begin *</td>
+      <td>1 September 2017</td>
+      <td>1 September 2017</td>
+      <td>Third beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>BETA4 builds begin *</td>
+      <td>8 September 2017</td>
+      <td>8 September 2017</td>
+      <td>Fourth beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>releng/10.4 branch</td>
+      <td>15 September 2017</td>
+      <td>15 September 2017</td>
+      <td>Subversion branch created; future release engineering
+	proceeds on this branch.</td>
+    </tr>
+
+    <tr>
+      <td>RC1 builds begin</td>
+      <td>15 September 2017</td>
+      <td>15 September 2017</td>
+      <td>First release candidate.</td>
+    </tr>
+
+    <tr>
+      <td>stable/10 thaw</td>
+      <td>17 September 2017</td>
+      <td>17 September 2017</td>
+      <td>The code freeze on the stable/10 branch
+	is lifted.</td>
+    </tr>
+
+    <tr>
+      <td>RC2 builds begin</td>
+      <td>22 September 2017</td>
+      <td>22 September 2017</td>
+      <td>Second release candidate.</td>
+    </tr>
+
+    <tr>
+      <td>RELEASE builds begin</td>
+      <td>29 September 2017</td>
+      <td>29 September 2017</td>
+      <td>10.4-RELEASE builds begin.</td>
+    </tr>
+
+    <tr>
+      <td>RELEASE announcement</td>
+      <td>3 October 2017</td>
+      <td>3 October 2017</td>
+      <td>10.4-RELEASE press release.</td>
+    </tr>
+
+    <tr>
+      <td>Turn over to the secteam</td>
+      <td>11 October 2017</td>
+      <td>11 October 2017</td>
+      <td>releng/10.4 branch is handed over to the
+	FreeBSD Security Officer Team in one or two weeks after the
+	announcement.</td>
+    </tr>
+  </table>
+
+  <p>"*" indicates "as-needed" items.</p>
+
+  <?ignore <h1>Status / TODO</h1>
+  <a href="&base;/releases/&local.rel;R/todo.html">&os; Release
+    Engineering TODO Page</a>
+  ?>
+
+  <h1>Additional Information</h1>
+
+  <ul>
+    <li><a href="./releng/index.html">FreeBSD Release
+	Engineering website</a></li>
+  </ul>
+
+
+  </body>
+</html>

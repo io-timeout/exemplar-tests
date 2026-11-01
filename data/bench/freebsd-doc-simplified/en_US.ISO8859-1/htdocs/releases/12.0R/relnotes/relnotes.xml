@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0">
+
+  <info>
+    <title>FreeBSD 12.0-RELEASE Release Notes</title>
+
+    <author>
+      <orgname>The FreeBSD Project</orgname>
+    </author>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <!-- First rev: 339953 -->
+    <!-- Last rev: 335799 -->
+
+    <copyright>
+      <year>2018</year>
+      <holder role="mailto:doc@FreeBSD.org">The FreeBSD Documentation
+	Project</holder>
+    </copyright>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>FreeBSD is a registered trademark of
+  the FreeBSD Foundation.</para>
+      <para>IBM, AIX, OS/2,
+  PowerPC, PS/2, S/390, and ThinkPad are
+  trademarks of International Business Machines Corporation in the
+  United States, other countries, or both.</para>
+      <para>IEEE, POSIX, and 802 are registered
+  trademarks of Institute of Electrical and Electronics Engineers,
+  Inc. in the United States.</para>
+      <para>Intel, Celeron, Centrino, Core, EtherExpress, i386,
+  i486, Itanium, Pentium, and Xeon are trademarks or registered
+  trademarks of Intel Corporation or its subsidiaries in the United
+  States and other countries.</para>
+      <para>SPARC, SPARC64, and
+  UltraSPARC are trademarks of SPARC International, Inc in the United
+  States and other countries.  SPARC International, Inc owns all of the
+  SPARC trademarks and under licensing agreements allows the proper use
+  of these trademarks by its members.</para>
+      <para>Many of the designations used by
+  manufacturers and sellers to distinguish their products are claimed
+  as trademarks.  Where those designations appear in this document,
+  and the FreeBSD Project was aware of the trademark claim, the
+  designations have been followed by the <quote>™</quote> or the
+  <quote>®</quote> symbol.</para>
+    </legalnotice>
+
+    <abstract>
+      <para>The release notes for FreeBSD 12.0-RELEASE contain
+	a summary of the changes made to the FreeBSD base system on the
+	12-STABLE development line.  This document lists
+	applicable security advisories that were issued since the last
+	release, as well as significant changes to the FreeBSD kernel and
+	userland.  Some brief remarks on upgrading are also
+	presented.</para>
+    </abstract>
+  </info>
+
+  <sect1 xml:id="intro">
+    <title>Introduction</title>
+
+    <para>This document contains the release notes for FreeBSD
+      12.0-RELEASE.  It describes recently added, changed, or
+      deleted features of FreeBSD.  It also provides some notes on
+      upgrading from previous versions of FreeBSD.</para>
+
+    <para releasetype="current">The release distribution to
+      which these release notes apply represents the latest point
+      along the 12-STABLE development branch since
+      12-STABLE was created.  Information regarding pre-built,
+      binary release distributions along this branch can be
+      found at <uri xlink:href="https://www.FreeBSD.org/releases/">https://www.FreeBSD.org/releases/</uri>.</para>
+
+    <para releasetype="snapshot">The release distribution to
+      which these release notes apply represents a point along the
+      12-STABLE development branch between 11.2-RELEASE and
+      the future 13.0-RELEASE.  Information regarding pre-built,
+      binary release distributions along this branch can be
+      found at <uri xlink:href="https://www.FreeBSD.org/releases/">https://www.FreeBSD.org/releases/</uri>.</para>
+
+    <para releasetype="release">This distribution of FreeBSD
+      12.0-RELEASE is a release distribution.  It can be
+      found at <uri xlink:href="https://www.FreeBSD.org/releases/">https://www.FreeBSD.org/releases/</uri> or
+      any of its mirrors.  More information on obtaining this (or
+      other) release distributions of FreeBSD can be found in the
+      <link xlink:href="@@URL_RELPREFIX@@/doc/en_US.ISO8859-1/books/handbook/mirrors.html"><quote>Obtaining
+	  FreeBSD</quote> appendix</link> to the <link xlink:href="@@URL_RELPREFIX@@/doc/en_US.ISO8859-1/books/handbook/">FreeBSD
+	Handbook</link>.</para>
+
+    <para>All users are encouraged to consult the release errata
+      before installing FreeBSD.  The errata document is updated with
+      <quote>late-breaking</quote> information discovered late in the
+      release cycle or after the release.  Typically, it contains
+      information on known bugs, security advisories, and corrections
+      to documentation.  An up-to-date copy of the errata for FreeBSD
+      12.0-RELEASE can be found on the FreeBSD Web site.</para>
+
+    <para>This document describes the most user-visible new or changed
+      features in FreeBSD since 11.2-RELEASE.  In general, changes
+      described here are unique to the 12-STABLE branch unless
+      specifically marked as MERGED features.</para>
+
+    <para>Typical release note items document recent security
+      advisories issued after 11.2-RELEASE, new drivers or hardware
+      support, new commands or options, major bug fixes, or
+      contributed software upgrades.  They may also list changes to
+      major ports/packages or release engineering practices.  Clearly
+      the release notes cannot list every single change made to FreeBSD
+      between releases; this document focuses primarily on security
+      advisories, user-visible changes, and major architectural
+      improvements.</para>
+  </sect1>
+
+  <sect1 xml:id="upgrade">
+    <title>Upgrading from Previous Releases of FreeBSD</title>
+
+    <para arch="amd64,i386">Binary upgrades between RELEASE versions
+      (and snapshots of the various security branches) are supported
+      using the <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility.  The binary upgrade
+      procedure will update unmodified userland utilities, as well as
+      unmodified GENERIC kernels distributed as a part of an official
+      FreeBSD release.  The <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility requires that
+      the host being upgraded have Internet connectivity.</para>
+
+    <para>Source-based upgrades (those based on recompiling the FreeBSD
+      base system from source code) from previous versions are
+      supported, according to the instructions in
+      <filename>/usr/src/UPDATING</filename>.</para>
+
+    <important>
+      <para>Upgrading FreeBSD should only be attempted after backing up
+	<emphasis>all</emphasis> data and configuration files.</para>
+    </important>
+  </sect1>
+
+  <sect1 xml:id="security-errata">
+    <title>Security and Errata</title>
+
+    <para>This section lists the various Security Advisories and
+      Errata Notices since 11.2-RELEASE.</para>
+
+    <sect2 xml:id="security">
+      <title>Security Advisories</title>
+
+      <informaltable frame="none" pgwide="1">
+	<tgroup cols="3">
+	  <colspec colwidth="40%"/>
+	  <colspec colwidth="30%"/>
+	  <colspec colwidth="30%"/>
+	  <thead>
+	    <row>
+	      <entry>Advisory</entry>
+	      <entry>Date</entry>
+	      <entry>Topic</entry>
+	    </row>
+	  </thead>
+
+	  <tbody>
+	    <row>
+	      <entry><para>No advisories.</para></entry>
+	      <entry><para> </para></entry>
+	      <entry><para> </para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </sect2>
+
+    <sect2 xml:id="errata">
+      <title>Errata Notices</title>
+
+      <informaltable frame="none" pgwide="1">
+	<tgroup cols="3">
+	  <colspec colwidth="40%"/>
+	  <colspec colwidth="30%"/>
+	  <colspec colwidth="30%"/>
+	  <thead>
+	    <row>
+	      <entry>Errata</entry>
+	      <entry>Date</entry>
+	      <entry>Topic</entry>
+	    </row>
+	  </thead>
+
+	  <tbody>
+	    <row>
+	      <entry><para>No errata notices.</para></entry>
+	      <entry><para> </para></entry>
+	      <entry><para> </para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="userland">
+    <title>Userland</title>
+
+    <para>This section covers changes and additions to userland
+      applications, contributed software, and system utilities.</para>
+
+    <sect2 xml:id="userland-config">
+      <title>Userland Configuration Changes</title>
+
+      <para revision="335864" contrib="sponsor" sponsor="DARPA, AFRL">Group permissions on
+	<filename>/dev/acpi</filename> have been changed to allow
+	users in the <literal>operator</literal>
+	<acronym>GID</acronym> to invoke <citerefentry vendor="current"><refentrytitle>acpiconf</refentrytitle><manvolnum>8</manvolnum></citerefentry> to suspend
+	the system.</para>
+
+      <para revision="336565">The default <citerefentry><refentrytitle>devfs.rules</refentrytitle><manvolnum>5</manvolnum></citerefentry>
+	configuration has been updated to allow <citerefentry><refentrytitle>mount_fusefs</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	with <citerefentry><refentrytitle>jail</refentrytitle><manvolnum>8</manvolnum></citerefentry>.</para>
+
+      <para revision="337497">The default <literal>PAGER</literal> now
+	defaults to <citerefentry><refentrytitle>less</refentrytitle><manvolnum>1</manvolnum></citerefentry> for most commands.</para>
+
+      <para revision="338165" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>newsyslog</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to reject configuration entries that specify
+	<citerefentry><refentrytitle>setuid</refentrytitle><manvolnum>2</manvolnum></citerefentry> or executable log files.</para>
+
+      <para revision="338642" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<literal>WITH_REPRODUCIBLE_BUILD</literal> <citerefentry><refentrytitle>src.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>
+	knob has been enabled by default.</para>
+
+      <para revision="339303"><application>LDNS</application> now
+	enables <literal>DANE-TA</literal>, and
+	<literal>GOST</literal> has been removed.</para>
+
+      <para revision="340773" contrib="sponsor" sponsor="The FreeBSD Foundation">A new
+	<citerefentry><refentrytitle>src.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> knob, <literal>WITH_RETPOLINE</literal>, has
+	been added to enable the retpoline mitigation for userland
+	builds.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-programs">
+      <title>Userland Application Changes</title>
+
+      <para>xlint and the ability to build lint libraries or lint
+	source code has been removed.</para>
+
+      <para revision="304200">The <citerefentry><refentrytitle>dtrace</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to support <literal>if</literal> and
+	<literal>else</literal> statements.</para>
+
+      <para revision="317416">The legacy <citerefentry><refentrytitle>gdb</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility included
+	in the base system is now installed to <filename class="directory">/usr/libexec</filename> for use with
+	<citerefentry><refentrytitle>crashinfo</refentrytitle><manvolnum>8</manvolnum></citerefentry>.  The <application>gdbserver</application>
+	and <application>gdbtui</application> utilities are no longer
+	installed.  For interactive debugging, <citerefentry><refentrytitle>lldb</refentrytitle><manvolnum>1</manvolnum></citerefentry> or
+	a modern version of <citerefentry><refentrytitle>gdb</refentrytitle><manvolnum>1</manvolnum></citerefentry> from <filename role="package">devel/gdb</filename> should be used.  A new
+	<citerefentry><refentrytitle>src.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> knob, <literal>WITHOUT_GDB_LIBEXEC</literal>
+	has been added to disable building <citerefentry><refentrytitle>gdb</refentrytitle><manvolnum>1</manvolnum></citerefentry>.  The
+	<citerefentry><refentrytitle>gdb</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility is still installed in <filename class="directory">/usr/bin</filename> on
+	sparc64.</para>
+
+      <para revision="332396" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>setfacl</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated to include a new
+	flag, <literal>-R</literal>, used to operate recursively on
+	directories.</para>
+
+      <para revision="323865">The <citerefentry><refentrytitle>cat</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated
+	to print output aligned the same regardless of if invoked with
+	<literal>-ne</literal> or <literal>-be</literal>.</para>
+
+      <para revision="334391" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	default bootstrap linker has been changed to <citerefentry><refentrytitle>ld_lld</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	for amd64.</para>
+
+      <para revision="334443">The <citerefentry><refentrytitle>dhclient</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to add a configuration knob to allow superseding the
+	<literal>interface-mtu</literal> option provided by an
+	incorrectly-configured <acronym>DHCP</acronym> server.</para>
+
+      <para revision="335222" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>asf</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been removed, as <citerefentry><refentrytitle>kgdb</refentrytitle><manvolnum>1</manvolnum></citerefentry> now
+	handles kernel module state internally.</para>
+
+      <para revision="336126">The <literal>sha224(1)</literal> utility
+	has been added.</para>
+
+      <para revision="336659">The <citerefentry><refentrytitle>geli</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to provide support for initializing multiple providers
+	at once when they use the same passphrase and/or key.</para>
+
+      <para revision="336901" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	default bootstrap linker has been changed to <citerefentry><refentrytitle>ld_lld</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	for i386.</para>
+
+      <para revision="337057" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	default bootstrap linker has been changed to <citerefentry><refentrytitle>ld_lld</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	for armv7.</para>
+
+      <para revision="337505">The <citerefentry><refentrytitle>dd</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated
+	to add the <literal>status=progress</literal> option, which
+	prints the status of its operation on a single line once per
+	second, similar to <acronym>GNU</acronym> <citerefentry><refentrytitle>dd</refentrytitle><manvolnum>1</manvolnum></citerefentry>.</para>
+
+      <para revision="337332">The <citerefentry><refentrytitle>date</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to include a new flag, <literal>-I</literal>, which
+	prints its output in <acronym>ISO</acronym> 8601
+	formatting.</para>
+
+      <para revision="337663">The <citerefentry><refentrytitle>bectl</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	added, providing an administrative interface for managing
+	<acronym>ZFS</acronym> boot environments, similar to
+	<filename role="package">sysutils/beadm</filename>.</para>
+
+      <para revision="337956">The <citerefentry><refentrytitle>ls</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated
+	to include a new
+	<literal>--color=<replaceable>when</replaceable></literal>
+	flag, where <replaceable>when</replaceable> can be one of
+	<literal>always</literal>, <literal>auto</literal> (default),
+	or <literal>never</literal>.</para>
+
+      <para revision="338210" contrib="sponsor" sponsor="iXsystems">The
+	<citerefentry><refentrytitle>bhyve</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been updated to add a new subcommand
+	to the <literal>-l</literal> and <literal>-s</literal> flags,
+	<literal>help</literal>, which when used, prints a list of
+	supported <acronym>LPC</acronym> and <acronym>PCI</acronym>
+	devices, respectively.</para>
+
+      <para revision="338258">The <citerefentry><refentrytitle>tftp</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to change the default transfer mode from
+	<acronym>ASCII</acronym> to binary.</para>
+
+      <para revision="338352">The <citerefentry><refentrytitle>last</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to include <citerefentry><refentrytitle>libxo</refentrytitle><manvolnum>3</manvolnum></citerefentry> support.</para>
+
+      <para revision="338353">The <citerefentry><refentrytitle>lastlogin</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to include <citerefentry><refentrytitle>libxo</refentrytitle><manvolnum>3</manvolnum></citerefentry> support.</para>
+
+      <para revision="338950" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>chown</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been updated
+	to prevent overflow of <acronym>UID</acronym> or
+	<acronym>GID</acronym> arguments where the argument exceeded
+	<literal>UID_MAX</literal> or <literal>GID_MAX</literal>,
+	respectively.</para>
+
+      <para revision="340444">The <citerefentry><refentrytitle>ctm</refentrytitle><manvolnum>1</manvolnum></citerefentry> and related utilities
+	have been marked as deprecated for removal in
+	FreeBSD 13.0.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-contrib">
+      <title>Contributed Software</title>
+
+      <para revision="333063" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<application>ELF Tool Chain</application> has been updated
+	to version r3614.</para>
+
+      <para revision="331602" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>zstd</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated
+	to version 1.3.4.</para>
+
+      <para revision="332452" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>vt</refentrytitle><manvolnum>4</manvolnum></citerefentry> Terminus BSD Console font has been updated to
+	version 4.46.</para>
+
+      <para revision="333783">The <citerefentry><refentrytitle>xz</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been updated
+	to version 5.2.4.</para>
+
+      <para revision="335799">The <application>clang</application>,
+	<application>llvm</application>,
+	<application>lld</application>,
+	<application>lldb</application>,
+	<application>compiler-rt</application> utilities and
+	<application>libc++</application> have been updated to version
+	6.0.1.</para>
+
+      <para revision="335885">The <application>bsnmp</application>
+	utility has been updated to version 1.13.</para>
+
+      <para revision="336203">The <acronym>WPA</acronym> utilities
+	have been updated to version 2.6.</para>
+
+      <para revision="336525">The <citerefentry><refentrytitle>ntpd</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to allow being run as a non-root user.</para>
+
+      <note>
+	<para>Source-based upgrades from FreeBSD 11.x and earlier
+	  require the <literal>ntpd</literal> <acronym>UID</acronym>
+	  (123) and <acronym>GID</acronym> (123) to exist before the
+	  <literal>installworld</literal> target is run.  See the
+	  "rebuild everything and install" section of
+	  <filename>UPDATING</filename> for the documented procedure
+	  for source-based upgrades for more details.</para>
+      </note>
+
+      <para revision="337018">Support for <acronym>UDP</acronym>-lite
+	has been added to <citerefentry><refentrytitle>dtrace_udplite</refentrytitle><manvolnum>4</manvolnum></citerefentry>.</para>
+
+      <para revision="337442">The <citerefentry><refentrytitle>file</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to version 5.34.</para>
+
+      <para revision="337810">The <application>lua</application>
+	utility has been updated to version 5.3.5.</para>
+
+      <para revision="338213">Support for send, receive, and
+	state-change providers have been added to
+	<citerefentry><refentrytitle>dtrace_sctp</refentrytitle><manvolnum>4</manvolnum></citerefentry>.</para>
+
+      <para revision="338126">The <citerefentry><refentrytitle>ntpd</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to version 4.2.8p12.</para>
+
+      <para revision="338561"><application>OpenSSH</application> has
+	been updated to version 7.8p1.</para>
+
+      <para revision="338826">The <citerefentry><refentrytitle>mandoc</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility has been
+	updated to version 1.14.4.</para>
+
+      <para revision="339216">Additional <citerefentry><refentrytitle>capsicum</refentrytitle><manvolnum>4</manvolnum></citerefentry> support has
+	been added to <citerefentry><refentrytitle>sshd</refentrytitle><manvolnum>8</manvolnum></citerefentry>.</para>
+
+      <para revision="339256"><application>Serf</application> has been
+	updated to version 1.3.9.</para>
+
+      <para revision="339262"><application>ACPICA</application> has
+	been updated to version 20181003.</para>
+
+      <para revision="339278"><application>Unbound</application> has
+	been updated to version 1.8.1.</para>
+
+      <para revision="339937">The timezone database files have been
+	updated to version 2018g.</para>
+
+      <para revision="340711"><application>OpenSSL</application> has
+	been updated to version 1.1.1a.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-installer">
+      <title>Installation and Configuration Tools</title>
+
+      <para revision="338282" contrib="sponsor" sponsor="Klara Systems">The
+	<citerefentry><refentrytitle>bsdinstall</refentrytitle><manvolnum>8</manvolnum></citerefentry> installer and <citerefentry><refentrytitle>zfsboot</refentrytitle><manvolnum>8</manvolnum></citerefentry> boot code
+	have been updated to allow an
+	<acronym>UEFI</acronym>+<acronym>GELI</acronym> installation
+	option.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-rc">
+      <title><filename class="directory">/etc/rc.d</filename>
+	Scripts</title>
+
+      <para revision="332857" contrib="sponsor" sponsor="The FreeBSD Foundation">A new
+	<citerefentry><refentrytitle>rc</refentrytitle><manvolnum>8</manvolnum></citerefentry> has been added to create <citerefentry><refentrytitle>cfumass</refentrytitle><manvolnum>4</manvolnum></citerefentry>
+	<acronym>LUN</acronym>s.</para>
+
+      <para revision="335673">The <citerefentry><refentrytitle>geli</refentrytitle><manvolnum>8</manvolnum></citerefentry> <citerefentry><refentrytitle>rc</refentrytitle><manvolnum>8</manvolnum></citerefentry> script has
+	been updated to include support for a new variable,
+	<literal>geli_groups</literal>, which provides support to
+	attach multiple providers when set in <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.</para>
+
+      <para revision="340348" contrib="sponsor" sponsor="Smule, Inc.">The
+	<citerefentry><refentrytitle>rc</refentrytitle><manvolnum>8</manvolnum></citerefentry> subsystem has been updated to support new keywords
+	in <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <literal>enable</literal>,
+	<literal>disable</literal>, and
+	<literal>delete</literal> with <citerefentry><refentrytitle>rc.d</refentrytitle><manvolnum>8</manvolnum></citerefentry> scripts and the
+	<citerefentry><refentrytitle>service</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility.  See <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> for usage
+	information.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-libraries">
+      <title>Runtime Libraries and API</title>
+
+      <para revision="331279">The <citerefentry><refentrytitle>getrandom</refentrytitle><manvolnum>2</manvolnum></citerefentry> system call and
+	<citerefentry><refentrytitle>getentropy</refentrytitle><manvolnum>3</manvolnum></citerefentry> library have been added, compatible with
+	<trademark class="registered">Linux</trademark> and OpenBSD implementations.</para>
+
+      <para revision="338059">The <citerefentry><refentrytitle>arc4random</refentrytitle><manvolnum>3</manvolnum></citerefentry> library has been
+	updated to match the OpenBSD version 1.35.</para>
+
+      <para revision="338600">The <citerefentry><refentrytitle>libarchive</refentrytitle><manvolnum>3</manvolnum></citerefentry> library has been
+	updated to version 3.3.3.</para>
+    </sect2>
+
+    <sect2 xml:id="userland-abi">
+      <title>ABI Compatibility</title>
+
+      <para revision="331936"><function>get_s(3)</function> has been
+	added.</para>
+
+      <para revision="337992">The <citerefentry><refentrytitle>pthread</refentrytitle><manvolnum>3</manvolnum></citerefentry> library has been
+	updated to incorporate
+	<acronym>POSIX</acronym>/<acronym>SUSv4</acronym>-2018
+	compliance improvements.</para>
+
+      <para revision="338331">The <citerefentry><refentrytitle>arc4random</refentrytitle><manvolnum>3</manvolnum></citerefentry> library has been
+	updated to remove <function>arc4random_stir()</function> and
+	<function>arc4random_addrandom()</function>.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="kernel">
+    <title>Kernel</title>
+
+    <para>This section covers changes to kernel configurations, system
+      tuning, and system control parameters that are not otherwise
+      categorized.</para>
+
+    <sect2 xml:id="kernel-bugfix">
+      <title>Kernel Bug Fixes</title>
+
+      <para revision="326956" contrib="sponsor" sponsor="Dell EMC Isilon">The <acronym>ACPI</acronym> subsystem has
+	been updated to implement <literal>Device</literal> object
+	types for <acronym>ACPI</acronym> 6.0 support, required for
+	some Dell, Inc. Poweredge™ <trademark class="registered">AMD</trademark> Epyc™ systems.</para>
+
+      <para revision="334625" contrib="sponsor" sponsor="Dell EMC Isilon">An issue with <acronym>IPv6-AH</acronym>
+	<acronym>IPSEC</acronym> padding has been fixed to match
+	<acronym>RFC</acronym>4302.</para>
+
+      <para revision="340446">The <citerefentry><refentrytitle>amdsmn</refentrytitle><manvolnum>4</manvolnum></citerefentry> and <citerefentry><refentrytitle>amdtemp</refentrytitle><manvolnum>4</manvolnum></citerefentry>
+	drivers have been updated to attach to
+	<trademark class="registered">AMD</trademark> Ryzen 2™ host bridges.</para>
+
+      <para revision="340447">The <citerefentry><refentrytitle>amdtemp</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	updated to fix temperature reporting for <trademark class="registered">AMD</trademark> 2990WX
+	<acronym>CPU</acronym>s.</para>
+    </sect2>
+
+    <sect2 xml:id="kernel-config">
+      <title>Kernel Configuration</title>
+
+      <para revision="324810">The <literal>VIMAGE</literal> kernel
+	configuration option has been enabled by default.</para>
+
+      <para revision="324965" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>dumpon</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to add support for compressed kernel crash dumps when
+	the kernel configuration file includes the
+	<literal>GZIO</literal> option.  See <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> and
+	<citerefentry><refentrytitle>dumpon</refentrytitle><manvolnum>8</manvolnum></citerefentry> for additional information.</para>
+
+      <para revision="327584">The <citerefentry><refentrytitle>ext2fs</refentrytitle><manvolnum>5</manvolnum></citerefentry> filesystem has been
+	updated to support full read/write support for ext4.</para>
+
+      <para revision="327774">The <literal>pmtimer</literal> device
+	has been removed from the i386
+	<filename>GENERIC</filename> kernel configuration.  Its
+	functionality is now part of <citerefentry><refentrytitle>apm</refentrytitle><manvolnum>4</manvolnum></citerefentry>.</para>
+
+      <para revision="329240" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>dumpon</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to add support for <citerefentry><refentrytitle>zstd</refentrytitle><manvolnum>1</manvolnum></citerefentry>-compressed kernel
+	crash dumps when the kernel configuration file includes the
+	<literal>ZSTDIO</literal> option.  See <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> and
+	<citerefentry><refentrytitle>dumpon</refentrytitle><manvolnum>8</manvolnum></citerefentry> for additional information.</para>
+
+      <para revision="330110" contrib="sponsor" sponsor="The FreeBSD Foundation">A new
+	<citerefentry><refentrytitle>src.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> knob,
+	<literal>WITH_KERNEL_RETPOLINE</literal>, has been added to
+	enable the retpoline mitigation for kernel builds.</para>
+
+      <para revision="333890">The <literal>EKCD</literal>,
+	<literal>GZIO</literal>, <literal>ZSTDIO</literal>, and
+	<literal>NETDUMP</literal> kernel configuration options have
+	been enabled by default for amd64, i386,
+	aarch64, powerpc, powerpc64, and
+	sparc64 architectures.</para>
+
+      <para revision="338214" contrib="sponsor" sponsor="Dell EMC Isilon">A new kernel configuration option,
+	<literal>KASSERT_PANIC_OPTIONAL</literal>, has been added
+	that allows runtime <citerefentry><refentrytitle>KASSERT</refentrytitle><manvolnum>9</manvolnum></citerefentry> behavior changes without
+	necessarily invoking <citerefentry><refentrytitle>panic</refentrytitle><manvolnum>9</manvolnum></citerefentry>.  The option is disabled
+	by default.</para>
+
+      <para revision="338602" contrib="sponsor" sponsor="Dell EMC Isilon, Netflix">The <literal>NUMA</literal>
+	option has been enabled by default in the amd64
+	<filename>GENERIC</filename> and <filename>MINIMAL</filename>
+	kernel configurations.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="drivers">
+    <title>Devices and Drivers</title>
+
+    <para>This section covers changes and additions to devices and
+      device drivers since 11.2-RELEASE.</para>
+
+    <sect2 xml:id="drivers-device">
+      <title>Device Drivers</title>
+
+      <para revision="331070" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>random</refentrytitle><manvolnum>4</manvolnum></citerefentry> device has been updated
+	to allow terminating large reads with
+	<literal>^C</literal>.</para>
+
+      <para revision="333713" contrib="sponsor" sponsor="The FreeBSD Foundation">Support
+	for the Microchip® LAN78xx™ USB3-GigE controller has
+	been added.</para>
+
+      <para revision="333760" contrib="sponsor" sponsor="The FreeBSD Foundation">A new
+	<literal>multifunction</literal> device has been added to
+	<citerefentry><refentrytitle>usb_template</refentrytitle><manvolnum>4</manvolnum></citerefentry>, providing mass storage,
+	<acronym>CDC</acronym> <acronym>ACM</acronym> (serial), and
+	<acronym>CDC</acronym> <acronym>ECM</acronym> (ethernet)
+	simultaneously.</para>
+
+      <para revision="338324">The <citerefentry><refentrytitle>random</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	updated to remove the Yarrow algorithm.  The Fortuna algorithm
+	remains the default, and now only, available algorithm.</para>
+
+      <para revision="333283" contrib="sponsor" sponsor="Dell EMC Isilon">The <citerefentry><refentrytitle>netdump</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been added,
+	providing a facility through which kernel crash dumps can be
+	transmitted to a remote host after a system panic.  See
+	<citerefentry><refentrytitle>netdump</refentrytitle><manvolnum>4</manvolnum></citerefentry> and <citerefentry><refentrytitle>dumpon</refentrytitle><manvolnum>8</manvolnum></citerefentry> for more information and
+	configuration details.</para>
+
+      <para revision="338292">The <citerefentry><refentrytitle>random</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	updated to fix excessive activity during pseudo-random number
+	generation.</para>
+
+      <para revision="338316">The <citerefentry><refentrytitle>vt</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been updated
+	with performance improvements, drawing text at rates ranging
+	from 2- to 6-times faster.</para>
+
+      <para revision="340190" contrib="sponsor" sponsor="Panzura">The <citerefentry><refentrytitle>ichwd</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been updated
+	to add <acronym>TCO</acronym> watchdog timer support for
+	<trademark class="registered">Intel</trademark> Lewisburg <acronym>PCH</acronym> (C620)
+	chipsets.</para>
+    </sect2>
+
+    <sect2 xml:id="drivers-network">
+      <title>Network Drivers</title>
+
+      <para revision="333149" contrib="sponsor" sponsor="Intel Corporation">The <citerefentry><refentrytitle>ixl</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been updated
+	to version 1.9.9-k.</para>
+
+      <para revision="334143" contrib="sponsor" sponsor="Chelsio Communications">The <citerefentry><refentrytitle>cxgbe</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been updated
+	to provide hardware support for the
+	<literal>SO_MAX_PACING_RATE</literal> <citerefentry><refentrytitle>setsockopt</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+	option when the kernel configuration contains the
+	<literal>RATELIMIT</literal> option.</para>
+
+      <para revision="339338" contrib="sponsor" sponsor="Intel Corporation">The <citerefentry><refentrytitle>ixlv</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been renamed
+	to <citerefentry><refentrytitle>iavf</refentrytitle><manvolnum>4</manvolnum></citerefentry> and updated to use <citerefentry><refentrytitle>iflib</refentrytitle><manvolnum>9</manvolnum></citerefentry>.  The
+	<citerefentry><refentrytitle>ixlv</refentrytitle><manvolnum>4</manvolnum></citerefentry> kernel module is now a hard link to <citerefentry><refentrytitle>iavf</refentrytitle><manvolnum>4</manvolnum></citerefentry>
+	for backwards compatibility for upgrading from earlier FreeBSD
+	releases.</para>
+    </sect2>
+
+    <sect2 xml:id="drivers-deprecated">
+      <title>Deprecated Drivers</title>
+
+      <para revision="333144" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>lmc</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been removed.</para>
+
+      <para revision="333173" contrib="sponsor" sponsor="Limelight Networks">The <citerefentry><refentrytitle>ixgb</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	removed.</para>
+
+      <para revision="333322" contrib="sponsor" sponsor="Limelight Networks">The <citerefentry><refentrytitle>nxge</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	removed.</para>
+
+      <para revision="333717" contrib="sponsor" sponsor="Limelight Networks">The <citerefentry><refentrytitle>vxge</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	removed.</para>
+
+      <para revision="337033">The <citerefentry><refentrytitle>jedec_ts</refentrytitle><manvolnum>4</manvolnum></citerefentry> driver has been
+	removed in 12.0-RELEASE, and its functionality replaced
+	by <citerefentry><refentrytitle>jedec_dimm</refentrytitle><manvolnum>4</manvolnum></citerefentry>.</para>
+
+      <para revision="339218">The <acronym>DRM</acronym> driver for
+	modern graphics chipsets has been marked deprecated and marked
+	for removal in FreeBSD 13.  The <acronym>DRM</acronym>
+	kernel modules are available from <filename role="package">graphics/drm-stable-kmod</filename> or
+	<filename role="package">graphics/drm-legacy-kmod</filename>
+	in the Ports Collection as well as via <citerefentry><refentrytitle>pkg</refentrytitle><manvolnum>8</manvolnum></citerefentry>.
+	Additionally, the kernel modules have been added to the lua
+	<citerefentry><refentrytitle>loader.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> <literal>module_blacklist</literal>, as
+	installation from the Ports Collection or <citerefentry><refentrytitle>pkg</refentrytitle><manvolnum>8</manvolnum></citerefentry> is
+	strongly recommended.</para>
+
+      <para revision="339735">The following drivers have been
+	deprecated in FreeBSD 12.0, and not present in
+	FreeBSD 13.0: <citerefentry><refentrytitle>ae</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>de</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>ed</refentrytitle><manvolnum>4</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>ep</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>ex</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>fe</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>pcn</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>sf</refentrytitle><manvolnum>4</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>sn</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>tl</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>tx</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>txp</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>vx</refentrytitle><manvolnum>4</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>wb</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>xe</refentrytitle><manvolnum>4</manvolnum></citerefentry></para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="hardware">
+    <title>Hardware Support</title>
+
+    <para>This section covers general hardware support for physical
+      machines, hypervisors, and virtualization environments, as well
+      as hardware changes and updates that do not otherwise fit in
+      other sections of this document.</para>
+
+    <sect2 xml:id="hardware-support">
+      <title>Hardware Support</title>
+
+      <para revision="333273">Support for powernv POWER9
+	<acronym>MMU</acronym> initialization has been added.</para>
+    </sect2>
+
+    <sect2 xml:id="hardware-graphics">
+      <title>Graphics Support</title>
+
+      <para>FreeBSD has changed the way graphics drivers are handled on
+	amd64 and i386.  Graphics drivers for modern
+	ATI/<trademark class="registered">AMD</trademark> and <trademark class="registered">Intel</trademark> graphics cards are now available in the
+	Ports Collection.  The base drivers are still available and
+	will be installed by default, but they lack support for
+	current generation laptop and desktop systems.</para>
+
+      <para>In most cases it is enough to install <filename role="package">graphics/drm-kmod</filename>
+	from ports or packages to install a driver appropriate for the
+	system, then adding the appropriate driver to
+	<varname>kld_list</varname> in <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.</para>
+
+      <para>For <trademark class="registered">Intel</trademark> (i915) systems after Broadwell™, the
+	<citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> entry is:</para>
+
+      <programlisting>kld_list="/boot/modules/i915kms.ko"</programlisting>
+
+      <para>Systems with ATI/<trademark class="registered">AMD</trademark> graphics cards have two options.
+	Modern systems starting with the HD7000 series GPU should
+	use:</para>
+
+      <programlisting>kld_list="/boot/modules/amdgpu.ko"</programlisting>
+
+      <para>Systems with cards released before the HD7000 GPU
+	use:</para>
+
+      <programlisting>kld_list="/boot/modules/radeonkms.ko"</programlisting>
+
+      <note>
+	<para>Users must be added to the <literal>video</literal>
+	  <acronym>GID</acronym> after installing <filename role="package">graphics/drm-kmod</filename> in order for
+	  <application>X</application> to start properly.</para>
+      </note>
+
+      <note>
+	<para>There are known issues with the
+	  <literal>xserver</literal> driver provided by <filename role="package">x11-drivers/xf86-video-ati</filename>
+	  when using graphics drivers from the base system;
+	  <filename role="package">x11-drivers/xf86-video-ati-legacy</filename>
+	  should be used instead.</para>
+      </note>
+
+      <note>
+	<para>There is a known issue where booting with
+	  <acronym>UEFI</acronym> and using the ATI/<trademark class="registered">AMD</trademark> graphics
+	  driver may cause the screen to be garbled before the
+	  appropriate driver is loaded.</para>
+      </note>
+
+      <para>For additional information regarding graphics support on
+	FreeBSD, please see the <link xlink:href="https://wiki.freebsd.org/Graphics">Graphics Wiki
+	  Page</link>.</para>
+    </sect2>
+
+    <sect2 xml:id="hardware-virtualization">
+      <title>Virtualization Support</title>
+
+      <para revision="325254">Amazon® EC2™ AMI instances now
+	have <filename role="package">sysutils/amazon-ssm-agent</filename>
+	installed by default, though the service is not enabled by
+	default in <citerefentry><refentrytitle>rc.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.  To enable the service,
+	add:</para>
+
+      <programlisting>	&gt;&gt;/etc/rc.conf
+	amazon_ssm_agent_enable="YES"</programlisting>
+
+      <para>to the EC2™ user-data.</para>
+
+      <para revision="326564">Amazon® EC2™ AMI instances now
+	disable <literal>ChallengeResponseAuthentication</literal> in
+	<citerefentry><refentrytitle>sshd_config</refentrytitle><manvolnum>5</manvolnum></citerefentry> by default.</para>
+
+      <para revision="326565">Amazon® EC2™ AMI instances now
+	use the Amazon® internal <application>NTP</application>
+	service by default.</para>
+
+      <para revision="332298">The <citerefentry><refentrytitle>bhyve</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to allow controlling <acronym>CPU</acronym> topology
+	from userland.</para>
+
+      <para revision="334940" contrib="sponsor" sponsor="iXsystems">The
+	<citerefentry><refentrytitle>bhyve</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been updated to add
+	<citerefentry><refentrytitle>virtio_scsi</refentrytitle><manvolnum>4</manvolnum></citerefentry> storage support.</para>
+
+      <para revision="335974" contrib="sponsor" sponsor="iXsystems">The
+	<citerefentry><refentrytitle>bhyve</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been updated to add
+	<acronym>NVMe</acronym> device emulation.</para>
+
+      <para revision="337023" contrib="sponsor" sponsor="HardenedBSD, G2, Inc.">A new <citerefentry><refentrytitle>sysctl</refentrytitle><manvolnum>8</manvolnum></citerefentry>,
+	<literal>security.jail.vmm_allowed</literal>, has been added,
+	which when set to <literal>1</literal> allows <citerefentry><refentrytitle>bhyve</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	use within a <citerefentry><refentrytitle>jail</refentrytitle><manvolnum>8</manvolnum></citerefentry>.</para>
+
+      <para revision="338321">Amazon® EC2™ AMI instances now
+	disable the PS/2 keyboard and mouse devices by default,
+	reducing overall boot time by 2.5 seconds.</para>
+    </sect2>
+
+    <sect2 xml:id="hardware-arm">
+      <title>ARM Support</title>
+
+      <para revision="335004" contrib="sponsor" sponsor="The FreeBSD Foundation">Support
+	for the <acronym>USB</acronym> <acronym>OTG</acronym> serial
+	terminal has been enabled on arm systems by
+	default.</para>
+
+      <para revision="336998">The armv6 and armv7 images
+	now default to boot with <acronym>EFI</acronym>.</para>
+
+      <para revision="337000">Support has been added for building
+	aarch64 images for the <filename>PINE64-LTS</filename>
+	system.</para>
+
+      <para revision="338666" contrib="sponsor" sponsor="The FreeBSD Foundation">Support
+	for <citerefentry><refentrytitle>capsicum</refentrytitle><manvolnum>4</manvolnum></citerefentry> has been enabled on armv6 and
+	armv7 by default.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="storage">
+    <title>Storage</title>
+
+    <para>This section covers changes and additions to file systems
+      and other storage subsystems, both local and networked.</para>
+
+    <sect2 xml:id="storage-general">
+      <title>General Storage</title>
+
+      <para revision="323923">The
+	<acronym>UFS</acronym>/<acronym>FFS</acronym> filesystem
+	has been updated to support check hashes to cylinder-group
+	maps.  Support for check hashes is available only for
+	<acronym>UFS</acronym>2.</para>
+
+      <para revision="333446" contrib="sponsor" sponsor="iXsystems">The
+	<acronym>CAM</acronym> Target Layer (<acronym>CTL</acronym>)
+	frontend and backend options have been overhauled to use
+	<citerefentry><refentrytitle>nv</refentrytitle><manvolnum>3</manvolnum></citerefentry> allowing creating multiple <citerefentry><refentrytitle>ioctl</refentrytitle><manvolnum>2</manvolnum></citerefentry> frontend
+	ports.</para>
+
+      <para revision="337749" contrib="sponsor" sponsor="DARPA, AFRL">The default <citerefentry><refentrytitle>auto_master</refentrytitle><manvolnum>5</manvolnum></citerefentry>
+	configuration has been updated to add the
+	<literal>noautoro</literal> <citerefentry><refentrytitle>automount</refentrytitle><manvolnum>8</manvolnum></citerefentry> flag to the
+	<filename class="directory">/media</filename> mount
+	point (commented by default).</para>
+
+      <para revision="338056" contrib="sponsor" sponsor="Netflix">The
+	<acronym>UFS</acronym>/<acronym>FFS</acronym> filesystem has
+	been updated to consolidate
+	<acronym>TRIM</acronym>/<literal>BIO_DELETE</literal>
+	commands, reducing read/write requests due to fewer
+	<acronym>TRIM</acronym> messages being sent
+	simultaneously.</para>
+
+      <para revision="338517" contrib="sponsor" sponsor="Netflix"><acronym>TRIM</acronym> consolidation
+	support has been enabled by default in the
+	<acronym>UFS</acronym>/<acronym>FFS</acronym> filesystem.
+	<acronym>TRIM</acronym> consolidation can be disabled by
+	setting the <literal>vfs.ffs.dotrimcons</literal>
+	<citerefentry><refentrytitle>sysctl</refentrytitle><manvolnum>8</manvolnum></citerefentry> to <literal>0</literal>, or adding
+	<literal>vfs.ffs.dotrimcons=0</literal> to
+	<citerefentry><refentrytitle>sysctl.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.</para>
+
+      <para revision="338640" contrib="sponsor" sponsor="DARPA, AFRL">The <citerefentry><refentrytitle>geom</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to add a new flag, <literal>-p</literal>, which
+	prints the <acronym>GEOM</acronym> class of the specified
+	provider.</para>
+
+      <para revision="338684" contrib="sponsor" sponsor="DARPA, AFRL">The <citerefentry><refentrytitle>geom</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to add a new flag, <literal>-t</literal>, which
+	prints the <acronym>GEOM</acronym> hierarchy.</para>
+    </sect2>
+
+    <sect2 xml:id="storage-net">
+      <title>Networked Storage</title>
+
+      <para revision="335012">The <acronym>NFS</acronym> version 4.1
+	server has been updated to include <acronym>pNFS</acronym>
+	server support.</para>
+    </sect2>
+
+    <sect2 xml:id="storage-zfs">
+      <title>ZFS</title>
+
+      <para revision="334844"><acronym>ZFS</acronym> has been updated
+	to include new <citerefentry><refentrytitle>sysctl</refentrytitle><manvolnum>8</manvolnum></citerefentry>s,
+	<literal>vfs.zfs.arc_min_prefetch_ms</literal> and
+	<literal>vfs.zfs.arc_min_prescient_prefetch_ms</literal>,
+	which improve performance of the <citerefentry><refentrytitle>zpool</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	<literal>scrub</literal> subcommand.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="boot">
+    <title>Boot Loader Changes</title>
+
+    <para>This section covers the boot loader, boot menu, and other
+      boot-related changes.</para>
+
+    <sect2 xml:id="boot-loader">
+      <title>Boot Loader Changes</title>
+
+      <para revision="329501" contrib="sponsor" sponsor="Dell EMC Isilon">The lua <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry> has been updated to
+	detect a list of installed kernels to boot.</para>
+
+      <para revision="336252" contrib="sponsor" sponsor="Microchip Technology, Inc.">The <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry> has been updated to
+	support <citerefentry><refentrytitle>geli</refentrytitle><manvolnum>8</manvolnum></citerefentry> for all architectures and all disk-like
+	devices.</para>
+
+      <para revision="337321" contrib="sponsor" sponsor="DARPA, AFRL">The <citerefentry><refentrytitle>init</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been
+	updated to be able to run an executable written in languages
+	other than <citerefentry><refentrytitle>sh</refentrytitle><manvolnum>1</manvolnum></citerefentry>, such as
+	<application>Python</application>, for example.</para>
+
+      <para revision="337715" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry> has been updated to add support for loading
+	<trademark class="registered">Intel</trademark> microcode updates early during the boot
+	process.</para>
+
+      <para revision="337740" contrib="sponsor" sponsor="DARPA, AFRL">A new <citerefentry><refentrytitle>kenv</refentrytitle><manvolnum>1</manvolnum></citerefentry> variable,
+	<literal>init_exec</literal>, has been added to <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	which allows <citerefentry><refentrytitle>init</refentrytitle><manvolnum>8</manvolnum></citerefentry> to execute a file after opening the
+	console, replacing <citerefentry><refentrytitle>init</refentrytitle><manvolnum>8</manvolnum></citerefentry> as <acronym>PID</acronym>
+	<literal>1</literal>.</para>
+
+      <para revision="338050">The default <citerefentry><refentrytitle>libstand</refentrytitle><manvolnum>3</manvolnum></citerefentry> interpreter
+	has been changed to <application>Lua</application>.</para>
+
+      <para revision="339218">The lua <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry> has been updated
+	to support module blacklists.</para>
+
+      <para revision="339308">The default lua <citerefentry><refentrytitle>loader.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> has
+	been updated to include the
+	<literal>kernels_autodetect</literal> option, which defaults
+	to <literal>YES</literal>, supplementing the <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	support to list available kernels to boot introduced in
+	revision <literal>329501</literal>.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="network">
+    <title>Networking</title>
+
+    <para>This section describes changes that affect networking in
+      FreeBSD.</para>
+
+    <sect2 xml:id="network-general">
+      <title>General Network</title>
+
+      <para revision="333322" contrib="sponsor" sponsor="iXsystems">The
+	<citerefentry><refentrytitle>carp</refentrytitle><manvolnum>4</manvolnum></citerefentry> interface has been updated to keep the state as
+	<literal>INIT</literal> instead of <literal>MASTER</literal>
+	when the <literal>net.inet.carp.allow</literal> <citerefentry><refentrytitle>sysctl</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	is set to <literal>0</literal>.</para>
+
+      <para>The <citerefentry><refentrytitle>pf</refentrytitle><manvolnum>4</manvolnum></citerefentry> packet filter is now usable within
+	a <citerefentry><refentrytitle>jail</refentrytitle><manvolnum>8</manvolnum></citerefentry> using <citerefentry><refentrytitle>vnet</refentrytitle><manvolnum>9</manvolnum></citerefentry>.</para>
+
+      <para revision="334375">The <citerefentry><refentrytitle>pf</refentrytitle><manvolnum>4</manvolnum></citerefentry> packet filter has been
+	updated to use <citerefentry><refentrytitle>rmlock</refentrytitle><manvolnum>9</manvolnum></citerefentry> instead of <citerefentry><refentrytitle>rwlock</refentrytitle><manvolnum>9</manvolnum></citerefentry>,
+	resulting in significant performance improvements.</para>
+
+      <para revision="334719" contrib="sponsor" sponsor="Limelight Networks">The <literal>SO_REUSEPORT_LB</literal>
+	option has been added to the network stack, allowing multiple
+	programs or threads to bind to the same port, and incoming
+	connections load balanced using a hash function.</para>
+
+      <para revision="338253">The <citerefentry><refentrytitle>pf</refentrytitle><manvolnum>4</manvolnum></citerefentry> ioctl interface and
+	<citerefentry><refentrytitle>pfctl</refentrytitle><manvolnum>8</manvolnum></citerefentry> now support <citerefentry><refentrytitle>altq</refentrytitle><manvolnum>4</manvolnum></citerefentry> bandwidth parameters of
+	<literal>2^32</literal> bps or greater.  The
+	<acronym>HFSC</acronym> discipline has been upgraded to
+	operate correctly with bandwidth parameters up to 100 Gbps,
+	and bandwidth parameters supplied to the non-upgraded
+	disciplines will now be saturated at the prior 32-bit
+	limit.</para>
+    </sect2>
+
+    <sect2 xml:id="network-protocols">
+      <title>Network Protocols</title>
+
+      <para revision="331714" contrib="sponsor" sponsor="DARPA, AFRL">Support for token-ring networks has
+	been removed.</para>
+
+      <para revision="332490" contrib="sponsor" sponsor="DARPA, AFRL">Support for the Arcnet protocol has
+	been removed.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="ports">
+    <title>Ports Collection and Package Infrastructure</title>
+
+    <para>This section covers changes to the FreeBSD Ports
+      Collection, package infrastructure, and package maintenance and
+      installation tools.</para>
+
+    <sect2 xml:id="ports-packages">
+      <title>Packaging Changes</title>
+
+      <para>The <citerefentry><refentrytitle>pkg</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility has been updated to verson
+	1.10.5_5.</para>
+
+      <para><application>KDE</application> has been updated to version
+	5.12.5.</para>
+
+      <para><application>Perl</application> has been updated to
+	version 5.26.2.</para>
+
+      <para><application>Python</application> has been updated to
+	version 2.7.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="doc">
+    <title>Documentation</title>
+
+    <para>This section covers changes to the FreeBSD Documentation
+      Project sources and toolchain.</para>
+
+    <sect2 xml:id="doc-sources">
+      <title>Documentation Source Changes</title>
+
+      <para revision="303033" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	<citerefentry><refentrytitle>arch</refentrytitle><manvolnum>7</manvolnum></citerefentry> manual page has been added, containing details
+	specific to certain architectures.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="releng">
+    <title>Release Engineering and Integration</title>
+
+    <para>This section convers changes that are specific to the
+      FreeBSD Release Engineering processes.</para>
+
+    <sect2 xml:id="releng-changes">
+      <title>Integration Changes</title>
+
+      <para revision="332446" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	FreeBSD/i386 memory stick installation images have been
+	changed to use the <acronym>MBR</acronym> partitioning scheme
+	instead of <acronym>GPT</acronym> to address boot issues with
+	some <acronym>BIOS</acronym>es.</para>
+
+      <para revision="334337" contrib="sponsor" sponsor="The FreeBSD Foundation">The
+	FreeBSD/amd64 memory stick installation images have been
+	changed to use the <acronym>MBR</acronym> partitioning scheme
+	instead of <acronym>GPT</acronym> to address boot issues with
+	some <acronym>BIOS</acronym>es.</para>
+    </sect2>
+  </sect1>
+</article>

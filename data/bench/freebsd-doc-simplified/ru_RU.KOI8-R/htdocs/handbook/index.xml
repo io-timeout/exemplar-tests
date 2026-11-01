@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSD$
+     $FreeBSDru: frdp/www/ru/handbook/index.xml,v 1.5 2004/04/08 13:10:16 den Exp $
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="refresh" content="5;url=./../doc/ru_RU.KOI8-R/books/handbook/index.html"/>
+
+      <title>Руководство было перемещено</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+      </head>
+
+  <body class="navinclude.docs">
+    <p>Руководство более недоступено по этой ссылке.  Используйте ссылку
+      <a href="./../doc/ru_RU.KOI8-R/books/handbook/index.html">./../doc/ru_RU.KOI8-R/books/handbook/index.html</a>.
+      Ваш браузер автоматически перейдет по ней через несколько секунд.
+      Если этого не произойдет, перейдите по ссылке и обновите закладки.
+      Приносим извинения за доставленные неудобства.</p>
+  </body>
+</html>

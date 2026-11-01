@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD Java® Project</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+  </head>
+
+  <body class="navinclude.developers">
+
+  <a href="https://www.oracle.com/technetwork/java/index.html"><img src="./../java/j2j.gif" hspace="10" border="0" alt="Offizielle Java®-Seite" align="right"/></a>
+
+  <h2>Java beziehen</h2>
+
+  <p>Für FreeBSD existieren zwei verschiedene Java Development Kits:</p>
+
+  <ul>
+    <li>
+    <h3>OpenJDK</h3>
+
+    <p>Das OpenJDK® Project bietet ihnen eine native Open
+      Source-Implementierung der Java® SE-Plattform und ist in den
+      Versionen 7 und 8 für alle unterstützten FreeBSD-Versionen
+      auf den Plattformen i386 sowie amd64 verfügbar.</p>
+
+    <p>OpenJDK® 7 wird regelmäßig aktualisiert.  Lesen Sie das <a href="https://svnweb.freebsd.org/ports/head/java/openjdk7/Makefile?view=log">Revisionslog</a>,
+      um sich über Änderungen zu informieren.  Weitere Informationen sind
+      auf <a href="https://www.freshports.org/java/openjdk7">FreshPorts</a>
+      verfügbar.</p>
+
+    <p>Verwenden Sie pkg(8), um OpenJDK® 7 zu installieren:</p>
+
+    <p>
+      <code>pkg install openjdk</code>
+      <br/>
+      oder nutzen Sie die Ports-Sammlung:
+      <br/>
+      <code>cd /usr/ports/java/openjdk7
+      <br/>make install clean
+      </code>
+    </p>
+
+    <p>OpenJDK® 8 wird regelmäßig aktualisiert.  Lesen Sie das <a href="https://svnweb.freebsd.org/ports/head/java/openjdk8/Makefile?view=log">Revisionslog</a>,
+      um sich über Änderungen zu informieren.  Weitere Informationen sind
+      auf <a href="https://www.freshports.org/java/openjdk8">FreshPorts</a>
+      verfügbar.</p>
+
+    <p>Verwenden Sie pkg(8), um OpenJDK® 8 zu installieren:</p>
+
+    <p>
+      <code>pkg install openjdk8</code>
+      <br/>
+      oder nutzen Sie die Ports-Sammlung:
+      <br/>
+      <code>cd /usr/ports/java/openjdk8
+      <br/>make install clean
+      </code>
+    </p>
+    </li>
+
+    <li>
+    <h3>Oracle JDK für Linux</h3>
+
+    <p>Dieser Port installiert das für Linux gebaute Java Development Kit
+      von Oracle.  Unter FreeBSD läuft es daher im
+      Linux-Kompatibilitätsmodus.</p>
+
+    <p><code>cd /usr/ports/java/linux-oracle-jdk18
+    <br/>make install clean
+    </code></p>
+
+    <p><b>Anmerkung:</b> Bitte beachten Sie, dass es die aktuellen
+      Lizenzbedingungen von Oracle es nicht erlauben, Binärpakete
+      für FreeBSD anzubieten.  Außerdem dürfen Sie das Oracle JDK
+      nur für den persönlichen Gebrauch einsetzen.  Aus diesem Grund
+      muss auch der Quellcode vor der Installation manuell heruntergeladen
+      werden.</p>
+    </li>
+  </ul>
+
+  <h2>Dokumentation</h2>
+
+  <ul>
+    <li><a href="./../doc/de_DE.ISO8859-1/books/porters-handbook/using-java.html">Ports erstellen</a></li>
+  </ul>
+
+  <h2>Ich will helfen, indem ich ...</h2>
+
+  <h3>... Software teste.</h3>
+
+  <p>Dann laden Sie bitte die aktuelle Version herunter, installieren Sie
+    sie und versuchen Sie, Ihre Java-Anwendungen damit auszuführen.  Sollte
+    eine Anwendung nicht funktionieren, lesen Sie bitte den nächsten
+    Punkt.</p>
+
+  <h3>... Problemberichte einreiche.</h3>
+
+  <p>Wenn eine Ihrer Anwendungen nicht funktioniert oder abstürzt, sollten
+    Sie die folgenden Schritte ausführen, bevor Sie einen Problembericht
+    erstellen:</p>
+    
+  <ol>
+    <li>Versuchen Sie nochmals, die Anwendung zu starten.</li>
+    <li>Überprüfen Sie die Konfiguration Ihrer Anwendung.  Vergewissern 
+      Sie sich, dass diese korrekt ist.</li>
+    <li>Versuchen Sie, die Anwendung auf einem anderen System oder einer
+      anderen Plattform zu starten.  Haben Sie Zugriff auf eine
+      Referenzplattform, versuchen Sie es auch dort.  Dies dient dazu,
+      einzugrenzen, ob es sich um ein Problem innerhalb der Anwendung,
+      einen Java-Bug oder ein FreeBSD-spezifisches Problem handelt.</li>
+    <li>Versuchen Sie, das Problem einzugrenzen.  Handelt es sich dabei
+      um von Ihnen entwickelten Code, versuchen Sie ihn zu debuggen.
+      Falls dies nicht möglich ist, finden Sie heraus, welche Schritte
+      notwendig sind, um das Problem zu reproduzieren.</li>
+    <li>Informieren Sie das JKD-Porting-Team.  Dazu senden Sie bitte
+      eine E-Mail an <a href="mailto:freebsd-java@FreeBSD.org">freebsd-java@FreeBSD.org</a>.
+      Achten Sie darauf, dass Sie alle bereits durchgeführten Schritte
+      dokumentieren.</li>
+    <li>Zuletzt und extrem wichtig: Seien Sie bereit, mit dem Team an der
+      Lösung des Problems zu arbeiten.</li>
+  </ol>
+
+  <h3>... Dokumentation erstelle.</h3>
+
+  <p>Jeder kann bei der Dokumentation helfen.  Wenn Sie etwas in
+    der Dokumenation vermissen, schreiben Sie eine Anleitung und senden
+    Sie diese an <a href="mailto:freebsd-java@FreeBSD.org">freebsd-java@FreeBSD.org</a>.</p>
+
+  </body>
+</html>

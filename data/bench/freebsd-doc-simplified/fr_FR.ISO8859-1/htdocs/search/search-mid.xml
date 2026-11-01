@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.8
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Recherche des Message-ID des listes de diffusion</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+<body>
+
+<form action="http://www.FreeBSD.org/cgi/mid.cgi" method="get">
+<b>Message-ID :</b><br/>
+<input name="id" type="text" size="50"/>
+<input name="db" value="mid" type="hidden"/>
+<input type="submit" value="Search"/>
+</form>
+
+<form action="http://www.FreeBSD.org/cgi/mid.cgi" method="get">
+<b>Réponses à un Message-ID :</b><br/>
+<input name="db" value="irt" type="hidden"/>
+<input type="text" name="id" size="50"/>
+<input type="submit" value="Search"/>
+</form>
+
+<p>
+Vous pouvez uniquement rechercher les en-têtes de courrier électronique
+<b>Message-ID</b>, <b>Resent-Message-id</b>, <b>In-Reply-to</b>, et
+<b>References</b>.
+Un Message-ID ressemble à &lt;199802242058.MAA24843@monk.via.net&gt;.
+Aucun autre en-tête de courrier électronique n'est supporté. La base de données
+des Message-ID est mise à jour toutes les heures.</p>
+
+<a href="search.html#mailinglists">Archives au format texte des listes de diffusion</a>.
+
+</body>
+</html>

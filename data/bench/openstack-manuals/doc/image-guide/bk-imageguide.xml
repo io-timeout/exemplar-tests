@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="openstack-image-manual">
+
+    <title>OpenStack Virtual Machine Image Guide</title>
+    <?rax title.font.size="28px" subtitle.font.size="28px"?>
+<titleabbrev>VM Image Guide</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>OpenStack Foundation</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2013</year>
+            <year>2014</year>
+            <holder>OpenStack Foundation</holder>
+        </copyright>
+        <releaseinfo>current</releaseinfo>
+        <productname>OpenStack</productname>
+        <pubdate/>
+        <legalnotice role="cc-by">
+            <annotation>
+                <remark>Remaining licensing details are filled in by
+                    the template.</remark>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This guide describes how to obtain, create, and
+                modify virtual machine images that are compatible with
+                OpenStack.</para>
+        </abstract>
+        <revhistory>
+            <!-- ... continue adding more revisions here as you change this document using the markup shown below... -->
+            <revision>
+                <date>2014-10-15</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Minor revisions for Juno.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-04-17</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Minor revisions for Icehouse - moved
+                                property listing into <citetitle>Command-Line
+                                Interface Reference</citetitle> and added a note
+                                about Windows time zones.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-10-25</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Adds information about image
+                                formats, properties.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-10-17</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Havana release.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-04</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Updated title for
+                                consistency.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-28</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Initial release of this
+                                guide.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
+    </info>
+    <!-- Chapters are referred from the book file through these include statements. You can add additional chapters using these types of statements. -->
+    <xi:include href="../common/ch_preface.xml"/>
+    <xi:include href="ch_introduction.xml"/>
+    <xi:include href="ch_obtaining_images.xml"/>
+    <xi:include href="ch_openstack_images.xml"/>
+    <xi:include href="ch_modifying_images.xml"/>
+    <xi:include href="ch_creating_images_manually.xml"/>
+    <xi:include href="ch_creating_images_automatically.xml"/>
+    <xi:include href="ch_converting.xml"/>
+    <xi:include href="../common/app_support.xml"/>
+   </book>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Original revision: r39632
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <title>Порты FreeBSD -- Прочая информация</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+
+<form method="get" action="http://www.FreeBSD.org/cgi/ports.cgi">
+Поиск портов:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">Все</option>
+<option value="name">Название пакета</option>
+<option value="text">Описание</option>
+<option value="pkgdescr">Полное описание</option>
+<option value="maintainer">Сопровождающий</option>
+<option value="requires">Зависимости</option>
+</select>
+<input type="submit" value="Искать"/>
+</form>
+
+<hr/>
+
+<p>Чтобы узнать больше о портах и пакетах, смотрите главу
+  <a href="./../doc/ru_RU.KOI8-R/books/handbook/ports.html">
+  Установка Приложений: порты и пакеты</a>
+  <a href="./../doc/ru_RU.KOI8-R/books/handbook/index.html">
+  Руководства FreeBSD</a>.
+</p>
+
+<p><a href="./../doc/ru_RU.KOI8-R/books/porters-handbook/index.html">
+  Руководство FreeBSD по созданию портов</a> — это основной источник
+  информации по созданию новых портов и сопровождению существующих, включая
+  главу
+  <a href="./../doc/ru_RU.KOI8-R/books/porters-handbook/keeping-up.html">
+  Актуализация</a>.  Оно также содержит дополнительную информацию по
+  указанным ниже темам, а также ссылки для дальнейшего изучения.
+</p>
+
+<p>Также вы можете найти полезным:</p>
+
+<ul>
+  <li>Архивы
+    <a href="http://docs.FreeBSD.org/mail/current/freebsd-ports.html">
+    списка рассылки, посвящённого портам FreeBSD</a>.
+  </li>
+
+  <li>Статья
+    <a href="./../doc/en_US.ISO8859-1/articles/contributing-ports/index.html">
+    Contributing to the FreeBSD Ports Collection</a>.
+  </li>
+
+  <li>
+    <a href="http://www.FreshPorts.org">FreshPorts.org</a> — это
+    полезный инструмент для получения дополнительной информации по отдельным
+    портам, такой как текущая версия, последняя правка, и множества другой
+    полезной статистики.  Вы можете подписаться на список рассылки и
+    получать последнюю информацию о ваших любимых портах.
+  </li>
+<!--
+ <li>Here is a graph of the
+   <a href="growth/status.png">rapid rate of growth</a>
+   of the Ports Collection.</li>
+-->
+
+  <li>Страницы справочника по
+    <a href="./../cgi/man.cgi?query=ftp"><tt>ftp</tt></a>,
+    <a href="./../cgi/man.cgi?query=pkg_add"><tt>pkg_add</tt></a> и
+    <a href="./../cgi/man.cgi?query=ports"><tt>ports</tt></a>.
+  </li>
+
+  <li>
+    <a href="http://pointyhat.FreeBSD.org">Кластер построения портов и
+    пакетов</a>.
+  </li>
+
+  <li>Страницы
+    <a href="./portmgr/">Группы управления портами</a> (portmgr).
+  </li>
+
+  <li><a href="http://cvsweb.FreeBSD.org">
+    Web-интерфейс репозитория исходных кодов</a> позволяет просматривать
+    файлы в репозитории исходных кодов.  Изменения, затрагивающие всю
+    систему портов, описываются в файле
+    <a href="http://cvsweb.FreeBSD.org/ports/CHANGES">CHANGES</a>.
+    Изменения, касающиеся отдельных портов, описываются в файле
+    <a href="http://cvsweb.FreeBSD.org/ports/UPDATING">UPDATING</a>.
+    Как бы то ни было, точный ответ на любой вопрос можно получить,
+    прочитав исходный код <a href="http://cvsweb.FreeBSD.org/ports/Mk/bsd.port.mk">
+    bsd.port.mk</a> и связанных с ним файлов.
+  </li>
+</ul>
+
+</body>
+</html>

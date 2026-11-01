@@ -1,0 +1,42 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "typecheck": {
+      // Needs upstream declarations, which `compile` emits.
+      "dependsOn": ["^compile"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "outputLogs": "new-only"
+    },
+    "compile": {
+      // Gated on this package's own typecheck, so type errors fail before anything is emitted.
+      "dependsOn": ["^compile", "typecheck"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "dependsOn": ["^compile"],
+      "env": ["EXEMPLAR_FUZZ_SCALE", "EXEMPLAR_FUZZ_SEED", "EXEMPLAR_FUZZ_PATH"]
+    },
+    "conformance": {
+      "dependsOn": ["^compile"],
+      "outputs": ["reports/**"],
+      "env": ["XMLLINT", "JAVA_HOME", "EXEMPLAR_FUZZ_SCALE", "EXEMPLAR_FUZZ_SEED", "EXEMPLAR_FUZZ_PATH"]
+    },
+    "bench": {
+      "dependsOn": ["^compile"],
+      "cache": false,
+      "passThroughEnv": ["EXEMPLAR_BASELINE", "EXEMPLAR_COMMIT"]
+    },
+    "lint": {
+      // Type-aware rules read upstream declarations, which `compile` emits.
+      "dependsOn": ["^compile"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "$TURBO_ROOT$/.oxlintrc.json"],
+      "outputLogs": "new-only"
+    },
+    // Root files that belong to no package.
+    "//#lint:root": {
+      "inputs": [".github/**", ".pnpmfile.mjs", ".oxlintrc.json"],
+      "outputLogs": "new-only"
+    }
+  }
+}

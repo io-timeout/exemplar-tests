@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   The FreeBSD French Documentation Project
+   Original revision: 1.3
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>IRC</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.community">
+
+     <p>Bien que des canaux #freebsd existent sur divers
+       réseaux IRC, le projet FreeBSD ne les contrôle pas
+       ni n'approuve l'utilisation de l'IRC en tant que média
+       de support.  Vous pouvez être ignoré,
+       insulté ou mis à la porte si vous posez des
+       questions sur un canal IRC.  Cependant, vous pouvez avoir un
+       peu plus de chance avec les canaux appelés #freebsdhelp
+       lorsqu'ils existent.  Si vous voulez essayer ces canaux ou
+       n'importe quel autre canal IRC, c'est à vos risques et
+       périls et les plaintes à propos des comportements
+       sur ces canaux ne doivent pas être adressées au
+       projet FreeBSD.  Consultez également la <a href="./../doc/en_US.ISO8859-1/books/faq/support.html#IRC">FAQ</a>
+       pour plus d'informations.</p>
+
+
+</body>
+</html>

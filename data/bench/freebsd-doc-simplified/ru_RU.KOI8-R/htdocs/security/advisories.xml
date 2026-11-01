@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSD$
+
+     Original revision: 1.18
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Бюллетени безопасности FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+  <body class="navinclude.support">
+
+  <p>Данная веб страница содержит список выпущенных бюллетеней
+    безопасности FreeBSD.  По общим вопросам безопасности FreeBSD
+    обращайтесь к странице <a href="security.html">
+    информационной безопасности FreeBSD</a>.</p>
+
+  <p>Выпуски, затрагивающие коллекцию портов FreeBSD, представлены в
+    документе <a href="http://vuxml.FreeBSD.org/">
+    FreeBSD VuXML</a>.</p>
+
+  
+
+</body>
+</html>

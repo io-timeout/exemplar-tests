@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="section_networking-options-reference">
+    <title>Networking configuration options</title>
+<para>The options and descriptions listed in this introduction are auto generated from the code in
+        the Networking service project, which provides software-defined networking between VMs run
+        in Compute. The list contains common options, while the subsections list the options for the
+        various networking plug-ins.</para>
+
+<xi:include href="../../common/tables/neutron-common.xml"/>
+
+<xi:include href="section_networking-plugins.xml"/>
+
+<xi:include href="section_rpc-for-networking.xml"/>
+
+<section xml:id="networking-options-agent">
+<title>Agent</title>
+<para>Use the following options to alter agent-related settings.</para>
+<xi:include href="../../common/tables/neutron-agent.xml"/>
+</section>
+
+<section xml:id="networking-options-api">
+<title>API</title>
+<para>Use the following options to alter API-related settings.</para>
+<xi:include href="../../common/tables/neutron-api.xml"/>
+</section>
+
+<section xml:id="networking-options-auth_token">
+<title>Token authentication</title>
+<para>Use the following options to alter token authentication settings.</para>
+<xi:include href="../../common/tables/neutron-auth_token.xml"/>
+</section>
+
+<section xml:id="networking-options-compute">
+<title>Compute</title>
+<para>Use the following options to alter Compute-related settings.</para>
+<xi:include href="../../common/tables/neutron-compute.xml"/>
+</section>
+
+<section xml:id="networking-options-db">
+<title>Database</title>
+<para>Use the following options to alter Database-related settings.</para>
+<xi:include href="../../common/tables/neutron-database.xml"/>
+</section>
+
+<section xml:id="networking-options-debug">
+<title>Logging</title>
+<para>Use the following options to alter debug settings.</para>
+<xi:include href="../../common/tables/neutron-debug.xml"/>
+</section>
+
+<section xml:id="networking-options-dhcp">
+<title>DHCP agent</title>
+<para>Use the following options to alter Database-related settings.</para>
+<xi:include href="../../common/tables/neutron-dhcp_agent.xml"/>
+</section>
+
+<section xml:id="networking-options-dvr">
+<title>Distributed virtual router</title>
+<para>Use the following options to alter DVR-related settings.</para>
+<xi:include href="../../common/tables/neutron-dvr.xml"/>
+</section>
+
+<section xml:id="networking-options-embrane_lb">
+<title>Embrane LBaaS driver</title>
+<para>Use the following options to alter Embrane
+Load-Balancer-as-a-Service related settings.</para>
+<xi:include href="../../common/tables/neutron-embrane_lb.xml"/>
+</section>
+
+<section xml:id="networking-options-fwaas">
+<title>Firewall-as-a-Service driver</title>
+<para>Use the following options in the <filename>fwaas_driver.ini</filename>
+    file for the FWaaS driver.</para>
+<xi:include href="../../common/tables/neutron-fwaas.xml"/>
+</section>
+
+<section xml:id="networking-options-ipv6_ra">
+<title>IPv6 router advertisement</title>
+<para>Use the following options to alter IPv6 RA settings.</para>
+<xi:include href="../../common/tables/neutron-ipv6_ra.xml"/>
+</section>
+
+<section xml:id="networking-options-l3_agent">
+<title>L3 agent</title>
+<para>Use the following options in the <filename>l3_agent.ini</filename>
+    file for the L3 agent.</para>
+<xi:include href="../../common/tables/neutron-l3_agent.xml"/>
+</section>
+
+<section xml:id="networking-options-lbaas">
+<title>Load-Balancer-as-a-Service agent</title>
+<para>Use the following options in the <filename>lbaas_agent.ini</filename>
+    file for the LBaaS agent.</para>
+<xi:include href="../../common/tables/neutron-lbaas.xml"/>
+<xi:include href="../../common/tables/neutron-lbaas_haproxy.xml"/>
+<xi:include href="../../common/tables/neutron-lbaas_netscaler.xml"/>
+<xi:include href="../../common/tables/neutron-lbaas_radware.xml"/>
+</section>
+
+<section xml:id="networking-options-logging">
+<title>Logging</title>
+<para>Use the following options to alter logging settings.</para>
+<xi:include href="../../common/tables/neutron-logging.xml"/>
+</section>
+
+<section xml:id="networking-options-metadata">
+<title>Metadata Agent</title>
+<para>Use the following options in the
+<filename>metadata_agent.ini</filename> file for the Metadata agent.</para>
+    <xi:include href="../../common/tables/neutron-metadata.xml"/>
+</section>
+
+<section xml:id="networking-options-metering_agent">
+<title>Metering Agent</title>
+<para>Use the following options in the
+<filename>metering_agent.ini</filename> file for the Metering agent.</para>
+    <xi:include href="../../common/tables/neutron-metering_agent.xml"/>
+</section>
+
+<section xml:id="networking-options-policy">
+<title>Policy</title>
+<para>Use the following options in the
+<filename>neutron.conf</filename> file to change policy settings.</para>
+    <xi:include href="../../common/tables/neutron-policy.xml"/>
+</section>
+
+<section xml:id="networking-options-quotas">
+<title>Quotas</title>
+<para>Use the following options in the
+<filename>neutron.conf</filename> file for the quota system.</para>
+    <xi:include href="../../common/tables/neutron-quotas.xml"/>
+</section>
+
+<section xml:id="networking-options-rootwrap">
+<title>Rootwrap</title>
+<para>Use the following options in the
+<filename>neutron.conf</filename> file for the rootwrap settings</para>
+    <xi:include href="../../common/tables/neutron-rootwrap.xml"/>
+</section>
+
+<section xml:id="networking-options-scheduler">
+<title>Scheduler</title>
+<para>Use the following options in the
+<filename>neutron.conf</filename> file to change scheduler settings.</para>
+    <xi:include href="../../common/tables/neutron-scheduler.xml"/>
+</section>
+
+<section xml:id="networking-options-securitygroups">
+<title>Security Groups</title>
+<para>Use the following options in the configuration file
+for your driver to change security group settings.</para>
+    <xi:include href="../../common/tables/neutron-securitygroups.xml"/>
+</section>
+
+<section xml:id="networking-options-ssl">
+<title>SSL and Certification Authority</title>
+<para>Use the following options in the
+<filename>neutron.conf</filename> file to enable SSL.</para>
+    <xi:include href="../../common/tables/neutron-ca.xml"/>
+</section>
+
+<section xml:id="networking-options-testing">
+<title>Testing</title>
+<para>Use the following options to alter testing-related features.</para>
+    <xi:include href="../../common/tables/neutron-testing.xml"/>
+</section>
+
+<section xml:id="networking-options-varmour">
+<title>vArmour Firewall-as-a-Service driver</title>
+<para>Use the following options in the <filename>l3_agent.ini</filename>
+    file for the vArmour FWaaS driver.</para>
+<xi:include href="../../common/tables/neutron-varmour.xml"/>
+</section>
+
+<section xml:id="networking-options-vpn">
+<title>VPN</title>
+<para>Use the following options in the <filename>vpn_agent.ini</filename>
+    file for the VPN agent.</para>
+    <xi:include href="../../common/tables/neutron-vpn.xml"/>
+</section>
+
+</section>

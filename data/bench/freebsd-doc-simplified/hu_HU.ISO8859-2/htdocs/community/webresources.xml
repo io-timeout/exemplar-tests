@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/community/webresources.xml
+     %SRCID%	1.4
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>Webes források</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.community">
+
+    <p>Ez a weboldal a legjobb információforrás,
+      ráadásul rengeteg tükrözéssel
+      rendelkezik világszerte.  Próbálkozzunk a
+      www.<b>országrövidítés</b>.FreeBSD.org
+      címmel (például a <a href="http://www.de.FreeBSD.org/">www.de.FreeBSD.org</a> a
+      németországi, vagy a <a href="http://www.au.FreeBSD.org/">www.au.FreeBSD.org</a> az
+      ausztráliai tükrözés), vagy
+      válasszunk egy szervert a <a href="./index.html">főoldal</a> legördülő
+      listájából.</p>
+
+    <p>A FreeBSD honlapja több nyelven is olvasható.  A
+      különböző fordítások linkjeit a
+      <a href="./index.html">főoldalon</a> találhatjuk
+      meg.</p>
+
+    <p>Ezenkívül még több nem angol nyelvű
+      forrás is létezik:</p>
+
+    <ul>
+      <li><a href="./../doc/pt_BR/books/faq/index.html">Brazíliai portugál GYIK</a>
+	</li>
+
+      <li><a href="http://www.FreeBSD-fr.org/">Francia</a></li>
+
+      <li><a href="http://www.FreeBSD.or.id">Indonéz</a></li>
+
+      <li><a href="http://www.jp.FreeBSD.org/">Japán</a></li>
+
+      <li><a href="./../zh/FAQ/FAQ.html">Kínai GYIK</a></li>
+
+      <li><a href="http://www.kr.FreeBSD.org/">Koreai</a></li>
+
+      <li><a href="./../hu/">Magyar</a></li>
+
+      <li><a href="http://www.gufi.org/">Olasz</a></li>
+
+      <li><a href="http://www.FreeBSD.org.ru/">Orosz</a>, <a href="./../doc/ru/books/faq/index.html">GYIK</a></li>
+
+      <li><a href="http://npf.pt.FreeBSD.org/">Portugál</a></li>
+    </ul>
+
+    <p>A FreeBSD jelenlegi állapotáról
+      szóló információkat a <a href="./../news/newsflash.html">Hírek</a> oldalon
+      találjuk.</p>
+
+  </body>
+</html>

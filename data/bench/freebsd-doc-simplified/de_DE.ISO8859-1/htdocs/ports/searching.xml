@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Die FreeBSD Ports-Sammlung durchsuchen</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+  <form method="get" action="//www.FreeBSD.org/cgi/ports.cgi">
+Search ports for:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">All</option>
+<option value="name">Package Name</option>
+<option value="text">Description</option>
+<option value="pkgdescr">Long description</option>
+<option value="maintainer">Maintainer</option>
+<option value="requires">Requires</option>
+</select>
+<input type="submit" value="Submit"/>
+</form>
+
+  <hr/>
+
+  <p>Das Formular auf dieser Seite erlaubt es Ihnen, nach bestimmten
+    Ports zu suchen.  Wenn Sie eine Suche starten, werden Sie auf
+    eine <a href="./../cgi/ports.cgi">erweiterte Version der
+    Suchfunktion</a> umgeleitet.</p>
+
+  <p>Haben Sie die Ports-Sammlung bereits installiert, können
+    Sie die Suche auch lokal im Verzeichnis <tt>/usr/ports</tt>
+    durchführen.  Dazu geben Sie einfach
+    <tt>make search name=</tt><em>Suchbegriff</em> ein.  Die Datei
+    <a href="http://svnweb.FreeBSD.org/ports/head/Mk/bsd.port.subdir.mk?view=log">
+    bsd.port.subdir.mk</a> beschreibt alle möglichen
+    Suchoptionen.</p>
+
+  <p>Alternativ können Sie auch die Seite <a href="https://www.FreshPorts.org">FreshPorts.org</a> besuchen
+    oder die von den Betreibern angebotenen Mailinglisten
+    abonnieren.</p>
+
+  </body>
+</html>

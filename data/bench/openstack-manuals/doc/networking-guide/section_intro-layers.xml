@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % openstack SYSTEM "../common/entities/openstack.ent">
+%openstack;
+]>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="intro-layers">
+    <title>Networking layers</title>
+
+    <para>Network communications is commonly described in terms of the OSI model,
+    a seven-layer model that describes how various protocols and mechanisms fit
+    together. Each layer depends on the protocols in the layer beneath it.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>7 Application</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>6 Presentation</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>5 Session</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>4 Transport</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>3 Network</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>2 Data link</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>1 Physical</term>
+        <listitem>
+          <para>FIXME</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>OpenStack Networking is primarily concerned with Layer 2 and Layer 3.</para>
+
+    <para>Layer-3 protocols include the Internet Protocal Suite, which includes
+    IPv4, IPv6, and the Internet Control Message Protocol (ICMP).</para>
+</section>

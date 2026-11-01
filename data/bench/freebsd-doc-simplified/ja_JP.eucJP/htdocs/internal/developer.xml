@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Japanese Documentation Project -->
+<!-- Original revision: r51679 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD コミッターのためのリソース</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+  </head>
+
+    <body class="navinclude.docs">
+
+    <h2><a href="./../doc/en_US.ISO8859-1/articles/committers-guide/">コミッターのためのガイド</a></h2>
+
+    <p>すべての新規コミッターを対象とした、
+      技術的な詳細とポリシーの詳細を含む包括的な文書です。
+      前者については、<a href="./../doc/en_US.ISO8859-1/articles/committers-guide/subversion-primer.html">
+	Subversion VCS</a>, <a href="./../doc/en_US.ISO8859-1/articles/committers-guide/bugzilla.html">
+	Bugzilla</a> バグ追跡システム、および <a href="./../doc/en_US.ISO8859-1/articles/committers-guide/ssh.guide.html">
+	SSH Quick-Start Guide</a> 章をご覧ください。</p>
+
+    <p>新しいコミッターが知るべきほとんどすべてのことが記述されています。
+      より多くのことを知るために、新しい貢献者のための FreeBSD
+      ドキュメンテーションプロジェクト入門や Ports ガイドも参照してください。</p>
+
+    <h2><a href="./../doc/en_US.ISO8859-1/books/fdp-primer/">新しい貢献者のための
+	FreeBSD ドキュメンテーションプロジェクト入門</a></h2>
+
+    <p>この入門書には、FreeBSD
+      ドキュメンテーションプロジェクトへの貢献を始めるために知っておくべきすべてのことが書いてあります。
+      あなたが使うであろう (必須や推奨される) ツールやソフトウェアから、
+      ドキュメンテーションプロジェクトの背後にある哲学まで記述しています。</p>
+
+    <h2><a href="./../doc/en_US.ISO8859-1/books/porters-handbook/index.html">port 作成者のためのハンドブック</a></h2>
+
+    <p>FreeBSD ports 作成者のためのガイド。公式的な <a href="./../doc/en_US.ISO8859-1/books/porters-handbook/versions.html">__FreeBSD_version の値のテーブル</a> があります。</p>
+
+    <h2><a href="./../doc/en_US.ISO8859-1/books/fdp-primer/the-website-build.html">
+	FreeBSD Web ページの構築方法</a></h2>
+
+    <p>この文書は、FreeBSD Web ページを手動で SVN
+      リポジトリから構築して更新する方法を解説しています。</p>
+
+    <h2>FreeBSD のプロジェクト</h2>
+      <ul>
+	<li><a href="./docproj/docproj.html">FreeBSD
+	  ドキュメンテーションプロジェクト</a></li>
+	<li><a href="./../releng/index.html">FreeBSD
+	  リリースエンジニアリング</a></li>
+	<li><a href="./platforms/index.html">FreeBSD
+	  ハードウェアプラットフォームプロジェクト</a></li>
+	<li><a href="./projects/index.html">FreeBSD 開発プロジェクト</a></li>
+    </ul>
+
+    <h2>その他のリソース</h2>
+    <ul>
+      <li><a href="./developers/cvs.html">ソースコードリポジトリ</a></li>
+      <li><a href="./support.html">バグ報告</a></li>
+      <li><a href="./security/index.html">FreeBSD のセキュリティ情報</a></li>
+      <li><a href="./copyright/copyright.html">著作権</a></li>
+      <li><a href="http://wiki.FreeBSD.org">FreeBSD Wiki</a></li>
+    </ul>
+
+    <p><a href="internal.html">FreeBSD Internal ホーム</a></p>
+
+  </body>
+</html>

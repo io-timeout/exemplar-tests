@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/where.xml
+     %SRCID%	1.105
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>A FreeBSD beszerzése</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+    <a name="releases"/>
+
+    <h2><a href="./../releases/index.html">Kiadási
+      információk</a></h2>
+
+    <p>Részletes leírás a régi, jelenlegi
+      és jövőbeli kiadásokról.
+      Először itt érdemes
+      tájékozódni a legfrissebb FreeBSD
+      0kiadásokról.</p>
+
+    <a name="install"/>
+
+    <h2><a href="./../doc/hu/books/handbook/install.html">A FreeBSD telepítése</a>
+      </h2>
+
+    <p>A FreeBSD telepítésére rengeteg
+      lehetőségünk van, telepíthetjük
+      például CD-ROM, DVD-ROM, vagy floppy
+      lemezekről, MS-DOS® partícióról,
+      mágnesszalagról, anonim FTP kapcsolaton
+      keresztül, vagy NFS állományrendszerről.
+      Mielőtt letöltenénk a teljes FreeBSD
+      disztribúciót, olvassuk el a <a href="./../doc/hu/books/handbook/install.html">telepítési útmutatót</a>.
+      </p>
+
+    <a name="distribution"/>
+
+    <h2>A FreeBSD megvásárlása</h2>
+
+    <p>A FreeBSD a <a href="http://www.freebsdmall.com/">FreeBSD Mall</a>-tól,
+      vagy a többi <a href="./../doc/hu/books/handbook/mirrors.html">CD-ROM és DVD-ROM terjesztő</a>
+      egyikétől megvásárolható CD-ROM
+      vagy DVD-ROM lemezen.</p>
+
+    <a name="download"/>
+
+    <h2>A FreeBSD letöltése</h2>
+
+    <table class="tblbasic">
+      <thead>
+	<tr style="text-align: center;">
+	  <td colspan="2">Verzió és platform</td>
+	  <td>Disztribúció</td>
+	  <td title="ISO9660 CD lemezkép"><a href="./../doc/hu/books/handbook/install-diff-media.html#INSTALL-CDROM">ISO</a></td>
+	  <td>Kiadási<br/>jegyzetek</td>
+	  <td>Hardverjegyzék</td>
+	  <td>Telepítési<br/>jegyzetek</td>
+	  <td>Hibajegyzék</td>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <td colspan="2">FreeBSD 12.0-RELEASE</td>
+	  <td colspan="2"/>
+	  <td rowspan="7"><a href="./../releases/12.0R/relnotes.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./../releases/12.0R/hardware.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./doc/hu/books/handbook/install.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./../releases/12.0R/errata.html">[Megtekint]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>amd64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>i386</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>ia64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>pc98</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>powerpc</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>sparc64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/12.0-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td colspan="2">FreeBSD 11.2-RELEASE</td>
+	  <td colspan="2"/>
+	  <td rowspan="7"><a href="./../releases/11.2R/relnotes.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./../releases/11.2R/hardware.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./../releases/11.2R/installation.html">[Megtekint]</a></td>
+	  <td rowspan="7"><a href="./../releases/11.2R/errata.html">[Megtekint]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>amd64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>i386</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>ia64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>pc98</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>powerpc</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>sparc64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/11.2-RELEASE">[Disztribúció]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/ISO-IMAGES/11.2/">[ISO]</a></td>
+ 	</tr>
+      </tbody>
+    </table>
+
+    <p><em>Megjegyzés:</em> Ha nem tudjuk eldönteni, melyik
+      platformra vagy architektúrára van
+      szükségünk, akkor nagyon
+      valószínű, hogy az <em>i386</em> fog
+      kelleni.</p>
+
+    <p>Ha az FTP kapcsolaton keresztüli letöltést
+      választjuk, a kézikönyvben
+      található <a href="./../doc/hu/books/handbook/mirrors-ftp.html"><strong>tükörszerverek</strong></a>
+      listájában keressük meg a hozzánk
+      legközelebbi kiszolgálót.
+      Lehetőségünk van letölteni a FreeBSD
+      legújabb változatát a BitTorrent protokollon
+      keresztül is.  Az ehhez szükséges <q>.torrent</q>
+      állományok a <a href="http://torrents.FreeBSD.org:8080/">FreeBSD BitTorrent Tracker</a>
+      honlapjáról érhetőek el.</p>
+
+    
+  <div>
+    <a name="helptest"/>
+    <h2>Segítsünk a következő FreeBSD kiadás
+      tesztelésében!</h2>
+
+    <p>A fejlesztőink és kiadásszervezőink a
+      következő FreeBSD kiadáson
+      dolgoznak, ha segíteni szeretnénk a
+      munkájukat, töltsük le a legfrissebb
+      tesztverziót.  Vegyük
+      figyelembe, hogy ezek a verziók — a
+      természetüknél fogva —
+      kizárólag csak tesztelésre és nem
+      éles használatra alkalmasak.</p>
+
+    <table class="tblbasic">
+      <thead>
+        <tr style="text-align: center;">
+          <td colspan="2">Verzió és platform</td>
+          <td>Disztribúció</td>
+          <td title="ISO9660 CD image"><a href="./doc/en_US.ISO8859-1/books/handbook/install-diff-media.html#INSTALL-CDROM">ISO</a></td>
+          <td>Jelenlegi állapot</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">FreeBSD 12.2-BETA2</td>
+          <td colspan="2"/>
+          <td rowspan="7"><a href="http://wiki.freebsd.org/Releng/12.2TODO">[Megtekint]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>amd64</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/amd64/12.2-BETA2">[Disztribúció]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>i386</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/i386/12.2-BETA2">[Disztribúció]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/i386/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>powerpc64</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc64/12.2-BETA2">[Disztribúció]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>sparc64</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/sparc64/12.2-BETA2">[Disztribúció]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/sparc64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+  </div>
+
+
+    <p>Ha érdekelnek minket a FreeBSD-CURRENT (vagy
+      13.0-CURRENT) kísérleti jellegű,
+      fejlesztők és tesztelők számára
+      készült <strong>pillanatkiadásai</strong>,
+      tekintsünk meg a <a href="./snapshots/">pillanatkiadásokat tároló szerver</a>
+      oldalát.  A régebbi, jelenlegi és tervezett
+      kiadásokkal kapcsolatos további
+      információkat a <a href="./releases/index.html">kiadások információs oldalán</a>
+      találhatjuk meg.</p>
+
+    <a name="derived"/>
+    <h2>A FreeBSD-ből származó operációs
+      rendszerek disztribúciói</h2>
+
+    <p>A FreeBSD széleskörűen használt más
+      kereskedelmi és nyílt forrású
+      operációs rendszerek
+      építőelemeként.  Az alábbi
+      projektek nagymértékben elterjedtek és
+      különleges jelentőséggel bírnak a
+      FreeBSD felhasználói számára.</p>
+
+    <ul>
+      <li>
+	<p>A <a href="http://www.pcbsd.org">PC-BSD</a> a FreeBSD egyik
+	  leszármazottja, grafikus telepítővel
+	  és lenyűgöző asztali
+	  eszközökkel, amelyek a hétköznapi
+	  felhasználók életét hivatottak
+	  megkönnyíteni.</p>
+      </li>
+    </ul>
+
+    <a name="apps"/>
+
+    <h2>Alkalmazások és segédprogramok</h2>
+
+    <h3>A Portgyűjtemény</h3>
+
+    <p>A FreeBSD Portgyűjteménye a FreeBSD-re portolt
+      alkalmazások egy változatos gyűjtése.</p>
+
+    <ul>
+      <li><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/">FreeBSD Portgyűjtemény</a>
+	</li>
+
+      <li><a href="./../ports/index.html">A Portgyűjtemény elérése webes felületen</a>
+	</li>
+
+      <li><a href="http://www.freshports.org/">FreshPorts — egy fejlettebb webes felület a Portgyűjtemény böngészéséhez</a>
+	</li>
+    </ul>
+
+    <p>Ha meg szeretnénk tudni, hogy saját kedvenc
+      szoftverünkkel <em>mi magunk</em> hogyan járulhatunk
+      hozzá a Portgyűjtemény
+      fejlesztéséhez, vessünk egy pillantást a
+      <em><a href="./../doc/en/books/porters-handbook/index.html">Porterek kézikönyvére</a></em>
+      és a <em><a href="./../doc/en/articles/contributing/index.html">Hozzájárulás a FreeBSD-hez</a></em>
+      című cikkre.</p>
+
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD Project - Administration und Management</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <h2>Einführung</h2>
+
+  <p>Diese Seite enthält eine Auflistung von Teams, Gruppen und
+    Einzelpersonen innerhalb des FreeBSD Projects und beschreibt
+    deren Rolle und Verantwortungsbereiche innerhalb des Projekts.
+    Außerdem finden Sie hier Tätigkeitsbeschreibungen
+    sowie Kontaktinformationen.  Um Missverständnissen
+    vorzubeugen, wurden die Bezeichnungen der Teams und Gruppen
+    <b>nicht</b> übersetzt.</p>
+
+  <ul>
+    <li>Projektmanagement
+      <ul>
+	<li><a href="#t-core">Core Team</a></li>
+	<li><a href="#t-doceng">Documentation Engineering Team</a></li>
+	<li><a href="#t-portmgr">Port Management Team</a></li>
+	<li><a href="#t-ports-secteam">Ports Security Team</a></li>
+      </ul>
+    </li>
+    <li>Release Engineering
+      <ul>
+	<li><a href="#t-re">Primary Release Engineering Team</a></li>
+	<li><a href="#t-re-builder">Builders Release Engineering Team</a></li>
+      </ul>
+    </li>
+    <li>Teams
+      <ul>
+	<li><a href="#t-donations">Donations Team</a></li>
+	<!--
+	<li><a href="#t-marketing">Marketing Team</a></li>
+	-->
+	<li><a href="#t-secteam">Security Team</a></li>
+	<li><a href="#t-vendor">Vendor Relations</a></li>
+      </ul>
+    </li>
+    <li>Sekretäre
+      <ul>
+	<li><a href="#t-core-secretary">Core Team Secretary</a></li>
+	<li><a href="#t-portmgr-secretary">Port Management Team
+	  Secretary</a></li>
+      </ul>
+    </li>
+    <li>Interne Verwaltung
+       <ul>
+	<li><a href="#t-accounts">Accounts Team</a></li>
+	<li><a href="#t-backups">Backup Administrators</a></li>
+	<li><a href="#t-bugmeister">Bugmeisters</a></li>
+	<li><a href="#t-clusteradm">Cluster Administrators</a></li>
+	<li><a href="#t-dnsadm">DNS Administrators</a></li>
+	<li><a href="#t-forum-admins">Forum Administrators</a></li>
+	<li><a href="#t-github-automation">GitHub Repository Mirror</a></li>
+	<li><a href="#t-jenkins-admin">Jenkins Continuous Integration
+	  Testing Administrators</a></li>
+	<li><a href="#t-mirror-admin">FTP/WWW Mirror Site
+	  Coordinators</a></li>
+	<li><a href="#t-phabric-admin">Phabricator Code Review
+	  Administration</a></li>
+	<li><a href="#t-postmaster">Postmaster Team</a></li>
+	<li><a href="#t-subversion">Subversion Administrators</a></li>
+	<li><a href="#t-webmaster">Webmaster Team</a></li>
+	<li><a href="#t-wiki">Wiki Admin Team</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <hr/>
+
+  <h3><a name="t-core">FreeBSD Core Team</a>
+    &lt;<a href="mailto:core@FreeBSD.org">core@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Core Team bildet den "Vorstand" des Projekts.  Es legt
+    fest, in welche Richtung sich das FreeBSD Project entwickelt und
+    verwaltet zusätzlich verschiedene Bereiche des Projekts.  Das
+    Core Team wird von den aktiven FreeBSD-Entwicklern gewählt.</p>
+
+  <ul>
+    <li>Allan Jude <email xmlns="http://docbook.org/ns/docbook">allanjude@FreeBSD.org</email> (Clusteradm Liaison)</li>
+    <li>Benedict Reuschling <email xmlns="http://docbook.org/ns/docbook">bcr@FreeBSD.org</email> (Foundation Liaison)</li>
+    <li>Brooks Davis <email xmlns="http://docbook.org/ns/docbook">brooks@FreeBSD.org</email> (Security Team Liaison)</li>
+    <li>Hiroki Sato <email xmlns="http://docbook.org/ns/docbook">hrs@FreeBSD.org</email> (Doceng Team Liaison)</li>
+    <li>Jeff Roberson <email xmlns="http://docbook.org/ns/docbook">jeff@FreeBSD.org</email></li>
+    <li>John Baldwin <email xmlns="http://docbook.org/ns/docbook">jhb@FreeBSD.org</email> (Bugmeister and Release Engineering Team Liaison)</li>
+    <li>Kris Moore <email xmlns="http://docbook.org/ns/docbook">kmoore@FreeBSD.org</email></li>
+    <li>Sean Chittenden <email xmlns="http://docbook.org/ns/docbook">seanc@FreeBSD.org</email> (CI and Portmgr Team Liaison)</li>
+    <li>Warner Losh <email xmlns="http://docbook.org/ns/docbook">imp@FreeBSD.org</email> (Code-of-Conduct Committee Liaison)</li>
+  </ul>
+
+  <h3><a name="t-doceng">FreeBSD Documentation Engineering Team</a>
+    &lt;<a href="mailto:doceng@FreeBSD.org">doceng@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Documentation Engineering Team legt die Vorgaben
+    für die Committer des Documentation Projects fest und
+    kontrolliert auch deren Einhaltung.  Die <a href="./../internal/doceng.html">Doceng Team Charter</a>
+    beschreibt die Aufgaben und Verantwortungsbereiche dieses
+    Teams ausführlich.</p>
+
+  <ul>
+    <li>Glen Barber <email xmlns="http://docbook.org/ns/docbook">gjb@FreeBSD.org</email></li>
+    <li>Warren Block <email xmlns="http://docbook.org/ns/docbook">wblock@FreeBSD.org</email></li>
+    <li>Marc Fonvieille <email xmlns="http://docbook.org/ns/docbook">blackend@FreeBSD.org</email></li>
+    <li>Benedict Reuschling <email xmlns="http://docbook.org/ns/docbook">bcr@FreeBSD.org</email></li>
+    <li>Gábor Kövesdán <email xmlns="http://docbook.org/ns/docbook">gabor@FreeBSD.org</email></li>
+    <li>Hiroki Sato <email xmlns="http://docbook.org/ns/docbook">hrs@FreeBSD.org</email></li>
+    <li>Ryusuke SUZUKI <email xmlns="http://docbook.org/ns/docbook">ryusuke@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-portmgr">FreeBSD Port Management Team</a>
+    &lt;<a href="mailto:portmgr@FreeBSD.org">portmgr@FreeBSD.org</a>&gt;</h3>
+
+  <p>Hauptaufgabe des FreeBSD Port Management Teams ist es, dafür
+    zu sorgen, dass die FreeBSD-Port-Entwickler eine funktionierende,
+    stabile, aktuelle und umfangreiche Ports-Sammlung bereitstellen.
+    Dazu koordiniert das Team die Arbeit der Entwickler, die an der
+    Ports-Sammlung arbeiten.  Die <a href="./../portmgr/charter.html">Portmgr Team Charter</a>
+    beschreibt die Aufgaben und Verantwortungsbereiche dieses
+    Teams ausführlich.</p>
+
+  <ul>
+    <li>Adam Weinberger <email xmlns="http://docbook.org/ns/docbook">adamw@FreeBSD.org</email></li>
+    <li>Antoine Brodin <email xmlns="http://docbook.org/ns/docbook">antoine@FreeBSD.org</email></li>
+    <li>Baptiste Daroussin <email xmlns="http://docbook.org/ns/docbook">bapt@FreeBSD.org</email> (Core Team Liaison)</li>    
+    <li>Bryan Drewery <email xmlns="http://docbook.org/ns/docbook">bdrewery@FreeBSD.org</email> (Release Engineering Team Liaison)</li>
+    <li>Mathieu Arnold <email xmlns="http://docbook.org/ns/docbook">mat@FreeBSD.org</email> (Cluster Administration Team Liaison)</li>
+    <li>René Ladan <email xmlns="http://docbook.org/ns/docbook">rene@FreeBSD.org</email> (Secretary)</li>
+    <li>Steve Wills <email xmlns="http://docbook.org/ns/docbook">swills@FreeBSD.org</email></li>
+  </ul>
+
+  <hr/>
+
+  <h3><a name="t-ports-secteam">FreeBSD Ports Security Team</a>
+    &lt;<a href="mailto:ports-secteam@FreeBSD.org">ports-secteam@FreeBSD.org</a>&gt;</h3>
+
+  <p>Die Hauptaufgabe des FreeBSD Port Security Teams ist die 
+    rasche Reaktion auf Sicherheitsprobleme, die in der FreeBSD
+    Ports-Sammlung auftreten.  Sie informieren die Anwender
+    über Bugs, Sicherheitslücken, bekannte Angriffe und andere
+    Risiken.  Lesen Sie bitte die entsprechende <a href="https://wiki.freebsd.org/ports-secteam">Wiki</a>-Seite
+    für weitere Informationen.</p>
+
+  <ul>
+    <li>Dag-Erling Smørgrav <email xmlns="http://docbook.org/ns/docbook">des@FreeBSD.org</email></li>
+    <li>Dmitry Marakasov <email xmlns="http://docbook.org/ns/docbook">amdmi3@FreeBSD.org</email></li>
+    <li>Eitan Adler <email xmlns="http://docbook.org/ns/docbook">eadler@FreeBSD.org</email></li>
+    <li>Eygene Ryabinkin <email xmlns="http://docbook.org/ns/docbook">rea@FreeBSD.org</email></li>
+    <li>Jason Helfman <email xmlns="http://docbook.org/ns/docbook">jgh@FreeBSD.org</email></li>
+    <li>Jochen Neumeister <email xmlns="http://docbook.org/ns/docbook">joneum@FreeBSD.org</email></li>
+    <li>Martin Wilke <email xmlns="http://docbook.org/ns/docbook">miwi@FreeBSD.org</email></li>
+    <li>Ryan Steinmetz <email xmlns="http://docbook.org/ns/docbook">zi@FreeBSD.org</email></li>
+    <li>Simon L. B. Nielsen <email xmlns="http://docbook.org/ns/docbook">simon@FreeBSD.org</email></li>
+    <li>Sofian Brabez <email xmlns="http://docbook.org/ns/docbook">sbz@FreeBSD.org</email></li>
+    <li>Steve Wills <email xmlns="http://docbook.org/ns/docbook">swills@FreeBSD.org</email></li>
+    <li>Thomas Zander <email xmlns="http://docbook.org/ns/docbook">riggs@FreeBSD.org</email></li>
+    <li>Wesley Shields <email xmlns="http://docbook.org/ns/docbook">wxs@FreeBSD.org</email></li>
+    <li>Xin Li <email xmlns="http://docbook.org/ns/docbook">delphij@FreeBSD.org</email></li>
+  </ul>
+
+  <hr/>
+
+  <h3><a name="t-re">Primary Release Engineering Team</a>
+    &lt;<a href="mailto:re@FreeBSD.org">re@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das Primary Release Engineering Team erstellt und
+    veröffentlicht die Zeitpläne für die
+    Bereitstellung der offiziellen FreeBSD-Releases, verfügt
+    "Code Freezes" und wartet die verschiedenen
+    <code>releng/*</code>-Zweige.  Die <a href="./../releng/charter.html">Release Engineering Team
+    Charter</a> beschreibt die Aufgaben und Verantwortungsbereiche
+    dieses Teams ausführlich.</p>
+
+  <ul>
+    <li>Glen Barber <email xmlns="http://docbook.org/ns/docbook">gjb@FreeBSD.org</email> (Lead)</li>
+    <li>Konstantin Belousov <email xmlns="http://docbook.org/ns/docbook">kib@FreeBSD.org</email></li>
+    <li>Bryan Drewery <email xmlns="http://docbook.org/ns/docbook">bdrewery@FreeBSD.org</email></li>
+    <li>Marc Fonvieille <email xmlns="http://docbook.org/ns/docbook">blackend@FreeBSD.org</email></li>
+    <li>Xin Li <email xmlns="http://docbook.org/ns/docbook">delphij@FreeBSD.org</email></li>
+    <li>Hiroki Sato <email xmlns="http://docbook.org/ns/docbook">hrs@FreeBSD.org</email></li>
+    <li>Gleb Smirnoff <email xmlns="http://docbook.org/ns/docbook">glebius@FreeBSD.org</email></li>
+    <li>Marius Strobl <email xmlns="http://docbook.org/ns/docbook">marius@FreeBSD.org</email> (Deputy Lead)</li>
+  </ul>
+
+  <h3><a name="t-re-builder">Builders Release Engineering Team</a>
+    &lt;<a href="mailto:re-builder@FreeBSD.org">re-builder@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Builders Release Engineering Team ist für den
+    Bau von FreeBSD-Releases auf allen unterstützten Plattformen
+    verantwortlich.</p>
+
+  <ul>
+    <li>Marcel Moolenaar <email xmlns="http://docbook.org/ns/docbook">marcel@FreeBSD.org</email></li>
+    <li>Yoshihiro Takahashi <email xmlns="http://docbook.org/ns/docbook">nyan@FreeBSD.org</email></li>
+    <li>Nathan Whitehorn <email xmlns="http://docbook.org/ns/docbook">nwhitehorn@FreeBSD.org</email></li>
+  </ul>
+
+  <hr/>
+
+  <h3><a name="t-donations">Donations Team</a>
+    &lt;<a href="mailto:donations@FreeBSD.org">donations@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Donations Team kümmert sich um Spendenangebote,
+    legt fest, wie mit Spenden umgegangen wird und koordiniert die
+    angebotenen Spenden mit den FreeBSD-Entwicklern.  Eine
+    ausführliche Beschreibung der Aufgaben des Donations Teams
+    finden Sie auf der Seite <a href="./../donations/">FreeBSD Donations Liaison</a>.</p>
+
+  <ul>
+    <li>Pietro Cerutti <email xmlns="http://docbook.org/ns/docbook">gahr@FreeBSD.org</email></li>
+    <li>Bradley T. Hughes <email xmlns="http://docbook.org/ns/docbook">bhughes@FreeBSD.org</email></li>
+    <li>Adriaan de Groot <email xmlns="http://docbook.org/ns/docbook">adridg@FreeBSD.org</email></li>
+  </ul>
+
+  <!--
+  <h3><a name="t-marketing">Marketing Team</a>
+    &lt;<a href="mailto:marketing@FreeBSD.org">marketing@FreeBSD.org</a>&gt;</h3>
+
+  <p>Pressekontakte, Marketing, Interviews und Informationen.</p>
+
+  <ul>
+    <li>Steven Beedle &lt;<a
+      href="mailto:steven@zna.com">steven@zna.com</a>&gt;</li>
+    <li>Anne Dickison &lt;<a
+      href="mailto:anne@freebsdfoundation.org">anne@freebsdfoundation.org</a>&gt;</li>
+    <li>&a.deb.email;</li>
+    <li>&a.dru.email;</li>
+    <li>&a.gnn.email;</li>
+    <li>&a.mwlucas.email;</li>
+    <li>&a.imp.email;</li>
+    <li>&a.kmoore.email;</li>
+    <li>&a.murray.email;</li>
+    <li>&a.matt.email;</li>
+    <li>Jeremy C. Reed &lt;<a
+    href="mailto:reed@reedmedia.net">reed@reedmedia.net</a>&gt;</li>
+    <li>&a.randi.email;</li>
+    <li>&a.rwatson.email;</li>
+  </ul>
+  -->
+
+  <h3><a name="t-secteam">Security Team</a>
+    &lt;<a href="mailto:secteam@FreeBSD.org">secteam@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Security Team (das vom Security Officer geleitet
+    wird) ist dafür verantwortlich, die FreeBSD-Gemeinde
+    über neu entdeckte Bugs und Sicherheitslücken im
+    src- und ports-Quellcodebaum zu informieren und Informationen
+    für den sicheren Betrieb eines FreeBSD-Systems zur
+    Verfügung zu stellen.  Außerdem sorgt es dafür,
+    dass neu entdeckte Sicherheitslücken geschlossen werden
+    und die Anwender durch Sicherheitshinweise informiert werden.
+    Die <a href="./security/charter.html">FreeBSD
+    Security Officer Charter</a> beschreibt die Aufgaben und
+    Verantwortungsbereiche des Security Officers ausführlich.</p>
+
+  <ul>
+    <li>Gordon Tetlow <email xmlns="http://docbook.org/ns/docbook">gordon@FreeBSD.org</email> (Officer)</li>
+    <li>Xin Li <email xmlns="http://docbook.org/ns/docbook">delphij@FreeBSD.org</email> (Officer Emeritus, Release Engineering
+      Team Liaison)</li>
+    <li>Dag-Erling Smørgrav <email xmlns="http://docbook.org/ns/docbook">des@FreeBSD.org</email> (Officer Emeritus)</li>
+    <li>Glen Barber <email xmlns="http://docbook.org/ns/docbook">gjb@FreeBSD.org</email> (Cluster Administrators Team Liaison)</li>
+    <li>Ed Maste <email xmlns="http://docbook.org/ns/docbook">emaste@FreeBSD.org</email> (Officer Deputy)</li>
+    <li>Brooks Davis <email xmlns="http://docbook.org/ns/docbook">brooks@FreeBSD.org</email> (Core Team Liaison)</li>
+    <li>Bjoern A. Zeeb <email xmlns="http://docbook.org/ns/docbook">bz@FreeBSD.org</email></li>
+    <li>George V. Neville-Neil <email xmlns="http://docbook.org/ns/docbook">gnn@FreeBSD.org</email></li>
+    <li>Martin Wilke <email xmlns="http://docbook.org/ns/docbook">miwi@FreeBSD.org</email></li>
+    <li>Philip Paeps <email xmlns="http://docbook.org/ns/docbook">philip@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-vendor">Vendor Relations</a>
+    &lt;<a href="mailto:vendor-relations@FreeBSD.org">vendor-relations@FreeBSD.org</a>&gt;</h3>
+
+  <p>FreeBSD Vendor Relations ist für die Bearbeitung der E-Mails
+    von Hard- und Softwareverkäufern verantwortlich.  An Vendor
+    Relations geschickte E-Mails werden zusätzlich an das
+    FreeBSD Core Team sowie die FreeBSD Foundation weitergeleitet.</p>
+
+  <hr/>
+
+  <h3><a name="t-core-secretary">Core Team Secretary</a>
+    &lt;<a href="mailto:core-secretary@FreeBSD.org">core-secretary@FreeBSD.org</a>&gt;</h3>
+
+  <p>Der FreeBSD Core Team Secretary ist ein nicht-stimmberechtigtes
+    Mitglied des Core Teams.  Er organisiert und dokumentiert die
+    Arbeit des Core Teams, stellt den Kontakt zwischen dem Core Team
+    und den FreeBSD-Entwicklern her und agiert als Schnittstelle zum
+    Admin Team bei der Aufnahme neuer Committer oder beim Anlegen neuer
+    Benutzerzugänge.  Außerdem ist der Core Team Secretary
+    für die Erstellung monatlicher Statusberichte zuständig,
+    in denen die FreeBSD-Entwickler über aktuelle Tätigkeiten
+    und Entscheidungen des Core Teams informiert werden.</p>
+
+  <ul>
+    <li>Joseph Mingrone <email xmlns="http://docbook.org/ns/docbook">jrm@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-portmgr-secretary">Port Management Team Secretary</a>
+    &lt;<a href="mailto:portmgr-secretary@FreeBSD.org">portmgr-secretary@FreeBSD.org</a>&gt;</h3>
+
+  <p>Der FreeBSD Port Management Team Secretary ist ein
+    nicht-stimmberechtigtes Mitglied des Port Management Teams.  Er
+    dokumentiert die Arbeit von portmgr@FreeBSD.org, führt Buch über
+    durchgeführte Abstimmung und agiert als Schnittstelle zu
+    anderen Teams, insbesondere zu den Admin und Core Teams.
+    Außerdem ist er für die Erstellung monatlicher
+    Statusberichte zuständig, in denen die FreeBSD-Entwickler
+    über aktuelle Tätigkeiten und Entscheidungen des
+    Port Management Teams informiert werden.</p>
+
+  <ul>
+    <li>René Ladan <email xmlns="http://docbook.org/ns/docbook">rene@FreeBSD.org</email></li>
+  </ul>
+
+  <hr/>
+
+  <h3><a name="t-accounts">Accounts Team</a>
+    <!-- Admin-Adressen absichtlich unvollständig -->
+    &lt;accounts@&gt;</h3>
+
+  <p>Das Accounts Team legt nach Rücksprache mit dem jeweiligen
+    Team Benutzerzugänge für neue Committer an.  Neue Zugänge werden
+    ausschließlich nach erfolgter offizieller Zustimmung des
+    betroffenen Teams angelegt.</p>
+
+  <p>E-Mails, die an das Accounts Team gesendet werden, werden derzeit
+    an die <a href="#t-clusteradm">Cluster-Administratoren</a>
+    weitergeleitet.</p>
+
+  <h3><a name="t-backups">Backups Administrators</a>
+    <!-- Admin-Adressen absichtlich unvollständig -->
+    &lt;backups@&gt;</h3>
+
+  <p>Die Backups Administrators kümmern sich um die Datensicherung
+    auf dem FreeBSD-Cluster.</p>
+
+  <p>E-Mails, die an das Backups Administrators Team gesendet werden,
+    werden derzeit an die <a href="#t-clusteradm">Cluster-Administratoren</a>
+    weitergeleitet.</p>
+
+  <h3><a name="t-bugmeister">Bugmeisters</a>
+    &lt;<a href="mailto:bugmeister@FreeBSD.org">bugmeister@FreeBSD.org</a>&gt;</h3>
+
+  <p>Bugmeister sind dafür verantwortlich, dass die Software zur
+    Verwaltung von Problemberichten einwandfrei funktioniert,
+    neue Einträge korrekt kategorisiert und ungültige Einträge
+    entfernt werden.</p>
+
+  <ul>
+    <li>Eitan Adler <email xmlns="http://docbook.org/ns/docbook">eadler@FreeBSD.org</email></li>
+    <li>Marcus von Appen <email xmlns="http://docbook.org/ns/docbook">mva@FreeBSD.org</email></li>
+    <li>Gavin Atkinson <email xmlns="http://docbook.org/ns/docbook">gavin@FreeBSD.org</email></li>
+    <li>Kubilay Kocak <email xmlns="http://docbook.org/ns/docbook">koobs@FreeBSD.org</email></li>
+    <li>Oleksandr Tymoshenko <email xmlns="http://docbook.org/ns/docbook">gonzo@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-clusteradm">Cluster-Administratoren</a>
+    <!-- Admin-Adressen absichtlich unvollständig -->
+    &lt;clusteradm@&gt;</h3>
+
+  <p>Cluster-Administratoren warten die Server und Dienste, die für die
+    Kommunikation innerhalb des Projekts und für die verteilte Arbeit
+    am FreeBSD Project benötigt werden.   
+    Fragen zur Projektinfrastruktur oder zur Einrichtung neuer
+    Systeme sollten an die Cluster-Administratoren gerichtet
+    werden.  Das Team wird vom Lead Cluster Administrator
+    geleitet, dessen Aufgaben und Verantwortung in der <a href="./../internal/clusteradm.html">Cluster Administration
+    Charta</a> ausführlich beschrieben werden.</p>
+
+  <ul>
+    <li>Allan Jude <email xmlns="http://docbook.org/ns/docbook">allanjude@FreeBSD.org</email></li>
+    <li>Brad Davis <email xmlns="http://docbook.org/ns/docbook">brd@FreeBSD.org</email></li>
+    <li>David Wolfskill <email xmlns="http://docbook.org/ns/docbook">dhw@FreeBSD.org</email></li>
+    <li>Gavin Atkinson <email xmlns="http://docbook.org/ns/docbook">gavin@FreeBSD.org</email></li>
+    <li>Glen Barber <email xmlns="http://docbook.org/ns/docbook">gjb@FreeBSD.org</email></li>
+    <li>Li-Wen Hsu <email xmlns="http://docbook.org/ns/docbook">lwhsu@FreeBSD.org</email></li>
+    <li>Peter Wemm <email xmlns="http://docbook.org/ns/docbook">peter@FreeBSD.org</email> (Lead)</li>
+    <li>Remko Lodder <email xmlns="http://docbook.org/ns/docbook">remko@FreeBSD.org</email></li>
+    <li>Sean Bruno <email xmlns="http://docbook.org/ns/docbook">sbruno@FreeBSD.org</email></li>
+    <li>Simon L. B. Nielsen <email xmlns="http://docbook.org/ns/docbook">simon@FreeBSD.org</email></li>
+    <li>Ryan Steinmetz <email xmlns="http://docbook.org/ns/docbook">zi@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-dnsadm">DNS Administrators</a>
+    <!-- Admin-Adressen absichtlich unvollständig -->
+    &lt;dnsadm@&gt;</h3>
+
+  <p>DNS Administrators verwalten DNS und verwandte Dienste.</p>
+
+  <p>E-Mails, die an das DNS Administrators Team gesendet werden,
+    werden derzeit an die <a href="#t-clusteradm">Cluster-Administratoren</a>
+    weitergeleitet.</p>
+
+  <h3><a name="t-forum-admins">FreeBSD Forum Administrators</a>
+    &lt;<a href="mailto:forum-admins@FreeBSD.org">forum-admins@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das Forum Administrators Team betreut das Internetforum des FreeBSD Projects
+    unter <a href="https://forums.freebsd.org/">https://forums.freebsd.org/</a>
+    und leitet auch das Moderatorenteam, um Qualität und Relevanz der
+    geposteten Beiträge zu gewährleisten.</p>
+
+  <ul>
+    <li>Brad Davis <email xmlns="http://docbook.org/ns/docbook">brd@FreeBSD.org</email></li>
+    <li>Daniel Geržo <email xmlns="http://docbook.org/ns/docbook">danger@FreeBSD.org</email></li>
+    <li>Ben C. O. Grimm <email xmlns="http://docbook.org/ns/docbook">dutchdaemon@FreeBSD.org</email></li>
+    <li>Lars Engels <email xmlns="http://docbook.org/ns/docbook">lme@FreeBSD.org</email></li>
+    <li>Warren Block <email xmlns="http://docbook.org/ns/docbook">wblock@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-github-automation">Repository Automated Mirroring to GitHub
+    Coordinators</a> &lt;<a href="mailto:github-automation@FreeBSD.org">github-automation@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das GitHub Automation Team überwacht den Export des FreeBSD
+    Quellcoderepositories an die (read-only)-Instanzen auf GitHub.</p>
+
+  <ul>
+    <li>Kubilay Kocak <email xmlns="http://docbook.org/ns/docbook">koobs@FreeBSD.org</email></li>
+    <li>Marcus von Appen <email xmlns="http://docbook.org/ns/docbook">mva@FreeBSD.org</email></li>
+    <li>Bartek Rutkowski <email xmlns="http://docbook.org/ns/docbook">robak@FreeBSD.org</email></li>
+    <li>Craig Rodrigues <email xmlns="http://docbook.org/ns/docbook">rodrigc@FreeBSD.org</email></li>
+    <li>Ulrich Spörlein <email xmlns="http://docbook.org/ns/docbook">uqs@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-jenkins-admin">Jenkins Continuous Integration Testing
+    Administrators</a> &lt;<a href="mailto:jenkins-admin@FreeBSD.org">jenkins-admin@FreeBSD.org</a>&gt;</h3>
+
+  <p>Jenkins-Administratoren sind für die kontinuierlichen Quellcodebau-
+    und Integrationstests verantwortlich.  Zu ihren Aufgaben gehören die
+    Wartung der Jenkins-Instanz und aller Build- und Testjobs.</p>
+
+  <ul>
+    <li>Baptiste Daroussin <email xmlns="http://docbook.org/ns/docbook">bapt@FreeBSD.org</email></li>
+    <li>Brad Davis <email xmlns="http://docbook.org/ns/docbook">brd@FreeBSD.org</email></li>
+    <li>Brooks Davis <email xmlns="http://docbook.org/ns/docbook">brooks@FreeBSD.org</email></li>    
+    <li>Li-Wen Hsu <email xmlns="http://docbook.org/ns/docbook">lwhsu@FreeBSD.org</email></li>
+    <li>Craig Rodrigues <email xmlns="http://docbook.org/ns/docbook">rodrigc@FreeBSD.org</email></li>
+    <li>Sean Chittenden <email xmlns="http://docbook.org/ns/docbook">seanc@FreeBSD.org</email> (Core Team Liaison)</li>
+    <li>Steve Wills <email xmlns="http://docbook.org/ns/docbook">swills@FreeBSD.org</email></li>
+  </ul>
+ 
+  <h3><a name="t-mirror-admin">FTP/WWW Mirror Site Coordinators</a>
+    &lt;<a href="mailto:mirror-admin@FreeBSD.org">mirror-admin@FreeBSD.org</a>&gt;</h3>
+
+  <p>FTP/WWW Mirror Site Coordinators koordinieren die Arbeit
+    der Administratoren von FTP/WWW-Spiegelservern, damit diese
+    stets aktuelle Softwareversionen anbieten können.  Sie
+    prüfen, ob die Spiegelserver die Kapazität haben,
+    auch große Updates zu verwalten und machen es Anwendern
+    einfach, den nächstgelegenen FTP/WWW-Spiegelserver zu
+    finden.</p>
+
+  <p>E-mails an das Mirror Site Coordinators Team wird derzeit an die
+    <a href="#t-clusteradm">Cluster-Administratoren</a>
+    weitergeleitet.  Und zusätzlich an:</p>
+
+  <ul>
+    <li>Jun Kuriyama <email xmlns="http://docbook.org/ns/docbook">kuriyama@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-phabric-admin">Phabricator Code Review Application
+    Administrators</a> &lt;<a href="mailto:phabric-admin@FreeBSD.org">phabric-admin@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das Phabricator Administrators Team ist für die Funktion der
+    FreeBSD-Instanz des Phabricator-Online-Codereviewsystems unter <a href="https://reviews.freebsd.org/">https://reviews.freebsd.org/</a>
+    verantwortlich:</p>
+
+  <ul>
+    <li>Allan Jude <email xmlns="http://docbook.org/ns/docbook">allanjude@FreeBSD.org</email></li>
+    <li>Muhammad Moinur Rahman <email xmlns="http://docbook.org/ns/docbook">bofh@FreeBSD.org</email></li>
+    <li>Eitan Adler <email xmlns="http://docbook.org/ns/docbook">eadler@FreeBSD.org</email></li>
+    <li>Ed Maste <email xmlns="http://docbook.org/ns/docbook">emaste@FreeBSD.org</email></li>
+    <li>Jonathan T. Looney <email xmlns="http://docbook.org/ns/docbook">jtl@FreeBSD.org</email></li>
+    <li>Li-Wen Hsu <email xmlns="http://docbook.org/ns/docbook">lwhsu@FreeBSD.org</email></li>
+    <li>Mathieu Arnold <email xmlns="http://docbook.org/ns/docbook">mat@FreeBSD.org</email></li>
+    <li>Martin Wilke <email xmlns="http://docbook.org/ns/docbook">miwi@FreeBSD.org</email></li>
+    <li>Kurt Jaeger <email xmlns="http://docbook.org/ns/docbook">pi@FreeBSD.org</email></li>
+  </ul>
+ 
+ <p>Bei Problemen mit Phabricator erstellen Sie bitte einen <a href="https://bugs.freebsd.org/submit/">Problembericht</a>.
+   Wählen Sie zuerst die Kategorie "Services" und danach
+   "Code Review".</p>
+
+  <h3><a name="t-postmaster">Postmaster Team</a>
+    &lt;<a href="mailto:postmaster@FreeBSD.org">postmaster@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das Postmaster Team sorgt für die korrekte Zustellung von
+    E-Mails, betreibt die Mailinglisten und ergreift Maßnahmen
+    gegen Trolle, Spam und Viren.</p>
+
+  <ul>
+    <li>David Wolfskill <email xmlns="http://docbook.org/ns/docbook">dhw@FreeBSD.org</email></li>
+    <li>Kirill Ponomarew <email xmlns="http://docbook.org/ns/docbook">krion@FreeBSD.org</email></li>
+    <li>Larry Rosenman <email xmlns="http://docbook.org/ns/docbook">ler@FreeBSD.org</email></li>
+    <li>Philip Paeps <email xmlns="http://docbook.org/ns/docbook">philip@FreeBSD.org</email></li>
+    <li>Kurt Jaeger <email xmlns="http://docbook.org/ns/docbook">pi@FreeBSD.org</email></li>
+    <li>Eygene Ryabinkin <email xmlns="http://docbook.org/ns/docbook">rea@FreeBSD.org</email></li>
+    <li>Remko Lodder <email xmlns="http://docbook.org/ns/docbook">remko@FreeBSD.org</email></li>
+    <li>Ryan Steinmetz <email xmlns="http://docbook.org/ns/docbook">zi@FreeBSD.org</email></li>    
+  </ul>
+
+  <h3><a name="t-subversion">Subversion Administrators</a> &lt;svnadm@&gt;</h3>
+
+  <p>Das FreeBSD Subversion Team ist für die korrekte Funktion der
+    Subversion Repositories verantwortlich.</p>
+
+  <p>E-mails an das Subversion Administration Team werden derzeit an die <a href="#t-clusteradm">Cluster-Administratoren</a> weitergeleitet.</p>
+
+  <h3><a name="t-webmaster">Webmaster Team</a>
+    &lt;<a href="mailto:webmaster@FreeBSD.org">webmaster@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Webmaster Team ist für den reibungslosen Betrieb
+    der Webseiten des FreeBSD Projects verantwortlich.  Zu den Aufgaben
+    dieses Teams gehören insbesondere die Konfiguration des
+    Webservers und der CGI-Skripte sowie der Betrieb der Suchmaschinen
+    für Webseite und Mailinglisten.  Das Team kümmert sich um
+    alle technischen Fragen, ausgenommen um Probleme innerhalb der
+    Dokumentation.</p>
+
+  <p>E-Mails an das Webmaster Team werden derzeit an das <a href="#t-doceng">Documentation Engineering</a> Team weitergeleitet,
+    und zusätzlich an:</p>
+
+  <ul>
+    <li>Wolfram Schneider <email xmlns="http://docbook.org/ns/docbook">wosch@FreeBSD.org</email></li>
+  </ul>
+
+  <h3><a name="t-wiki">Wiki Admin Team</a>
+    &lt;<a href="mailto:wiki-admin@FreeBSD.org">wiki-admin@FreeBSD.org</a>&gt;</h3>
+
+  <p>Das FreeBSD Wiki Team ist für den Betrieb, das allgemeine
+    Design sowie die Struktur des FreeBSD
+    <a href="https://wiki.FreeBSD.org/">Wiki</a>
+    verantwortlich.</p>
+
+  <ul>
+    <li>Gavin Atkinson <email xmlns="http://docbook.org/ns/docbook">gavin@FreeBSD.org</email></li>
+    <li>Mark Linimon <email xmlns="http://docbook.org/ns/docbook">linimon@FreeBSD.org</email></li>
+    <li>David Chisnall <email xmlns="http://docbook.org/ns/docbook">theraven@FreeBSD.org</email></li>
+    <li>Kubilay Kocak <email xmlns="http://docbook.org/ns/docbook">koobs@FreeBSD.org</email></li>
+  </ul>
+
+</body>
+</html>

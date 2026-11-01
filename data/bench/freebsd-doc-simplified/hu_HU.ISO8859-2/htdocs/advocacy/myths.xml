@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/advocacy/myths.xml
+     %SRCID%	1.44
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD Képviseleti Projekt</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+    <p>Miközben a BSD projektek (DragonflyBSD, FreeBSD, NetBSD
+      és az OpenBSD) nagyra nőttek, számos
+      mítosz kezdett terjedni róluk.  Ezek közül
+      néhányat jó szándékú,
+      ám megfontolatlan személyek indítottak el,
+      másokat pedig önhitt emberek.</p>
+
+    <p>Ennek az oldalnak az a célja, hogy a lehető
+      legnagyobb tárgyilagosság mellett eloszlassa ezeket a
+      tévhiteket.</p>
+
+    <blockquote><b>Megjegyzés:</b> Ezen az oldalon a <q>*BSD</q>
+      kifejezés mind a négy BSD projektre vonatkozik.
+      Ahol az adott mende-monda csak az egyik
+      különálló projektre vonatkozik, ott azt
+      külön említjük.</blockquote>
+
+    <blockquote>Ha úgy érezzük, hogy az oldal
+      valamely témában hiányos ismereteket
+      közöl, akkor értesítsük az oldal
+      fenntartóját, Tom Rhodes-ot a következő
+      e-mail címen: &lt;<a href="mailto:trhodes@FreeBSD.org">trhodes@FreeBSD.org</a>&gt;
+      </blockquote>
+
+    <h2>Tartalom</h2>
+
+    <ul>
+      <li><a href="#closed-model">A *BSD rendszerek zárt
+	fejlesztési modellel rendelkeznek, sokkal inkább
+	<q>katedrálisok</q> mintsem
+	<q>bazárok</q></a></li>
+
+      <li><a href="#own-distro">A *BSD rendszerekről nem
+	készíthető saját
+	disztribúció, vagy nem
+	származtatható egyéb munka</a></li>
+
+      <li><a href="#server">A *BSD rendszerek remek
+	kiszolgálók, de rossz asztali rendszerek</a></li>
+
+      <li><a href="#old-codebase">A *BSD rendszerek
+	forráskódja régi, elavult és
+	haldoklik</a></li>
+
+      <li><a href="#bsd-war">A *BSD projektek egymással
+	háborúznak, hetente válnak ki újabb
+	felhasználói csoportok</a></li>
+
+      <li><a href="#clustering">A *BSD rendszereket nem
+	fürtözni (párhuzamos
+	számításokra)</a></li>
+
+      <li><a href="#support">Nincs kereskedelmi támogatás
+	a *BSD rendszerekhez</a></li>
+
+      <li><a href="#applications">Nincsenek alkalmazások a *BSD
+	rendszerekhez</a></li>
+
+      <li><a href="#beats">A *BSD rendszerek jobbak, mint más
+	rendszerek</a></li>
+
+      <li><a href="#beaten">Más rendszerek jobbak, mint a
+	*BSD a rendszerek</a></li>
+    </ul>
+
+    <h2>Mítoszok</h2>
+
+    <h3>A <a name="closed-model">*BSD</a> rendszerek zárt
+      fejlesztési modellel rendelkeznek, sokkal inkább
+      <q>katedrálisok</q> mintsem <q>bazárok</q></h3>
+
+    <p>Eric Raymond nagy hatású írása <a href="http://www.catb.org/~esr/writings/cathedral-bazaar/">A katedrális és a bazár</a>
+      címmel a Linux fejlesztési modellt (és azt a
+      modellt, amelyet Eric a <tt>fetchmail</tt>
+      kifejlesztéséhez használt) említi mint
+      a <q>nyílt</q> fejlesztési modell
+      példáját.  Ezzel szemben a *BSD
+      fejlesztési modelljét gyakran jellemzik
+      zártként.</p>
+
+    <p>A hallgatólagos bírálat szerint a
+      <q>bazár</q> (nyílt) jó, és a
+      <q>katedrális</q> (zárt) rossz.</p>
+
+    <p>Ha valami, akkor a *BSD rendszerek által alkalmazott
+      fejlesztési modell <strong>még inkább</strong>
+      hasonlít a <q>bazárhoz</q>, mint a Linux vagy a
+      <tt>fetchmail</tt> esetében, amelyeket Eric
+      említ.</p>
+
+    <p>Ehhez elég csupán a következőket
+      figyelembe vennünk:</p>
+
+    <ul>
+      <li>
+	<p><b>Minden *BSD projekt esetén:</b> A
+	  forráskód aktuális változata a
+	  FreeBSD, NetBSD, és az OpenBSD esetében is a nap 24
+	  órájában bárki
+	  számára elérhető az Interneten
+	  keresztül.  Nem szükséges arra várni,
+	  hogy egy új kiadás jelenjen meg.</p>
+
+	<p><b>FreeBSD, NetBSD:</b> Egy telepíthető
+	  <q>pillanatverzió</q> 24 óránként
+	  válik elérhetővé.  Ezek a
+	  pillanatképek teljesen ugyanúgy
+	  telepíthetők mint a közönséges
+	  kiadások, és a telepítéshez nem
+	  szükséges egy meglévő rendszer.</p>
+
+	<p><b>OpenBSD:</b> OpenBSD pillanatképei naponta
+	  készülnek, és ha Theo elég
+	  jónak találja ezeket, felkerülnek a
+	  tükörszerverekre.</p>
+
+	<p>Ezzel ellentétben a Linux kernelnek csak alkalmilag
+	  válik elérhetővé új
+	  verziója, és a különböző
+	  disztribúciók kiadási gyakorisága
+	  a disztribúció fejlesztőitől
+	  függ.</p>
+
+	<p>Itt nem kíséri harsonaszó egy új
+	  kernel megjelenését, mivel a legtöbb *BSD
+	  felhasználó számára ez egy
+	  teljesen megszokott esemény.</p>
+      </li>
+
+      <li>
+	<p>A *BSD projektek mind CVS-t használnak a
+	  forráskód karbantartásához.</p>
+
+	<p><b>Minden *BSD projekt esetén:</b> a CVS Repository a
+	  nap 24 órájában
+	  böngészhető, és a repositoryból
+	  az egész rendszer letölthető.  A
+	  forrás elérhető anonim CVS, CVSup, CVSupit,
+	  CTM (e-mail-en keresztül) vagy egyszerű FTP
+	  segítségével.</p>
+      </li>
+
+      <li>
+	<p>Bárki küldhet javításokat,
+	  hibajelentéseket, dokumentációt,
+	  és egyéb módokon is
+	  hozzájárulhat a munkához.  Ezt a *BSD
+	  rendszerek részét képező
+	  <tt>send-pr</tt> program vagy a webes felület
+	  segítségével lehet megtenni.</p>
+
+	<p>A dokumentáció hemzseg az erre utaló
+	  hivatkozásoktól.</p>
+      </li>
+
+      <li>
+	<p>Nem mindenki hajthat végre
+	  változtatásokat a *BSD rendszerek
+	  forráskódjában, ehhez először
+	  <em>committerré</em> kell válnia.
+	  Általában olyan emberek kapnak <q>commit
+	  jogot</q>, akik már a <tt>send-pr</tt>
+	  segítségével vagy más
+	  hasonló módon beküldtek már
+	  pár alapos változtatást a projektnek.</p>
+
+      <p>Ez a rendszer hasonló a Linux módszeréhez.
+	Egyetlen ember, Linus jogosult megváltoztatni a kernelt,
+	de a különböző területek (mint
+	például a hálózati kód)
+	fejlesztését más emberek tartják
+	karban.</p>
+
+      <p><i>Mellesleg Nik (nik@FreeBSD.org) jó példa erre.
+	 Miután számos fejlesztést hajtott
+	 végre a FreeBSD Dokumentációs Projekten
+	 és a weboldalon, felajánlották neki a
+	 <q>commit jogot</q>, hogy ne kelljen más committereket
+	 zargatnia, hogy hajtsák végre az általa
+	 készített fejlesztéseket.  Soha nem
+	 kérte ezt a jogot, ingyen kapta.</i></p>
+      </li>
+    </ul>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="own-distro">A</a> *BSD rendszerekről nem
+      készíthető saját
+      disztribúció, vagy nem származtatható
+      egyéb munka</h3>
+
+    <p>Készíthető, csak a
+      dokumentációban és a
+      forrásfájlokban fel kell tüntetni, hogy a
+      forráskód honnan származik.  Rengeteg
+      származtatott projekt létezik:</p>
+
+    <ul>
+      <li>
+	<p>A <a href="http://www.dragonflybsd.org/">DragonflyBSD</a> a
+	  FreeBSD 4.X egy leágazásaként indult,
+	  de azóta már van saját
+	  felhasználói közössége
+	  és vannak fejlesztési céljai.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.trustedbsd.org/">TrustedBSD</a> a
+	  FreeBSD-hez nyújt a megbízható (trusted)
+	  operációs rendszerekre jellemző
+	  funkciókat képviselő
+	  különböző kiterjesztéseket,
+	  és ezzel az IT biztonsági
+	  minősítést, a Common Criteria-t (CC)
+	  célozza meg.  Ez a projekt folyamatos fejlesztés
+	  alatt áll, a kód nagy része
+	  visszakerül a FreeBSD alaprendszerébe, de a
+	  fejlesztés külön történik.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.hybrid-cluster.com/">Hybrid Cluster</a>
+	  egy FreeBSD és ZFS alapokon nyugvó webes klaszter,
+	  amely szabványos LAMP alapú honlapok és
+	  alkalmazások számára szolgáltat
+	  redundáns adatbiztonságot és automatikus
+	  terheléskiegyenlítést.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://frenzy.org.ua/eng/">Frenzy</a> egy
+	  másik live-CD disztribúció, de
+	  elsősorban adminisztrációs feladatokhoz.
+	  Egyaránt tartalmaz hardvertesztelő,
+	  állományrendszer-ellenőrző,
+	  biztonsági ellenőrző,
+	  hálózatkonfiguráló és
+	  -analizáló szoftvereket.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.FreeBSD.org/cgi/man.cgi?query=picobsd">PicoBSD</a>
+	  egy testreszabott FreeBSD disztribúció, amely
+	  elfér akár egy floppy lemezen is.  Remek
+	  eszköz merevlemez nélküli 386-os PC-k
+	  útválasztóvá vagy
+	  nyomtatószerverré
+	  alakításához.  A FreeBSD
+	  forrásfájának része, lásd a
+	  /usr/src/release/picobsd könyvtárat.</p>
+      </li>
+
+      <li>
+	<p>A <a href="../../doc/en_US.ISO8859-1/articles/nanobsd/index.html">NanoBSD</a> egy
+	  másik olyan projekt, amely a FreeBSD minimális
+	  helyigényű verziójának
+	  előállításával foglalkozik.
+	  Ez a változat elfér egy Compact Flash
+	  kártyán vagy egyéb kisebb
+	  méretű adathordozón.  Ez a projekt is a
+	  FreeBSD forrásfájának része,
+	  lásd a /usr/src/tools/tools/nanobsd
+	  könyvtárat.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.tinybsd.org/tinybsd">TinyBSD</a> olyan
+	  shell szripteket foglal össze, amelyek a FreeBSD 5.X
+	  és 6.X verzióin alapuló beágyazott
+	  rendszerek fejlesztéséhez
+	  használhatóak.</p></li>
+
+      <li>
+	<p>A <a href="http://thinbsd.zefyris.com/">ThinBSD</a> egy
+	  kisméretű rendszerindító lemez,
+	  amellyel egy egyszerű PC-t használhatunk Microsoft
+	  Windows RDP kliensként, vagy X
+	  terminálként.  Az egész
+	  konfiguráció DHCP protokollon
+	  végezhető.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.pcbsd.org/">PC-BSD</a> egy asztali
+	  felhasználásra előkészített
+	  FreeBSD leszármazott.  A fejlesztés célja,
+	  hogy könnyen telepíthető legyen és egy
+	  segítőkész közösség
+	  alakuljon ki körülötte.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.desktopbsd.net/">DesktopBSD</a> egy
+	  másik asztali felhasználásra szánt
+	  FreeBSD alapú operációs rendszer.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.gentoo.org/proj/en/gentoo-alt/bsd/fbsd/index.xml">Gentoo/FreeBSD</a>
+	  a Gentoo Projekt kezdeményezése arra, hogy a
+	  Gentoo adminisztrációs adottságait
+	  portolják a megbízható FreeBSD
+	  rendszermagjára és
+	  szoftverkörnyezetére.  A projekt befejezetlen,
+	  jelenleg kísérleti stádiumban van.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.m0n0.ch/wall/">m0n0wall</a> egy FreeBSD
+	  alapú tűzfalrendszer.  Rengeteg olyan
+	  funkcióval rendelkezik, amelyet a drága
+	  tűzfalak is nyújtanak, mint például
+	  a webes interfész, gyári
+	  beállítások
+	  visszaállítása,
+	  állapottartó csomagszűrés, NAT/PAT
+	  átirányítás, DHCP kliens és
+	  szerver, gyorstárazó névszerver és
+	  még sok minden más.</p>
+      </li>
+
+      <li>
+	<p>A <a href="http://www.pfsense.com">pfSense</a> egy m0n0wall
+	  alapú tűzfalrendszer, de a fejlesztés
+	  céljai és a támogatott funkciók
+	  különbözőek, mint például az
+	  OpenBSD Packet Filter (PF) és a FreeBSD 6.1
+	  támogatása, vagy a kitűnő
+	  hálózati ütemezéshez az ALTQ
+	  támogatása, valamint a funkcionalitás
+	  bővíthetőségét egy
+	  integrált csomagkezelő rendszer
+	  segítségével valósítja
+	  meg.</p>
+      </li>
+
+      <li>
+	<p>A Whistle Interjet egy <q>hálózati
+	  készülék</q>, amely
+	  útválasztó, webszerver, e-mail szerver
+	  és egyéb funkciókat lát el,
+	  továbbá webböngészővel
+	  konfigurálható.  A készülék
+	  alapja a FreeBSD operációs rendszer, és a
+	  Whistle a fejlesztéseinek nagy részét
+	  visszaküldte a FreeBSD Projektnek (miközben eleget
+	  megtartott ahhoz, hogy az üzleti versenyben
+	  maradhasson).</p>
+      </li>
+    </ul>
+
+    <p>A DragonflyBSD esetéhez hasonlóan, az OpenBSD sem
+      volt önálló projekt, a NetBSD projekt
+      alapjaitól indult el és azóta kialakult a
+      saját szemléletmódja.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="server">A *BSD</a> rendszerek remek
+      kiszolgálók, de rossz asztali rendszerek</h3>
+
+    <p>A *BSD rendszerek remek kiszolgálók, de egyben
+      remek asztali rendszerek is.  Sok elvárás a
+      kiszolgálók felé (rövid
+      válaszidő nagy terhelés alatt is,
+      stabilitás, az erőforrások hatékony
+      kihasználása) ugyanúgy elvárás
+      az asztali rendszerek esetén is.</p>
+
+    <p>A *BSD rendszerek ugyanazokkal az asztali szoftverekkel (KDE,
+      GNOME, Firefox, ablakkezelők) működnek, mint a
+      Linux, és az irodai szoftverek, mint például
+      az OpenOffice csomag is remekül működnek
+      alattuk.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="old-codebase">A</a> *BSD rendszerek
+      forráskódja régi, elavult és
+      haldoklik</h3>
+
+    <p>Noha a BSD rendszerek forráskódjának egyes
+      részei akár több mint 20 évesek is
+      lehetnek, egyáltalán nem jelenti azt, hogy elavult
+      lenne vagy éppen haldokolna.  Rengeteg profi
+      felhasználó szereti azt a stabilitást,
+      amelyet ez a többéves tesztelés hozott
+      magával.</p>
+
+    <p>Technológiai fejlesztések továbbra is
+      bekerülnek a *BSD rendszerekbe, mint
+      például:</p>
+
+    <ul>
+      <li>
+	<p>SMP: Symmetric Multi-Processing, vagyis a több
+	  processzorral rendelkező rendszerek használata.</p>
+      </li>
+
+      <li>
+	<p>SoftUpdates: A BSD állományrendszert
+	  legalább olyan gyorssá teszi mint a Linux
+	  által használt állományrendszerek,
+	  az aszinkron írási műveletek
+	  engedélyezése — és így az
+	  ezzel járó kockázat —
+	  <strong>nélkül</strong>.</p>
+      </li>
+
+      <li>
+	<p>VM rendszer: A VM (Virtuális Memória)
+	  alrendszer folyamatosan fejlődik.  A VM/cache
+	  kialakítása segít a wcarchive.cdrom.com
+	  szolgáltatásához hasonló
+	  kiszolgálóknak a több ezer
+	  (konkrétan több mint 10 000) egyidejű
+	  FTP kapcsolat kiesésektől mentes
+	  kezelésében.</p>
+      </li>
+
+      <li>
+	<p>Különböző architektúrák: A
+	  FreeBSD jelenleg hét fő architektúrát
+	  támogat: Alpha, AMD64, i386, Itanium, PC-98, PowerPC
+	  és UltraSPARC.  Jelenleg is folynak fejlesztések
+	  további architektúrák
+	  támogatására.  Bővebb
+	  információért lásd a <a href="./platforms/index.html">Támogatott
+	  platformok</a> oldalt.</p>
+      </li>
+
+      <li>
+	<p>MAC alrendszer: A FreeBSD támogatja a Mandatory Access
+	  Controlt, vagyis egy olyan funkciót, amely
+	  általában csak drága
+	  megbízható (trusted) operációs
+	  rendszerekben található meg.  A FreeBSD ellenben
+	  kiemelkedő biztonságot nyújt ingyen!  A
+	  témával kapcsolatban a <a href="http://www.trustedbsd.org">TrustedBSD Projekt</a>
+	  kínál további
+	  kiegészítéseket.</p></li>
+
+      <li>
+	<p>GEOM alrendszer: A GEOM egy moduláris lemezkezelő
+	  rendszer, amelynek segítségével
+	  összefűzhetünk, tükrözhetünk,
+	  csíkozhatunk vagy titkosíthatunk lemezeket.
+	  Funkcionalitásban gazdag, és biztonságban
+	  tartja az adatainkat.</p>
+      </li>
+    </ul>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="bsd-war">A</a> *BSD projektek egymással
+      háborúznak, hetente válnak ki újabb
+      felhasználói csoportok</h3>
+
+    <p>Ez nem így van.  Noha időnként heves
+      viták zajlanak a *BSD rendszerek képviselői
+      között, a projektek továbbra is együtt
+      dolgoznak.  A FreeBSD Alpha portja kezdetben nagyrészt a
+      NetBSD csapat munkáján alapult.  A NetBSD és
+      az OpenBSD is a FreeBSD Portgyűjteményét vette
+      alapul a saját portrendszerének
+      kialakításakor.  A FreeBSD és a NetBSD is
+      vesznek át olyan biztonsági
+      javításokat, amelyeket az OpenBSD-ben fedeznek fel
+      először.</p>
+
+    <p>A FreeBSD és a NetBSD projektek több mint tíz
+      éve váltak szét, azóta csak az OpenBSD
+      és a DragonflyBSD számítanak újabb BSD
+      projektnek.</p>
+
+    <p>A *BSD projektek más területen is
+      együttműködnek.  Például a <a href="http://www.daemonnews.org/">DaemonNews</a> havonta
+      frissülő internetes magazin is a négy projekt
+      tagjainak közös munkája.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="clustering">A</a> *BSD rendszereket nem
+      fürtözni (párhuzamos
+      számításokra)</h3>
+
+    <p>A következő (angol nyelvű) linkek pontosan ezt
+      cáfolják:</p>
+
+    <ul>
+      <li><a href="http://www.epm.ornl.gov/pvm/">http://www.epm.ornl.gov/pvm/</a>
+	The Parallel Virtual Machine: egy olyan szoftvercsomag, amellyel
+	egyszerűen össze tudunk állítani egy
+	fürtöt.  Ez a forráskód szabadon
+	elérhető, és nagyobb problémák
+	nélkül elfut FreeBSD-n.</li>
+
+      <li><a href="http://www.scl.ameslab.gov/Projects/old/ClusterCookbook/">
+	http://www.scl.ameslab.gov/Projects/old/ClusterCookbook/</a></li>
+
+      <li><a href="http://people.freebsd.org/~brooks/papers/bsdcon2003/fbsdcluster/">http://people.freebsd.org/~brooks/papers/bsdcon2003/fbsdcluster/</a>
+	Brooks Davis leírása egy olyan FreeBSD fürt
+	implementációjáról, amely több,
+	mint 300 processzort tartalmaz.</li>
+
+      <li><a href="http://www.onlamp.com/pub/a/bsd/2004/07/01/freesbie.html">http://www.onlamp.com/pub/a/bsd/2004/07/01/freesbie.html</a>
+	Webkiszolgáló fürt létrehozása
+	FreeSBIE-vel (egy FreeBSD alapú live-CD rendszerrel).</li>
+
+      <li><a href="http://www.openbsd.org/faq/pf/carp.html">http://www.openbsd.org/faq/pf/carp.html</a>
+	Az OpenBSD Közös cím redudancia protokollja
+	(Common Address Redundancy Protocol, CARP), amellyel
+	redundáns fürtöket hozhatunk létre a
+	tűzfal szintjén.</li>
+
+      <li><a href="http://www.countersiege.com/doc/pfsync-carp">http://www.countersiege.com/doc/pfsync-carp</a>
+	Egy jó áttekintés a CARP-ról.</li>
+
+      <li><a href="http://pf4freebsd.love2party.net/carp.html">http://pf4freebsd.love2party.net/carp.html</a>
+	Az OpenBSD CARP implementációjának FreeBSD
+	portja.</li>
+    </ul>
+
+    <p>Ezeken kívül még a <a href="mailto:freebsd-cluster@FreeBSD.org">freebsd-cluster</a>
+      levelezési lista is rendelkezésre áll a
+      FreeBSD fürtözésével kapcsolatos
+      kérdések megvitatására.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="support">Nincs kereskedelmi támogatás a
+      *BSD rendszerekhez</a></h3>
+
+    <p><b>FreeBSD:</b> A <a href="./../commercial/consult_bycat.html">FreeBSD kereskedelmi oldala</a>
+      felsorolja azokat a cégeket, amelyek kereskedelmi
+      támogatást nyújtanak a FreeBSD-hez.</p>
+
+    <p>A <a href="http://www.freebsdmall.com">FreeBSD
+      Mall</a> szintén kínál kereskedelmi
+      támogatást, illetve ezenkívül
+      árusít pólókat, sapkákat,
+      könyveket, szoftvereket és promóciós
+      tárgyakat.</p>
+
+    <p>Tanfolyamok után a <a href="http://www.bsdmall.com/">BSDMall.com</a> oldalon
+      érdeklődhetünk, de egyéb termékeket
+      is árulnak, mint például
+      pólókat, sapkákat, könyveket és
+      szoftvereket!  Egy pillantást megér.</p>
+
+    <p><b>OpenBSD:</b> Az <a href="http://www.openbsd.org/support.html">OpenBSD kereskedelmi
+      oldala</a> tartalmazza a cégeket, amelyek kereskedelmi
+      támogatást kínálnak az
+      OpenBSD-hez.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="applications">Nincsenek</a> alkalmazások a *BSD
+      rendszerekhez</h3>
+
+    <p>A nyílt forrású közösség
+      túlnyomórészt BSD rendszereken (SunOS
+      és hasonlók) kezdett el dolgozni.  A *BSD rendszerek
+      felhasználói általában
+      módosítás nélkül le tudják
+      fordítani ezeket az alkalmazásokat.</p>
+
+    <p>Továbbá minden *BSD projekt tartalmaz egy
+      ún.  <q>portrendszert</q>, amellyel a portolt
+      alkalmazások lefordítását igyekszik
+      megkönnyíteni.</p>
+
+    <p><b>FreeBSD:</b> Jelenleg több, mint 16 000
+      alkalmazás tölthető le és
+      telepíthető a FreeBSD Portgyűjteményén
+      keresztül.  Az i386 és AMD64 platformokon a Linux
+      emulációs réteg képes futtatni a Linux
+      alkalmazások nagy többségét.  Az AMD64
+      és Itanium architektúrákon
+      ezenkívül egy kompatibilitási réteg
+      segítségével futtathatók a
+      32 bites FreeBSD alkalmazások.</p>
+
+    <p><b>NetBSD:</b> A Linux emulációs réteg
+      futtatja az i386 architektúrára készült
+      Linux alkalmazások nagy többségét, a
+      SunOS4 alkalmazások többsége pedig SPARCStation
+      munkaállomásokon futtatható.</p>
+
+    <p><b>OpenBSD:</b> Jelenleg több, mint 3 700
+      alkalmazás tölthető le és
+      telepíthető az OpenBSD saját
+      portgyűjteményének
+      segítségével.  A Linux
+      emulációs réteg itt is képes futtatni
+      az i386-os Linux alkalmazások nagy
+      többségét, a SunOS4 alkalmazások
+      többsége pedig SPARCStation
+      munkaállomásokon futtatható.</p>
+
+    <p>A NetBSD és az OpenBSD is képes némi
+      módosítással használni a FreeBSD
+      Portgyűjteményében található
+      alkalmazásokat, ezt tükrözi a portolt
+      alkalmazásaik kisebb száma is.</p>
+
+    <p>Igaz, a legtöbb cég a Linuxot választja
+      először, ha UNIX®-ra akarja portolni a szoftvereit.
+      Szerencsére a *BSD rendszerek Linux emulációs
+      rétege képes futtatni ezeket az
+      alkalmazásokat (Acrobat, StarOffice, Mathematica,
+      WordPerfect, Quake, az Intel ICC fordítója, a Compaq
+      Alpha fordítója stb.) viszonylag gond
+      nélkül, ha nem is problémamentesen.</p>
+
+    <p>Történeti példaként
+      megemlítjük, hogy a Netscape Navigator első
+      verziója, amely Java támogatással futott a
+      FreeBSD alatt, a linuxos verzió volt.  A rendszer azonban most
+      már futtathatja a Mozilla natív FreeBSD
+      verzióját is, natív Java pluginnal.  Mindez a
+      Portgyűjtemény segítségével
+      könnyen és kényelmesen
+      telepíthető.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="beats">A *BSD</a> rendszerek jobbak, mint más
+      rendszerek</h3>
+
+    <p>Ez csak a felhasználó
+      ízlésétől függ.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h3><a name="beaten">Más rendszerek</a> jobbak, mint a *BSD
+      rendszerek</h3>
+
+    <p>Ez csak a felhasználó
+      ízlésétől függ.</p>
+
+    <hr noshade="noshade" size="1"/>
+
+    <h2>Hozzájárulók</h2>
+
+    <p>A FreeBSD, NetBSD, és OpenBSD projekt tagai, akik
+      hozzájárultak ehhez az oldalhoz:</p>
+
+    <table width="100%">
+      <tbody>
+	<tr>
+	<td>Nik Clayton
+	  &lt;<a href="mailto:nik@FreeBSD.org">nik@FreeBSD.org</a>&gt;</td>
+	</tr>
+	<tr>
+	<td>Jordan Hubbard
+	  &lt;<a href="mailto:jkh@FreeBSD.org">jkh@FreeBSD.org</a>&gt;</td>
+	</tr>
+	<tr>
+	<td>Ian F. Darwin
+	  &lt;<a href="mailto:ian@DarwinSys.com">ian@DarwinSys.com</a>&gt;</td>
+	</tr>
+	<tr>
+	<td>Adrian Filipi-Martin
+	  &lt;<a href="mailto:adrian@ubergeeks.com">adrian@ubergeeks.com</a>&gt;</td>
+	</tr>
+	<tr>
+	<td>Tom Rhodes
+	  &lt;<a href="mailto:trhodes@FreeBSD.org">trhodes@FreeBSD.org</a>&gt;</td>
+	</tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

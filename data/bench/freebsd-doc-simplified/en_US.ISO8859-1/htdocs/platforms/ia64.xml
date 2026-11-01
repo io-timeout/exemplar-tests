@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD/ia64 Project</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+  <p>The FreeBSD/ia64 platform pages have been moved to
+    <a href="ia64/index.html">here</a>. Please update your bookmarks.</p>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/news/news.xml
+     %SRCID%	1.52
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD hírek</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <img src="./../gifs/news.jpg" alt="FreeBSD hírek" align="right" border="0"/>
+
+  <h2>Helyi hírek</h2>
+
+  <ul>
+    <li>
+      <p><b><a href="./news/newsflash.html">Hírek</a></b>:
+	Új kiadások, eszközmeghajtók,
+	committerek, biztonsági figyelmeztetések és
+	egyéb hírek</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://freebsdfoundation.org/press/">Alapítványi
+	  sajtóközlemények</a></b>: A FreeBSD
+	Alapítvány sajtóközleményei
+	(lásd még <a href="pressreleases.html">a 2005
+	előtti sajtóközlemények
+	archívumát</a>)</p>
+    </li>
+
+    <li>
+      <p><b><a href="./../news/press.html">Cikkek a sajtóban</a></b>:
+	A FreeBSD megjelenése a sajtóban</p>
+    </li>
+
+    <li>
+      <p><b><a href="./../news/status/status.html">Helyzetjelentések</a></b>:
+	Helyzetjelentések a FreeBSD
+	fejlesztéséről</p>
+    </li>
+  </ul>
+
+  <h2>Egyéb oldalak</h2>
+
+  <ul>
+    <li>
+      <p><b><a href="http://www.onlamp.com/bsd/">BSD DevCenter</a></b>:
+	Az ONLamp.com/O'Reilly Network rovata a BSD cikkek,
+	hírek, útmutatók és
+	általános közösségi
+	információk számára</p>
+    </li>
+
+    <li>
+<!--
+      <p><b><a href="http://www.bsdforums.org">BSDForums.org</a></b>:
+-->
+      <p><b><a href="http://www.daemonforums.org">Daemon Forums</a></b>:
+	Aktív internetes fórumok és
+	közösségi hírek a FreeBSD és a
+	többi BSD számára</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://bsdfreak.org">BSD Freak</a></b>:
+	Egy oldal, amely a BSD-vel kapcsolatos cikkeket és
+	útmutatókat a felhasználó
+	szemszögéből nézve
+	kínálja</p>
+    </li>
+
+<!--
+    <li>
+      <p><b><a href="http://www.bsdnews.org/">BSDnews.org</a></b>:
+	Egy online magazin az összes BSD számára</p>
+    </li>
+-->
+
+    <li>
+      <p><b><a href="http://www.daemonnews.org/">DaemonNews</a></b>:
+<!--
+	(<b><a href="http://www.bsdnews.com/">BSDnews.com</a></b>):
+-->
+	Havonta megjelenő cikkek és minden BSD-t
+	érintő dolog rendszeres napi
+	megbeszélése</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://www.freebsddiary.org/">FreeBSD Diary</a></b>:
+	Egy ember FreeBSD-vel kapcsolatos
+	megpróbáltatásairól és
+	sikereiről szóló beszámoló</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://www.kerneltrap.org">Kerneltrap</a></b>:
+	Naponta megjelenő cikkek és aktuális
+	hírek a BSD és Linux rendszermagjairól</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://www.osnews.com">OSNews</a></b>:
+	Naponta megjelenő cikkek a Linux, BSD és
+	egyéb operációs rendszerekről</p>
+    </li>
+
+    <li>
+      <p><b><a href="http://slashdot.org/bsd/">A Slashdot BSD rovata</a></b>:
+	Linkek és a BSD hírek fórumai, nem csak a
+	FreeBSD-ről</p>
+    </li>
+  </ul>
+
+  </body>
+</html>

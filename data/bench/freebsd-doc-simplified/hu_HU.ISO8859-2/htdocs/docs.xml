@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/docs.xml
+     %SRCID%	1.195
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>A FreeBSD dokumentációja</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+  <img src="./../gifs/doc.jpg" alt="BSD Démon      dokumentációt olvas" align="right" border="0" width="274" height="163"/>
+
+  <p>A FreeBSD-hez számos dokumentáció létezik,
+    ezen az oldalon és más oldalakon egyaránt.</p>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Spanish Documentation Project
+     Original Revision: r1.195			-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Documentación</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+  <img src="./../gifs/doc.jpg" alt="El demonio está leyendo     documentación" align="right" border="0" width="274" height="163"/>
+
+  <p>Se puede encontrar abundante información sobre FreeBSD tanto en este
+    sitio web como en otras fuentes externas.</p>
+
+  </body>
+</html>

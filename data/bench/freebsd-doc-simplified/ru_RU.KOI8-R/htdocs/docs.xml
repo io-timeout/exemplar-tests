@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSDru: frdp/www/ru/docs.xml,v 1.50 2005/12/23 15:14:21 gad Exp $
+
+     Original revision: 1.194
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Документация</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+  <img src="./../gifs/doc.jpg" alt="BSD Даемон, изучающий документацию" align="right" border="0" width="274" height="163"/>
+
+  <p>Имеется масса документации по FreeBSD, как на этом Web-сервере, так и на
+    других сайтах, ссылки на которые даются здесь.</p>
+
+
+ </body>
+</html>

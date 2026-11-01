@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: PALI, Gabor <pgj@FreeBSD.org>
+     %SOURCE%	en/security/advisories.xml
+     %SRCID%	1.1
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD Projekt biztonsági figyelmeztetései</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+  <p>Ezen az oldalon találhatjuk a FreeBSD Projekt
+    részéről kiadott biztonsági
+    figyelmeztetéseket.  Az általános
+    biztonsággal kapcsolatos tudnivalókat a <a href="security.html">FreeBSD Projekt biztonsági
+      információs oldalán</a> találhatjuk
+    meg.</p>
+
+  <p>A FreeBSD Portgyűjteményére vonatkozó
+    biztonsági problémákat <a href="http://vuxml.FreeBSD.org/">a FreeBSD Projekt VuXML
+      dokumentumában</a> olvashatjuk.</p>
+
+  
+
+</body>
+</html>

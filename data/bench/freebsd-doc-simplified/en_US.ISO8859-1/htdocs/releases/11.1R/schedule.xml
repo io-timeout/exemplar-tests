@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD 11.1 Release Process</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+  <h1>Introduction</h1>
+
+  <p>This is the release schedule for FreeBSD 11.1.  For more
+    information about the release engineering process, please see the <a href="./releng/index.html">Release Engineering</a> section of the
+    web site.</p>
+
+  <p>General discussions about the pending release and known issues should be
+    sent to the public
+    <a href="mailto:FreeBSD-stable@FreeBSD.org">freebsd-stable</a> mailing list.
+    <a href="./doc/en_US.ISO8859-1/books/handbook/freebsd-glossary.html#mfc-glossary">MFC</a>
+    requests are no longer being accepted.</p>
+
+  
+  
+
+  <h1>Schedule</h1>
+
+  <table class="tblbasic">
+    <tr class="heading">
+      <td>Action</td>
+      <td>Expected</td>
+      <td>Actual</td>
+      <td>Description</td>
+    </tr>
+
+    <tr>
+      <td>Initial release schedule announcement</td>
+      <td>-</td>
+      <td>14 March 2017</td>
+      <td>Release Engineers send announcement email to developers with
+	a rough schedule.</td>
+    </tr>
+
+    <tr>
+      <td>Release schedule reminder</td>
+      <td>21 April 2017</td>
+      <td>8 May 2017</td>
+      <td>Release Engineers send reminder announcement e-mail to
+	developers with updated schedule.</td>
+    </tr>
+
+    <tr>
+      <td>Code slush begins</td>
+      <td>19 May 2017</td>
+      <td>19 May 2017</td>
+      <td>Release Engineers announce that all further commits to the
+	stable/11 branch will not require explicit
+	approval, however new features should be avoided.</td>
+    </tr>
+
+    <tr>
+      <td>Code freeze begins</td>
+      <td>2 June 2017</td>
+      <td>2 June 2017</td>
+      <td>Release Engineers announce that all further commits to the
+	stable/11 branch will require explicit approval.
+	Certain blanket approvals will be granted for narrow areas of
+	development, documentation improvements, etc.</td>
+    </tr>
+
+    <tr>
+      <td>BETA1 builds begin</td>
+      <td>9 June 2017</td>
+      <td>9 June 2017</td>
+      <td>First beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>BETA2 builds begin</td>
+      <td>16 June 2017</td>
+      <td>16 June 2017</td>
+      <td>Second beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>BETA3 builds begin *</td>
+      <td>23 June 2017</td>
+      <td>23 June 2017</td>
+      <td>Third beta test snapshot.</td>
+    </tr>
+
+    <tr>
+      <td>releng/11.1 branch</td>
+      <td>30 June 2017</td>
+      <td>30 June 2017</td>
+      <td>Subversion branch created; future release engineering
+	proceeds on this branch.</td>
+    </tr>
+
+    <tr>
+      <td>RC1 builds begin</td>
+      <td>30 June 2017</td>
+      <td>30 June 2017</td>
+      <td>First release candidate.</td>
+    </tr>
+
+    <tr>
+      <td>stable/11 thaw</td>
+      <td>2 July 2017</td>
+      <td>30 June 2017</td>
+      <td>The code freeze on the stable/11 branch
+	is lifted.</td>
+    </tr>
+
+    <tr>
+      <td>RC2 builds begin</td>
+      <td>7 July 2017</td>
+      <td>7 July 2017</td>
+      <td>Second release candidate.</td>
+    </tr>
+
+    <tr>
+      <td>RC3 builds begin *</td>
+      <td>14 July 2017 </td>
+      <td>14 July 2017 </td>
+      <td>Third release candidate.</td>
+    </tr>
+
+    <tr>
+      <td>RELEASE builds begin</td>
+      <td>21 July 2017</td>
+      <td>21 July 2017</td>
+      <td>11.1-RELEASE builds begin.</td>
+    </tr>
+
+    <tr>
+      <td>RELEASE announcement</td>
+      <td>26 July 2017</td>
+      <td>26 July 2017</td>
+      <td>11.1-RELEASE press release.</td>
+    </tr>
+
+    <tr>
+      <td>Turn over to the secteam</td>
+      <td>-</td>
+      <td>9 August 2017</td>
+      <td>releng/11.1 branch is handed over to the
+	FreeBSD Security Officer Team in one or two weeks after the
+	announcement.</td>
+    </tr>
+  </table>
+
+  <p>"*" indicates "as-needed" items.</p>
+
+  <?ignore <h1>Status / TODO</h1>
+  <a href="&base;/releases/&local.rel;R/todo.html">&os; Release
+    Engineering TODO Page</a>
+  ?>
+
+  <h1>Additional Information</h1>
+
+  <ul>
+    <li><a href="./releng/index.html">FreeBSD Release
+	Engineering website</a></li>
+  </ul>
+
+
+  </body>
+</html>

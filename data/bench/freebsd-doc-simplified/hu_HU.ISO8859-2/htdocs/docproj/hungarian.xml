@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Written by: Gabor Kovesdan	<gabor@FreeBSD.org>	-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A Magyar FreeBSD Dokumentációs Projekt</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <h2>A Projekt célja</h2>
+
+    <p>A FreeBSD Dokumentációs Projekt által
+      létrehozott dokumentációk felölelnek
+      ugyan minden témát, de ezek a dokumentumok az angol
+      nyelv amerikai követelményei szerint
+      íródtak, hiszen az angol nyelv vált az
+      informatika <q>hivatalos</q> nyelvévé.  A Magyar
+      FreeBSD Dokumentációs Projekt célja, hogy egy
+      egységes magyar nyelvű dokumentációt
+      nyújtson az angol nyelvismerettel egyáltalán
+      nem rendelkező, vagy angol nyelvet kevésbé
+      jól értő felhasználók
+      számára.</p>
+
+    <h2>Hogyan segíthetünk?</h2>
+
+    <p>Lefordíthatunk egy még le nem fordított
+      angol nyelvű dokumentumot, vagy akár saját magunk
+      is írhatunk új dokumentumokat.  Mind az angol, mind
+      a magyar nyelvű dokumentumok <a href="sgml.html">SGML</a>
+      nyelven készülnek, így az angol nyelv ismerete
+      mellett az SGML nyelv alapjaival is tisztában kell
+      lennünk, valamint követnünk kell az <a href="./../doc/hu/books/fdp-primer/index.html">A FreeBSD
+	Dokumentációs Projekt irányelvei
+	kezdőknek</a> című könyv tartalmi és
+      formai előírásait.</p>
+
+    <h2>Kapcsolat</h2>
+
+    <p>Kövesdán Gábor &lt;<a href="mailto:gabor@FreeBSD.org">gabor@FreeBSD.org</a>&gt;</p>
+
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   The FreeBSD French Documentation Project
+   Original revision: 1.10
+
+   Version francaise : Pascal Florin <FlorinPascal@aol.com>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Ressources artistiques FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+    <ul>
+      <li><a href="#bsd-daemon">Le "daemon" BSD</a></li>
+      <li><a href="#powered-by">Les logos <q>Powered by FreeBSD</q></a></li>
+      <li><a href="#adv">Les anciennes bannières publicitaires</a></li>
+      <li><a href="#use">Utilisation des ressources graphiques</a></li>
+    </ul>
+
+    <p>Cette page contient diverses ressources <q>artistiques</q> FreeBSD.
+      Des suggestions pour enrichir cette rubrique peuvent être envoyées à <a href="mailto:www@FreeBSD.org">www@FreeBSD.org</a>.  S'il vous plaît,
+      prenez connaissance des <a href="#use">conditions d'utilisation</a> de
+      ces ressources graphiques.</p>
+
+   <h2 id="bsd-daemon"><a href="copyright/daemon.html">Le "daemon"
+      BSD</a></h2>
+
+    <table width="100%" border="0">
+      <tbody>
+	<tr>
+	  <td align="center" colspan="6"><img src="./../gifs/daemon-phk.png" alt="Le        &quot;daemon&quot; BSD" width="191" height="208" border="0"/> </td>
+	</tr>
+	<tr>
+	  <td align="center" colspan="6">Créé par Poul-Henning Kamp<br/>Source:
+	    <a href="http://cvsweb.FreeBSD.org/src/share/examples/BSD_daemon/">
+	      /usr/share/examples/BSD_daemon/</a> sur les systèmes
+	    FreeBSD.</td>
+	</tr>
+	<tr>
+	  <td align="center" colspan="3"><a href="./../gifs/daemon_hammer.jpg"><img src="./../gifs/daemon_hammer-tn25.jpg" alt="Le &quot;daemon&quot; BSD brandissant un marteau" width="150" height="178" border="0"/></a></td>
+	  <td align="center" colspan="3"><img src="./../gifs/power.jpg" alt="Le &quot;daemon&quot; BSD faisant le service" width="160" height="246" border="0"/></td>
+	</tr>
+	<tr>
+	  <td align="center" colspan="2"><img src="./../gifs/news.jpg" alt="Le &quot;daemon&quot; BSD éditant le journal" width="193" height="144" border="0"/></td>
+	  <td align="center" colspan="2"><img src="./../gifs/doc.jpg" alt="Le &quot;daemon&quot; BSD lisant la documentation" width="274" height="163" border="0"/></td>
+	  <td align="center" colspan="2"><img src="./../gifs/releases.jpg" alt="Le &quot;daemon&quot; livrant les dernières versions" width="259" height="178" border="0"/></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <h2 id="powered-by">Les logos <q>Powered by FreeBSD</q></h2>
+
+    <table width="100%" border="0">
+      <tbody>
+	<tr>
+	  <td align="left"><img src="./../gifs/powerlogo.gif" alt="Logo Powered        by FreeBSD" align="left" border="0"/></td>
+	  <td align="left"><img src="./../gifs/power-button.gif" alt="Logo Powered by FreeBSD" align="left" border="0"/></td>
+	</tr>
+
+	<tr>
+	  <td align="right"><img src="./../gifs/pbfbsd2.gif" width="171" alt="Logo Powered by FreeBSD" height="64" border="0"/></td>
+	  <td align="right"><img src="./../gifs/powerani.gif" width="171" alt="Logo Powered by FreeBSD" height="64"/></td>
+	  <td align="right"><img src="./../gifs/fhp_mini.jpg" width="145" alt="Logo FreeBSD Hardware Partner" height="50"/></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p align="center"><img src="./../gifs/banner1.gif" alt="Logo FreeBSD The  Power To Serve" width="446" height="63" border="0"/></p>
+    <p align="center"><img src="./../gifs/banner2.gif" alt="Logo FreeBSD The  Power To Serve" width="310" height="63" border="0"/></p>
+    <p align="center"><img src="./../gifs/banner3.gif" alt="Logo FreeBSD The  Power To Serve" width="250" height="35" border="0"/></p>
+    <p align="center"><img src="./../gifs/banner4.gif" alt="Logo FreeBSD The  Power To Serve" width="225" height="46" border="0"/></p>
+
+    <h2>Anciennes bannières publicitaires</h2>
+
+    <table width="100%" border="0">
+      <tbody>
+        <tr>
+          <!-- Wow, the URI scheme is wrong in this image -->
+          <td align="center"><img src="./../gifs/freebsd-advert.gif" alt="      Bannière1" width="455" height="60" border="0"/></td>
+          <td align="center"><img src="./../gifs/freebsd_3.gif" alt="      Bannière2" width="306" height="94" border="0"/></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="use">Utilisation des ressources graphiques</h2>
+
+    <p>Les logos <q>Powered by FreeBSD</q> ci-dessus peuvent être <a href="./../gifs/powerlogo.gif">téléchargés</a> et utilisés
+      sur des pages internet personnelles ou commerciales hébergées
+      par des machines qui tournent sous FreeBSD. L'utilisation de ce logo ou
+      d'autres produits similaires aux <a href="copyright/daemon.html">"daemons" BSD</a> à des fins lucratives
+      nécessite les consentements préalables de <a href="mailto:taob@risc.org">Brian
+      Tao</a> (créateur du logo <q>power</q>) et de  <a href="mailto:mckusick@mckusick.com">Marshall Kirk McKusick</a>
+      (dépositaire du copyright pour l'image du "daemon" BSD).</p>
+
+    <p>L'aspect du "daemon" BSD de Poul-Henning Kamp est enregistré sous <q>LA LICENCE
+	BEER-WARE</q>.  Consultez la rubrique <a href="http://www.freebsd.org/cgi/cvsweb.cgi/~checkout~/src/share/examples/BSD_daemon/README?content-type=text/plain">LISEZ-MOI</a>
+      pour plus d'informations.</p>
+
+    <h2 id="trademark">Marques déposées</h2>
+
+    <p>La <a href="http://www.freebsdfoundation.org">Fondation FreeBSD</a>
+      détiens plusieurs marques relatives à FreeBSD
+      (parmi lesquelles la marque déposée pour le terme
+      <q>FreeBSD</q>).  Pour plus d'information à propos de ces
+      marques déposées consultez les <a href="http://www.freebsdfoundation.org/faqs.shtml#Trademark">Conditions
+      et termes d'utilisation de la marque déposée
+      FreeBSD</a>.</p>
+
+  </body>
+</html>

@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: PALI, Gabor <pgj@FreeBSD.org>
+     %SOURCE%   en/news/2009/news.xml
+     %SRCID%    1.1
+-->
+<news>
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">
+      $FreeBSD$
+    </cvs:keyword>
+
+  <year>
+    <name>2009</name>
+
+    <month>
+      <name>12</name>
+
+      <day>
+	<name>20</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:ryusuke@FreeBSD.org">Ryusuke
+	    SUZUKI</a> (doc/ja_JP, www/ja)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>7</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:gavin@FreeBSD.org">Gavin Atkinson</a>
+	    (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <title>Az NVIDIA kártyák most már az
+	    amd64 architektúrán is hivatalosan
+	    támogatottak</title>
+
+	  <p>Az NVIDIA Corporation bétateszt
+	    céljából kiadta az NVIDIA 195.22
+	    verziójú grafikus meghajtójának
+	    FreeBSD változatát i386 és
+	    amd64 architektúrákra egyaránt.
+	    A meghajtó a FreeBSD operációs rendszer
+	    legújabb (7.2-STABLE és 8.0-RELEASE)
+	    változatait támogatja, és számos
+	    újítást vonultat fel, mint
+	    például az SLI támogatása, jobb
+	    kompatibilitás és teljesítmény,
+	    különösen 4 GB fizikai
+	    memóriánál többel rendelkező
+	    rendszerek esetén.  Ez a meghajtó első
+	    olyan kiadása, amely támogatja az amd64
+	    architektúrát, mivel korábban
+	    kizárólag csak i386 rendszerekre volt
+	    elérhető.  A további
+	    részletekről az eredeti <a href="http://www.nvnews.net/vbulletin/showthread.php?=142120">bejelentésben</a>
+	    olvashatunk.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>11</name>
+
+      <day>
+	<name>27</name>
+
+	<event>
+	  <title>Sajtókiadvány a FreeBSD 8.0
+	    megjelenéséről</title>
+
+	  <p>Megjelent a <a href="./../releases/8.0R/pressrelease.html">FreeBSD 8.0
+	      megjelenéséről szóló</a>
+	    sajtókiadvány.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>26</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-RELEASE!</title>
+
+	  <p>Megjelent a <a href="./../releases/8.0R/announce.html">FreeBSD 8.0-RELEASE</a>.
+	    A kiadáshoz kapcsolódó legfrissebb
+	    információk és/vagy
+	    problémák miatt a telepítés
+	    előtt ne felejtsük el átolvasni a
+	    kiadáshoz mellékelt <a href="./../releases/8.0R/relnotes.html">jegyzeteket</a>
+	    valamint <a href="./../releases/8.0R/errata.html">hibajegyzéket</a>.
+	    A különböző FreeBSD
+	    kiadásokról részletesebben a <a href="./../releases/index.html">kiadási
+	      információkkal</a> foglalkozó oldalon
+	    olvashatunk.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>18</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:mandree@FreeBSD.org">Matthias Andree</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>12</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-RC3!</title>
+
+	  <p>A FreeBSD 8.0 kiadási ciklusának harmadik
+	    kiadásra jelölt változata végre
+	    megérkezett.  ISO formátumban az összes
+	    Tier 1, valamint <em>pendrive</em> formátumban
+	    pedig amd64 és i386 architektúrákra <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-November/052699.html">érhetőek el</a>
+	    lemezképek, melyek a legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD tükrözésen</a>
+	    már megtalálhatóak.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>10</name>
+
+      <day>
+	<name>29</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:sylvio@FreeBSD.org">Sylvio
+	    Cesar Teixeira</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>28</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-RC2! </title>
+
+	  <p>Mostantól érhető el a FreeBSD 8.0
+	    megjelenési ciklusának második
+	    kiadásra jelölt változata.  A <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD tükrözések</a>
+	    többségén már <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-October/052544.html">megtalálhatjuk</a>
+	    az ISO lemezképeket az összes Tier 1,
+	    valamint a <em>pendrive</em> formátumú
+	    telepítőkészleteket az amd64 és
+	    i386 architektúrákra.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>11</name>
+
+	<event>
+	  <title>2009 második és harmadik
+	    negyedéves (április - szeptember)
+	    helyzetjelentések</title>
+
+	  <p>A 2009 áprilisa és szeptembere közt
+	    eltelt időszakról tudósító
+	    38 helyzetjelentés <a href="./../news/status/report-2009-04-2009-09.html">mostantól
+	      elérhető</a>.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>4</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:jh@FreeBSD.org">Jaakko
+	    Heinonen</a> (src)</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>9</name>
+
+      <day>
+	<name>21</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-RC1!</title>
+
+	  <p>Megjelent a FreeBSD-8.0 kiadási ciklusának
+	    első kiadásra jelölt változata.  A
+	    legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	      tükrözésről</a> mostantól <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-September/052024.html">letölthetőek</a>
+	    ISO lemezképek az összes Tier 1
+	    architektúrára, valamint <em>pendrive</em>
+	    formátumú telepítőkészletek
+	    amd64 és i386 architektúrákra.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>15</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:wen@FreeBSD.org">Wen
+	    Heping</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>7</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-BETA4!</title>
+
+	  <p>A FreeBSD 8.0 kiadásának negyedik, egyben
+	    utolsó BETA változata megjelent.  A
+	    hozzá tartozó ISO lemezképek az
+	    összes Tier 1 architektúrára,
+	    valamint a <em>pendrive</em> formátumú
+	    telepítőkészletek amd64 és i386
+	    architektúrákhoz mostantól <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-September/051801.html">elérhetőek</a>
+	    a <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	    tükrözések</a>
+	    többségéről.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>8</name>
+
+      <day>
+	<name>24</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-BETA3!</title>
+
+	  <p>A FreeBSD 8.0 kiadásának harmadik BETA
+	    változata <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-August/051628.html">megérkezett</a>.
+	    A <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	      tükrözések</a>
+	    többségéről mostanra már
+	    elérhető ISO lemezkép
+	    formájában az összes Tier 1
+	    architektúrára, valamint <em>pendrive</em>
+	    formátumban amd64 és i386
+	    architektúrákra.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>10</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:fluffy@FreeBSD.org">Dima
+	    Panov</a> (ports)</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>7</name>
+
+      <day>
+	<name>20</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:yzlin@FreeBSD.org">Yi-Jheng
+	    Lin</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>18</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-BETA2!</title>
+
+	  <p>A FreeBSD-8.0 kiadásának végső
+	    állomása tovább folytatódik a
+	    második publikus béta változat
+	    megjelenésével.  A FreeBSD 8.0-BETA2 ISO
+	    lemezképei az összes Tier 1
+	    architektúrára a legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	      tükrözésről</a>
+	    elérhetőek.  Az első béta
+	    kiadáshoz hasonlóan ezt a változatot
+	    sem javasoljuk még éles környezetben.
+	    Ennek ellenére szeretnénk mindenkit
+	    bátorítani, hogy lehetőség szerint
+	    minél többen próbálják ki
+	    és jelezzék az esetleges
+	    problémákat.  A kiadással kapcsolatban
+	    további általános és
+	    frissítési információkat a
+	    hivatalos <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-July/051181.html">bejelentésben</a>
+	    olvashatunk.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>7</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 8.0-BETA1!</title>
+
+	  <p>Az első publikus béta változat
+	    megjelentetésével elérkeztünk a
+	    FreeBSD-8.0 kiadásának végső
+	    állomásához.  A FreeBSD 8.0-BETA1 ISO
+	    lemezképei az összes Tier 1
+	    architektúrára a legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">
+	      FreeBSD tükrözésről</a> már
+	    elérhetőek.  Bátran ajánljuk
+	    mindenkinek a FreeBSD 8.0-BETA1
+	    kipróbálását,
+	    véleményezését, azonban a
+	    telepítés előtt ne felejtsük el
+	    tüzetesen átolvasni a <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-July/051018.html">
+	      hivatalos bejelentést</a>.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>6</name>
+
+      <day>
+	<name>8</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:np@FreeBSD.org">Navdeep
+	    Parhar</a> (src)</p>
+	</event>
+
+	<event>
+	  <p>Új tag: <a href="mailto:tuexen@FreeBSD.org">Michael
+	    Tuexen</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>4</name>
+
+	<event>
+	  <title>Átszervezések a Port Manager
+	    Teamben</title>
+
+	  <p>A Port Manager Team lelkesedéssel köszönti
+	    két új tagját.</p>
+
+	  <p>Martin Wilke három évvel ezelőtt kapta
+	    commit jogát, és azóta az egyik
+	    legaktívabb fejlesztőnk.  A projekten belül
+	    számos kisebb csoportnak, többek közt a
+	    python, ports-security és KDE csapatnak is tagja.</p>
+
+	  <p>Ion-Mihai Tetcu a portok regressziós
+	    tesztelésével és
+	    minőségbiztosításával
+	    foglalkozik.  Ebből a célból hozta
+	    létre a QAT elnevezésű automatikus
+	    tesztelőrendszert, amely az egyes commitok után
+	    ellenőrzi az egyes portokat, illetve a pointyhat
+	    csomagkészítő klaszter
+	    számára szolgáltat folyamatosan friss
+	    visszajelzéseket.</p>
+
+	  <p>Ezzel egyidőben sajnos búcsút kell
+	    intenünk Kirill Ponomarewnek, akinek mostanság
+	    már nincs ideje a FreeBSD fejlesztésével
+	    foglalkozni, ezért elhagyja a Port Manager
+	    csapatát.</p>
+
+	  <p>Köszönjük Kirillnek az eddig végzett
+	    remek munkáját és sok sikert
+	    kívánunk Martinnak és Ion-Mihainak a
+	    rájuk bízott feladataik
+	    teljesítésében!</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <p>Új bugmeisterek:
+	    <a href="mailto:gavin@FreeBSD.org">Gavin Atkinson</a>,
+	    <a href="mailto:vwe@FreeBSD.org">Volker Werth</a></p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>5</name>
+
+      <day>
+	<name>28</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:avl@FreeBSD.org">Alexander
+	    Logvinov</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>27</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:kmoore@FreeBSD.org">Kris
+	    Moore</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>23</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:bcr@FreeBSD.org">Benedict
+	    Reuschling</a> (doc/de_DE, www/de)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>22</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:jilles@FreeBSD.org">Jilles
+	    Tjoelker</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>20</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:tota@FreeBSD.org">TAKATSU
+	    Tomonari</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>10</name>
+
+	<event>
+	  <title>Kihirdették az ezévi Google Summer of
+	    Code projekteket</title>
+
+	  <p>A FreeBSD Projekt ebben az évben is rengeteg nagyon
+	    jó pályázatot kapott a <a href="http://code.google.com/soc">Google Summer of Code</a>
+	    programjában résztvenni
+	    kívánó hallgatóktól.  A
+	    program részeként ebben az évben a FreeBSD
+	    Projekt részére 20 hallgatói
+	    pályázatot választottak ki
+	    finanszírozásra.  Szeretnénk viszont
+	    bíztatni mindenkit, akinek ebben az évben nem
+	    fogadtuk el a beadott pályázatát, hogy
+	    a FreeBSD Projekt a közösségi
+	    levelezési listákon és más
+	    fejlesztői fórumokon keresztül
+	    továbbra is támogatja az
+	    operációs rendszerek fejlesztése
+	    iránt érdeklődő
+	    hallgatókat.</p>
+
+	  <p>A következő hallgatói projektek kaptak
+	    tehát támogatást:
+
+	    <ul>
+	      <li><a href="http://wiki.FreeBSD.org/AdityaSarawgi">Aditya Sarawgi</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009AdityaSarawgi">Az ext2fs támogatás továbbfejlesztése és GPL-mentessé tétele</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/UlfLilleengen">Ulf Lilleengen</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/AlejandroPulver">Alejandro Pulver</a>,
+		<em>A portfa licenszelési infrastruktúrája (második rész: integrálás)</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/ErwinLansing">Erwin Lansing</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/AnaKukec">Ana Kukec</a>,
+		<em>A környező gépek biztonságos felderítése IPv6 alatt — natív API FreeBSD rendszerekre</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/BjoernZeeb">Bjoern Zeeb</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/DavidForsythe">David Forsythe</a>,
+		<em><a href="http://wiki.FreeBSD.org/SoC2009DavidForsythe">A csomagkezelő eszközök újraírása egy új könyvtáron keresztül, sok újítással</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/TimKientzle">Tim Kientzle</a>)</li>
+
+	      <li><a class="nonexistent" href="http://wiki.FreeBSD.org/EdwardTomaszNapierala">Edward Tomasz Napierala</a>,
+		<em>Hierarchikus erőforráskorlátozás</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/BrooksDavis">Brooks Davis</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/FabioChecconi">Fabio Checconi</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009FabioChecconi">GEOM alapú lemezütemezők</a></em>
+		(Mentor: <a class="nonexistent" href="http://wiki.FreeBSD.org/LuigiRizzo">Luigi Rizzo</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/FangWang">Fang Wang</a>,
+		<em>A TCP UTO megvalósítása</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/RuiPaulo">Rui Paulo</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/G%C3%A1borK%C3%B6vesd%C3%A1n">Kövesdán Gábor</a>,
+		<em><a href="http://wiki.FreeBSD.org/G%C3%A1borSoC2009">BSD licenszű libiconv az alaprendszerben</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/XinLi">Xin Li</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/GlebKurtsov">Gleb Kurtsov</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009GlebKurtsov">Rendszermagon belül támogatott, halmozható titkosított állományrendszer (pefs)</a></em>
+		(Mentor: <a class="nonexistent" href="http://wiki.FreeBSD.org/StanislavSedov">Stanislav Sedov</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/IliasMarinos">Ilias Marinos</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009IliasMarinos">Alkalmazásfüggő biztonsági nyomkövetés</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/RobertWatson">Robert Watson</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/MartaCarbone">Marta Carbone</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009MartaCarbone">Az IPFW és a dummynet továbbfejlesztése</a></em>
+		(Mentor: <a class="nonexistent" href="http://wiki.FreeBSD.org/LuigiRizzo">Luigi Rizzo</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/NikhilBysani">Nikhil Bysani</a>,
+		<em>A NetworkManager portolása FreeBSD rendszerekre</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/EdSchouten">Ed Schouten</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/P%C3%A1liG%C3%A1borJ%C3%A1nos">Páli Gábor János</a>,
+		<em><a href="http://wiki.FreeBSD.org/PGJSoC2009">Segédkönyvtárak tervezése és fejlesztése a különböző alrendszerek felügyeletéhez és vezérléséhez</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/OleksandrTymoshenko">Oleksandr Tymoshenko</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/PrashantVaibhav">Prashant Vaibhav</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009PrashantVaibhav">A időzített hívási séma átdolgozása: egy lépés a "tickless" rendszermag felé</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/EdMaste">Ed Maste</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/SatishSrinivasan">Satish Srinivasan</a>,
+		<em>TrustedBSD Audit: Linuxos és BSM formátumú audit naplók konvertálásához BSD licenszű segédprogramok fejlesztése</em>
+		(Mentor: <a class="nonexistent" href="http://wiki.FreeBSD.org/StaceySon">Stacey Son</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/SylvestreGallon">Sylvestre Gallon</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009SylvestreGallon">A FreeBSD USB támogatásának javítása</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/PhilipPaeps">Philip Paeps</a>)</li>
+
+	      <li><a class="nonexistent" href="http://wiki.FreeBSD.org/TatsianaElavaya">Tatsiana Elavaya</a>,
+		<em><a class="nonexistent" href="http://wiki.FreeBSD.org/SOC2009TatsianaElavaya">Az IPW szabályrendszerének optimalizációja és egy magasabb szintű szabályleíró nyelv létrehozása</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/DiomidisSpinellis">Diomidis Spinellis</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/TatsianaSeveryna">Tatsiana Severyna</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009TatsianaSeveryna">A puffs (pass-to-userspace framework file system) FreeBSD portja</a></em>
+		(Mentor: <a class="nonexistent" href="http://wiki.FreeBSD.org/KonstantinBelousov">Konstantin Belousov</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/ZachariahRiggle">Zachariah Riggle</a>,
+		<em>TCP/IP regressziós tesztek</em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/GeorgeNevilleNeil">George Neville Neil</a>)</li>
+
+	      <li><a href="http://wiki.FreeBSD.org/ZhaoShuai">Zhao Shuai</a>,
+		<em><a href="http://wiki.FreeBSD.org/SOC2009ZhaoShuai">FIFO optimalizációk</a></em>
+		(Mentor: <a href="http://wiki.FreeBSD.org/JohnBaldwin">John Baldwin</a>)</li>
+	    </ul>
+	  </p>
+
+	  <p>A FreeBSD programbeli résztvételéről
+	    a <a href="http://wiki.FreeBSD.org/SummerOfCode2009">Summer of
+	      Code Wiki</a> oldalán található
+	    részletesebb információkat.  A nagy
+	    nyári kódolás május 23-án
+	    veszi kezdetét, addig köszöntsük
+	    együtt körünkben a programban ezévben
+	    résztvevő 20 hallgatót!</p>
+	</event>
+      </day>
+
+      <day>
+	<name>7</name>
+
+	<event>
+	  <title>2009 első negyedéves (január -
+	    március) helyzetjelentések</title>
+
+	  <p>A 2009 januárja és márciusa közt
+	    eltelt időszakról tudósító
+	    15 helyzetjelentés <a href="./../news/status/report-2009-01-2009-03.html">mostantól
+	      elérhető</a>.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>5</name>
+
+	<event>
+	  <p>Új tag, egykori SoC résztvevő: <a href="mailto:snb@FreeBSD.org">Nick Barkas</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>4</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 7.2-RELEASE!</title>
+
+	  <p>A FreeBSD <a href="./../releases/7.2R/announce.html">7.2-RELEASE</a>
+	    kiadása mostantól elérhető.  A
+	    telepítés előtt javasolt a
+	    kiadással kapcsolatos legfrissebb <a href="./../7.2R/relnotes.html">Kiadási
+	      jegyzetek</a> és <a href="./../releases/7.2R/errata.html">Sajtóhibák</a>
+	    alapos átolvasása.  A FreeBSD kiadásokra
+	    vonatkozó bővebb információkat a
+	    <a href="./../releases/index.html">kiadási
+	      információkat</a> tartalmazó oldalon
+	    olvashatjuk.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>4</name>
+
+      <day>
+	<name>24</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 7.2-RC2!</title>
+
+	  <p>A FreeBSD 7.2-RELEASE kiadási ciklus
+	    következő lépéseként a tervek
+	    szerint megjelent a második kiadásra
+	    jelölt (Release Candidate) változat.  A <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	    tükrözések</a>
+	    többségéről most már a
+	    Tier 1 támogatással rendelkező
+	    architektúrák mindegyikére <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-April/049591.html">elérhetőek</a>
+	    lemezképek.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>21</name>
+
+	<event>
+	  <title>Elérhetőek a DCBSDCon
+	    előadásai!</title>
+
+	  <p>A nemrég megrendezésre került <a href="http://www.dcbsdcon.org">DCBSDCon 2009</a>
+	    összes videora vett szakmai előadása
+	    mostantól elérhető a <a href="http://www.youtube.com">YouTube</a> portál
+	    <a href="http://www.youtube.com/bsdconferences">BSDConferences</a>
+	    csatornáján.  Ezzel együtt a
+	    csatornán most már több mint 50
+	    különböző szakmai előadás
+	    videoanyaga található meg a korábbi
+	    MeetBSD, NYCBSDCon, AsiaBSDCon és BSDCan anyagai
+	    mellett.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>17</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 7.2-RC1!</title>
+
+	  <p>Megjelent a FreeBSD 7.2-RELEASE kiadási
+	    ciklusában következő, első
+	    kiadásra jelölt (Release Candidate)
+	    változata.  Az összes Tier 1
+	    architektúrára a legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">FreeBSD
+	      tükrözésen</a> már
+	    mostantól <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-April/049464.html">elérhetőek</a>
+	    hozzá lemezképek.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>12</name>
+
+	<event>
+	  <p>Bővebb commit jogosultság: <a href="mailto:pgj@FreeBSD.org">Páli Gábor</a>
+	    (ports, doc)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>10</name>
+
+	<event>
+	  <title>Megjelent a PC-BSD 7.1!</title>
+
+	  <p>Örömmel értesítünk mindenkit,
+	    hogy megjelent a PC-BSD 7.1 kiadása.  A PC-BSD egy FreeBSD
+	    alapú operációs rendszer, amely az
+	    egyszeri felhasználók számára
+	    igyekszik egy könnyen használható asztali
+	    rendszert kínálni.  A legfrissebb
+	    változat újításai és
+	    javításai a megtalálhatóak a <a href="http://www.pcbsd.org/content/view/104/30/">honlapon</a>.</p>
+
+	  <p>A kiadás interneten keresztül <a href="http://www.pcbsd.org/">letölthető</a> vagy <a href="http://www.freebsdmall.com/">megrendelhető</a>
+	    DVD változatban.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>6</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:rmacklem@FreeBSD.org">Rick
+	      Macklem</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 7.2-BETA1!</title>
+
+	  <p>Az első béta változat
+	    megjelentetésével megkezdődött a
+	    FreeBSD 7.2-RELEASE kiadás ciklusánák
+	    utolsó szakasza.  Mostantól már a
+	    legtöbb <a href="/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html">tükrözésen</a>
+	    <a href="http://lists.freebsd.org/pipermail/freebsd-stable/2009-April/049233.html">elérhetőek</a>
+	    lemezképek az összes Tier 1
+	    architektúrához.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>3</name>
+
+      <day>
+	<name>25</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:skreuzer@FreeBSD.org">Steven
+	    Kreuzer</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>22</name>
+
+	<event>
+	  <title>A FreeBSD Projekt is résztvesz a Google Summer of
+	    Code 2009 programjában</title>
+
+	  <p>Örömmel jelentjük be, hogy a FreeBSD Projekt
+	    meghívást nyert a Google Summer of Code 2009
+	    programjába, amelynek köszönhetően
+	    ösztöndíjat tudunk adni a FreeBSD
+	    forráskódjával dolgozó
+	    hallgatóinknak.  Szeretettel várunk minden
+	    érdeklődőt, és javasoljuk, hogy
+	    minél hamarabb adják be a
+	    jelentkezésünket!</p>
+
+	  <p>További információkért
+	      lásd a <a href="./../projects/summerofcode.html">FreeBSD
+	      nyári projektötleteit</a>, illetve a <a href="http://lists.freebsd.org/pipermail/freebsd-announce/2009-March/001242.html">hivatalos
+	      bejelentést</a>.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>16</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:fabient@FreeBSD.org">Fabien
+	    Thomas</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>12</name>
+
+	<event>
+	  <title>FreeBSD Twitteren is</title>
+
+	  <p>Mostantól számos félhivatalos Twitter
+	    stream is elérhető a FreeBSD Projekt legfrissebb
+	    híreivel!  A <a href="http://twitter.com/freebsdannounce">@freebsdannounce</a>
+	    stream a FreeBSD híreit foglalja össze
+	    röviden és linkeli be.  A <a href="http://twitter.com/freebsdblogs">@freebsdblogs</a> a
+	    FreeBSD fejlesztők legfrissebb blogbejegyzéseit
+	    közli közvetlenül a <a href="http://planet.freebsdish.org">Planet
+	      FreeBSD</a> oldalról.  A <a href="http://twitter.com/freebsd">@freebsd</a> ez
+	    előbbi két forrásból és
+	    más egyéb helyekről vesz át
+	    híreket.  Végezetül a nemrég
+	    elindult <a href="http://twitter.com/bsdevents">@bsdevents</a> stream
+	    a Projekttel kapcsolatos <a href="http://www.FreeBSD.org/events">rendezvényeket</a>,
+	    illetve egyéb BSD témájú
+	    összejövetelekről szóló
+	    további emlékeztetőket és
+	    felhívásokat közvetít.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:dhn@FreeBSD.org">Dennis
+	    Herrmann</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>1</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:dchagin@FreeBSD.org">Dmitry
+	    Chagin</a> (src)</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>2</name>
+
+      <day>
+	<name>19</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:mva@FreeBSD.org">Marcus von
+	    Appen</a> (ports)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>18</name>
+
+	<event>
+	  <p>Új tag: <a href="mailto:avg@FreeBSD.org">Andriy
+	    Gapon</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>14</name>
+
+	<event>
+	  <title>Megjelent a KDE 4.2.0 FreeBSD változata!</title>
+
+	  <p>A KDE 4.2.0 beolvasztásra került a
+	    portfába.  A vele kapcsolatos
+	    újításokról a <a href="http://kde.org/announcements/4.2/index.php">hivatalos
+	      bejelentésben</a> olvashatunk részletesebben.
+	    A KDE FreeBSD alatti használatáról
+	    további információkat pedig a <a href="http://freebsd.kde.org">FreeBSD KDE</a> projekt
+	    honlapján találhatunk.</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+      <name>1</name>
+
+      <day>
+	<name>28</name>
+
+	<event>
+	  <title>2008 negyedik negyedéves (október -
+	    december) helyzetjelentések</title>
+
+	  <p>A 2008 októbere és decembere közt eltelt
+	    időszakról tudósító 19
+	    helyzetjelentés <a href="./../news/status/report-2008-10-2008-12.html">mostantól
+	      elérhető</a>.</p>
+	</event>
+
+	<event>
+	  <p>Új tag: <a href="mailto:beat@FreeBSD.org">Beat
+	    Gätzi</a> (ports)</p>
+	</event>
+
+	<event>
+	  <p>Új tag: <a href="mailto:jamie@FreeBSD.org">Jamie
+	     Gritton</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>17</name>
+
+	<event>
+	  <title>Felkerült egy FreeBSD rendszermagról
+	    szóló előadás</title>
+
+	  <p>Kirk McKusick a <a href="http://www.youtube.com/watch?v=nwbqBdghh6E">FreeBSD
+	      rendszermag belső
+	      működését</a> bemutató
+	    előadásainak első része teljes
+	      hosszában felkerült a <a href="http://www.youtube.com">YouTube</a> <a href="http://www.youtube.com/bsdconferences">BSD
+	      konferenciákkal</a> foglalkozó
+	      csatornájára.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>9</name>
+
+	<event>
+	    <title>Megjelent a GNOME 2.24.2 FreeBSD
+	      változata!</title>
+
+	    <p>A FreeBSD GNOME csapata örömmel jelenti be a GNOME
+	      2.24.2 verziójának FreeBSD
+	      változatát.  A kiadásról
+	      bővebben a <a href="./../gnome/index.html">FreeBSD
+		GNOME</a> projekt honlapján
+	      tájékozódhatunk.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>5</name>
+
+	<event>
+	  <title>Megjelent a FreeBSD 7.1-RELEASE!</title>
+
+	  <p>Megjelent a <a href="./../releases/7.1R/announce.html">FreeBSD
+	      7.1-RELEASE</a>!  A 7.1 legfrissebb híreivel
+	      és/vagy
+	    kisebb problémáival kapcsolatban a
+	    kiadás telepítése előtt
+	    feltétlenül olvassuk át a <a href="./../releases/7.1R/relnotes.html">kiadási
+	      jegyzeteket</a> és a hozzá tartozó <a href="./../releases/7.1R/errata.html">hibajegyzéket</a>.
+	    A FreeBSD kiadásairól részletesebben a <a href="./../releases/index.html">kiadási
+	      információkat</a>
+	    tartalmazó oldalon olvashatunk.</p>
+	</event>
+      </day>
+    </month>
+  </year>
+</news>

@@ -1,0 +1,45 @@
+<!-- DocBook 5.0, FreeBSD's author and manual-page entities, and the ISO character entity sets. -->
+<!ENTITY % docbook SYSTEM "share/xml/docbook50.dtd">
+%docbook;
+<!ENTITY % authors SYSTEM "share/xml/authors.ent">
+%authors;
+<!ENTITY % man SYSTEM "share/xml/man-refs.ent">
+%man;
+<!ENTITY % iso-amsa SYSTEM "xmlcharent/iso-amsa.ent">
+%iso-amsa;
+<!ENTITY % iso-amsb SYSTEM "xmlcharent/iso-amsb.ent">
+%iso-amsb;
+<!ENTITY % iso-amsc SYSTEM "xmlcharent/iso-amsc.ent">
+%iso-amsc;
+<!ENTITY % iso-amsn SYSTEM "xmlcharent/iso-amsn.ent">
+%iso-amsn;
+<!ENTITY % iso-amso SYSTEM "xmlcharent/iso-amso.ent">
+%iso-amso;
+<!ENTITY % iso-amsr SYSTEM "xmlcharent/iso-amsr.ent">
+%iso-amsr;
+<!ENTITY % iso-box SYSTEM "xmlcharent/iso-box.ent">
+%iso-box;
+<!ENTITY % iso-cyr1 SYSTEM "xmlcharent/iso-cyr1.ent">
+%iso-cyr1;
+<!ENTITY % iso-cyr2 SYSTEM "xmlcharent/iso-cyr2.ent">
+%iso-cyr2;
+<!ENTITY % iso-dia SYSTEM "xmlcharent/iso-dia.ent">
+%iso-dia;
+<!ENTITY % iso-grk1 SYSTEM "xmlcharent/iso-grk1.ent">
+%iso-grk1;
+<!ENTITY % iso-grk2 SYSTEM "xmlcharent/iso-grk2.ent">
+%iso-grk2;
+<!ENTITY % iso-grk3 SYSTEM "xmlcharent/iso-grk3.ent">
+%iso-grk3;
+<!ENTITY % iso-grk4 SYSTEM "xmlcharent/iso-grk4.ent">
+%iso-grk4;
+<!ENTITY % iso-lat1 SYSTEM "xmlcharent/iso-lat1.ent">
+%iso-lat1;
+<!ENTITY % iso-lat2 SYSTEM "xmlcharent/iso-lat2.ent">
+%iso-lat2;
+<!ENTITY % iso-num SYSTEM "xmlcharent/iso-num.ent">
+%iso-num;
+<!ENTITY % iso-pub SYSTEM "xmlcharent/iso-pub.ent">
+%iso-pub;
+<!ENTITY % iso-tech SYSTEM "xmlcharent/iso-tech.ent">
+%iso-tech;

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-custom-brand">
+    <title>Customize the dashboard</title>
+    <para>Adapted from <link
+            xlink:href="http://www.prestonlee.com/2012/05/09/how-to-custom-brand-the-openstack-horizon-dashboard/"
+            >How To Custom Brand The OpenStack “Horizon”
+            Dashboard</link>.</para>
+    <para>You install the OpenStack dashboard through the
+            <literal>openstack-dashboard</literal> package. You can
+        customize the dashboard with your own colors, logo, and site
+        title through a CSS file.</para>
+    <para>Canonical also provides an
+            <literal>openstack-dashboard-ubuntu-theme</literal>
+        package that brands the Python-based Django interface.</para>
+    <!-- The following diagrams are sized incorrectly and will add back later -->
+    <!--<para>The following example shows a customized dashboard with
+        custom colors, logo, and site title:</para>
+    <mediaobject>
+        <imageobject role="fo">
+            <imagedata
+                fileref="figures/Login-OpenStack-Dashboard.png"
+                format="PNG" scale="40"/>
+        </imageobject>
+        <imageobject role="html">
+            <imagedata
+                fileref="figures/Login-OpenStack-Dashboard.png"
+                format="PNG"/>
+        </imageobject>
+    </mediaobject>
+    <mediaobject>
+        <imageobject role="fo">
+            <imagedata
+                fileref="figures/Flavors-TGen-Cloud-Dashboard.png"
+                format="PNG" scale="40"/>
+        </imageobject>
+        <imageobject role="html">
+            <imagedata
+                fileref="figures/Flavors-TGen-Cloud-Dashboard.png"
+                format="PNG"/>
+        </imageobject>
+    </mediaobject>-->
+    <procedure>
+        <step>
+            <para>Create a graphical logo with a transparent
+                background. The text <literal>TGen Cloud</literal> in
+                this example is rendered through
+                    <filename>.png</filename> files of multiple sizes
+                created with a graphics program.</para>
+            <para>Use a 200×27 for the logged-in banner graphic, and
+                365×50 for the login screen graphic.</para>
+        </step>
+        <step>
+            <para>Set the HTML title, which appears at the top of the
+                browser window, by adding the following line to
+                    <filename>/etc/openstack-dashboard/local_settings.py</filename>:</para>
+            <para><code>SITE_BRANDING = "Example, Inc.
+                Cloud"</code></para>
+        </step>
+        <step>
+            <para>Upload your new graphic files to the following
+                location:
+                <filename>/usr/share/openstack-dashboard/openstack_dashboard/static/dashboard/img/</filename></para>
+        </step>
+        <step>
+            <para>Create a CSS style sheet in the following directory:
+                <filename>/usr/share/openstack-dashboard/openstack_dashboard/static/dashboard/css/</filename></para>
+        </step>
+        <step>
+            <para>Edit your CSS file to override the Ubuntu
+                customizations in the <filename>ubuntu.css</filename>
+                file.</para>
+            <para>Change the colors and image file names as
+                appropriate, though the relative directory paths
+                should be the same. The following example file shows
+                you how to customize your CSS
+                file:</para><programlisting><?db-font-size 65%?>/*
+* New theme colors for dashboard that override the defaults:
+*  dark blue: #355796 / rgb(53, 87, 150)
+*  light blue: #BAD3E1 / rgb(186, 211, 225)
+*
+* By Preston Lee &lt;plee@tgen.org&gt;
+*/
+h1.brand {
+background: #355796 repeat-x top left;
+border-bottom: 2px solid #BAD3E1;
+}
+h1.brand a {
+background: url(../img/my_cloud_logo_small.png) top left no-repeat;
+}
+#splash .login {
+background: #355796 url(../img/my_cloud_logo_medium.png) no-repeat center 35px;
+}
+#splash .login .modal-header {
+border-top: 1px solid #BAD3E1;
+}
+.btn-primary {
+background-image: none !important;
+background-color: #355796 !important;
+border: none !important;
+box-shadow: none;
+}
+.btn-primary:hover,
+.btn-primary:active {
+border: none;
+box-shadow: none;
+background-color: #BAD3E1 !important;
+text-decoration: none;
+}</programlisting>
+        </step>
+        <step>
+            <para>Open the following HTML template in an editor:
+                <filename>/usr/share/openstack-dashboard/openstack_dashboard/templates/_stylesheets.html</filename></para>
+        </step>
+        <step>
+            <para>Add a line to include your
+                    <filename>custom.css</filename> file:</para>
+                <programlisting><?db-font-size 65%?>...
+ &lt;link href='{{ STATIC_URL }}bootstrap/css/bootstrap.min.css' media='screen' rel='stylesheet' /&gt;
+ &lt;link href='{{ STATIC_URL }}dashboard/css/{% choose_css %}' media='screen' rel='stylesheet' /&gt;
+ <emphasis>&lt;link href='{{ STATIC_URL }}dashboard/css/custom.css' media='screen' rel='stylesheet' /&gt;</emphasis>
+ ...</programlisting>
+        </step>
+        <step>
+            <title>Restart Apache:</title>
+            <para>On Ubuntu:
+            <screen><prompt>#</prompt> <userinput>service apache2 restart</userinput></screen>
+           </para>
+            <para>On Fedora, RHEL, CentOS:
+            <screen><prompt>#</prompt> <userinput>service httpd restart</userinput></screen>
+           </para>
+            <para>On openSUSE:
+            <screen><prompt>#</prompt> <userinput>service apache2 restart</userinput></screen>
+           </para>
+        </step>
+        <step>
+            <para>Reload the dashboard in your browser to view your
+                changes.</para>
+            <para>Modify your CSS file as appropriate.</para>
+        </step>
+    </procedure>
+</section>

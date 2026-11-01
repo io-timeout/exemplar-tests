@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Japanese Documentation Project -->
+<!-- Original revision: r54420 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <title>FreeBSD Ports Collection のインストール</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+
+<form method="get" action="//www.FreeBSD.org/cgi/ports.cgi">
+ports の検索:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">すべて</option>
+<option value="name">package 名</option>
+<option value="text">説明</option>
+<option value="pkgdescr">詳しい説明</option>
+<option value="maintainer">保守担当者</option>
+<option value="requires">必要なもの</option>
+</select>
+<input type="submit" value="検索"/>
+</form>
+
+<hr/>
+
+<p>FreeBSD のインストーラは、オペレーティングシステムのインストールとともに、
+  Ports Collection のインストールにも使えます。
+  詳細については、
+  <a href="./../cgi/man.cgi?query=bsdinstall"><tt>bsdinstall</tt></a>
+  をご覧ください。</p>
+
+<p>オペレーティングシステムのインストール時に
+  Ports Colllection をインストールしていなければ、
+  <a href="./../doc/ja_JP.eucJP/books/handbook/ports-using.html"><tt>portsnap</tt></a>
+  (FreeBSD 11.4 もしくは 12.1 を使用している場合)、
+  または
+  <a href="./../doc/ja_JP.eucJP/books/handbook/svn.html">Subversion</a>
+  (FreeBSD -CURRENT を使用している場合)
+  を使ってインストールしてください。</p>
+</body>
+</html>

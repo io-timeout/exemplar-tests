@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/support.xml
+     %SRCID%	1.356
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>FreeBSD támogatás</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+    <p>A FreeBSD fejlődését széles körben
+      támogatja egy közösség és több
+      kereskedelmi támogató.  A honlap <a href="./community.html">Közösség</a>
+      szekciója részletezi a közösség
+      által elérhető támogatási
+      lehetőségeket, beleértve számos
+      <a href="./community/mailinglists.html">levelezési listát</a>.
+      </p>
+
+    <p>Kereskedelmi támogatás is igénybe
+      vehető, rengeteg <a href="./../commercial/">cég</a>
+      kínál termékeket,
+      szolgáltatásokat és/vagy
+      szaktanácsadást a FreeBSD-hez.</p>
+
+    <h2>Hibajelentés</h2>
+
+    <p>Hibát találtunk a FreeBSD-ben?  Téves
+      információra akadtunk a
+      dokumentációban?  Jelezzük, ha a hibát
+      eddig még nem jelentették!</p>
+
+    <p>Az jelentett hibák ellenőrzéséhez <a href="//www.FreeBSD.org/cgi/query-pr-summary.cgi?query">kereshetünk a
+      hibajelentések adatbázisában</a>,
+      kategória, felelős, beküldő, a
+      hibajelentés szövege stb.  szerint, vagy
+      megnézhetjük az <a href="//www.FreeBSD.org/cgi/query-pr-summary.cgi?category=">összes nyitott hibajelentést</a>.
+    </p>
+
+    <p>Ha a hibát még nem jelentették, olvassuk el
+      a <a href="./support/bugreports.html">a hibajelentési irányelveket</a>
+      és jelentsük a hibát a <a href="./send-pr.html">hibajelentési űrlapunk segítségével</a>.
+      </p>
+
+  </body>
+</html>

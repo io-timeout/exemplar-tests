@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Turkish Documentation Project
+
+     $FreeBSD$
+     Original Revision: 1.9
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:lang="tr">
+  <info><title>BSD Nedir?</title>
+    
+
+    <author><personname><firstname>Greg</firstname><surname>Lehey</surname></personname><affiliation>
+	<address><email>grog@FreeBSD.org</email></address>
+      </affiliation></author>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>FreeBSD is a registered trademark of
+  the FreeBSD Foundation.</para>
+      <para>Apple, AirPort, FireWire,
+  iMac, iPhone, iPad,
+  Mac, Macintosh, Mac OS,
+  Quicktime, and TrueType are trademarks of Apple Inc.,
+  registered in the U.S. and other countries.</para>
+      <para>Linux is a registered trademark of
+  Linus Torvalds.</para>
+      <para>Motif, OSF/1, and UNIX are
+  registered trademarks and IT DialTone and The Open Group are
+  trademarks of The Open Group in the United States and other
+  countries.</para>
+      <para>Sun, Sun Microsystems, Java, Java
+  Virtual Machine, JDK, JRE, JSP, JVM, Netra, OpenJDK,
+  Solaris, StarOffice, SunOS
+  and VirtualBox are trademarks or registered trademarks of
+  Sun Microsystems, Inc. in the United States and other countries.</para>
+      <para>XFree86 is a trademark of The
+  XFree86 Project, Inc.</para>
+      <para>Many of the designations used by
+  manufacturers and sellers to distinguish their products are claimed
+  as trademarks.  Where those designations appear in this document,
+  and the FreeBSD Project was aware of the trademark claim, the
+  designations have been followed by the <quote>™</quote> or the
+  <quote>®</quote> symbol.</para>
+    </legalnotice>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <releaseinfo>$FreeBSD$</releaseinfo>
+
+    <abstract>
+      <para>Açık kod dünyasında
+	<quote>Linux</quote> kelimesi neredeysec<quote>işletim
+	sistemi</quote> ile eşanlamlıdır fakat
+	açık kaynak kodlu <trademark class="registered">UNIX</trademark> sadece
+	<quote>Linux</quote> deðildir.  <link xlink:href="http://www.leb.net/hzo/ioscount/data/r.9904.txt">İnternet
+	İşletim Sistemi Sayacı</link> 'na göre
+	Nisan 1999 itibarı ilecdünyada internete baðlı
+	makinaların %31.3 'ücLinux, %14.6 'ü ise <trademark class="registered">UNIX</trademark> 'tir.
+	<link xlink:href="http://www.yahoo.com/">Yahoo!</link> gibi
+	dünyanın en büyük organizasyonlarından
+	biri BSD kullanmaktadır.
+	Dünyanın en meşgul FTP sunucularından biri
+	olan <link xlink:href="ftp://ftp.cdrom.com/">ftp.cdrom.com</link>
+	günde 1.4 TB dosya transferi için BSD
+	kullanmaktadır.</para>
+
+      <para>Öyleyse sır nedir? Neden BSD daha iyi bilinmiyor?
+	Bu küçük yazı, bu ve diðer
+	soruların cevaplarını
+	aramaktadır.</para>
+
+      <para>Bu yazıda BSD ve Lİnux arasındaki farklar
+	<emphasis>bu şekilde</emphasis> ifade edilecektir.</para>
+    </abstract>
+  </info>
+
+  <sect1>
+    <title>BSD nedir?</title>
+
+    <para>BSD <quote>Berkeley Software Distribution</quote> 'ın
+      kısaltılmışıdır.
+      Bu isim California Üniversitesi, Berkeley 'in kaynak kodu
+      daðıtımı olan AT&amp;T 'nin <trademark class="registered">UNIX</trademark> 'i
+      için bir eklentiler zinciridir. Bir çok
+      açık kaynak kodlu işletim sistemi projesi,
+      4.4BSD-Lite olarak bilinen kaynak kodu
+      daðıtımını temel kabul eder.
+      Ek olarak bunlar, özellikle GNU projesi olmak üzere
+      diðer bir çok açık kod projesini de
+      kapsar. BSD 'in içeriði:</para>
+
+    <itemizedlist>
+      <listitem>
+	<para>BSD çekirdeði işlem zamanlama,
+	  hafıza yönetimi, simetrik çoklu
+	  işlemci(SMP), aygıt sürücüleri ve
+	  diðerlerini kapsar.</para>
+
+	<para><emphasis>Linux çekirdeðinden farklı
+	  olarak kapasite ve güçte bir çok
+	  farklı BSD çekirdeði
+	  vardır.</emphasis></para>
+      </listitem>
+
+      <listitem>
+	<para>C kütüphanesi, sistem API 'sinin temellidir</para>
+
+	<para><emphasis>BSD C kütüphanesi GNU projesi
+	  tabanlı deðildir, Berkeley kodu
+	  temellidir.</emphasis></para>
+      </listitem>
+
+      <listitem>
+	<para>Kabuk, dosya araçları derleyiciler ve
+	  linkerler gibi araçlar.</para>
+
+	<para><emphasis>Bazı araçlar
+	  dışında bir çoðu projesinden
+	  saðlanmıştır.</emphasis></para>
+      </listitem>
+
+      <listitem>
+	<para>X Windows sistemi grafik ekran arabirimi.</para>
+
+	<para>Birçok BSD türevinde kullanılan X
+	  Window sistemi ayrı bir proje olan
+	  <link xlink:href="http://www.XFree86.org/"><trademark>XFree86</trademark> projesi</link> 'nde
+	  devam ettirilmektdir.  Linux 'te bu sistemi kullanmaktadır.
+	  BSD KDE ya da GNOME gibi bir <quote>görsel
+	  masaüstü</quote> ile öntanımlı
+	  olarak gelmez. Fakat istenirse bunlar da
+	  kullanılabilir.</para>
+      </listitem>
+
+      <listitem>
+	<para>Bir çok diðer program ve araçlar.</para>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+
+  <sect1>
+    <title>Ne gerçek bir  <trademark class="registered">UNIX</trademark> 'mi?</title>
+
+    <para>BSD işletim sistemi bir kopya deðildir, fakat temelde
+      <trademark class="registered">UNIX</trademark> 'in atası sayılan AT&amp;T'nin  işletim
+      sisteminin kaynak kodundan oluşur. Ayrıca bu kod
+      System V <trademark class="registered">UNIX</trademark> 'in de atasıdır.  Bu durum sizi belki
+      şaşırtmış olabilir.  Yada AT&amp;T
+      hiç bir zaman kaynak kodunu vermemiş olmasına
+      raðmen bu nasıl olabilir?</para>
+
+    <para>AT&amp;T <trademark class="registered">UNIX</trademark> 'inin açık kaynak kodlu
+      olmadıðı doðrudur ve kopya hakkı
+      düşünüldüðünde BSD kesinlikle bir
+      <trademark class="registered">UNIX</trademark> <emphasis>deðildir</emphasis> fakat diðer taraftan
+      AT&amp;T diðer projelerden ve özellikle Berkeleydeki
+      California Üniversitesi Computer Science Research Group
+      (CSRG -Bilgisayar Bilimi Araşatırma Grubu)undan
+      AT&amp;T <trademark class="registered">UNIX</trademark> 'e bir çok kod dahil ettiði
+      düşünülmelidir.  1976 'dan başlayarak
+      CSRG yazdıkları yazılımı
+      içeren teyp 'leri daðıtarak bunu <emphasis>Berkeley
+      Software Distribution</emphasis> ya da <emphasis>BSD</emphasis>
+      olarak nitelendirdi.</para>
+
+    <para>BSD ilk sürümleri asıl olarak
+      kullanıcı programlarından oluşuyordu
+      ta ki dramatik bir şekilde CSRG
+      karşılılı olarak DARPA (Defence
+      Advanced Projects Research Agency) ile aðlarındaki
+      (ARPANET) iletişim protokollerini güncellemek için
+      sözleşme imzalayana kadar.  Bu yeni protokol
+      <emphasis>İnternet Protokolü</emphasis> daha sonra da
+      <emphasis>TCP/IP</emphasis> olarak adlandırıldı.
+      BSD nin asıl geniş alanlara
+      yayılmış sürümü 1982 de piyasaya
+      sürülen 4.2 BSD 'dir.</para>
+
+    <para>1980 'lerde bir çok küçük
+      çaplı işletim sistemi şirketi piyasaya
+      çıktı.  Ve birçokları kendi
+      işletim sistemlerini yazmak yerine  <trademark class="registered">UNIX</trademark>
+      işletim sistemini lisanslamayı tercih ettiler.
+      Özelde SUN Microsystems 4.2BSD temelli <trademark class="registered">UNIX</trademark> üzerinde
+      deðişiklikler yaparak <trademark>SunOS</trademark> adıyla
+      lisansladı.  AT&amp;T <trademark class="registered">UNIX</trademark> 'in ticari olarak
+      satılmasına izin verince, çok kısa bir
+      süre içinde System V adını alacak System
+      III isimli küçük uygulamalarla satışa
+      başlandı.  System V networking uygulama ve
+      bileşenlerini içermiyordu, bu sebeble piyasaya
+      sürülen bir çok uygulama BSD 'den
+      özellikle að teknolojileri alanında TCP/IP
+      protokolünü kullanmaya başladı.  Bunun
+      yanında <emphasis>csh</emphasis> kabuðu ve
+      <emphasis>vi</emphasis> editörünü de kendi
+      sistemlerine dahil etti.  BSD 'den alınan bütün bu
+      eklentilere <emphasis>Berkeley Extensions</emphasis> adı
+      verildi.</para>
+
+    <para>Piyasaya sunulan BSD kasetleri AT&amp;T kaynak kodu ve
+      gerekli olan olan UNIX lisansını içeriyordu.
+      90larda CSRG'a ayrılan fon azalınca grup kapanma ile
+      karşı karşıya kaldı ve bazı
+      grup üyeleri AT&amp;T 'nin kodunu içermeyen BSD
+      Açık kaynak kod olarak daðıtılan
+      kodlarını daðıtmaya karar verdi ve bu
+      <emphasis>Networking Tape 2</emphasis> ya da kısaca
+      <emphasis>Net/2</emphasis> adı verilen
+      daðıtım ile gerçekleşti.  Net/2 tam
+      anlamıyla bir işletim sistemi deðildi
+      çünkü yaklaşık olarak %20
+      oranındaki kernel kaynak kodu eksikti.  CSRG üyelerinde
+      William F. Jolitz geriye kalan %20 lik kodu yazarak 1992'de
+      <emphasis>386BSD</emphasis> ismiyle piyasaya sürdü.
+      Aynı zaman zarfında eski CSRG üyelerinden
+      oluşan bir grup <link xlink:href="http://www.bsdi.com/">Berkeley
+      Software Design Inc.</link> adı verilen işletim
+      sisteminin betasını piyasaya sürdüler ve
+      bu işletim sisteminin adı daha sonra BSD/OS olarak
+      deðiştirildi.</para>
+
+    <para>386BSD hiçbir zaman güvenilir bir işletim
+      sistemi olamadı.  Onun yerine 1993 yılında
+      iki ayrı proje doðdu.  Bunlar:
+      <link xlink:href="http://www.NetBSD.org/">NetBSD</link> ve
+      <link xlink:href="http://www.FreeBSD.org">FreeBSD</link>.
+      NetBSD 93'ün başlarında tamamlandı ancak
+      FreeBSD 'nin ilk versiyonu yılın sonuna kadar
+      hazır durumda deðildi.  Bu süre içerisinde kodu
+      devam ettirilmekte güçlük çekilince
+      karışıklıðı önlemek ve
+      yönetimi kolay kılmak için ayrıldı.
+      Projeler farklı amaçlar gütmeye başladı.
+      1996 'da NetBSD 'den ayrılarak doðan
+      <link xlink:href="http://www.OpenBSD.org/">OpenBSD</link> doðdu.</para>
+  </sect1>
+
+  <sect1>
+    <title>BSD neden daha iyi tanınmıyor?</title>
+
+
+    <para>Aşaðıdaki birçok sebebe baðlı
+      olarak BSD tam olarak bilinmemektedir:</para>
+
+    <orderedlist>
+      <listitem>
+	<para>BSD programcıları çoðu zaman
+	  pazarlama amacı gütmek yerine kendi
+	  kodlarını geliştirme ile
+	  ilgileniyorlar.</para>
+      </listitem>
+
+      <listitem>
+	<para> Linux 'lerin popülaritesi  özellikle
+	  baskı (ve kitap piyasası) ve şirketlerin
+	  desteði linuxlere özel destek ve güncellik
+	  saðlıyor buna karşılık BSDnin
+	  bu şekilde herhangi bir destekçisi yoktur.
+	  Fakat bu gün geçtikçe
+	  deðişmektedir.</para>
+      </listitem>
+
+      <listitem>
+	<para>BSD programcıları Linux
+	  programcılarından daha tecrübeliler
+	  ve işletim sisteminin kullanım
+	  kolaylıðı ile daha az ilgileniyorlar
+	  Yeni kullanıcılar Linuxleri daha
+	  kullanışlı olarak kabul ediyor
+	  ve destekliyorlar.</para>
+      </listitem>
+
+      <listitem>
+	<para>1992, AT&amp;T <link xlink:href="http://www.bsdi.com/">BSDI</link>
+	  'a dava açtı ve bu yazılımın
+	  AT&amp;T 'ye ait olan lisanslı kaynak kodunu
+	  içerdiðini iddia etti.  Dava 1994'te anlaşma
+	  ile sona erdi.  Fakat davanın hayaleti insanları
+	  avlamaya devam etti.  Mart 2000'de ise web üzerine,
+	  davanın mahkeme tarafından geçmişte
+	  <quote>sonuçlandırıldıðını</quote>
+	  haykıran bir makale yayınlandı.</para>
+
+	<para>Davanın ortaya
+	  çıkardıðı önemli bir
+	  detayda isimlendirmeydi.  1980 'lerde BSD aynı zamanda
+	  <quote>BSD <trademark class="registered">UNIX</trademark></quote> olarakta bilinmekteydi.  AT&amp;T 'ye
+	  ait kodların son
+	  kalıntılarının da BSD'den
+	  çıkartılması ile birlikte BSD <trademark class="registered">UNIX</trademark>
+	  adından kurtuldu.  Bu sebeble birçok kitapta
+	  <quote>the 4.3BSD <trademark class="registered">UNIX</trademark> operating system</quote> ve
+	  <quote>the 4.4BSD operating system</quote>
+	  isimlerini görebilirsiniz.</para>
+      </listitem>
+
+      <listitem>
+	<para>BSD ile ilgili olarak akılda kalan genellikle
+	  daðınık ve saldırgan olduðudur.
+	  There is a perception that the BSD projects are fragmented and
+	  belligerent.  <link xlink:href="http://interactive.wsj.com/bin/login?Tag=/&amp;URI=/archive/retrieve.cgi%253Fid%253DSB952470579348918651.djm&amp;">Wall Street
+	  Journal</link>'da bir makalede BSD projelerinin
+	  <quote>balkan</quote> ülkelerinin ürünü
+	  olduðundan bahsedildi.  Davada olduðu gibi burada da
+	  akılda kalan bu tip düşünceler BSD'nin
+	  geçmişteki konumu ve durumudur.</para>
+      </listitem>
+    </orderedlist>
+  </sect1>
+
+  <sect1>
+    <title>BSD ve Linux nasıl
+      karşılaştırması</title>
+
+    <para>Linux (mesela Debian Linux) ile BSD arasındaki
+      asıl farklılık nedir?  Normal
+      kullanıcılar için fark aslında
+      çok küçüktür yani ikiside <trademark class="registered">UNIX</trademark>
+      benzeri işletim sistemidir.  Her ikiside ticari olmayan
+      amaçlar için geliştirildi (Tabiki bu diðer
+      bazı ticari Linux daðıtımlarındaki
+      gibi deðildir).  Bu bölümde BSD'nin
+      yapısına bakıp Linux ile
+      karşılaştıracaðız.  Genel
+      olarak söylediklerimiz FreeBSD'ye yakın olacak
+      çünkü yaygın olarak kullanılan BSD
+      versiyonu FreeBSD 'dir.</para>
+
+    <sect2>
+      <title>BSD'nin sahibi kimdir?</title>
+
+      <para>Hiç kimse veya hiçbir kuruluş BSD'nin
+	sahibi deðildir.  BSD bütün dünya
+	üzerinde teknik olarak üst düzeyde ve uzman bir
+	çok insan tarafından geliştirildi.  ve BSD'nin
+	bazı bileşenleri farklı açık
+	kaynak kodu geliştiricileri tarafından
+	saðlandı.</para>
+    </sect2>
+
+    <sect2>
+      <title>BSD nasıl geliştirildi ve güncellendi?</title>
+
+      <para>BSD çekirdeði Açık kaynak
+	geliştirim modeli ile geliştirilmiştir.
+	Her proje erişimi herkese açık olan
+	<emphasis>kaynak kodu aðacı</emphasis> altında
+	<link xlink:href="http://www.sourcegear.com/CVS/">Concurrent Versions
+	System</link> (CVS) ile daðıtıldı.
+	Bu sistemde BSD ile alakalı doküman ve diðer
+	dosyalar da bulunmaktadır.  CVS ile herhangi bir
+	kişi <quote>check out</quote> (yani gerekli
+	dosyaların bir kopyasını sistemine indirerek)
+	yaparak sistemin herhangi bir bolümüne sahip
+	olabilmektedir.</para>
+
+      <para>Dünya üzerinde odukça fazla sayıda
+	programcı BSD'nin gelişimine katkıda bulunur.
+	Bu programcı ve geliştiriciler temelde üç
+	kısma ayrılır:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para><firstterm>Contributors(Katkıta
+	    Bulunanlar)</firstterm> doküman ya da kod yazarlar.
+	    Bu grubun direk olarak kod aðacına herhangi bir
+	    kod eklenmelerine izin verilmez. Bu kişilerin
+	    yazdıðı kodlar <emphasis>committer</emphasis>
+	    tarafından incelenip ana sistemde dahil edilirler.</para>
+	</listitem>
+
+	<listitem>
+	  <para><firstterm>Committers</firstterm> kaynak aðacına
+	    kod ekleme yetkisinde sahip geliştiriciler.  Committer
+	    olabilmek için
+	    çalıştıðı
+	    alan üzerinde çok yüksek bilgi seviyesine
+	    sahip olması gerekir.</para>
+
+	  <para>Bazı commiterler bütün kaynak koduna
+	    ulaşma yetkisine sahiptirler diðerleri ise
+	    gerçek koddan ayrı tutulurlar.
+	    Dökümantasyonla ilgilenenler normal olarak kernel
+	    koduna ulaşma yetkisine sahip deðillerdir.
+	    Principal Architect olarak adlandırılan
+	    çekirdek takımındaki
+	    bazı şahısların ise
+	    <firstterm>back out</firstterm> adı verilen kaynak
+	    kodu aðacındaki kodları silme hakkı
+	    vardır.  Bütün committer 'lar
+	    yapılan her bir commit (işlem) için
+	    e-posta alırlar ve böylece gizlice
+	    bir kodun kaynak kodu aðacına girmesi
+	    engellenmiş olur.</para>
+	</listitem>
+
+	<listitem>
+	  <para><firstterm>Core team (Çekirdek
+	    Takımı)</firstterm>.
+	    FreeBSD ve NetBSD kesinlikle bir çekirdek
+	    takıma sahiptir.
+	    Çekirdek takım projenin gelişimi ve
+	    oluşturulması sırasında
+	    programlarını yaparlar ve rolleri tam olarak
+	    belli deðildir.
+	    Çekirdek takımı üyesi olmak
+	    için program geliştirici (developer) olma
+	    zorunluluðu yoktur ve buda son derece normaldir.
+	    Çekirdek takım için
+	    kurallar bir projeden diðerine farklılık
+	    gösterebilir ve genel olarak
+	    çekirdek takımın projenin gelişme
+	    ve gidişat noktasındaki görüş ve
+	    fikirleri kesinlikle Çekirdek Takım üyesi
+	    olmayan kişilerin görüş ve
+	    fikirlerinden daha üstün tutulur.</para>
+	</listitem>
+      </itemizedlist>
+
+      <para>İşte bütün bu düzenlemeler
+	Linux'ten birçok noktada farklılık
+	gösterir:</para>
+
+      <orderedlist>
+	<listitem>
+	  <para>Hiç kimse sistem içeriðini kontrol
+	    edemez.  Pratikte bu farklılık göze
+	    çok önemli gelebilir.  Asıl mimar
+	    (Chief Architect) kodun asıl koddan
+	    çıkartılması isteðinde
+	    bulunabilir ve hatta Linux projelerinde birçok
+	    kişi deðişiklikler yapabilir.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Diðer taraftan merkezi bir depo vardır.
+	    Bu depo eski tüm versiyonlarda dahil olmak üzere
+	    bir noktada toplanmış olarak işletim
+	    sistemine ait tüm kodları
+	    barındırır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>BSD projeleri yalnızca kernel(çekirdek)
+	    olarak deðil <quote>bütün işletim
+	    sistemi</quote> olarak kabul edilir.  Bu özellik
+	    yalnızca marjinal olarak faydalıdır.
+	    Ne BSD nede Linux programlar olmadan yararlı deðildir.
+	    Ve bu programlar Linux altında BSD altında
+	    kullanıldıðı gibi
+	    kullanılır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>CVS kod aðacının (source tree)
+	    biçimlendirilmiş olmasının
+	    bir neticesi olarak BSD gelişim evreleri gayet
+	    açıktır ve herhangi bir versiyona ait
+	    bilgi versiyon numarası yada piyasaya sürülme
+	    tarihi ile bulunabilir.  Hatta CVS güncellemelere izin
+	    bile verir.  Örneðin FreeBSD deposu ortalama
+	    günde 100 kez güncellenir ancak bu güncellemeler
+	    çoðu kez çok küçüktür.
+	</para>
+	</listitem>
+      </orderedlist>
+    </sect2>
+
+    <sect2>
+      <title>BSD Sürümleri</title>
+
+      <para>Her BSD projesi üç tane farklı
+	sürüm içerir.  Linuxteki gibi bu
+	sürümler 1.4.1 ya da da 3.5.0 olarak belirlenir.
+	Ek olarak versiyon numaraları kendi amacını
+	belirten bir son eke sahiptir:</para>
+
+      <orderedlist>
+	<listitem>
+	  <para>Geliştirilmiş olan versiyon
+	    <firstterm>CURRENT</firstterm> (Geçerli En Son)
+	    olarak adlandırılır.  FreeBSD'de
+	    CURRENT'a bir numara atanır. Örneðin FreeBSD
+	    5.0-CURRENT.  NetBSD açık bir biçimde
+	    farklı isimlendirme şeması
+	    kullanır.  Kullanılan bu şema tek
+	    harften oluşan bir son ektir ki bu son ek dahili
+	    arayüzdeki deðişikliði ifade eder.
+	    Örneðin NetBSD 1.4.3G gibi.  OpenBSD her hangi
+	    bir numara ataması yapmaz
+	    (OpenBSD-current).  Bütün yeni sürümler
+	    sistemde bu şekilde kullanılır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Belirli aralılarla yılda iki ila dört
+	    defa projeler CD-ROM ile edinme yada ftp sitelerinden
+	    ücretsiz olarak download etmek için
+	    piyasaya sürülür(RELEASE).  Örneðin
+	    OpenBSD 2.6 RELEASE.  Yada NetBSD 1.4-RELEASE.  Piyasaya
+	    sürülen <firstterm>Sürüm</firstterm>
+	    (RELEASE) versiyonu son kullanıcı
+	    için gerekli olan sürümdür ve sistemin
+	    normal versiyonudur.  Ayrıca
+	    NetBSD ayrıca <emphasis>yama sürümleri</emphasis>
+	    (patch releases) Örneðin NetBSD 1.4.2 gibi.
+	    Bu sürümler üç
+	    basamaklıdır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>RELEASE versiyonlarda her hangi bir hata (bug)
+	    bulunðunda hatalar düzeltilir ve CVS kaynak kodu
+	    aðacına (source tree) dahil edilir.  FreeBSD 'de
+	    son elde edilen sürüm <firstterm>STABLE</firstterm>
+	    (saðlam versiyon) olarak adlandırılır
+	    ancak OpenBSD ve NetBSD RELEASE versiyon ismini kullanmaya
+	    devam eder.  CURRENT versiyonun test edilmesi
+	    sırasında yeni ama küçük
+	    özellikler sisteme dahil edilebilir.</para>
+	</listitem>
+      </orderedlist>
+
+      <para><emphasis>Bütün bunların aksine Linux'te iki
+	ayrı kod aðacı (code tree) vardır:
+	Stable (Saðlam) versiyon ve Development (Gelişmekte olan)
+	versiyon.  Stable versiyon çift sayılardan
+	oluşan minor versiyon numaralarına
+	sahiptir. 2.0, 2.2, 2.4 gibi.  Development versiyon ise tek
+	sayılardan oluşan minor versiyon numaralarına
+	sahiptir. 2.1, 2.3, 2.5 gibi.
+	Bazı durumlarda deðişik Linux
+	daðıtım firmaları kendi
+	geliştirdikleri ürünleri
+	<quote>TurboLinux 6.0 with kernel 2.2.14</quote></emphasis>
+	şeklinde piyasaya sürebilir.</para>
+    </sect2>
+
+    <sect2>
+      <title>BSD'nin in hangi versiyonları bulunabilir?</title>
+
+      <para>Birçok Linux sürümünün aksine
+	açık kaynak kodu olan yanlızca üç
+	tane BSD sürümü vardır.her BSD projesi
+	kendi kod aðacı (source tree) ve çekirdeðine
+	sahiptir. Ve pratikte kullanıcıların
+	projelere kendi ekledikleri kodlarla Linuxteki kodlar
+	arasında daha az farklılık vardır.</para>
+
+      <para>Her projenin amacını gruplamak gerçekten
+	zordur: Farklılıklar kişilere özeldir.
+	Genel olarak:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>FreeBSD yüksek performans ve son
+	    kullanıcılar için kullanım
+	    kolaylıðı amacını güder.
+	    Ve ISP firmaları için favori işletim
+	    sistemdir.  PCler ve Compaq'ın Alpha işlemcileri
+	    üzerinde çalışır.  FreeBSD
+	    açık bir farkla diðer projelere oranla daha
+	    fazla kişi tarafından
+	    kullanılır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>NetBSD azami seviyede taşınabilirlilik
+	    hedefler.  <quote>NetBSD üzerinde elbette
+	    çalışır!</quote> ile de bu
+	    belirtilmiş olur.  Ek olarak sade dizayna sahip olmak
+	    önemlidir.  NetBSD palmtoplardan
+	    büyük serverlara kadar her yarde
+	    çalışır ve NASA'nın uzay
+	    çalışmalarında da
+	    kullanılmıştır.Özel olarakda
+	    Intel-olmayan donanımlar için iyi
+	    seçimdir.</para>
+	</listitem>
+
+	<listitem>
+	  <para>OpenBSD kod temizliðini ve güvenliðini
+	    hedef alır.  Açık kaynak
+	    kod geliştirim modeli ve sıkı kod
+	    incelemesini içerir ve banka
+	    ABD hükümet bakanlıkları, hisse
+	    senedi kurumları gibi  güvenlik
+	    temelli işletmeler için bir işletim
+	    sistemi olmayı hedefler.  NetBSD
+	    gibi birçok platformda
+	    çalışabilir.</para>
+	</listitem>
+      </itemizedlist>
+
+      <para>Bunlardan başka açık kod olamayan iki
+	deðişik ki deðişik iki BSD <trademark class="registered">UNIX</trademark>
+	işletim sistemi mevcuttur.  Bunlar BSD/OS ve
+	Apple'ın geliştirdiði <trademark class="registered">Mac OS</trademark> X:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>BSD/OS 4.4 BSD türetilmiş en eski
+	    sürümdür.  Açık kaynak kodlu
+	    deðildir ve bu sebeble kod çok
+	    küçük bir maliyetle satın
+	    alınabilir.  Bir çok açıdan
+	    FreeBSD'ye benzer ve bir çok geliştirici iki
+	    sistemlede çalışır.</para>
+	</listitem>
+
+	<listitem>
+	  <para><link xlink:href="http://www.apple.com/macosx/server/"><trademark class="registered">Mac OS</trademark>
+	    X</link>
+	    <link xlink:href="http://www.apple.com/">Apple Computer Inc.'in</link>
+	    <trademark class="registered">Macintosh</trademark> serisinin en son üyesidir.  Bu işletim
+	    sisteminin çekirdeði BSD tabanlıdır
+	    ve <link xlink:href="http://developer.apple.com/darwin/">Darwin</link>,
+	    olarak adlandırılır.  Diðer
+	    versiyonların aksine işletim aksine
+	    çekirdek açık kaynak kodludur.  Bu
+	    gelişimin bir neticesi olarakda
+	    Apple geliştiricileri FreeBSD committer
+	    'ıdır.  Bu çekirdeðin üzerinde
+	    Aqua/Quartz grafik arabirimi ve <trademark class="registered">Mac OS</trademark> 'un diðer
+	    ürünleri vardır.  Fakat bu X arabiriminin
+	    kodu kapalıdır. Bu işletim sistemi
+	    x86 and PPC mimarilerinde
+	    çalışır.</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2>
+      <title>BSD kullanım lisansının GNU
+	kullanım lisansından farkı nedir?</title>
+
+      <para>Linux kapalı kod (closed source)
+	yazılımını saf
+	dışı bırakmak için
+	tasarlanmış
+	<link xlink:href="http://www.fsf.org/copyleft/gpl.html">GNU General
+	Public License</link> (GPL) lisansı ile
+	daðıtılır. GPL lisanslı bir
+	ürün kullanarak geliştirilen bir
+	yazılımda mutlaka GPL lisansı ile
+	daðıtılmalıdır.  Fakat
+	<link xlink:href="http://www.opensource.org/licenses/bsd-license.html">BSD
+	lisansı</link> daha az
+	kısıtlayıcıdır ve binary
+	daðıtıma izin verir.  Bu özellikle
+	gömülü uygulamalar için çekici bir
+	lisans türüdür.</para>
+    </sect2>
+
+    <sect2>
+      <title>Daha başka ne bilmeliyim?</title>
+
+      <para>BSDler için Linuxlere oranla daha az
+	programın üretildiði zamanlarda BSD
+	geliştiricileri Linux programlarını BSD
+	altında çalıştırmayı
+	saðlayan Linux uyumluluk paketini ortaya
+	çıkardılar.  Bu Paket, Linux sistem
+	çaðrılarını düzgün
+	yapabilmek için her iki çekirdek
+	deðişikliklerini ve C Library (C
+	kütüphanesi) gibi Linux uyumluluk
+	dosyalarını içerir.  Linux
+	programlarını Linux makinesi ile BSD makinesi
+	altında çalıştırmak
+	arasında hız bakımından her hangi
+	bir kayda deðer fark yoktur.</para>
+
+      <para>BSD 'nin <quote>All from one supplier (Herşey
+	tek elden)</quote> mantıðı Linuxlerde
+	aynı sıklıkla yapılan
+	güncelleme işlemlerinin daha kolay olduðu
+	anlamına gelir.  BSD kütüphane versiyon
+	güncellemelerini eski versiyon kütüphaneleri ile
+	uyumlu olarak yapar ve bu eski Binary kodları
+	çalıştırmayı mümkün
+	kılar.</para>
+    </sect2>
+
+    <sect2>
+      <title>BSD'mi Linux'mü kullanmalıyım?</title>
+
+      <para>Bunların hepsinin pratikteki anlamı nedir?
+	Kim BSD kim Linux kullanmalı?</para>
+
+      <para>Bu hakikatten cevaplanması zor bir sorudur.
+	Bir kaç öneri şuşekilde
+	sıralanabilir:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para><quote>If it ain't broke, don't fix it</quote>
+	    (Bozulmuyorsa düzeltme).  Eðer halihazırda
+	    açık kodlu bir işletim sistemi
+	    kullanıyorsanız ve ondan memnunsanız
+	    deðişiklik yapmak için iyi bir sebeb
+	    yoktur.</para>
+	</listitem>
+
+	<listitem>
+	  <para>BSD sistemi, özellikle FreeBSD dikkate deðer
+	    bir şekilde Linuxlerden daha fazla performans
+	    saðlayabilir.  Fakat bu herkesi aynı derecede
+	    etkileyen birşey deðildir ve bir çok
+	    durumda yok denecek kadar az performans farkı
+	    vardır.  Ama bazı özel durumlarda da
+	    Linux'de FreeBSD'den daha iyi olarak nitelendirilebilir.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Genelde BSD sistemi güvenilirlilik
+	    açısından daha iyi üne
+	    sahiptir.  ve bu genelde daha olgun koda sahip
+	    oluşundan kaynaklanır.</para>
+	</listitem>
+
+	<listitem>
+	  <para>BSD lisansı GPL Lisansından daha dikkat
+	    çekicidir.</para>
+	</listitem>
+
+	<listitem>
+	  <para>BSD Linux kodlarını
+	    çalıştırabilir ama Linux
+	    BSD kodlarını
+	    çalıştıranilir.  Bunun bir
+	    neticesi olarakda BSD için Linux'den daha fazla
+	    yazılım vardır.</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2>
+      <title>BSD için kim yardım servis ve eðitim
+	saðlıyor?</title>
+
+      <para>BSDi her zaman BSD/OS'u desteklemektedir ve yakın
+	zaman önce FreeBSD ile bir anlaşma
+	imzalamışlardır.</para>
+
+      <para>Ek olarak her projenin kendi yardım yada kiralama
+	departmanı vardır: <link xlink:href="../../../../commercial/consulting_bycat.html">FreeBSD</link>,
+	<link xlink:href="http://www.netbsd.org/gallery/consultants.html">NetBSD</link>,
+	and
+	<link xlink:href="http://www.openbsd.org/support.html">OpenBSD</link>.</para>
+    </sect2>
+  </sect1>
+</article>

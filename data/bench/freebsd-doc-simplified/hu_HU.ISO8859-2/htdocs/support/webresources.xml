@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/support/webresources.xml
+     %SRCID%	1.3
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Webes források</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+  <ul>
+    <li><a href="#general">Általános információk a UNIX®-ról</a></li>
+    <li><a href="#xwin">Az X Window System</a></li>
+    <li><a href="#hardware">Hardver</a></li>
+    <li><a href="#related">Kapcsolódó operációs rendszerek</a></li>
+  </ul>
+
+  <a name="general"/>
+
+  <h2>Általános információk a
+    UNIX®-ról</h2>
+
+  <ul>
+    <li><a href="http://www.technion.ac.il/guides/unix.html">The Unix Reference Desk</a>
+      (készítette: Jennifer Myers)</li>
+
+    <li><a href="http://www.ugu.com/">Unix Guru Universe</a></li>
+
+    <li><a href="http://www.ora.com/">O'Reilly &amp; Associates, Inc.</a></li>
+
+    <li><a href="http://www.unixpower.org">Unix Power</a></li>
+  </ul>
+
+  <a name="xwin"/>
+
+  <h2>Az X Window System</h2>
+
+  <ul>
+    <li>Az <a href="http://www.x.org/">X.Org</a> és az <a href="http://www.xfree86.org/">XFree86™</a> projektek
+      kiváló X Window rendszert biztosítanak az
+      Intel alapú UNIX® rendszerek, többek közt a FreeBSD
+      számára is.</li>
+
+    <li>A <a href="http://www.winehq.com/">WINE</a> projekt
+      Microsoft® Windows® alkalmazásokat hivatott futtatni
+      Intel alapú rendszereken, mint például a
+      FreeBSD, NetBSD és Linux.</li>
+  </ul>
+
+  <a name="hardware"/>
+
+  <h2>Hardver</h2>
+
+  <ul>
+    <li>A <em>comp.answers</em> <a href="ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/comp/answers/pc-hardware-faq">pc-hardware-faq</a>
+      egy nagyszerű referencia azok számára, akik
+      saját maguk állítanak össze
+      számítógépet.</li>
+
+    <li><a href="http://www.x86.org/">Intel Titkok — Amit az Intel titokban szeretne tartani</a>
+      — rengeteg információ az Intel
+      chipekről.</li>
+
+    <li><a href="http://www.faqs.org/faqs/pc-hardware-faq/chiplist/">Aad Offerman Chip Listája</a>
+      — referenciaanyag a PC chipekről.</li>
+  </ul>
+
+  <a name="related"/>
+
+  <h2>Kapcsolódó operációs rendszerek</h2>
+
+  <ul>
+    <li>A <a href="http://www.netbsd.org/"><strong>NetBSD</strong></a>
+      egy másik szabad 4.4BSD Lite alapú
+      operációs rendszer, amely több más
+      platformon is fut.</li>
+
+    <li>Az <a href="http://www.openbsd.org/"><strong>OpenBSD</strong></a> egy
+      újabb 4.4BSD alapú projekt, amely a
+      biztonságra fókuszál.</li>
+
+    <li>A <a href="http://www.linux.org/"><strong>Linux</strong></a> egy
+      szabad UNIX®-szerű rendszer.</li>
+
+    <li>A <a href="http://www.opendarwin.org/"><strong>Darwin</strong></a> egy
+      szabad rendszer, amely az Apple <a href="http://www.apple.com/macosx/">Mac OS X</a>
+      rendszerének az alapját képezi.</li>
+
+    <li>A <a href="http://www.cs.utah.edu/flux/lites/html/"><strong>Lites</strong></a>
+      egy 4.4BSD Lite alapú szerver és
+      emulációs könyvtár, amely a Mach
+      alapú rendszerek számára kínál
+      UNIX® funkcionalitást.</li>
+
+    <li>A <a href="http://www.gnu.org/software/hurd/hurd.html"><strong>GNU Hurd</strong></a>
+      szintén egy olyan projekt, amely egy szabad
+      UNIX®-szerű operációs rendszer
+      kifejlesztését célozza meg.</li>
+
+    <li>A <a href="http://www.dragonflybsd.org/"><strong>DragonFly BSD</strong></a>
+      a FreeBSD 4.X alapjaira épü, de más
+      fejlesztési céljai vannak, mint a FreeBSD utána
+      következő változatainak.</li>
+
+    <li>Az <a href="http://opensolaris.org/os/"><strong>OpenSolaris</strong></a>
+      a Sun Microsystems Solaris operációs
+      rendszerének nyílt forráskódú
+      változata.  A Solaris is egy BSD-ből
+      származó rendszer, eredeti neve SunOS volt.  A
+      kód nagy részé megnyitották, de az
+      operációs rendszert a hagyományos
+      módon is terjesztik.</li>
+  </ul>
+
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Peter Terbe <sncdev@gmail.com>
+     %SOURCE%	en/docproj/doc-set.xml
+     %SRCID%	1.17
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD Dokumentációs Projekt: A
+  dokumentációs csomag</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <p>A FreeBSD dokumentációja három fő
+      kategóriára osztható:</p>
+
+    <ol>
+      <li>
+	<p><a href="http://www.FreeBSD.org/cgi/man.cgi"><b>A man oldalak</b></a>
+	  </p>
+
+	<p>A projekt ezzel nem igazán foglalkozik, mert ez az
+	  alaprendszer részét képezi.
+	  Kivételt képez ez alól a japán
+	  csapat, ők lefordítják ezeket az oldalakat
+	  is.  Nincs akadálya azonban, hogy mások is
+	  így tegyenek.</p>
+
+	<p>Nem arról van szó, hogy a man oldalak nem
+	  fontosak, egyáltalán nem!  Egyszerűen csak
+	  annyira kötődnek a FreeBSD néhány
+	  részéhez, hogy a legtöbb esetben a
+	  legalkalmasabb ember, aki lefordíthatná ezeket
+	  az, aki a FreeBSD azon részét írta.</p>
+      </li>
+
+      <li>
+	<p><a href="./docs/books.html"><b>Könyvek</b></a>
+	  </p>
+
+	<p>A projekt sok olyan dokumentációval
+	  rendelkezik, melyek már <q>könyv
+	  terjedelműek</q>, vagy azok lesznek.  Ezek
+	  közé tartozik a FreeBSD GYIK és a FreeBSD
+	  kézikönyv.</p>
+      </li>
+
+      <li>
+	<p><a href="./docs/books.html#ARTICLES"><b>Cikkek</b></a>
+	  </p>
+
+	<p>A FreeBSD-t érintő hatalmas
+	  információmennyiség érhető el
+	  rövidebb cikkek formájában,
+	  hasonlóan más projektek oktatóanyagaihoz
+	  vagy HOGYAN leírásaihoz.</p>
+      </li>
+    </ol>
+
+    <a href="docproj.html">A FreeBSD Dokumentációs Projekt kezdőlapja</a>
+
+  </body>
+</html>

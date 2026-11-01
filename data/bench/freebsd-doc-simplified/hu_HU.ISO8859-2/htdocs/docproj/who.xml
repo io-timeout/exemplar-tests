@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Peter Terbe <sncdev@gmail.com>
+     %SOURCE%	en/docproj/who.xml
+     %SRCID%	1.15
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD Dokumentációs Projekt: Kik
+  vagyunk?</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <p>A projekt néhány ember laza csoportja, akikben
+      csupán az a közös, hogy feliratkoztak a <a href="mailto:FreeBSD-doc@FreeBSD.org">freebsd-doc</a>
+      levelezési listára.</p>
+
+    <p>Néhányan közülünk
+      közvetlenül végezhetnek
+      módosításokat a FreeBSD
+      dokumentációján.  Az ilyen
+      jogosultsággal rendelkező fejlesztők teljes
+      listáját <a href="./../doc/en/articles/contributors/staff-committers.html">itt</a>,
+      a FreeBSD Dokumentációs Projekt fontosabb tagjainak
+      listáját pedig <a href="./../administration.html#t-doceng">itt</a>
+      tekinthetjük meg.</p>
+
+    <p>Mások jogosultságok nélkül is
+      folyamatosan írhatnak és beküldhetnek
+      dokumentációkat.  Miután a
+      dokumentáció beküldésre került, a
+      <a href="submitting.html">Dokumentáció beküldése</a>
+      oldalon leírtak szerint, a jogosultsággal
+      rendelkezők egyike átnézi és beilleszti
+      a dokumentációba.</p>
+
+    <p>Amennyiben segíteni szeretnénk a
+      Dokumentációs Projekt munkáját
+      (reményeink szerint igen), csupán annyit kell
+      tennünk, hogy a feliratkozunk az előbb említett
+      levelezési listára és
+      résztveszünk a feladatokban.  Ha mindezt
+      megtettük, immáron mi magunk is a projekt tagjai
+      vagyunk.</p>
+
+    <p><a href="docproj.html">A FreeBSD Dokumentációs Projekt kezdőlapja</a>
+      </p>
+
+    <p><a href="hungarian.html">A Magyar FreeBSD Dokumentációs Projekt kezdőlapja</a>
+      </p>
+
+  </body>
+</html>

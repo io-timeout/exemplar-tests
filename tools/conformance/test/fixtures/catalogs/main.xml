@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  <system systemId="http://example.com/a.dtd" uri="a-local.dtd"/>
+  <system systemId="rel.dtd" uri="rel-local.dtd"/>
+  <system systemId="http://example.com/first.dtd" uri="first-1.dtd"/>
+  <system systemId="http://example.com/first.dtd" uri="first-2.dtd"/>
+  <rewriteSystem systemIdStartString="http://example.com/r/" rewritePrefix="rewrite-short/"/>
+  <rewriteSystem systemIdStartString="http://example.com/r/deep/" rewritePrefix="rewrite-long/"/>
+  <rewriteSystem systemIdStartString="http://example.com/tie/" rewritePrefix="tie-1/"/>
+  <rewriteSystem systemIdStartString="http://example.com/tie/" rewritePrefix="tie-2/"/>
+  <systemSuffix systemIdSuffix="x.dtd" uri="suffix-short.dtd"/>
+  <systemSuffix systemIdSuffix="/4.3/x.dtd" uri="suffix-long.dtd"/>
+  <rewriteSystem systemIdStartString="http://example.com/order/" rewritePrefix="order-rewrite/"/>
+  <systemSuffix systemIdSuffix="order.dtd" uri="order-suffix.dtd"/>
+  <public publicId="-//EX//DTD  Spaced//EN " uri="spaced.dtd"/>
+  <public publicId="-//EX//DTD Both//EN" uri="both-public.dtd"/>
+  <system systemId="http://example.com/both.dtd" uri="both-system.dtd"/>
+  <group prefer="system" xml:base="http://base.example/group/">
+    <public publicId="-//EX//DTD Grouped//EN" uri="grouped.dtd"/>
+    <system systemId="http://example.com/grouped.dtd" uri="grouped-system.dtd"/>
+    <delegatePublic publicIdStartString="-//GROUPDELEG//" catalog="file:///nowhere/deleg.xml"/>
+  </group>
+  <system systemId="http://example.com/base.dtd" uri="based.dtd" xml:base="http://other.example/dir/"/>
+  <delegateSystem systemIdStartString="http://deleg.example/" catalog="deleg-short.xml"/>
+  <delegateSystem systemIdStartString="http://deleg.example/long/" catalog="deleg-long.xml"/>
+  <delegatePublic publicIdStartString="-//DELEG//" catalog="deleg-public.xml"/>
+  <uri name="http://example.com/u.xml" uri="u-local.xml"/>
+  <uri name="u-rel.xml" uri="u-rel-local.xml"/>
+  <uri name="http://example.com/frag#part" uri="frag-local.xml"/>
+  <rewriteURI uriStartString="http://example.com/ru/" rewritePrefix="ru-short/"/>
+  <rewriteURI uriStartString="http://example.com/ru/deep/" rewritePrefix="ru-long/"/>
+  <uriSuffix uriSuffix="/s.xml" uri="us-short.xml"/>
+  <uriSuffix uriSuffix="/long/s.xml" uri="us-long.xml"/>
+  <delegateURI uriStartString="http://deleguri.example/" catalog="deleg-uri.xml"/>
+  <nextCatalog catalog="next.xml"/>
+  <nextCatalog catalog="missing.xml"/>
+  <nextCatalog catalog="not-catalog.xml"/>
+  <nextCatalog catalog="next-2.xml"/>
+</catalog>

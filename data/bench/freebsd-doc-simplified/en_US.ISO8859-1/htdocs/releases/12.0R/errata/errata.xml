@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0">
+  <info>
+    <title>FreeBSD 12.0-RELEASE Errata</title>
+
+    <author>
+      <orgname>The FreeBSD Project</orgname>
+    </author>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <copyright>
+      <year>2018</year>
+      <holder role="mailto:doc@FreeBSD.org">The FreeBSD Documentation
+	Project</holder>
+    </copyright>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>FreeBSD is a registered trademark of
+  the FreeBSD Foundation.</para>
+      <para>Intel, Celeron, Centrino, Core, EtherExpress, i386,
+  i486, Itanium, Pentium, and Xeon are trademarks or registered
+  trademarks of Intel Corporation or its subsidiaries in the United
+  States and other countries.</para>
+      <para>SPARC, SPARC64, and
+  UltraSPARC are trademarks of SPARC International, Inc in the United
+  States and other countries.  SPARC International, Inc owns all of the
+  SPARC trademarks and under licensing agreements allows the proper use
+  of these trademarks by its members.</para>
+      <para>Many of the designations used by
+  manufacturers and sellers to distinguish their products are claimed
+  as trademarks.  Where those designations appear in this document,
+  and the FreeBSD Project was aware of the trademark claim, the
+  designations have been followed by the <quote>™</quote> or the
+  <quote>®</quote> symbol.</para>
+    </legalnotice>
+
+    <abstract>
+      <para>This document lists errata items for FreeBSD 12.0-RELEASE,
+	containing significant information discovered after the
+	release or too late in the release cycle to be otherwise
+	included in the release documentation.  This information
+	includes security advisories, as well as news relating to the
+	software or documentation that could affect its operation or
+	usability.  An up-to-date version of this document should
+	always be consulted before installing this version of
+	FreeBSD.</para>
+
+      <para>This errata document for FreeBSD 12.0-RELEASE will be maintained
+	until the release of FreeBSD 13.0-RELEASE.</para>
+    </abstract>
+  </info>
+
+  <sect1 xml:id="intro">
+    <title>Introduction</title>
+
+    <para>This errata document contains <quote>late-breaking
+	news</quote> about FreeBSD 12.0-RELEASE Before installing this
+      version, it is important to consult this document to learn about
+      any post-release discoveries or problems that may already have
+      been found and fixed.</para>
+
+    <para>Any version of this errata document actually distributed
+      with the release (for example, on a CDROM distribution) will be
+      out of date by definition, but other copies are kept updated on
+      the Internet and should be consulted as the <quote>current
+	errata</quote> for this release.  These other copies of the
+      errata are located at <link xlink:href="https://www.FreeBSD.org/releases/"/>, plus any
+      sites which keep up-to-date mirrors of this location.</para>
+
+    <para>Source and binary snapshots of FreeBSD 12-STABLE also
+      contain up-to-date copies of this document (as of the time of
+      the snapshot).</para>
+
+    <para>For a list of all FreeBSD CERT security advisories, see
+      <link xlink:href="https://www.FreeBSD.org/security/"/>.</para>
+  </sect1>
+
+  <sect1 xml:id="security">
+    <title>Security Advisories</title>
+
+    
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<informaltable xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" frame="none" pgwide="1">
+  <tgroup cols="3">
+    <colspec colwidth="40%"/>
+    <colspec colwidth="30%"/>
+    <colspec colwidth="30%"/>
+    <thead>
+      <row>
+	<entry>Advisory</entry>
+	<entry>Date</entry>
+	<entry>Topic</entry>
+      </row>
+    </thead>
+
+    <tbody>
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-18:15.bootpd.asc">FreeBSD-SA-18:15.bootpd</link></entry>
+	<entry>19 December 2018</entry>
+	<entry><para>Buffer overflow</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:01.syscall.asc">FreeBSD-SA-19:01.syscall</link></entry>
+	<entry>5 February 2019</entry>
+	<entry><para>Kernel data register leak</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:02.fd.asc">FreeBSD-SA-19:02.fd</link></entry>
+	<entry>5 February 2019</entry>
+	<entry><para>File description reference count
+	    leak</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:03.wpa.asc">FreeBSD-SA-19:03.wpa</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>Multiple vulnerabilities</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:04.ntp.asc">FreeBSD-SA-19:04.ntp</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>Authenticated denial of service in
+	    <citerefentry><refentrytitle>ntpd</refentrytitle><manvolnum>8</manvolnum></citerefentry></para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:05.pf.asc">FreeBSD-SA-19:05.pf</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>IPv6 fragment reassembly panic in
+	    <citerefentry><refentrytitle>pf</refentrytitle><manvolnum>4</manvolnum></citerefentry></para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:06.pf.asc">FreeBSD-SA-19:06.pf</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>ICMP/ICMP6 packet filter bypass in
+	    <citerefentry><refentrytitle>pf</refentrytitle><manvolnum>4</manvolnum></citerefentry></para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:07.mds.asc">FreeBSD-SA-19:07.mds</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>Microarchitectural Data Sampling</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:08.rack.asc">FreeBSD-SA-19:08.rack</link></entry>
+	<entry>19 June 2019</entry>
+	<entry><para>Resource exhaustion in non-default RACK TCP
+	    stack</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:09.iconv.asc">FreeBSD-SA-19:09.iconv</link></entry>
+	<entry>2 July 2019</entry>
+	<entry><para><citerefentry><refentrytitle>iconv</refentrytitle><manvolnum>3</manvolnum></citerefentry> buffer overflow</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:10.ufs.asc">FreeBSD-SA-19:10.ufs</link></entry>
+	<entry>2 July 2019</entry>
+	<entry><para>Kernel stack disclosure</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:11.cd_ioctl.asc">FreeBSD-SA-19:11.cd_ioctl</link></entry>
+	<entry>2 July 2019</entry>
+	<entry><para>Privilege escalation in <citerefentry><refentrytitle>cd</refentrytitle><manvolnum>4</manvolnum></citerefentry></para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:12.telnet.asc">FreeBSD-SA-19:12.telnet</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para>Multiple vulnerabilities</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:13.pts.asc">FreeBSD-SA-19:13.pts</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para>Write-after-free vulnerability</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:15.mqueuefs.asc">FreeBSD-SA-19:15.mqueuefs</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para>Reference count overflow</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:16.bhyve.asc">FreeBSD-SA-19:16.bhyve</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para><citerefentry><refentrytitle>xhci</refentrytitle><manvolnum>4</manvolnum></citerefentry> out-of-bounds read</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:17.fd.asc">FreeBSD-SA-19:17.fd</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para>Reference count leak</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:18.bzip2.asc">FreeBSD-SA-19:18.bzip2</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Multiple vulnerabilities</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:19.mldv2.asc">FreeBSD-SA-19:19.mldv2</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Out-of-bounds memory access</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:20.bsnmp.asc">FreeBSD-SA-19:20.bsnmp</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Insufficient message length
+	  validation</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:21.bhyve.asc">FreeBSD-SA-19:21.bhyve</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Insufficient validation of guest-supplied
+	  data</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:22.mbuf.asc">FreeBSD-SA-19:22.mbuf</link></entry>
+	<entry>20 August 2019</entry>
+	<entry><para>IPv6 remove denial-of-service</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:23.midi.asc">FreeBSD-SA-19:23.midi</link></entry>
+	<entry>20 August 2019</entry>
+	<entry><para>Kernel memory disclosure</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:24.mqueuefs.asc">FreeBSD-SA-19:24.mqueuefs</link></entry>
+	<entry>20 August 2019</entry>
+	<entry><para>Reference count overflow</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:25.mcepsc.asc">FreeBSD-SA-19:25.mcepce</link></entry>
+	<entry>12 November 2019</entry>
+	<entry><para>Machine Check Exception on Page Size
+	  Change</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-19:26.mcu.asc">FreeBSD-SA-19:26.mcu</link></entry>
+	<entry>12 November 2019</entry>
+	<entry><para>Intel CPU Microcode Update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-20:01.libfetch.asc">FreeBSD-SA-20:01.libfetch</link></entry>
+	<entry>28 January 2020</entry>
+	<entry><para><citerefentry><refentrytitle>fetch</refentrytitle><manvolnum>3</manvolnum></citerefentry> buffer overflow</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-20:02.ipsec.asc">FreeBSD-SA-20:02.ipsec</link></entry>
+	<entry>28 January 2020</entry>
+	<entry><para>Missing anti-replay window check</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-SA-20:03.thrmisc.asc">FreeBSD-SA-20:03.thrmisc</link></entry>
+	<entry>28 January 2020</entry>
+	<entry><para>Kernel stack data disclosure</para></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+  </sect1>
+
+  <sect1 xml:id="errata">
+    <title>Errata Notices</title>
+
+    
+<!--
+     The FreeBSD Documentation Project
+
+     $FreeBSD$
+-->
+<informaltable xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xlink="http://www.w3.org/1999/xlink" frame="none" pgwide="1">
+  <tgroup cols="3">
+    <colspec colwidth="40%"/>
+    <colspec colwidth="30%"/>
+    <colspec colwidth="30%"/>
+    <thead>
+      <row>
+	<entry>Errata</entry>
+	<entry>Date</entry>
+	<entry>Topic</entry>
+      </row>
+    </thead>
+
+    <tbody>
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:01.cc_cubic.asc">FreeBSD-EN-19:01.cc_cubic</link></entry>
+	<entry>9 January 2019</entry>
+	<entry><para>Connection stalls with CUBIC congestion
+	    control</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:02.tcp.asc">FreeBSD-EN-19:02.tcp</link></entry>
+	<entry>9 January 2019</entry>
+	<entry><para>TCP connections may stall and eventually fail in
+	    case of packet loss</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:03.sqlite.asc">FreeBSD-EN-19:03.sqlite</link></entry>
+	<entry>9 January 2019</entry>
+	<entry><para>sqlite update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:04.tzdata.asc">FreeBSD-EN-19:04.tzdata</link></entry>
+	<entry>9 January 2019</entry>
+	<entry><para>Timezone database information
+	    update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:06.dtrace.asc">FreeBSD-EN-19:06.dtrace</link></entry>
+	<entry>5 February 2019</entry>
+	<entry><para>DTrace incompatibility with SMAP-enabled
+	    systems</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:07.lle.asc">FreeBSD-EN-19:07.lle</link></entry>
+	<entry>5 February 2019</entry>
+	<entry><para>LLE table lookup code race
+	    condition</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:08.tzdata.asc">FreeBSD-EN-19:08.tzdata</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>Timezone database information
+	    update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:09.xinstall.asc">FreeBSD-EN-19:09.xinstall</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para><citerefentry><refentrytitle>install</refentrytitle><manvolnum>1</manvolnum></citerefentry> broken with partially matching
+	    relative paths</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:10.scp.asc">FreeBSD-EN-19:10.scp</link></entry>
+	<entry>14 May 2019</entry>
+	<entry><para>Insufficient filename validation in <citerefentry><refentrytitle>scp</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	    client</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:11.net.asc">FreeBSD-EN-19:11.net</link></entry>
+	<entry>19 June 2019</entry>
+	<entry><para>Incorrect locking in networking
+	    stack</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:12.tzdata.asc">FreeBSD-EN-19:12.tzdata</link></entry>
+	<entry>2 July 2019</entry>
+	<entry><para>Timezone database information
+	    update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:13.mds.asc">FreeBSD-EN-19:13.mds</link></entry>
+	<entry>24 July 2019</entry>
+	<entry><para>System crash from Intel CPU vulnerability
+	    mitigation</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:14.epoch.asc">FreeBSD-EN-19:14.epoch</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Incorrect locking</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:15.libunwind.asc">FreeBSD-EN-19:15.libunwind</link></entry>
+	<entry>6 August 2019</entry>
+	<entry><para>Incorrect exception handling</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:16.bhyve.asc">FreeBSD-EN-19:16.bhyve</link></entry>
+	<entry>20 August 2019</entry>
+	<entry><para>Instruction emulation improvements</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:17.ipfw.asc">FreeBSD-EN-19:17.ipfw</link></entry>
+	<entry>20 August 2019</entry>
+	<entry><para>"jail" keyword fix</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:18.tzdata.asc">FreeBSD-EN-19:18.tzdata</link></entry>
+	<entry>23 October 2019</entry>
+	<entry><para>Timezone database information
+	    update</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-19:19.loader.asc">FreeBSD-EN-19:19.loader</link></entry>
+	<entry>12 November 2019</entry>
+	<entry><para>UEFI Loader Memory Fragmentation</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-20:01.ssp.asc">FreeBSD-EN-20:01.ssp</link></entry>
+	<entry>28 January 2020</entry>
+	<entry><para>Imprecise orderring of canary
+	  initialization</para></entry>
+      </row>
+
+      <row>
+	<entry><link xlink:href="https://www.FreeBSD.org/security/advisories/FreeBSD-EN-20:02.nmount.asc">FreeBSD-EN-20:02.nmount</link></entry>
+	<entry>28 January 2020</entry>
+	<entry><para>Invalid pointer dereference</para></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+  </sect1>
+
+  <sect1 xml:id="open-issues">
+    <title>Open Issues</title>
+
+    <itemizedlist>
+      <listitem>
+	<para>[2018-12-11] Some <trademark class="registered">Intel</trademark> J1900 systems may hang on boot
+	  in <acronym>UEFI</acronym> mode.  An observed workaround is
+	  to set <literal>kern.vty=sc</literal> at the <citerefentry><refentrytitle>loader</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	  prompt.  To have the setting persist after <citerefentry><refentrytitle>reboot</refentrytitle><manvolnum>8</manvolnum></citerefentry>,
+	  add <literal>kern.vty=sc</literal> to
+	  <citerefentry><refentrytitle>loader.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.</para>
+
+	<para>See <acronym>PR</acronym> <link xlink:href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230172">230172</link>
+	  for more information.</para>
+      </listitem>
+
+      <listitem>
+	<para>[2018-12-11] <application>OpenSSL</application> version
+	  1.1.1 disables use of hardware cryptography accelerator
+	  cards provided by <citerefentry><refentrytitle>crypto</refentrytitle><manvolnum>4</manvolnum></citerefentry> by default.  Systems that
+	  have cryptography devices such as <citerefentry><refentrytitle>hifn</refentrytitle><manvolnum>4</manvolnum></citerefentry>,
+	  <citerefentry><refentrytitle>padlock</refentrytitle><manvolnum>4</manvolnum></citerefentry>, <citerefentry><refentrytitle>safe</refentrytitle><manvolnum>4</manvolnum></citerefentry>, and <citerefentry><refentrytitle>ubsec</refentrytitle><manvolnum>4</manvolnum></citerefentry> currently
+	  will not take advantage of hardware cryptography
+	  offloading.</para>
+
+	<para>It is currently unclear if an Errata Notice will be
+	  issued to re-enable use of <citerefentry><refentrytitle>crypto</refentrytitle><manvolnum>4</manvolnum></citerefentry>.</para>
+      </listitem>
+
+      <listitem>
+	<para>[2018-12-13] Due to the size of the base system of
+	  FreeBSD 12.0, the disc1.iso images for amd64 and
+	  i386 do not fit onto a 700 MB
+	  <acronym>CD-ROM</acronym>.  As of FreeBSD 12.0-RELEASE,
+	  however, disc1.iso for these architectures can be written to
+	  a flash drive, or to a <acronym>DVD</acronym>.</para>
+
+	<para>See <acronym>PR</acronym> <link xlink:href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=233989">233989</link>
+	  for more information.</para>
+      </listitem>
+
+      <listitem>
+	<para>[2018-12-13] Some users have reported
+	  FreeBSD 12.0-RELEASE boot messages do not report
+	  <acronym>CPU</acronym>s other than <literal>CPU0</literal>.
+	  This is expected behavior introduced in
+	  <literal>r333334</literal>, and results in boot-time
+	  reduction.</para>
+      </listitem>
+
+      <listitem>
+	<para>[2018-12-13] The FreeBSD 12.0 release notes mention
+	  use of <filename role="package">graphics/drm-stable-kmod</filename> and
+	  <filename role="package">graphics/drm-legacy-kmod</filename>
+	  for modern graphics cards.  These ports have been changed to
+	  a "meta port" in the Ports Collection, and will be
+	  renamed in the <literal>2019Q1</literal> quarterly branch,
+	  after which <filename role="package">graphics/drm-kmod</filename> should be used
+	  instead.</para>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+
+  <sect1 xml:id="late-news">
+    <title>Late-Breaking News</title>
+
+    <para>No news.</para>
+  </sect1>
+</article>

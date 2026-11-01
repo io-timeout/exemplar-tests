@@ -1,0 +1,4369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $FreeBSD$
+     $Id: book.xml,v 1.2 2003-01-12 12:47:57 blackend Exp $
+     Original revision: 1.15
+
+-->
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:lang="fr">
+  <info><title>Livre de chevet du développeur FreeBSD</title>
+    
+
+    <author><orgname>Le groupe du projet de documentation FreeBSD</orgname></author>
+
+    <pubdate>Août 2000</pubdate>
+
+    <copyright>
+      <year>2000</year>
+      <year>2001</year>
+      <year>2002</year>
+      <year>2003</year>
+      <holder>Le groupe du projet de documentation FreeBSD</holder>
+    </copyright>
+
+    
+<legalnotice xml:id="legalnotice">
+  <title>Copyright</title>
+
+  <para>Redistribution and use in source (XML DocBook) and 'compiled'
+    forms (XML, HTML, PDF, PostScript, RTF and so forth) with or without
+    modification, are permitted provided that the following conditions are
+    met:</para>
+
+  <orderedlist>
+    <listitem>
+      <para>Redistributions of source code (XML DocBook) must retain the
+        above copyright notice, this list of conditions and the following
+        disclaimer as the first lines of this file unmodified.</para>
+    </listitem>
+
+    <listitem>
+      <para>Redistributions in compiled form (transformed to other DTDs,
+        converted to PDF, PostScript, RTF and other formats) must
+        reproduce the above copyright notice, this list of conditions and
+        the following disclaimer in the documentation and/or other
+        materials provided with the distribution.</para>
+    </listitem>
+  </orderedlist>
+
+  <important>
+    <para>THIS DOCUMENTATION IS PROVIDED BY THE FREEBSD DOCUMENTATION
+      PROJECT "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+      BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+      FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+      THE FREEBSD DOCUMENTATION PROJECT BE LIABLE FOR ANY DIRECT, INDIRECT,
+      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+      USE OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+      DAMAGE.</para>
+  </important>
+</legalnotice>
+
+
+    <releaseinfo>$FreeBSD$</releaseinfo>
+
+    <abstract>
+      <para>Bienvenue dans le livre de chevet du développeur</para>
+      <para><emphasis>Version française de Frédéric Praca
+  <email>frederic.praca@freebsd-fr.org</email>.</emphasis></para>
+    <para>N.d.T.: La version française est publiée sur le
+    <link xlink:href="@@URL_RELPREFIX@@/">serveur World Wide Web du groupe de
+    traduction en langue française de la documentation de
+    FreeBSD</link>.</para>
+
+    <para>N.d.T.: Contactez la liste de diffusion du groupe d'utilisateurs francophones de FreeBSD
+  <email>freebsd-questions@FreeBSD-fr.org</email> si vous voulez collaborer
+    à la traduction.</para>
+
+    <para>La traduction de ce manuel est “en cours”. Dans la
+    table des matières ci-dessous:
+
+    <itemizedlist>
+          <listitem>
+            <para>Les chapitres marqués de deux astérisques
+              sont en cours de traduction.</para>
+          </listitem>
+
+          <listitem>
+            <para>Les chapitres marqués de trois astérisques
+              sont à traduire.</para>
+          </listitem>
+
+          <listitem>
+            <para>L'astérisque simple est réservé aux
+              chapitres et sections en cours de rédaction dans la
+              version U.S.</para>
+          </listitem>
+        </itemizedlist>
+	</para>
+	</abstract>
+
+  </info>
+
+  <part xml:id="introduction">
+    <title>Introduction</title>
+
+    <chapter xml:id="developmentplatform">
+      <title>Développer sous FreeBSD</title>
+
+      <para>Ce document a pour but de décrire FreeBSD comme une plateforme
+        de développement, la vision de BSD, un survol de l'architecture, l'agencement
+        de /usr/src, l'histoire, etc.</para>
+
+      <para>Merci d'adopter FreeBSD comme votre plateforme
+        de développement !  Nous espérons qu'elle ne vous laissera pas tomber.</para>
+    </chapter>
+
+    <chapter xml:id="bsdvision">
+      <title>La vision BSD</title>
+
+      <para/>
+    </chapter>
+
+    <chapter xml:id="archoverview">
+      <title>Survol de l'architecture</title>
+
+      <para/>
+    </chapter>
+
+    <chapter xml:id="sourcelayout">
+      <title>L'agencement de /usr/src</title>
+
+      <para>Le code source complet de FreeBSD est disponible depuis notre
+    	base CVS publique.  Le code source est normalement installé sous
+      <filename>/usr/src</filename> qui contient les
+      sous-répertoires suivants.</para>
+
+      <para>
+      <informaltable frame="none">
+        <tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry>Répertoire</entry>
+	      <entry>Description</entry>
+	    </row>
+	  </thead>
+
+	  <tbody>
+	    <row>
+	    <entry><filename>bin/</filename></entry>
+            <entry>Sources des fichiers de
+            <filename>/bin</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>contrib/</filename></entry>
+	    <entry>Sources des fichiers des logiciels fournis ("contributed").</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>crypto/</filename></entry>
+	    <entry>Sources du DES</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>etc/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/etc</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>games/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/usr/games</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>gnu/</filename></entry>
+	    <entry>Utilitaires sous licence publique GNU</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>include/</filename></entry>
+            <entry>Sources des fichiers de <filename>/usr/include</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>kerberosIV/</filename></entry>
+            <entry>Sources de Kerbereros version IV</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>kerberos5/</filename></entry>
+            <entry>Sources de Kerbereros version 5</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>lib/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/usr/lib</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>libexec/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/usr/libexec</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>release/</filename></entry>
+            <entry>Fichiers requis pour la production d'une version
+            stable de FreeBSD</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>sbin/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/sbin</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>secure/</filename></entry>
+	    <entry>Sources de FreeSec</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>share/</filename></entry>
+	    <entry>Sources des fichiers de <filename>/sbin</filename></entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>sys/</filename></entry>
+	    <entry>Fichiers source du noyau</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>tools/</filename></entry>
+	    <entry>Outils utilisés pour la maintenance et les tests de
+	    FreeBSD</entry>
+	    </row>
+
+	    <row>
+	    <entry><filename>usr.bin/</filename></entry>
+            <entry>Sources des fichiers de <filename>/usr/bin</filename></entry>
+            </row>
+
+	    <row>
+	    <entry><filename>usr.sbin/</filename></entry>
+            <entry>Sources des fichiers de <filename>/usr/sbin</filename></entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </informaltable>
+
+      </para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="Basics">
+    <title>Les fondamentaux</title>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $Id: chapter.xml,v 1.1 2002-02-14 14:25:02 gioria Exp $
+     Original revision: 1.4
+     $FreeBSD$
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="tools">
+      <title>Outils de programmation</title>
+
+      <para><emphasis>Ce chapître a été écrit par James Raynard.
+      Les modifications pour le livre de chevet du développeur par Murray Stokely.
+      </emphasis></para>
+
+      <sect1><title>Synopsis</title>
+
+      <para>Ce document est une introduction à l'utilisation de quelques
+      outils de programmation fournis avec FreeBSD, toutefois tout sera applicable
+      à beaucoup d'autres versions d'Unix. Cette introduction <emphasis>n'essaye</emphasis>
+      pas de décrire la programmation dans le détail.
+      La plupart du document suppose que vous possédez peu ou pas de connaissances
+      en programmation, espérant que les programmeurs trouveront un
+      intérêt dans ce document.</para>
+
+      </sect1>
+
+      <sect1><title>Introduction</title>
+
+      <para>FreeBSD offre un excellent environnement de développement.
+      Des compilateurs pour C, C++ et Fortran ainsi qu'un assembleur sont fournis avec
+      le système de base, sans parler de l'interpréteur PERL ni des
+      outils classiques Unix comme <command>sed</command> et <command>awk</command>.
+      Si cela n'est pas suffisant, il y a encore plus de compilateurs et
+      d'interpréteurs dans la collection des logiciels portés.
+      FreeBSD est compatible avec les standards comme <acronym>POSIX</acronym> et C
+      <acronym>ANSI</acronym>, aussi bien qu'avec son propre héritage BSD,
+      aussi il est possible d'écrire des applications qui se compileront
+      et s'exécuteront avec peu ou pas de modifications sur un grand nombre de
+      plateformes.</para>
+
+      <para>Toutefois, toute cette puissance peut être plutôt écrasante
+      au premier abord si vous n'avez jamais écrit de programmes sur une
+      plateforme Unix auparavant. Ce document a pour but de vous aider à commencer,
+      sans entrer trop loin dans des sujets plus avancés. L'intention est
+      que ce document devrait vous donner assez de bases pour être capable de
+      donner du sens à la documentation.</para>
+
+      <para>La majeure partie du document requiert peu ou pas de connaissance
+      de la programmation, bien qu'il suppose une compétence de base dans
+      l'utilisation d'Unix et dans la bonne volonté d'apprendre !</para>
+
+      </sect1>
+
+      <sect1>
+      <title>Introduction à la programmation</title>
+
+      <para>Un programme est un ensemble d'instructions qui disent à l'ordinateur
+      de faire diverses choses; quelques fois, l'instruction qu'il a à exécuter
+      dépend de ce qui s'est passé lors de l'exécution d'une instruction
+      précédente. Cette section donne un aperçu des deux manières par lesquelles
+      vous pouvez donner ces instructions, ou
+      <quote>commandes</quote> comme elles sont habituellement nommées.
+      Une façon utilise un <firstterm>interpréteur</firstterm>, l'autre
+      un <firstterm>compilateur</firstterm>. Comme les langages humains sont
+      trop difficiles à comprendre sans ambiguïté par un ordinateur,
+      les commandes sont habituellement écrites dans un langage ou un autre
+      spécialement conçus pour cet usage.</para>
+
+    <sect2>
+      <title>Les interpréteurs</title>
+
+      <para>Avec un interpréteur, le langage va avec un environnement
+	où vous entrez des commandes à un invite de commandes et l'environnement
+	les exécute pour vous. Pour des programmes plus compliqués, vous pouvez
+	entrer les commandes dans un fichier et demander à l'interpréteur de charger
+	le fichier et d'exécuter les commandes qui sont à l'intérieur.
+	Si quoique ce soit se passe mal, beaucoup d'interpréteurs vous enverrons
+	dans un dévermineur pour vous aider à débusquer le problème.</para>
+
+      <para>L'avantage de cela est que vous pouvez voir les résultats de
+	vos commandes immédiatement, et les erreurs peuvent être corrigées
+	facilement. Le plus gros désavantage arrive quand vous voulez partager
+	vos programmes avec d'autres personnes. Ils doivent avoir le même
+	interpréteur ou bien vous devez avoir un moyen de leur donner,
+	et ils doivent comprendre comment l'utiliser. Par ailleurs, les
+	utilisateurs pourraient ne pas apprécier d'être renvoyés dans un
+	dévermineur s'ils ont appuyé sur la mauvaise touche !
+	D'un point de vue performance, les interpréteurs peuvent utiliser
+	beaucoup de mémoire et généralement ne génèrent pas un code aussi
+	efficace que les compilateurs.</para>
+
+      <para>A mon avis, les langages interprétés sont le meilleur moyen
+      	pour démarrer si vous n'avez jamais programmé. Ce genre
+      	d'environnement se trouve typiquement avec des langages comme Lisp,
+      	Smalltalk, Perl et Basic. Il peut aussi être dit que l'interpréteur de
+	commandes Unix (<command>sh</command>, <command>csh</command>) est
+	lui-même un interpréteur, et beaucoup de gens écrivent en fait des
+	<quote>scripts</quote> (procédures) pour l'interpréteur pour les aider
+	dans diverses tâches <quote>domestiques</quote> sur leur machine.
+	En effet, une partie de la philosophie d'origine d'Unix était de
+	fournir plein de petits programmes utilitaires qui pouvaient être liés
+	ensemble dans des procédures pour effectuer des tâches utiles.</para>
+    </sect2>
+
+    <sect2>
+      <title>Les interpréteurs disponibles avec FreeBSD</title>
+
+      <para>Voici la liste des interpréteurs qui sont disponibles sous la forme
+      de <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/">
+      logiciels pré-compilés pour FreeBSD</link>, avec une brève description
+      de quelques uns des langages interprétés les plus populaires.</para>
+
+      <para>Pour obtenir un de ces logiciels pré-compilés, tout ce que vous
+      avez à faire est de cliquer sur le lien du logiciel et d'exécuter</para>
+
+      <screen><prompt>#</prompt> <userinput>pkg_add nom du logiciel</userinput>
+      </screen>
+
+      <para>en tant que super-utilisateur. Evidemment, vous aurez besoin d'un
+      FreeBSD 2.1.0 ou plus en état de marche pour que le logiciel fonctionne !</para>
+
+      <variablelist>
+	<varlistentry>
+	  <term><acronym>BASIC</acronym></term>
+
+	  <listitem>
+	    <para>Abbréviation de "Beginner's All-purpose Symbolic
+	      Instruction Code" (code d'instruction symbolique tout usage
+	      pour le débutant). Développé dans les années 50 pour apprendre
+	      aux étudiants d'université à programmer et fourni avec tout
+	      ordinateur qui se respecte dans les années 80,
+	      <acronym>BASIC</acronym> a été le premier langage de
+	      programmation pour beaucoup de programmeurs. Il est aussi le
+	      fondement même du Visual Basic.</para>
+
+	    <para>L'interpréteur Basic <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/bwbasic-2.10.tgz">Bywater
+		</link> et l'interpréteur Basic de <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/pbasic-2.0.tgz">Phil
+		Cockroft</link> (anciennement Rabbit
+	      Basic) sont disponibles pour FreeBSD sous forme de<link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/"> logiciels pré-compilés
+		</link></para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Lisp</term>
+
+	  <listitem>
+	    <para>Un langage qui a été développé à la fin des années 50 comme
+	      une alternative aux langages <quote>dévoreurs de calculs</quote>
+	      qui étaient très populaires à l'époque. Plutôt qu'être basé
+	      sur les nombres, Lisp est basé sur les listes; en fait
+	      le nom est l'abbréviation de <quote>List Processing</quote>.
+	      Très populaire en IA (Intelligence Artificielle).</para>
+
+	    <para>Lisp est un langage extrèmement puissant et sophistiqué
+	      , mais peut être assez lourd et peu maniable.</para>
+
+	    <para>FreeBSD a <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/gcl-2.0.tgz">GNU
+		Common Lisp</link> de disponible sous la forme d'un logiciel pré-compilé.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Perl</term>
+
+	  <listitem>
+	    <para>Très populaire auprès des administrateurs système pour la rédaction
+	      de procédures; aussi souvent utilisé sur les serveurs Internet pour
+	      l'écriture de procédures <acronym>CGI</acronym>.</para>
+
+	    <para>La dernière version (version 5) est fournie avec FreeBSD.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Scheme</term>
+
+	  <listitem>
+	    <para>Un dérivé du Lisp qui est plutôt plus compact et
+	      plus propre que le Common Lisp. Populaire dans les universités étant
+	      suffisamment simple à apprendre aux étudiants comme premier langage
+	      , il possède un niveau d'abstraction suffisamment important pour être
+	      utilisé dans le travail de recherche.</para>
+
+	    <para>On trouve pour FreeBSD les logiciels pré-compilés <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/elk-3.0.tgz">interpréteur
+		Scheme Elk</link>, <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/mit-scheme-7.3.tgz">l'interpréteur
+		Scheme du MIT</link> et <link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/scm-4e1.tgz">l'interpréteur Scheme
+		SCM</link>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Icon</term>
+
+	  <listitem>
+	    <para><link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/icon-9.0.tgz">Le langage
+		de programmation Icon</link>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Logo</term>
+
+	  <listitem>
+	    <para><link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/ucblogo-3.3.tgz">l'interpréteur Logo
+		de Brian Harvey</link>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Python</term>
+
+	  <listitem>
+	    <para><link xlink:href="ftp://ftp.FreeBSD.org:pub/FreeBSD/packages/lang/python-1.2">Le
+		langage orienté objet Python</link></para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2>
+      <title>Les compilateurs</title>
+
+      <para>Les compilateurs sont plutôt différents entre eux. Tout d'abord, vous écrivez
+	votre code dans un fichier (ou des fichiers) en utilisant un éditeur de texte. Vous
+	exécutez ensuite le compilateur et vérifiez qu'il accepte votre programme. S'il ne
+	compile pas, grincez des dents et retournez à l'éditeur; s'il compile et
+	vous donne un programme, vous pouvez exécuter ce dernier à l'invite de commande ou
+	dans un dévermineur pour voir s'il fonctionne correctement.
+
+	<footnote>
+	  <para>Si vous l'exécuter à l'invite de commande, vous pouvez recevoir un fichier
+	  d'image mémoire (NDT: le désormais célèbre "core dump").</para>
+	</footnote></para>
+
+      <para>Evidemment, ce n'est pas aussi direct que d'utiliser un interpréteur.
+      Toutefois cela vous permet de faire beaucoup de choses qui sont difficiles
+      ou même impossibles avec un interpréteur, comme écrire du code qui interagit
+      de façon proche du système d'exploitation ou même d'écrire votre propre
+      système d'exploitation ! C'est aussi utile si vous avez besoin d'écrire du code
+      très efficace, étant donné que le compilateur peut prendre son temps et
+      optimiser le code, ce qui ne serait pas acceptable avec un interpréteur.
+      Et distribuer un programme écrit pour un compilateur est habituellement
+      plus évident qu'un écrit pour un interpréteur—vous pouvez juste donner
+      une copie de l'exécutable, en supposant que l'utilisateur possède le même
+      système d'exploitation que vous.</para>
+
+      <para>Les langages compilés incluent Pascal, C et C++. C et C++
+	sont des langages plutôt impitoyables et conviennent mieux
+	aux programmeurs expérimentés; Pascal, d'autre part, a été
+	conçu comme un langage éducatif, et est un assez bon langage
+	pour commencer. Malheureusement, FreeBSD ne possède aucun
+	support Pascal, excepté pour un convertisseur Pascal vers C
+	dans les logiciels portés.</para>
+
+      <para>Le cycle édition-compilation-exécution-déverminage étant relativement pénible
+      lors de l'utilisation de programmes séparés, beaucoup de fabricants de compilateur
+      ont produit des environnements de développement intégrés (ou <acronym>IDE</acronym> pour
+      Integrated Development Environments et <acronym>EDI</acronym> dans la langue de
+      Molière). FreeBSD ne possède pas d'<acronym>EDI</acronym>
+      tel quel; toutefois il est possible d'utiliser Emacs à cet effet.
+      Ceci est vu dans <xref linkend="emacs"/>.</para>
+    </sect2>
+  </sect1>
+
+
+  <sect1>
+    <title>Compiler avec <command>cc</command></title>
+
+    <para>Cette section traite uniquement du compilateur GNU pour C et C++,
+      celui-ci faisant partie du système FreeBSD de base. Il peut être invoqué
+      soit par <command>cc</command> ou <command>gcc</command>. Les
+      détails de production d'un programme avec un interpréteur varient
+      considérablement d'un interpréteur à l'autre, et sont habituellement
+      bien couverts par la documentation et l'aide en ligne de l'interpréteur.</para>
+
+    <para>Une fois que vous avez écrit votre chef d'oeuvre, la prochaine étape est
+      de le convertir en quelque chose qui s'exécutera (espérons !) sur FreeBSD.
+      Cela implique normalement plusieurs étapes, réalisées chacune par un programme
+      différent.</para>
+
+    <procedure>
+      <step>
+	<para>Pré-traiter votre code source pour retirer les commentaires et faire
+	  d'autres trucs comme développer (expanser) les macros en C.</para>
+      </step>
+
+      <step>
+	<para>Vérifier la syntaxe de votre code source pour voir si vous avez
+	obéi aux règles du langage. Si vous ne l'avez pas fait, il se plaindra !</para>
+      </step>
+
+      <step>
+	<para>Convertir le code source en langage assembleur—
+	cela est vraiment proche du code machine, mais reste
+	  compréhensible par des humains. Prétendument.
+
+	  <footnote>
+	    <para>Pour être vraiment précis, <command>cc</command> convertit à ce niveau le
+	      code source dans son propre <firstterm>p-code</firstterm> indépendant de la
+	      machine plutôt qu'en langage assembleur.</para>
+	  </footnote></para>
+      </step>
+
+      <step>
+	<para>Convertir le langage  assembleur en code machine
+	  —ouais, on parle de bits et d'octets, de uns et
+	  de zéros.</para>
+      </step>
+
+      <step>
+	<para>Vérifier que vous avez utilisé des choses comme des fonctions et
+	des variables globales de façon consistente. Par exemple, si vous
+	  avez appelé une fonction inexistente, le compilateur se plaindra.</para>
+      </step>
+
+      <step>
+	<para>Si vous essayez de produire un exécutable depuis plusieurs
+	  fichiers de code source, résoudre comment les faire fonctionner
+	  ensemble.</para>
+      </step>
+
+      <step>
+	<para>Résoudre comment produire quelque chose que le chargeur au vol
+	du système sera capable de charger en mémoire et exécuter.</para>
+      </step>
+
+      <step>
+	<para>Finalement, écrire l'exécutable dans le système de fichiers.</para>
+      </step>
+    </procedure>
+
+    <para>Le mot <firstterm>compilation</firstterm> est souvent utilisé pour
+      les étapes 1 à 4 seules—les autres correspondent au terme
+      <firstterm>liaison</firstterm>. Quelquefois, l'étape 1 est appelée
+      <firstterm>pre-traitement</firstterm> et les étapes 3-4 <firstterm>assemblage</firstterm>.</para>
+
+    <para>Heureusement, la plupart de ces détails vous sont cachés, étant donné que
+    <command>cc</command> est un frontal qui s'occupe d'appeler tous les
+      programmes avec les arguments corrects pour vous; tapez simplement</para>
+
+    <screen><prompt>%</prompt> <userinput>cc foobar.c</userinput>
+    </screen>
+
+    <para>compilera <filename>foobar.c</filename> avec toutes les étapes au-dessus.
+    Si vous avez plus d'un fichier à compiler, faites simplement
+      quelque chose comme</para>
+
+    <screen><prompt>%</prompt> <userinput>cc foo.c bar.c</userinput>
+    </screen>
+
+    <para>Notez que la vérification de syntaxe n'est que cela—vérifier
+      la syntaxe. Cela ne vérifiera pas les erreurs de logique que vous pouvez
+      avoir faites, comme mettre le programme en boucle infinie ou
+      utiliser un tri à bulles quand vous devriez utiliser un tri binaire.
+
+      <footnote>
+	<para>Au cas où vous ne le sauriez pas, un tri binaire est un manière
+	  efficace de trier les éléments et le tri à bulles n'en est pas une.</para>
+      </footnote></para>
+
+    <para>Il y a beaucoup d'options pour <command>cc</command>, qui
+      qui se trouvent toutes dans les pages de manuel en ligne.
+      Voici quelques unes des plus importantes, avec des exemples illustrant leur
+      utilisation.</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><option>-o <replaceable>nom_du_fichier</replaceable></option></term>
+
+	<listitem>
+	  <para>Le nom de sortie du fichier.  Si vous n'utilisez pas cette option,
+	  <command>cc</command> produira un exécutable appelé
+	    <filename>a.out</filename>.
+
+	    <footnote>
+	      <para>Les raisons de ceci sont enterrées dans les brumes de l'histoire.</para>
+	    </footnote></para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc foobar.c</userinput>               <lineannotation>l'exécutable est a.out</lineannotation>
+<prompt>%</prompt> <userinput>cc -o foobar foobar.c</userinput>     <lineannotation>l'exécutable est foobar</lineannotation>
+	    </screen>
+	  </informalexample>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>-c</option></term>
+
+	<listitem>
+	  <para>Compile juste le fichier, ne le lie pas. Utile pour les
+	    programmes jouets dont vous voulez juste vérifier la syntaxe,
+	    ou si vous utilisez un <filename>Makefile</filename>.</para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc -c foobar.c</userinput>
+	    </screen>
+	  </informalexample>
+
+	  <para>Cela va produire un <firstterm>fichier objet</firstterm> (pas un
+	    exécutable) appelé <filename>foobar.o</filename>. Celui-ci
+	    peut être lié ensuite avec d'autres fichiers objets pour produire un
+	    exécutable.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>-g</option></term>
+
+	<listitem>
+	  <para>Crée une version de déverminage de l'exécutable. Cela oblige
+	    le compilateur à placer des informations dans l'exécutable comme
+	    telle ligne du fichier source correspond à tel appel de fonction.
+	    Un dévermineur peut utiliser cette information pour vous montrer
+	    le code source au fur et à mesure que vous avancez pas à pas dans le programme,
+	    ce qui est <emphasis>très</emphasis> utile; le désavantage est que
+	    toutes ces informations supplémentaires rendent le programme plus gros.
+	    Normalement, vous compilez avec l'option <option>-g</option> quand vous
+	    êtes en train de développer un programme et compilez ensuite une
+	    <quote>version de production</quote> sans <option>-g</option> quand vous êtes
+	    satisfait du fonctionnement.</para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc -g foobar.c</userinput>
+	    </screen>
+	  </informalexample>
+
+	  <para>Cela va produire une version de déverminage du programme foobar.
+
+	    <footnote>
+	      <para>Notez, nous n'avons pas utilisé l'option <option>-o</option>
+		pour spécifier le nom de l'exécutable, aussi nous obtiendrons un
+		exécutable du nom de <filename>a.out</filename>.
+		Produire une version de déverminage du nom de
+		<filename>foobar</filename> est laissé en exercice pour le lecteur!</para>
+	    </footnote></para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>-O</option></term>
+
+	<listitem>
+	  <para>Crée une version optimisée de l'exécutable. Le compilateur
+	    effectue différents trucs malins pour essayer de produire
+	    un exécutable qui s'exécute plus rapidement que normal.
+	    Vous pouvez ajouter un nombre après l'option <option>-O</option>
+	    pour spécifier un niveau d'optimisation plus important, mais cela vous expose
+	    souvent aux bogues dans l'optimiseur du compilateur. Par exemple, la version de
+	    <command>cc</command> fournit avec la version 2.1.0 FreeBSD est connue
+	    pour produire du mauvais code avec l'option <option>-O2</option>
+	    dans certaines circonstances.</para>
+
+	  <para>L'optimisation est habituellement activée uniquement lors de
+	  la compilation d'une version de production.</para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc -O -o foobar foobar.c</userinput>
+	    </screen>
+	  </informalexample>
+
+	  <para>Cela va produire une version optimisée de
+	    <filename>foobar</filename>.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Les trois prochaines options vont forcer <command>cc</command>
+      à vérifier que votre code est conforme au standard international en cours,
+      se référant souvent à la norme <acronym>ANSI</acronym>, qui pour dire précisement
+      est un standard <acronym>ISO</acronym>.</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><option>-Wall</option></term>
+
+	<listitem>
+	  <para>Active tous les avertissements que les auteurs de
+	    <command>cc</command> pensent valoir le coup. Malgré le nom, il
+	    n'active pas tous les avertissements dont <command>cc</command>
+	    est capable.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>-ansi</option></term>
+
+	<listitem>
+	  <para>Désactive la plupart, mais pas toutes, des caractéristiques
+	    du C fournies par <command>cc</command> qui sont non-<acronym>ANSI</acronym> . Malgré
+	    le nom, cela ne garantit pas strictement que votre code sera conforme au standard.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>-pedantic</option></term>
+
+	<listitem>
+	  <para>Désactive <emphasis>toutes</emphasis>
+	    les caractéristiques de <command>cc</command> qui ne sont pas <acronym>ANSI</acronym> .</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Sans ces options, <command>cc</command> vous permettrait d'utiliser
+      quelques extensions au standard non-standards. Quelques unes de celles-ci
+      sont très utiles, mais ne fonctionneront pas avec d'autres compilateurs
+      —en fait, un des principaux buts du standard est de permettre aux gens
+      d'écrire du code qui fonctionnera avec n'importe quel compilateur sur
+      n'importe quel système. Cela est connu sous le nom de <firstterm>code portable</firstterm>.</para>
+
+    <para>Generalement, vous devriez essayer de faire votre code aussi portable
+    que possible, sinon vous pourriez avoir a ré-écrire totalement votre
+    programme plus tard pour le faire fonctionner autre part—et qui
+      sait ce que vous utiliserez dans quelques années?</para>
+
+    <informalexample>
+      <screen><prompt>%</prompt> <userinput>cc -Wall -ansi -pedantic -o foobar foobar.c</userinput>
+      </screen>
+    </informalexample>
+
+    <para>Cela produira un exécutable <filename>foobar</filename>
+      après avoir vérifié que <filename>foobar.c</filename> est conforme au standard.</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><option>-l<replaceable>librairie</replaceable></option></term>
+
+	<listitem>
+	  <para>Spécifie une librairie de fonctions à utiliser lors
+	  de l'édition des liens.</para>
+
+	  <para>L'exemple le plus commun de cela est lors de la compilation
+	  d'un programme qui utilise quelques fonctions mathématiques en C.
+	  A l'inverse de la plupart des plateformes, celles-ci se trouvent dans
+	  une librairie standard du C et vous devez dire au compilateur de l'ajouter.
+	  </para>
+
+	  <para>La règle est que si une librairie est appelée
+	    <filename>libquelque_chose.a</filename>,
+	    vous donnez à  <command>cc</command> l'argument
+	    <option>-l<replaceable>quelque_chose</replaceable></option>.
+	    Par exemple, la librairie des fonctions mathématiques est
+	    <filename>libm.a</filename>, aussi vous donnez à
+	    <command>cc</command> le paramètre  <option>-lm</option>.
+	    Un <quote>piège</quote> habituel avec la librairie math est
+	    qu'elle doit être la dernière sur la ligne de commande.</para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc -o foobar foobar.c -lm</userinput>
+	    </screen>
+	  </informalexample>
+
+	  <para>Cela va lier les fonctions de la librairie math à l'interieur de
+	    <filename>foobar</filename>.</para>
+
+	  <para>Si vous compilez du C++; vous devrez ajouter
+	    <option>-lg++</option>, ou <option>-lstdc++</option> si
+	    vous utilisez FreeBSD 2.2 ou ultérieur, à la ligne de commande de
+	    <command>cc</command> pour lier avec les fonctions de la librairie C++.
+	    Alternativement, vous pouvez utiliser <command>c++</command> plutôt
+	    que <command>cc</command>, qui fait tout cela pour vous.
+	    <command>c++</command> peut aussi être invoqué par
+	    <command>g++</command> sur FreeBSD.</para>
+
+	  <informalexample>
+	    <screen><prompt>%</prompt> <userinput>cc -o foobar foobar.cc -lg++</userinput>     <lineannotation>Pour FreeBSD 2.1.6 et antérieur</lineannotation>
+<prompt>%</prompt> <userinput>cc -o foobar foobar.cc -lstdc++</userinput>  <lineannotation>Pour FreeBSD 2.2 et ultérieur</lineannotation>
+<prompt>%</prompt> <userinput>c++ -o foobar foobar.cc</userinput>
+	    </screen>
+	  </informalexample>
+
+	  <para>Chacune de ces commandes va produire un exécutable
+	    <filename>foobar</filename> à partir du fichier source C++
+	    <filename>foobar.cc</filename>. Notez que, sur les systèmes Unix
+	    , les fichiers source C++ se terminent traditionnellement en
+	    <filename>.C</filename>, <filename>.cxx</filename> ou
+	    <filename>.cc</filename>, plutôt que le style MS-DOS
+	    <filename>.cpp</filename> (qui était déjà
+	    utilisé pour autre chose).  <command>gcc</command> a utilisé cela
+	    pour trouver le type de compilateur à utiliser sur le fichier source;
+	    toutefois, cette restriction ne s'applique plus,
+	    aussi vous pouvez maintenant appeler vos fichiers C++
+	    <filename>.cpp</filename> en toute impunité !</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <sect2>
+      <title>Questions et problèmes usuels sur <command>cc</command></title>
+
+      <qandaset>
+	<qandaentry>
+	  <question>
+	    <para>J'essaye d'écrire un programme qui utilise la fonction
+	      <function>sin()</function> et je reçois l'erreur suivante.
+	      Que cela signifie-t-il ?</para>
+
+	    <informalexample>
+	      <screen>/var/tmp/cc0143941.o: Undefined symbol `_sin' referenced from text segment
+	      </screen>
+	    </informalexample>
+	  </question>
+
+	  <answer>
+	    <para>Lors de l'utilisation des fonctions mathématiques comme
+	      <function>sin()</function>, vous devez dire à
+	      <command>cc</command> de lier avec la librairie math, comme :</para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>cc -o foobar foobar.c -lm</userinput>
+	      </screen>
+	    </informalexample>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>J'ai écrit un programme simple pour m'exercer à
+	    l'utilisation de l'option <option>-lm</option>. Tout ce qu'il fait
+	    est d'élever 2,1 à la puissance 6.</para>
+
+	    <informalexample>
+	      <programlisting>#include &lt;stdio.h&gt;
+
+int main() {
+	float f;
+
+	f = pow(2.1, 6);
+	printf("2.1 ^ 6 = %f\n", f);
+	return 0;
+}
+	      </programlisting>
+	    </informalexample>
+
+	    <para>j'ai effectué la compilation comme suit :</para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>cc temp.c -lm</userinput>
+	      </screen>
+	    </informalexample>
+
+	    <para>et comme expliqué ici, mais j'obtiens ceci
+	    quand je l'exécute :</para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>./a.out</userinput>
+2.1 ^ 6 = 1023.000000
+	      </screen>
+	    </informalexample>
+
+	    <para>Ce <emphasis>n'est pas</emphasis> la réponse correcte !
+	      Que se passe-t-il ?</para>
+	  </question>
+
+	  <answer>
+	    <para>Quand le compilateur voit que vous appelez une fonction, il
+	    vérifie s'il a déjà un prototype pour celle-ci.
+	    S'il ne l'a pas vu, il suppose que la fonction retourne un <type>int</type>,
+	    ce qui n'est absolument  pas ce que vous voulez ici.
+	    </para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>Alors comment puis-je le réparer?</para>
+	  </question>
+
+	  <answer>
+	    <para>Les prototypes des fonctions mathématiques sont dans
+	      <filename>math.h</filename>. Si vous incluez ce fichier,
+	      le compilateur sera capable de trouver le prototype et il
+	      arrêtera de faire des trucs étranges à vos calculs!
+	      </para>
+
+	    <informalexample>
+	      <programlisting>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+...
+	      </programlisting>
+	    </informalexample>
+
+	    <para>Après avoir recompilé comme précédemment,
+	    exécutez :
+	    </para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>./a.out</userinput>
+2.1 ^ 6 = 85.766121
+	      </screen>
+	    </informalexample>
+
+	    <para>Si vous utilisez quelques fonctions mathématiques que ce soit,
+	    incluez <emphasis>toujours</emphasis> <filename>math.h</filename> et n'oubliez pas
+	    de lier avec la librairie math.</para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>J'ai compilé un fichier appelé
+	      <filename>foobar.c</filename> et je ne trouve pas d'exécutable
+	      appelé <filename>foobar</filename>. Où est-il parti?</para>
+	  </question>
+
+	  <answer>
+	    <para>Souvenez-vous, <command>cc</command> appellera
+	    l'exécutable <filename>a.out</filename> sauf si vous lui dites
+	    de faire autrement. Utilisez l'option
+	      <option>-o <replaceable>nomfichier</replaceable></option>:</para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>cc -o foobar foobar.c</userinput>
+	      </screen>
+	    </informalexample>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>OK, j'ai un exécutable appelé
+	      <filename>foobar</filename>, je peux le voir en exécutant
+	      <command>ls</command>, mais quand je tape
+	      <command>foobar</command> à l'invite de commandes, la réponse
+	      est qu'il n'y a pas de tel fichier. Pourquoi le système ne le trouve pas?
+	    </para>
+	  </question>
+
+	  <answer>
+	    <para>A l'inverse de MS-DOS, Unix ne regarde pas dans le
+	    répertoire courant lorsqu'il essaye de trouver un
+	    exécutable que vous voulez exécuter, sauf si
+	    vous lui avez dit de le faire.
+	    Vous pouvez soit taper <command>./foobar</command>, ce qui
+	    signifie <quote>exécute le fichier nommé
+	    <filename>foobar</filename> dans le répertoire courant</quote>,
+	    soit changer votre variable d'environnement <envar>PATH</envar>
+	    de façon à ce qu'elle ressemble à quelque chose comme
+	    </para>
+
+	    <informalexample>
+	      <screen>bin:/usr/bin:/usr/local/bin:.
+	      </screen>
+	    </informalexample>
+
+	    <para>Le point à la fin signifie <quote>regarde dans le repertoire
+	    courant s'il n'est dans aucun autre</quote>.</para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>J'ai appelé mon exécutable <filename>test</filename>,
+	    mais rien ne se passe quand je l'exécute. Que se passe-t-il?
+	    </para>
+	  </question>
+
+	  <answer>
+	    <para>La plupart des systèmes Unix ont un programme appelé
+	      <command>test</command> dans <filename>/usr/bin</filename>
+	      et l'interpréteur prend celui-ci avant de vérifier dans
+	      le répertoire courant. Soit vous tapez
+	      </para>
+
+	    <informalexample>
+	      <screen><prompt>%</prompt> <userinput>./test</userinput>
+	      </screen>
+	    </informalexample>
+
+	    <para>soit vous choisissez un meilleur nom pour votre programme !!
+	    </para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>J'ai compilé mon programme et il semble fonctionner au premier abord,
+	    puis il y a une erreur et le système a dit quelque chose comme
+	    <errorname>core dumped</errorname>. Que cela signifie-t-il?</para>
+	  </question>
+
+	  <answer>
+	    <para>Le nom <firstterm>core dump</firstterm> date
+	    des tous premiers jours d'Unix, quand les machines utilisaient
+	    la mémoire centrale<footnote><para>NDT: je n'ai pas trouvé
+	    de meilleure traduction pour core memory</para></footnote>pour stocker
+	    les données.
+	    Simplement, si le programme a échoué sous certaines conditions,
+	    le système va écrire le contenu de la mémoire centrale
+	    sur le disque dans un fichier appelé
+	    <filename>core</filename>, que le programmeur peut ensuite
+	    examiner de près pour trouver ce qui s'est mal passé.
+	    </para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>Fascinant, mais que suis-je supposé faire ?</para>
+	  </question>
+
+	  <answer>
+	    <para>Utilisez <command>gdb</command> pour analyser le fichier <filename>core</filename>
+	    (voir <xref linkend="debugging"/>).</para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>Quand mon programme a généré un fichier <filename>core</filename>,
+	    il a parlé d'une erreur <errorname>segmentation fault</errorname>.
+	    Qu'est-ce que c'est ?</para>
+	  </question>
+
+	  <answer>
+	    <para>Cela signifie simplement que votre programme a essayé
+	    d'effectuer une opération illégale sur la mémoire;
+	    Unix est conçu pour protéger le système d'exploitation
+	    et les autres programmes des programmes crapuleux.
+	    </para>
+
+	    <para>Les causes habituelles de cela sont :</para>
+
+	    <itemizedlist>
+	      <listitem>
+		<para>Essayer d'écrire dans un pointeur <symbol>NULL</symbol>,
+		par exemple
+		</para>
+
+		<programlisting>char *foo = NULL;
+strcpy(foo, "bang!");
+		</programlisting>
+	      </listitem>
+
+	      <listitem>
+		<para>Utiliser un pointeur qui n'a pas été initialisé,
+		par exemple</para>
+
+		<programlisting>char *foo;
+strcpy(foo, "bang!");
+		</programlisting>
+
+		<para>Le pointeur va avoir une valeur aléatoire qui
+		avec de la chance, pointera dans une zone de la mémoire qui
+		n'est pas disponible pour votre programme et le noyau va tuer
+		votre programme avant qu'il ne fasse des dommages. Si
+		vous êtes malchanceux, il pointera quelque part dans votre
+		propre programme et altèrera une de vos structures de données,
+		faisant planter votre programme mystérieusement.
+		</para>
+	      </listitem>
+
+	      <listitem>
+		<para>Essayer d'accèder la mémoire au-delà de la fin
+		d'un tableau,
+		par exemple</para>
+
+		<programlisting>int bar[20];
+bar[27] = 6;
+		</programlisting>
+	      </listitem>
+
+	      <listitem>
+		<para>Essayer de stocker quelque chose dans la mémoire en lecture seule,
+		par exemple</para>
+
+		<programlisting>char *foo = "Ma chaine";
+strcpy(foo, "bang!");
+		</programlisting>
+
+		<para>Les compilateurs Unix mettent souvent les chaînes comme
+		<literal>"Ma chaine"</literal> dans des zones de mémoire
+		en lecture seule.
+		</para>
+	      </listitem>
+
+	      <listitem>
+		<para>Faire des trucs sales avec
+		  <function>malloc()</function> et
+		  <function>free()</function>, par exemple</para>
+
+		<programlisting>char bar[80];
+free(bar);
+		</programlisting>
+
+		<para>ou</para>
+
+		<programlisting>char *foo = malloc(27);
+free(foo);
+free(foo);
+		</programlisting>
+	      </listitem>
+	    </itemizedlist>
+
+	    <para>Faire une de ces fautes ne conduit pas toujours
+	    à une erreur, mais elles sont toujours de mauvais entrainements.
+	    Certains systèmes et compilateurs sont plus tolérants que d'autres,
+	    ce qui explique pourquoi des programmes qui fonctionnent bien sur un système
+	    peuvent planter si vous les essayer sur un autre.
+	    </para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>Des fois quand je reçoit une erreur <errorname>core dump</errorname>,
+	    il est précisé <errorname>bus error</errorname>.
+	    Il est dit dans mon livre Unix qu'il s'agit d'un problème matériel
+	    mais l'ordinateur semble toujours fonctionner. Est-ce vrai ?
+	    </para>
+	  </question>
+
+	  <answer>
+	    <para>Non, heureusement non (sauf si bien sûr vous avez réellement
+	    un problème matériel…). Cela est habituellement une
+	    manière de dire que vous avez accédé à la mémoire
+	    d'une façon que vous n'auriez pas dû.
+	    </para>
+	  </answer>
+	</qandaentry>
+
+	<qandaentry>
+	  <question>
+	    <para>Toute cette affaire de fichier <filename>core</filename> semble être
+	    assez utile, si je peux le faire apparaître quand je le désire.
+	    Puis-je faire cela, ou dois-je attendre la prochaine erreur ?</para>
+	  </question>
+
+	  <answer>
+	    <para>Oui, ouvrez une autre console ou xterm, faites</para>
+
+	    <screen><prompt>%</prompt> <userinput>ps</userinput>
+	    </screen>
+
+	    <para>pour trouver l'identifiant du processus de votre programme, et faites
+	    </para>
+
+	    <screen><prompt>%</prompt> <userinput>kill -ABRT identifiant</userinput>
+	    </screen>
+
+	    <para>où
+	      <parameter><replaceable>identifiant</replaceable></parameter> est
+	      l'identifiant du processus que vous avez trouvé.</para>
+
+	    <para>Ceci est utile si votre programme est bloqué dans une boucle
+	    infinie, par exemple. Si votre programme arrive à bloquer le signal
+	    <symbol>SIGABRT</symbol>, il y a d'autres signaux qui ont des effets
+	    similaires.
+	    </para>
+
+	    <para>Alternativement, vous pouvez créer un fichier <filename>core</filename> depuis
+	    votre programme, en appelant la fonction <function>abort()</function>.
+	    Voir la page de manuel en ligne de <citerefentry><refentrytitle>abort</refentrytitle><manvolnum>3</manvolnum></citerefentry> pour en savoir plus.
+	    </para>
+
+            <para>Si vous voulez créer un fichier <filename>core</filename> depuis
+	    l'extérieur de votre programme, mais ne voulez pas que le processus
+	    s'arrêt,vous pouvez utiliser le programme <command>gcore</command>.
+	    Voir la page de manuel en ligne de <citerefentry><refentrytitle>gcore</refentrytitle><manvolnum>1</manvolnum></citerefentry> pour plus d'informations.
+	    </para>
+
+	  </answer>
+	</qandaentry>
+      </qandaset>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Make</title>
+
+    <sect2>
+      <title>Qu'est-ce que <command>make</command>?</title>
+
+      <para>Quand vous travaillez sur un programme simple avec seulement
+      un ou deux fichiers source, taper
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>cc fichier1.c fichier2.c</userinput>
+      </screen>
+
+      <para>n'est pas si mal, mais cela devient rapidement fastidieux quand
+      il y a plusieurs fichiers—et cela peut prendre du temps à compiler aussi.
+      </para>
+
+      <para>Une façon de contourner cela est d'utiliser les fichiers objet
+      et de recompiler le fichier source seulement si le code source a changé.
+      Aussi, nous pourrions avoir quelque chose comme ça:
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>cc fichier1.o fichier2.o</userinput> … <userinput>fichier37.c</userinput> …
+      </screen>
+
+      <para>si nous avions changé le fichier <filename>fichier37.c</filename> mais aucun
+      des autres depuis la dernère compilation. Cela pourrait accélerer assez bien
+      la compilation mais cela ne resoud pas le problème de la frappe au clavier.
+      </para>
+
+      <para>Ou nous pourrions écrire une procédure pour résoudre ce
+      problème de frappe, mais celle-ci devrait tout re-compiler, devenant
+      ainsi inefficace sur un gros projet.
+      </para>
+
+      <para>Que se passe-t-il si nous avons des centaines de fichiers source ?
+      Que se passe-t-il si nous travaillons dans une équipe avec
+      d'autres personnes qui oublient de nous dire quand ils ont changé
+      un de leurs fichiers source que nous utilisons ?
+      </para>
+
+      <para>Peut-être pourrions nous mettre ensemble les deux solutions et
+      écrire quelque chose comme une procédure qui contiendrait
+      quelque règle magique disant quand notre fichier source doit être
+      compilé. Maintenant, tout ce dont nous avons besoin est un programme
+      qui comprend ces règles, alors que c'est trop compliqué pour
+      l'interpréteur.
+      </para>
+
+      <para>Ce programme s'appelle <command>make</command>. Il lit
+      dans un fichier, appelé un <firstterm>makefile</firstterm>,
+      qui lui dit comment les différents fichiers dépendent les
+      uns des autres, et détermine quels fichiers ont besoin d'être
+      recompilés et quels n'en ont pas besoin.
+      Par exemple, une règle pourrait dire quelque chose comme
+      <quote>si <filename>fromboz.o</filename> est plus ancien que
+      <filename>fromboz.c</filename>, cela signifie que quelqu'un a dû
+      changer <filename>fromboz.c</filename>, aussi il a besoin d'être
+      recompilé.</quote> Le makefile possède aussi des règles
+      pour dire à <command>make</command> <emphasis>comment</emphasis>
+      re-compiler un fichier source, en faisant ainsi un outil encore plus
+      puissant.
+      </para>
+
+      <para>Les <filename>Makefile</filename>s sont typiquement stockés dans le même
+      répertoire que le source auxquels il s'appliquent, et peuvent être
+      appelés <filename>makefile</filename>, <filename>Makefile</filename>
+      ou <filename>MAKEFILE</filename>. La plupart des programmeurs utilise le nom
+      <filename>Makefile</filename>, celui-ci se trouvant proche du début de la
+      liste du contenu du répertoire où il peut être facilement vu.
+
+	<footnote>
+	  <para>Ils n'utilisent pas la forme <filename>MAKEFILE</filename>
+	  car les bloques de majuscules sont souvent utilisés pour les
+	  fichiers de documentation comme <filename>README</filename>.
+	  </para>
+	</footnote>
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Exemple d'utilisation de <command>make</command></title>
+
+      <para>Voici un exemple très simple de <filename>Makefile</filename>:
+      </para>
+      <programlisting>foo: foo.c
+	cc -o foo foo.c</programlisting>
+
+      <para>Il consiste en deux lignes, une ligne de dépendance et une ligne
+      de création.
+      </para>
+
+      <para>La ligne de dépendance ici consiste en le nom du programme (connu comme
+      <firstterm>cible</firstterm>), suivi de deux-points puis un espace et enfin
+      le nom du fichier source.
+      Quand <command>make</command> lit cette ligne, il vérifie si
+       <filename>foo</filename> existe; s'il existe, il compare la date à laquelle
+       <filename>foo</filename> a été modifié la dernière fois
+       avec la date de dernière modification de <filename>foo.c</filename>.
+       Si <filename>foo</filename> n'existe pas ou est plus ancien que <filename>foo.c</filename>,
+       il regarde la ligne de création pour trouver ce qu'il doit faire.
+       En d'autres termes, il s'agit de la règle à utiliser quand
+       <filename>foo.c</filename> a besoin d'être re-compilé.
+       </para>
+
+      <para>La ligne de création commence avec un <token>tab</token> (appuyez
+      sur la touche <keycap>tab</keycap>) suivi de la commande que vous taperiez
+      pour créer <filename>foo</filename> si vous deviez le faire à l'invite
+      de commandes. Si <filename>foo</filename> n'est pas à jour ou n'existe
+      pas, <command>make</command> exécute alors cette commande pour
+      le créer. En d'autres termes, il s'agit de la règle permettant
+      à make de re-compiler <filename>foo.c</filename>.
+      </para>
+
+      <para>Aussi, quand vous tapez <userinput>make</userinput>, il vérifiera
+      que <filename>foo</filename> est à jour en respect de vos derniers
+      changements sur <filename>foo.c</filename>. Ce principe peut être
+      étendu à des <filename>Makefile</filename>s de plusieurs
+      centaines de cibles—en fait, sur FreeBSD, il est possible de
+      compiler un système d'exploitation entier en tapant juste
+      <userinput>make world</userinput> dans le répertoire approprié !
+      </para>
+
+      <para>Une autre propriété utile des makefiles est que les cibles
+      n'ont pas nécessairement besoin d'être des programmes.
+      Par exemple, nous pourrions avoir un <filename>Makefile</filename>
+      qui ressemble à cela:
+      </para>
+
+      <programlisting>foo: foo.c
+	cc -o foo foo.c
+
+install:
+	cp foo /home/moi</programlisting>
+
+      <para>Nous pouvons dire à <command>make</command> quelle cible nous
+      voulons en tapant:
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>make cible</userinput>
+      </screen>
+
+      <para><command>make</command> ira seulement voir cette cible
+      et ingorera les autres. Par exemple, si nous tapons
+      <userinput>make foo</userinput> avec le <filename>Makefile</filename> du dessus,
+      <command>make</command> ignorera la cible <phrase remap="action">install</phrase>.
+      </para>
+
+      <para>Si nous tapons juste <userinput>make</userinput>,
+      <command>make</command> regardera toujours la première cible et s'arrêtera
+      sans regarder aucune autre. Aussi, si nous avions tapé <userinput>make</userinput>
+      seul, <command>make</command> serait juste allé à la cible <phrase remap="action">foo</phrase>,
+      aurait recompilé <filename>foo</filename> si nécessaire et se
+      serait arrêté sans aller à la cible <phrase remap="action">install</phrase>.
+      </para>
+
+      <para>Notez que la cible <phrase remap="action">install</phrase> ne dépend pour l'instant
+      de rien ! Cela signifie que la commande qui suit est toujours exécutée
+      lorsque nous essayons de créer cette cible en tapant <userinput>make install</userinput>.
+      Dans ce cas, <command>make</command> va copier <filename>foo</filename> dans le
+      répertoire de l'utilisateur. Cela est souvent utilisé par les
+      <filename>Makefile</filename>s des applications, ainsi l'application
+      peut être installée dans le répertoire correct
+      quand elle a été correctement compilée
+      </para>
+
+      <para>Il s'agit d'un sujet légèrement embrouillant à essayer
+      et expliquer.
+      Si vous ne comprenez pas bien comment <command>make</command>
+      fonctionne, la meilleure chose à faire est d'écrire un petit
+      programme comme <quote>bonjour monde</quote> et un fichier <filename>Makefile</filename>
+      comme le précédent et de le tester. Ensuite continuez en
+      utilisant plus d'un fichier source ou en ayant un fichier source
+      incluant un fichier d'en-tête. La commande <command>touch</command> est
+      très utile ici—elle change la date sur un fichier sans avoir
+      à l'éditer.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Les <filename>Makefiles</filename>de FreeBSD</title>
+
+      <para>Les <filename>Makefile</filename>s peuvent être plutôt compliqués
+      à écrire. Heureusement, les systèmes BSD comme FreeBSD sont fournis avec
+      des fichiers très puissants comme partie intégrante du système.
+      Un très bon exemple est le système des logiciels portés. Voici
+      la partie essentielle d'un <filename>Makefile</filename> typique des logiciels portés:
+      </para>
+
+      <programlisting>MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+DISTFILES=      scheme-microcode+dist-7.3-freebsd.tgz
+
+.include &lt;bsd.port.mk&gt;</programlisting>
+
+      <para>Maintenant, si nous allons dans le répertoire de ce logiciel porté et
+      tapons <userinput>make</userinput>, la chose suivante se passe :
+      </para>
+
+      <procedure>
+	<step>
+	  <para>Une vérification est faite pour voir si le code source de ce logiciel porté
+	  est déjà dans le système.
+	  </para>
+	</step>
+
+	<step>
+	  <para>Si celui-ci n'y est pas, une connexion FTP à l'URL dans
+	  <symbol>MASTER_SITES</symbol> est faite pour télécharger le source.
+	  </para>
+	</step>
+
+	<step>
+	  <para>La somme de contrôle (<literal>checksum</literal>) du source est calculée
+	  et comparée avec celle d'une bonne et connue copie du source. Cela est fait pour
+	  être sûr que le source n'a pas été corrompu pendant le transfert.
+	  </para>
+	</step>
+
+	<step>
+	  <para>Tout changement requis pour faire fonctionner le source sur FreeBSD est appliqué—
+	  cela est connu sous le nom de <firstterm>correctif</firstterm><footnote><para>NDT: On entendra plus souvent parler de
+	  <literal>patch</literal>.</para></footnote>.
+	  </para>
+	</step>
+
+	<step>
+	  <para>Toute configuration spéciale nécessaire pour le source est faite.
+	  (Beaucoup de distributions de programmes Unix essaye de fonctionner quelle que soit
+	  la version d'Unix sur laquelle elles sont compilées et quelles que soient les
+	  caractéristiques optionnelles qui sont présentes—c'est ce qui se trouve
+	  dans le scénario des logiciels portés pour FreeBSD).
+	  </para>
+	  <!--  A verifier
+	  optional Unix features are present&mdash;this is where
+	    they are given the information in the FreeBSD ports
+	    scenario.</para>
+	    -->
+	</step>
+
+	<step>
+	  <para>Le code source pour ce programme est compilé. En effet, nous changeons
+	  de répertoire pour le répertoire où le source a été
+	  décompressé et faisons <command>make</command>—le fichier <filename>Makefile</filename>
+	  du programme contient les informations nécessaires pour construire le programme.
+	  </para>
+	</step>
+
+	<step>
+	  <para>Nous avons maintenant une version compilée du programme. Si nous le désirons,
+	  nous pouvons le tester maintenant; quand nous sommes confiant dans le programme, nous pouvons
+	  taper <userinput>make install</userinput>. Cela va installer le programme et ses fichiers de
+	  soutien nécessaires au bon endroit; une entrée est aussi créée dans
+	  la <database>base de données des logiciels pré-compilés</database>, ainsi
+	  le logiciel porté peut être facilement désinstallé plus tard si
+	  nous changeons d'avis sur ce programme.
+	  </para>
+	</step>
+      </procedure>
+
+      <para>Maintenant je pense que vous serez d'accord que c'est plus impressionnant qu'une
+      procédure de quatre lignes !
+      </para>
+
+      <para>Le secret réside dans la dernière ligne qui dit à
+      <command>make</command> de regarder dans le <filename>Makefile</filename> système
+      appelé <filename>bsd.port.mk</filename>. Il est facile de fermer les yeux sur cette
+      ligne mais c'est ici que tous les trucs forts se passent—quelqu'un a écrit un <filename>Makefile</filename>
+      qui dit à <command>make</command> de faire tout ce qu'il y a au-dessus (plus un couple d'autres choses
+      que je n'ai pas mentionnées, comme la gestion des erreurs) et n'importe qui peut avoir accès
+      à cela simplement est ajoutant une simple ligne dans son propre fichier <filename>Makefile</filename> !
+      </para>
+
+      <para>Si vous voulez jeter un regard sur ces <filename>Makefile</filename>s système,
+      ils se trouvent <filename>/usr/share/mk</filename> mais il est probablement mieux
+      d'attendre un moment jusqu'à ce que vous ayez un peu d'entrainement avec les
+      <filename>Makefile</filename>s car ceux-ci sont très compliqués (et
+      si vous les lisez, soyez sûr d'avoir un thermos de café fort à portée
+      de main !)
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Utilisations plus avancées de <command>make</command></title>
+
+      <para><command>Make</command> est un outil très puissant et peut
+      faire beaucoup plus que le simple exemple précédent ne l'a montré.
+      Malheureusement, il y a différentes versions de <command>make</command>
+      et elles diffèrent considérablement.
+      Le meilleur moyen d'apprendre ce qu'elles peuvent faire est probablement de lire
+      la documentation—heureusement cette introduction vous donnera la base
+      à partir de laquelle vous pourrez faire cela.
+      </para>
+
+      <para>La version de <command>make</command> fournies avec FreeBSD est le
+      <application>Berkeley make</application>(make de Berkeley); il y a un cours d'instruction
+      pour celui-ci dans <filename>/usr/share/doc/psd/12.make</filename>. Pour le voir, faites
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>zmore paper.ascii.gz</userinput>
+      </screen>
+
+      <para>dans ce répertoire.</para>
+
+      <para>Beaucoup d'applications dans les logiciels portés utilisent
+      <application>GNU make</application>, qui possède un très bon ensemble de page
+      d'<quote>info</quote>. Si vous avez installé un de ces logiciels portés,
+      <application>GNU make</application> aura été automatiquement installé
+      sous le nom de <command>gmake</command>. Il est aussi disponible comme logiciel porté ou
+      logiciel pré-compilé seul.
+      </para>
+
+      <para>Pour voir les pages d'info pour <application>GNU make</application>, vous devrez
+      editer le fichier <filename>dir</filename> dans le répertoire
+      <filename>/usr/local/info</filename> pour ajouter une entrée pour celui-ci.
+      Cela implique d'ajouter une ligne
+      </para>
+
+      <programlisting> * Make: (make).                 l'utilitaire GNU Make.</programlisting>
+
+      <para>au fichier. Une fois que vous avez fait ceci, vous pouvez taper
+	<userinput>info</userinput> et ensuite sélectionner
+	<guimenuitem>make</guimenuitem> dans le menu (ou dans <application>Emacs</application>,
+	faites <userinput>C-h i</userinput>).
+      </para>
+
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="debugging">
+    <title>Déverminer</title>
+
+    <sect2>
+      <title>Le dévermineur</title>
+
+      <para>Le dévermineur fourni avec FreeBSD est appelé
+      <command>gdb</command> (<application>GNU
+	  debugger</application>). Vous pouvez le démarrer en tapant
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>gdb nomprog</userinput>
+      </screen>
+
+      <para>bien que la plupart des gens préfèrent le démarrer au
+      sein d'<application>Emacs</application>. Vous pouvez faire cela avec:
+      </para>
+
+      <screen><userinput>M-x gdb RET nomprog RET</userinput>
+      </screen>
+
+      <para>Utiliser un dévermineur vous permet d'exécuter le programme
+      dans des circonstances plus contrôlées. Typiquement, vous pouvez
+      exécuter le programme ligne à ligne, inspecter la valeur des
+      variables, changer cette dernière, dire au dévermineur d'exécuter jusqu'à
+      un certain point puis de s'arrêter etc... Vous pouvez même vous brancher
+      sur un programme en fonctionnement, ou charger un fichier <filename>core</filename>
+      pour enquêter sur le plantage du programme. Il est même possible de
+      déverminer le noyau, quoique ce soit un peu plus rusé que de
+      déverminer des applications utilisateur dont nous discuterons
+      dans cette section.
+      </para>
+
+      <para><command>gdb</command> dispose d'une assez bonne aide en ligne
+      comme d'un ensemble de pages d'info, aussi cette section va se concentrer sur
+      quelques commandes basiques.
+      </para>
+
+      <para>Finalement, si vous trouvez son interface texte non fonctionnelle,
+      il y a une interface graphique pour celui-ci, <link xlink:href="../../ports/devel.html">xxgdb</link>,
+      dans la collection des logiciels portés.
+      </para>
+
+      <para>Cette section a pour but d'être une introduction
+      à l'utilisation de <command>gdb</command> et ne couvre pas les sujets
+      très spécialisés comme le déverminage du noyau.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Exécuter un programme dans le dévermineur</title>
+
+      <para>Vous devrez avoir compilé le programme avec l'option	<option>-g</option>
+      pour avoir la meilleure utilisation de <command>gdb</command>. Il fonctionnera sans
+      mais vous ne verrez que le nom de la fonction dans laquelle vous vous trouvez plutôt
+      que son code source. Si vous voyez une ligne comme:
+      </para>
+
+      <screen>… (no debugging symbols found) …
+      </screen>
+
+      <para>quand <command>gdb</command> démarre, vous saurez que le programme
+      n'a pas été compilé avec l'option <option>-g</option>.
+      </para>
+
+      <para>A l'invite de <command>gdb</command>, tapez
+      <userinput>break main</userinput>. Cela dira au dévermineur
+      de passer le code préliminaire d'initialisation du programme
+      et de démarrer au début de votre code. Maintenant tapez
+      <userinput>run</userinput> pour démarrer le programme—cela va
+      démarrer au début du code d'initialisation et ensuite s'arrêtera
+      lors de l'appel à <function>main()</function>.
+      (Si vous vous êtes toujours demandé où <function>main()</function>
+      était appelé, maintenant vous le savez !).
+      </para>
+
+      <para>Vous pouvez maintenant vous déplacer dans le programme ligne par ligne en
+      pressant <command>n</command>. Si vous arrivez à l'appel d'une fonction,
+      vous pouvez entrer dans celle-ci en appuyant sur <command>s</command>. Une fois
+      que vous êtes dans l'appel de la fonction, vous pouvez retourner dans le code
+      appelant en appuyant sur <command>f</command>. Vous pouvez aussi utiliser
+      <command>up</command> et <command>down</command> pour avoir une vue rapide de l'appelant.
+      </para>
+
+      <para>Voici un exemple simple de comment détecter une erreur dans un programme avec
+      <command>gdb</command>. Voici notre programme (avec une erreur délibérée):
+      </para>
+
+      <programlisting>#include &lt;stdio.h&gt;
+
+int bazz(int anint);
+
+main() {
+	int i;
+
+	printf("C'est mon programme\n");
+	bazz(i);
+	return 0;
+}
+
+int bazz(int anint) {
+	printf("Vous m'avez fourni %d\n", anint);
+	return anint;
+}</programlisting>
+
+      <para>Le programme met <symbol>i</symbol> à <literal>5</literal> et le passe à une
+      fonction <function>bazz()</function> qui imprime le nombre que nous lui avons donné.
+      </para>
+
+      <para>Puis nous compilons et exécutons le programme obtenu
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>cc -g -o temp temp.c</userinput>
+<prompt>%</prompt> <userinput>./temp</userinput>
+C'est mon programme
+Vous m'avez fourni 4231
+      </screen>
+
+      <para>Ce n'était pas ce que nous attendions ! Il est temps de voir ce qui se passe !
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>gdb temp</userinput>
+GDB is free software and you are welcome to distribute copies of it
+ under certain conditions; type "show copying" to see the conditions.
+There is absolutely no warranty for GDB; type "show warranty" for details.
+GDB 4.13 (i386-unknown-freebsd), Copyright 1994 Free Software Foundation, Inc.
+(gdb) <userinput>break main</userinput>				<lineannotation>passe le code d'initialisation</lineannotation>
+Breakpoint 1 at 0x160f: file temp.c, line 9.	<lineannotation>gdb met un point d'arrêt sur main()</lineannotation>
+(gdb) <userinput>run</userinput>					<lineannotation>Exécute jusqu'à main()</lineannotation>
+Starting program: /home/james/tmp/temp		<lineannotation>Le programme démarre</lineannotation>
+
+Breakpoint 1, main () at temp.c:9		<lineannotation>gdb s'arrête à main()</lineannotation>
+(gdb) <userinput>n</userinput>						<lineannotation>Va à la ligne suivante</lineannotation>
+C'est mon programme				<lineannotation>Le programme écrit</lineannotation>
+(gdb) <userinput>s</userinput>						<lineannotation>entre dans bazz()</lineannotation>
+bazz (anint=4231) at temp.c:17			<lineannotation>gdb montre la pile</lineannotation>
+(gdb)
+      </screen>
+
+      <para>Arrêtons-nous une minute! Comment <symbol>anint</symbol> a eu la valeur
+      <literal>4231</literal>? Ne l'avons-nous pas mis à <literal>5</literal>
+      dans <function>main()</function>? Remontons dans <function>main()</function>
+      et regardons.
+      </para>
+
+      <screen>(gdb) <userinput>up</userinput>					<lineannotation>Remonte la pile des appels</lineannotation>
+#1  0x1625 in main () at temp.c:11		<lineannotation>gdb montre la pile</lineannotation>
+(gdb) <userinput>p i</userinput>					<lineannotation>Montre la valeur de i</lineannotation>
+$1 = 4231					<lineannotation>gdb montre 4231</lineannotation>
+      </screen>
+
+      <para>Oh ! En regardant dans le code, nous avons oublié d'initialiser <symbol>i</symbol>.
+      Nous aurions dû mettre
+      </para>
+
+      <programlisting><lineannotation>…</lineannotation>
+main() {
+	int i;
+
+	i = 5;
+	printf("C'est mon programme\n");
+<lineannotation>…</lineannotation></programlisting>
+
+      <para>mais nous n'avions pas mis la ligne <literal>i=5;</literal>. Comme
+      nous n'avons pas initialisé <symbol>i</symbol>, il a pris le nombre se trouvant
+      dans la zone de mémoire quand le programme a démarré,
+      ce qui dans ce cas était <literal>4231</literal>.
+      </para>
+
+      <note>
+	<para><command>gdb</command> montre la pile chaque fois que nous entrons ou sortons
+	d'une fonction, même si nous avons utilisé	<command>up</command> et
+	<command>down</command> pour nous déplacer dans la pile des appels.
+	Cela montre le nom de la fonction et les valeurs de ses arguments, ce qui nous aide
+	à garder une trace d'où nous sommes et de ce qui se passe.
+	(La pile est une zone de stockage où le programme stocke les informations
+	sur les arguments passés aux fonctions et où il doit aller
+	quand il revient d'une fonction).
+	</para>
+      </note>
+    </sect2>
+
+    <sect2>
+      <title>Examiner un fichier <filename>core</filename></title>
+
+      <para>Un fichier <filename>core</filename> est basiquement un fichier qui contient
+      l'état complet du processus quand il s'est planté.
+      Dans <quote>le bon vieux temps</quote>, les programmeurs devait imprimer des
+      listings en hexadécimal de fichiers <filename>core</filename> et transpirer
+      sur leur manuels de code machine, mais la vie est maintenant un peu plus facile.
+      Par chance, sous FreeBSD et les autres systèmes 4.4BSD, un fichier <filename>core</filename>
+      est appelé <filename>nomprog.core</filename>
+      plutôt que juste <filename>core</filename>, pour mieux savoir à quel
+      programme appartient un fichier <filename>core</filename>.
+      </para>
+
+      <para>Pour examiner un fichier <filename>core</filename>, démarrez <command>gdb</command>
+      de façon habituel. Plutôt que de taper <command>break</command> ou
+      <command>run</command>, tapez
+      </para>
+
+      <screen>(gdb) <userinput>core nomprog.core</userinput>
+      </screen>
+
+      <para>Si vous n'êtes pas dans le même répertoire que le fichier
+      <filename>core</filename>, vous devrez faire <userinput>dir /path/to/core/file</userinput>
+      d'abord.
+      </para>
+
+      <para>Vous devriez voir quelque chose comme cela:
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>gdb a.out</userinput>
+GDB is free software and you are welcome to distribute copies of it
+ under certain conditions; type "show copying" to see the conditions.
+There is absolutely no warranty for GDB; type "show warranty" for details.
+GDB 4.13 (i386-unknown-freebsd), Copyright 1994 Free Software Foundation, Inc.
+(gdb) <userinput>core a.out.core</userinput>
+Core was generated by `a.out'.
+Program terminated with signal 11, Segmentation fault.
+Cannot access memory at address 0x7020796d.
+#0  0x164a in bazz (anint=0x5) at temp.c:17
+(gdb)
+      </screen>
+
+      <para>Dans ce cas, le programme a été appelé	<filename>a.out</filename>,
+      aussi le fichier <filename>core</filename> s'appelle <filename>a.out.core</filename>.
+      Nous pouvons voir que le programme s'est planté car il a essayé
+      d'accèder à une zone dans la mémoire qui n'était pas
+      disponible dans la fonction appelée <function>bazz</function>.
+      </para>
+
+      <para>Quelquefois il est utile de pouvoir voir comment une fonction a été
+      appelée car le problème peut avoir eu lieu bien avant
+      dans la pile des appels dans un programme complexe. La commande <command>bt</command>
+      demande à <command>gdb</command> d'afficher une trace inverse de la pile
+      des appels:
+      </para>
+
+      <screen>(gdb) <userinput>bt</userinput>
+#0  0x164a in bazz (anint=0x5) at temp.c:17
+#1  0xefbfd888 in end ()
+#2  0x162c in main () at temp.c:11
+(gdb)
+      </screen>
+
+      <para>La fonction <function>end()</function> est appelée lorsque le programme se plante;
+      dans ce cas, la fonction <function>bazz()</function> a été appelée
+      <function>main()</function>.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Se brancher sur un programme en cours d'exécution</title>
+
+      <para>Une des plus belles caractéristiques de <command>gdb</command>
+      est qu'il peut se brancher sur un programme qui s'exécute déjà.
+      Bien sûr, cela suppose que vous ayez les privilèges suffisants pour
+      le faire. Un problème habituel est quand vous vous déplacez dans
+      un programme qui se dédouble et que vous voulez tracer le programme fils
+      cependant le dévermineur ne vous laissera seulement tracer le père.
+      </para>
+
+      <para>Ce que vous devez faire est de démarrer un autre <command>gdb</command>,
+      utiliser <command>ps</command> pour trouver l'ID du processus fils et faire
+      </para>
+
+      <screen>(gdb) <userinput>attach identifiant_processus</userinput>
+      </screen>
+
+      <para>dans <command>gdb</command>, et déverminer ensuite comme d'habitude.
+      </para>
+
+      <para><quote>C'est tout simple,</quote> pensez-vous certainement,<quote>
+      mais pendant le temps que je faisais ça, le processus fils
+      sera déjà parti loin</quote>. Ne vous en faites pas,
+      noble lecteur, voici comment faire (avec l'appui des pages d'info
+      de <command>gdb</command>):
+      </para>
+
+      <screen><lineannotation>…</lineannotation>
+if ((pid = fork()) &lt; 0)		/* _Toujours_ verifier cela */
+	error();
+else if (pid == 0) {		/* le fils */
+	int PauseMode = 1;
+
+	while (PauseMode)
+		sleep(10);	/* Attendre jusqu'a ce que quelqu'un se brache sur nous */
+	<lineannotation>…</lineannotation>
+} else {			/* le pere */
+	<lineannotation>…</lineannotation>
+      </screen>
+
+      <para>Maintenant tout ce que nous avons à faire est de nous brancher sur le processus fils,
+      de mettre <symbol>PauseMode</symbol> à <literal>0</literal> et d'attendre
+      que l'appel à la fonction <function>sleep()</function> retourne !
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="emacs">
+    <title>Utiliser Emacs comme environnement de développement</title>
+
+    <sect2>
+      <title>Emacs</title>
+
+      <para>Malheureusement, les systèmes Unix ne sont pas fournis avec des sortes
+      d'environnements de développement intégrés
+      tout-ce-que-vous-avez-toujours-voulu-et-beaucoup-plus-dans-un-ensemble-gigantesque
+      que d'autres sytèmes ont.
+
+	<footnote>
+	  <para>Sauf si vous payez des sommes importantes.
+	  </para>
+	</footnote>
+
+	Toutefois, il est possible de se faire son propre environnement.
+	Cela n'est pas forcément aussi joli et il peut ne pas être
+	autant intégré mais vous pouvez le personnaliser comme
+	vous voulez. Et c'est gratuit. Et vous en avez les sources.
+	</para>
+
+      <para>La clé de tout cela est Emacs. Maintenant il y a des gens qui le détestent,
+      mais beaucoup l'aiment. Si vous êtes un du premier groupe, j'ai peur que cette section
+      ait peu d'intérêt pour vous. Vous aurez besoin d'une quantité
+      moyenne de mémoire pour le faire fonctionner—Je recommenderai 8Mo en mode
+      texte et 16Mo dans X pour avoir un minimum de performances.
+      </para>
+
+      <para>Emacs est basiquement un éditeur hautement personnalisable
+      —en effet, il a été personnalisé au point de ressembler
+      plus à un système d'exploitation qu'à un éditeur!
+      Beaucoup de développeurs et d'administrateurs système passent
+      en fait pratiquement tout leur temps à travailler dans Emacs,
+      en ne le quittant qu'à leur déconnexion.
+      </para>
+
+      <para>Il est impossible de dire tout ce qu'Emacs peut faire ici,
+      mais voici quelques unes des caractéristiques d'intérêt
+      pour les développeurs:
+      </para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>Un très puissant éditeur, permettant le chercher-remplacer sur
+	  les chaînes et les expressions régulières (motifs),
+	  sauter à la fin ou au début d'un bloc, etc, etc.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Menus déroulants et aide en ligne.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Colorisation syntaxique en fonction du langage et indentation.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Totalement personnalisable.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Vous pouvez compiler et déverminer des programmes dans Emacs.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Sur erreur de compilation, vous pouvez aller directement
+	  à la ligne de code source fautive.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Une interface amicale au programme <command>info</command>
+	  utilisé pour lire la documentation hypertexte GNU,
+	  incluant la documentation sur Emacs elle-même.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Une interface agréable à <command>gdb</command>, vous permettant
+	  de voir le code source au fur et à mesure que vous vous déplacez
+	  dans votre programme.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Vous pouvez lire les nouvelles Usenet et envoyer des e-mails pendant que
+	  votre programme est en compilation.
+	  </para>
+	</listitem>
+      </itemizedlist>
+
+      <para>Et sans doute beaucoup plus que je n'ai survolé.
+      </para>
+
+      <para>Emacs peut être installé sur FreeBSD en utilisant Emacs
+      <link xlink:href="../../ports/editors.html">le logiciel porté Emacs</link>.
+      </para>
+
+      <para>Une fois installé, démarrez-le et faites <userinput>C-h t</userinput>
+      pour lire un cours sur Emacs—cela signifie maintenir la touche <keycap>control</keycap>,
+      presser <keycap>h</keycap>, relâcher la touche <keycap>control</keycap>
+      et presser <keycap>t</keycap>. (Alternativement, vous pouvez utiliser la souris
+      pour sélectionner <guimenuitem>Emacs Tutorial</guimenuitem> dans le menu
+      <guimenu>Help</guimenu>).
+      </para>
+
+      <para>Bien que Emacs possède des menus, il est valable d'apprendre les raccourcis
+      clavier, étant plus rapide quand vous éditez quelque chose
+      d'appuyer sur un couple de touches que de reprendre la souris et de cliquer
+      au bon endroit. Et, quand vous discutez avec des utilisateurs expérimentés
+      d'Emacs, vous trouverez qu'ils parlent souvent de choses comme
+      <quote><literal>M-x replace-s RET foo RET bar RET</literal></quote> aussi il est utile
+      de savoir ce que cela veut dire. Et dans tous les cas, Emacs possède beaucoup trop
+      de fonctions pour qu'elles soient dans les barres de menus.
+      </para>
+
+      <para>Heureusement, il est assez simple de récupérer les raccourcis
+      clavier car ils sont affichés à côté des éléments
+      des menus déroulants. Mon conseil est d'utiliser un élément de menu
+      pour, disons, ouvrir un fichier jusqu'à ce que vous sachiez comment cela fonctionne
+      et que quand vous vous sentez à l'aise avec, essayez <userinput>C-x C-f</userinput>.
+      Quand vous serez content avec ça, passez à une autre commande du menu.
+      </para>
+
+      <para>Si vous ne pouvez pas vous rappeler de ce qu'une combinaison de touches particulières
+      fait, sélectionnez <guimenuitem>Describe Key</guimenuitem> dans le menu
+      <guimenu>Help</guimenu> et tapez-la—Emacs vous dira ce qu'elle fait.
+      Vous pouvez aussi utiliser l'élément de menu <guimenuitem>Command Apropos</guimenuitem>
+      pour trouver toutes les commandes qui contiennent un mot particulier, avec leur
+      raccourci clavier.
+      </para>
+
+      <para>De cette manière, l'expression ci-dessus signifie maintenir la touche
+      <keysym>Meta</keysym>, taper <keysym>x</keysym>, relâcher
+      la touche <keysym>Meta</keysym>, taper <userinput>replace-s</userinput>
+      (raccourci pour <literal>replace-string</literal>—
+      une autre caractéristique d'Emacs est que vous pouvez abréger
+      les commandes), appuyer sur la touche <keysym>Entrée</keysym>, taper
+      <userinput>foo</userinput> (la chaîne que vous voulez remplacer), presser
+      la touche <keysym>Entrée</keysym>, taper <userinput>bar</userinput> (la chaîne
+      que vous voulez substituer à <literal>foo</literal>) puis appuyer sur
+      <keysym>Entrée</keysym> une dernière fois. Emacs va alors faire
+      l'opération chercher-remplacer que vous avez demandé.
+      </para>
+
+      <para>Si vous vous demandez ce qu'est cette touche <keysym>Meta</keysym>,
+      il s'agit d'une touche spéciale que beaucoup de stations de travail Unix
+      possèdent. Malheureusement, les PC n'en ont pas, aussi c'est habituellement
+      la touche <keycap>alt</keycap> (ou si vous n'avez pas de chance, la touche <keysym>échap</keysym>).
+      </para>
+
+      <para>Oh, et pour sortir d'Emacs, faites <command>C-x C-c</command>
+      (ce qui signifie maintenir la touche <keysym>control</keysym> appuyée,
+      appuyer <keysym>c</keysym> et relâcher la touche <keysym>control</keysym>.
+      Si vous avez des fichiers non sauvegardés ouverts, Emacs vous demandera si
+      vous voulez les sauvegarder. (Ignorez le bout de documentation où il est dit
+      que <command>C-z</command> est la manière habituelle de quitter Emacs—
+      qui quitte Emacs en le laissant tourner en tâche de fond et qui n'est
+      vraiment utile que si vous avez un système sans terminal virtuel).
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Configurer Emacs</title>
+
+      <para>Emacs fait des choses merveilleuses; une partie est intégrée
+      directement, une autre doit être configurée.
+      </para>
+
+      <para>Plutôt que d'utiliser un macro langage propriétaire pour la configuration,
+      Emacs utilise une version du Lisp spécialement adaptée pour les
+      éditeurs, connue sous le nom d'Emacs Lisp. Celui-ci peut être assez utile si
+      vous voulez poursuivre et apprendre quelque chose comme le Common Lisp,
+      car il est considérablement plus petit que le Common Lisp (bien que
+      déjà assez gros!).
+      </para>
+
+      <para>La meilleure façon d'apprendre l'Emacs Lisp est de télécharger
+      le <link xlink:href="ftp://prep.ai.mit.edu:pub/gnu/elisp-manual-19-2.4.tar.gz">cours d'Emacs</link>
+      </para>
+
+      <para>Toutefois, il n'y a pas besoin de connaître le Lisp pour commencer
+      la configuration d'Emacs, car j'ai inclus un exemple de fichier <filename>.emacs</filename>
+      qui devrait être suffisant pour commencer. Copiez juste celui-ci dans votre
+      répertoire utilisateur et redémarrez Emacs si celui-ci s'exécute,
+      il lira les commandes du fichier et (si tout va bien!) vous donnera une configuration
+      basique utile.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Un fichier exemple <filename>.emacs</filename></title>
+
+      <para>Malheureusement, il y a beaucoup trop de choses ici pour les expliquer en détail;
+      toutefois, il y a un ou deux points qui valent d'être mentionnés.
+      </para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>Tout ce qui commence avec un <literal>;</literal> est un commentaire et est
+	  ignoré par Emacs.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>A la première ligne, le <literal>-*- Emacs-Lisp -*-</literal>
+	  est tel que vous pouvez éditer le fichier <filename>.emacs</filename> lui-même
+	  à l'intérieur d'Emacs et d'obtenir tous les fantaisistes dispositifs
+	  pour l'édition en Emacs Lisp. Emacs essaye habituellement de deviner cela
+	  en se basant sur le nom du fichier, et ne trouvera peut-être pas pour
+	  <filename>.emacs</filename>.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>La touche <keysym>tab</keysym> est liée à la fonction d'indentation
+	  dans certains modes, aussi quand vous l'enfoncez, cela va indenter la ligne courante
+	  de code. Si vous voulez mettre un caractère <token>tab</token> dans quoique ce soit
+	  que vous tapiez, maintenez la touche <keysym>control</keysym> enfoncée pendant
+	  que vous appuyez sur <keysym>tab</keysym>.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Ce fichier supporte la colorisation de syntaxe pour les langages C, C++, Perl, Lisp
+	  et Scheme en devinant le langage par leur nom.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Emacs possède déjà une fonction pré-définie
+	  appelée <function>next-error</function>.  Dans la fenêtre de sortie d'une
+	  compilation, cela vous permet de vous déplacer d'une erreur de compilation
+	  à la suivante en faisant <command>M-n</command>; nous définissons une
+	  fonction complémentaire <function>previous-error</function>, qui vous permet
+	  d'aller à l'erreur précédente en faisant <command>M-p</command>.
+	  Le plus beau dispositif de tous est que <command>C-c C-c</command>
+	  va ouvrir le fichier source dans lequel l'erreur a eu lieu et sautera à la ligne
+	  appropriée.
+	  </para>
+	</listitem>
+
+	<listitem>
+	  <para>Nous autorisons la capacité d'Emacs à agir comme un serveur
+	  ainsi si vous faites quelque chose en dehors d'Emacs et voulez éditer un
+	  fichier, tapez juste
+	  </para>
+
+	  <screen><prompt>%</prompt> <userinput>emacsclient nomfichier</userinput>
+	  </screen>
+
+	  <para>et alors vous pouvez éditer le fichier dans votre Emacs!
+	  <footnote>
+	  <para>Beaucoup d'utilisateurs d'Emacs mettent leur variable d'environnement
+	  <envar>EDITOR</envar> à <literal>emacsclient</literal> ainsi cela se passe
+	  à chaque fois qu'ils ont besoin d'éditer un fichier.
+	  </para>
+	  </footnote>
+	  </para>
+	</listitem>
+      </itemizedlist>
+
+      <example>
+	<title>Un fichier exemple <filename>.emacs</filename></title>
+
+	<programlisting>;; -*-Emacs-Lisp-*-
+
+;; Ce fichier est concu pour etre reevalue, utiliser la variable first-time
+;; pour eviter tout probleme.
+(defvar first-time t
+  "Valeur signifiant que c'est la premiere fois que .emacs a ete evalue"
+  )
+
+;; Meta
+(global-set-key "\M- " 'set-mark-command)
+(global-set-key "\M-\C-h" 'backward-kill-word)
+(global-set-key "\M-\C-r" 'query-replace)
+(global-set-key "\M-r" 'replace-string)
+(global-set-key "\M-g" 'goto-line)
+(global-set-key "\M-h" 'help-command)
+
+;; Function keys
+(global-set-key [f1] 'manual-entry)
+(global-set-key [f2] 'info)
+(global-set-key [f3] 'repeat-complex-command)
+(global-set-key [f4] 'advertised-undo)
+(global-set-key [f5] 'eval-current-buffer)
+(global-set-key [f6] 'buffer-menu)
+(global-set-key [f7] 'other-window)
+(global-set-key [f8] 'find-file)
+(global-set-key [f9] 'save-buffer)
+(global-set-key [f10] 'next-error)
+(global-set-key [f11] 'compile)
+(global-set-key [f12] 'grep)
+(global-set-key [C-f1] 'compile)
+(global-set-key [C-f2] 'grep)
+(global-set-key [C-f3] 'next-error)
+(global-set-key [C-f4] 'previous-error)
+(global-set-key [C-f5] 'display-faces)
+(global-set-key [C-f8] 'dired)
+(global-set-key [C-f10] 'kill-compilation)
+
+;; Keypad bindings
+(global-set-key [up] "\C-p")
+(global-set-key [down] "\C-n")
+(global-set-key [left] "\C-b")
+(global-set-key [right] "\C-f")
+(global-set-key [home] "\C-a")
+(global-set-key [end] "\C-e")
+(global-set-key [prior] "\M-v")
+(global-set-key [next] "\C-v")
+(global-set-key [C-up] "\M-\C-b")
+(global-set-key [C-down] "\M-\C-f")
+(global-set-key [C-left] "\M-b")
+(global-set-key [C-right] "\M-f")
+(global-set-key [C-home] "\M-&lt;")
+(global-set-key [C-end] "\M-&gt;")
+(global-set-key [C-prior] "\M-&lt;")
+(global-set-key [C-next] "\M-&gt;")
+
+;; Souris
+(global-set-key [mouse-3] 'imenu)
+
+;; Divers
+(global-set-key [C-tab] "\C-q\t")	; Control tab quotes a tab.
+(setq backup-by-copying-when-mismatch t)
+
+;; Traite 'y' ou &lt;CR&gt; comme yes, 'n' comme no.
+(fset 'yes-or-no-p 'y-or-n-p)
+    (define-key query-replace-map [return] 'act)
+    (define-key query-replace-map [?\C-m] 'act)
+
+;; Charge les ajouts
+(require 'desktop)
+(require 'tar-mode)
+
+;; Diff mode sympa
+(autoload 'ediff-buffers "ediff" "Intelligent Emacs interface to diff" t)
+(autoload 'ediff-files "ediff" "Intelligent Emacs interface to diff" t)
+(autoload 'ediff-files-remote "ediff"
+  "Intelligent Emacs interface to diff")
+
+(if first-time
+    (setq auto-mode-alist
+	  (append '(("\\.cpp$" . c++-mode)
+		    ("\\.hpp$" . c++-mode)
+                    ("\\.lsp$" . lisp-mode)
+		    ("\\.scm$" . scheme-mode)
+		    ("\\.pl$" . perl-mode)
+		    ) auto-mode-alist)))
+
+;; Mode de verrouillage automatique de la police de caracteres
+(defvar font-lock-auto-mode-list
+  (list 'c-mode 'c++-mode 'c++-c-mode 'emacs-lisp-mode 'lisp-mode 'perl-mode 'scheme-mode)
+  "List of modes to always start in font-lock-mode")
+
+(defvar font-lock-mode-keyword-alist
+  '((c++-c-mode . c-font-lock-keywords)
+    (perl-mode . perl-font-lock-keywords))
+  "Associations between modes and keywords")
+
+(defun font-lock-auto-mode-select ()
+  "Automatically select font-lock-mode if the current major mode is
+in font-lock-auto-mode-list"
+  (if (memq major-mode font-lock-auto-mode-list)
+      (progn
+	(font-lock-mode t))
+    )
+  )
+
+(global-set-key [M-f1] 'font-lock-fontify-buffer)
+
+;; New dabbrev stuff
+;(require 'new-dabbrev)
+(setq dabbrev-always-check-other-buffers t)
+(setq dabbrev-abbrev-char-regexp "\\sw\\|\\s_")
+(add-hook 'emacs-lisp-mode-hook
+	  '(lambda ()
+	     (set (make-local-variable 'dabbrev-case-fold-search) nil)
+	     (set (make-local-variable 'dabbrev-case-replace) nil)))
+(add-hook 'c-mode-hook
+	  '(lambda ()
+	     (set (make-local-variable 'dabbrev-case-fold-search) nil)
+	     (set (make-local-variable 'dabbrev-case-replace) nil)))
+(add-hook 'text-mode-hook
+	  '(lambda ()
+	     (set (make-local-variable 'dabbrev-case-fold-search) t)
+	     (set (make-local-variable 'dabbrev-case-replace) t)))
+
+;; mode C++ et C...
+(defun my-c++-mode-hook ()
+  (setq tab-width 4)
+  (define-key c++-mode-map "\C-m" 'reindent-then-newline-and-indent)
+  (define-key c++-mode-map "\C-ce" 'c-comment-edit)
+  (setq c++-auto-hungry-initial-state 'none)
+  (setq c++-delete-function 'backward-delete-char)
+  (setq c++-tab-always-indent t)
+  (setq c-indent-level 4)
+  (setq c-continued-statement-offset 4)
+  (setq c++-empty-arglist-indent 4))
+
+(defun my-c-mode-hook ()
+  (setq tab-width 4)
+  (define-key c-mode-map "\C-m" 'reindent-then-newline-and-indent)
+  (define-key c-mode-map "\C-ce" 'c-comment-edit)
+  (setq c-auto-hungry-initial-state 'none)
+  (setq c-delete-function 'backward-delete-char)
+  (setq c-tab-always-indent t)
+;; Style d'indentation BSD
+  (setq c-indent-level 4)
+  (setq c-continued-statement-offset 4)
+  (setq c-brace-offset -4)
+  (setq c-argdecl-indent 0)
+  (setq c-label-offset -4))
+
+;; mode Perl
+(defun my-perl-mode-hook ()
+  (setq tab-width 4)
+  (define-key c++-mode-map "\C-m" 'reindent-then-newline-and-indent)
+  (setq perl-indent-level 4)
+  (setq perl-continued-statement-offset 4))
+
+;; mode Scheme...
+(defun my-scheme-mode-hook ()
+  (define-key scheme-mode-map "\C-m" 'reindent-then-newline-and-indent))
+
+;; mode Emacs-Lisp...
+(defun my-lisp-mode-hook ()
+  (define-key lisp-mode-map "\C-m" 'reindent-then-newline-and-indent)
+  (define-key lisp-mode-map "\C-i" 'lisp-indent-line)
+  (define-key lisp-mode-map "\C-j" 'eval-print-last-sexp))
+
+;; Ajoute tout le reste...
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+(add-hook 'scheme-mode-hook 'my-scheme-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'my-lisp-mode-hook)
+(add-hook 'lisp-mode-hook 'my-lisp-mode-hook)
+(add-hook 'perl-mode-hook 'my-perl-mode-hook)
+
+;; Le complement a next-error
+(defun previous-error (n)
+  "Visit previous compilation error message and corresponding source code."
+  (interactive "p")
+  (next-error (- n)))
+
+;; Divers...
+(transient-mark-mode 1)
+(setq mark-even-if-inactive t)
+(setq visible-bell nil)
+(setq next-line-add-newlines nil)
+(setq compile-command "make")
+(setq suggest-key-bindings nil)
+(put 'eval-expression 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+
+;; Recherche des archives Elisp
+(autoload 'format-lisp-code-directory "lispdir" nil t)
+(autoload 'lisp-dir-apropos "lispdir" nil t)
+(autoload 'lisp-dir-retrieve "lispdir" nil t)
+(autoload 'lisp-dir-verify "lispdir" nil t)
+
+;; Mode de verrouillage de police
+(defun my-make-face (face colour &amp;optional bold)
+  "Create a face from a colour and optionally make it bold"
+  (make-face face)
+  (copy-face 'default face)
+  (set-face-foreground face colour)
+  (if bold (make-face-bold face))
+  )
+
+(if (eq window-system 'x)
+    (progn
+      (my-make-face 'blue "blue")
+      (my-make-face 'red "red")
+      (my-make-face 'green "dark green")
+      (setq font-lock-comment-face 'blue)
+      (setq font-lock-string-face 'bold)
+      (setq font-lock-type-face 'bold)
+      (setq font-lock-keyword-face 'bold)
+      (setq font-lock-function-name-face 'red)
+      (setq font-lock-doc-string-face 'green)
+      (add-hook 'find-file-hooks 'font-lock-auto-mode-select)
+
+      (setq baud-rate 1000000)
+      (global-set-key "\C-cmm" 'menu-bar-mode)
+      (global-set-key "\C-cms" 'scroll-bar-mode)
+      (global-set-key [backspace] 'backward-delete-char)
+					;      (global-set-key [delete] 'delete-char)
+      (standard-display-european t)
+      (load-library "iso-transl")))
+
+;; X11 ou PC utilisant les ecritures directes a l'ecran
+(if window-system
+    (progn
+      ;;      (global-set-key [M-f1] 'hilit-repaint-command)
+      ;;      (global-set-key [M-f2] [?\C-u M-f1])
+      (setq hilit-mode-enable-list
+	    '(not text-mode c-mode c++-mode emacs-lisp-mode lisp-mode
+		  scheme-mode)
+	    hilit-auto-highlight nil
+	    hilit-auto-rehighlight 'visible
+	    hilit-inhibit-hooks nil
+	    hilit-inhibit-rebinding t)
+      (require 'hilit19)
+      (require 'paren))
+  (setq baud-rate 2400)			; For slow serial connections
+  )
+
+;; Terminal de type TTY
+(if (and (not window-system)
+	 (not (equal system-type 'ms-dos)))
+    (progn
+      (if first-time
+	  (progn
+	    (keyboard-translate ?\C-h ?\C-?)
+	    (keyboard-translate ?\C-? ?\C-h)))))
+
+;; Sous Unix
+(if (not (equal system-type 'ms-dos))
+    (progn
+      (if first-time
+	  (server-start))))
+
+;; Add any face changes here
+(add-hook 'term-setup-hook 'my-term-setup-hook)
+(defun my-term-setup-hook ()
+  (if (eq window-system 'pc)
+      (progn
+;;	(set-face-background 'default "red")
+	)))
+
+;; Restaure le  "desktop" - faire cela le plus tard possible
+(if first-time
+    (progn
+      (desktop-load-default)
+      (desktop-read)))
+
+;; Indique que ce fichier a ete lu au moins une fois
+(setq first-time nil)
+
+;; Pas besoin de deverminer quoique ce soit maintenant
+
+(setq debug-on-error nil)
+
+;; Tout est fait
+(message "All done, %s%s" (user-login-name) ".")
+	</programlisting>
+      </example>
+    </sect2>
+
+    <sect2>
+      <title>Etendre la palette de langages qu'Emacs comprend</title>
+
+      <para>Maintenant, Emacs est très bien si vous voulez seulement programmer
+      dans des langages déjà fournis dans le fichier <filename>.emacs</filename>
+      (C, C++, Perl, Lisp et Scheme), mais qu'arrive-t-il si un nouveau langage appelé
+      <quote>whizbang</quote> sort, plein d'excitantes fonctionnalités ?
+      </para>
+
+      <para>La première chose à faire est de savoir si whizbang est fourni avec
+      des fichiers de configuration pour Emacs. Ceux-ci se terminent habituellement
+      par <filename>.el</filename>, raccourci pour <quote>Emacs Lisp</quote>.
+      Par exemple, si whizbang est un logiciel porté FreeBSD, nous pouvons
+      localiser ces fichiers en faisant
+      </para>
+
+      <screen><prompt>%</prompt> <userinput>find /usr/ports/lang/whizbang -name "*.el" -print</userinput>
+      </screen>
+
+      <para>et les installer en les copiant dans le répertoire Lisp d'Emacs.
+      Sur FreeBSD 2.1.0-RELEASE, il s'agit de <filename>/usr/local/share/emacs/site-lisp</filename>
+      <footnote><para>NDT : Sur FreeBSD 4.2-RELEASE aussi.</para></footnote>.
+      </para>
+
+      <para>Aisni par exemple, si la sortie de la commande <command>find</command> était
+      </para>
+
+      <screen>/usr/ports/lang/whizbang/work/misc/whizbang.el
+      </screen>
+
+      <para>nous ferions
+      </para>
+
+      <screen><prompt>#</prompt> <userinput>cp /usr/ports/lang/whizbang/work/misc/whizbang.el /usr/local/share/emacs/site-lisp</userinput>
+      </screen>
+
+      <para>Ensuite, nous devons décider quel extension les fichiers source whizbang ont. Disons
+      qu'il s'agit de fichiers se terminant par <filename>.wiz</filename>. Nous devons
+      ajouter une entrée dans notre fichier <filename>.emacs</filename> pour être sûr
+      qu'Emacs sera capable d'utiliser les informations dans <filename>whizbang.el</filename>.
+      </para>
+
+      <para>Trouvez l'entrée <symbol>auto-mode-alist</symbol> dans
+      <filename>.emacs</filename> et ajoutez une ligne pour whizbang, comme :
+      </para>
+
+      <programlisting><lineannotation>…</lineannotation>
+("\\.lsp$" . lisp-mode)
+("\\.wiz$" . whizbang-mode)
+("\\.scm$" . scheme-mode)
+<lineannotation>…</lineannotation></programlisting>
+
+      <para>Cela signifie qu'Emacs ira automatiquement dans la fonction
+      <function>whizbang-mode</function> quand vous éditerez un fichier se terminant
+      par <filename>.wiz</filename>.
+      </para>
+
+      <para>Juste en-dessous, vous trouverez l'entrée <symbol>font-lock-auto-mode-list</symbol>.
+      Ajoutez <function>whizbang-mode</function> à celle-ci comme ceci :
+      </para>
+
+      <programlisting>;; Auto font lock mode
+(defvar font-lock-auto-mode-list
+  (list 'c-mode 'c++-mode 'c++-c-mode 'emacs-lisp-mode 'whizbang-mode 'lisp-mode 'perl-mode 'scheme-mode)
+  "List of modes to always start in font-lock-mode")</programlisting>
+
+      <para>Cela signifie qu'Emacs autorisera toujours <function>font-lock-mode</function>
+      (ie colorisation de la syntaxe) pendant l'édition d'un fichier <filename>.wiz</filename>.
+      </para>
+
+      <para>Et c'est tout ce qui est nécessaire. S'il y a quoique ce soit que
+      vous voulez de fait automatiquement quand vous ouvrez un fichier
+      <filename>.wiz</filename>, vous pouvez ajouter un	<function>whizbang-mode hook</function>
+      (voir <function>my-scheme-mode-hook</function> pour un exemple simple
+      qui ajoute <function>auto-indent</function>, l'auto-indentation).
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Pour aller plus loin</title>
+
+    <itemizedlist>
+      <listitem>
+	<para>Brian Harvey and Matthew Wright
+	  <emphasis>Simply Scheme</emphasis>
+	  MIT 1994.<!-- <br> -->
+	  ISBN 0-262-08226-8</para>
+      </listitem>
+
+      <listitem>
+	<para>Randall Schwartz
+	  <emphasis>Learning Perl</emphasis>
+	  O'Reilly 1993<!-- <br> -->
+	  ISBN 1-56592-042-2</para>
+      </listitem>
+
+      <listitem>
+	<para>Patrick Henry Winston and Berthold Klaus Paul Horn
+	  <emphasis>Lisp (3rd Edition)</emphasis>
+	  Addison-Wesley 1989<!-- <br> -->
+	  ISBN 0-201-08319-1</para>
+      </listitem>
+
+      <listitem>
+	<para>Brian W. Kernighan and Rob Pike
+	  <emphasis>The Unix Programming Environment</emphasis>
+	  Prentice-Hall 1984<!-- <br> -->
+	  ISBN 0-13-937681-X</para>
+      </listitem>
+
+      <listitem>
+	<para>Brian W. Kernighan and Dennis M. Ritchie
+	  <emphasis>The C Programming Language (2nd Edition)</emphasis>
+	  Prentice-Hall 1988<!-- <br> -->
+	  ISBN 0-13-110362-8</para>
+      </listitem>
+
+      <listitem>
+	<para>Bjarne Stroustrup
+	<emphasis>The C++ Programming Language</emphasis>
+	Addison-Wesley 1991<!-- <br> -->
+	ISBN 0-201-53992-6</para>
+      </listitem>
+
+      <listitem>
+	<para>W. Richard Stevens
+	  <emphasis>Advanced Programming in the Unix Environment</emphasis>
+	  Addison-Wesley 1992<!-- <br> -->
+	  ISBN 0-201-56317-7</para>
+      </listitem>
+
+      <listitem>
+	<para>W. Richard Stevens
+	  <emphasis>Unix Network Programming</emphasis>
+	  Prentice-Hall 1990<!-- <br> -->
+	  ISBN 0-13-949876-1</para>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+
+    </chapter>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $Id: chapter.xml,v 1.1 2002-02-14 14:25:02 gioria Exp $
+     Original revision: 1.3
+     $FreeBSD$
+
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="secure">
+      <title>Programmation sécurisée</title>
+
+      <para>Ce chapître a été écrit par Murray Stokely.</para>
+
+      <sect1><title>Synopsis</title>
+
+      <para>Ce chapître décrit quelques problèmes de sécurité qui
+      ont tourmenté les programmeurs Unix depuis des dizaines d'années
+      et quelques uns des nouveaux outils disponibles pour aider
+      les programmeurs à éviter l'écriture de code non sécurisé.
+      </para>
+      </sect1>
+
+      <sect1 xml:id="secure-philosophy"><title>Méthodologie de développement
+      sécurisé</title>
+
+      <para>Ecrire des applications sécurisées demande une très minutieuse
+      et pessimiste vision de la vie. Les applications devrait fonctionner
+      avec le principe du <quote>privilège moindre</quote> de façon à ce
+      qu'aucun processus ne fonctionne avec plus que le strict minimum dont
+      il a besoin pour accomplir sa tâche. Le code pré-testé devrait être
+      réutilisé autant que possible pour éviter les erreurs communes que
+      d'autres peuvent déjà avoir réparées.</para>
+
+      <para>Un des pièges de l'environnement Unix est qu'il est facile
+      d'affecter la stabilité de l'environnement.
+      Les applications ne devraient jamais avoir confiance dans la saisie
+      de l'utilisateur (sous toutes ses formes),
+      les ressources système, la communication inter-processus, ou l'enchaînement
+      des évènements. Les processus Unix n'exécutent pas de manière synchrone
+      aussi, logiquement, les opérations sont rarement atomiques.</para>
+      </sect1>
+
+      <sect1><title>Dépassement de capacité</title>
+
+      <para>Les dépassements de capacité ("Buffer Overflows") existent depuis
+      les débuts de l'architecture de Von-Neuman <xref linkend="COD"/>.
+      Ils gagnèrent une grande notoriété en 1988 avec le ver pour Internet
+      de Morris. Malheureusement, la même attaque basique reste effective
+      aujourd'hui. Des 17 rapports de sécurité du CERT de 1999, 10
+      furent causés directement des bogues logiciels de dépassement de
+      capacité. De loin la plus commune de types d'attaques par dépassement de
+       capacité est basée sur la corruption de la pile.</para>
+
+      <para>La plupart des systèmes informatiques modernes utilise une pile
+      pour passer les arguments aux procédures et stocker les variables locales
+      Une pile est une zone mémoire dernier entré-premier sorti (Last In-First
+       Out : LIFO) dans la zone de mémoire haute de l'image d'un processus.
+      Quand un programme invoque une fonction une nouvelle structure pile est
+      créée. Cette structure pile consiste dans les arguments passés à la
+      fonction aussi bien que dans une quantité dynamique d'espace pour
+      la variable locale. Le pointeur de pile est un registre qui référence la
+      position courante du sommet de la pile. Etant donné que cette valeur
+      change constamment au fur et à mesure que de nouvelles valeurs sont
+      ajoutées au sommet de la pile, beaucoup d'implémentations fournissent
+      aussi un pointeur de structure qui est positionné dans le voisinage du
+      début de la structure pile de façon à ce que les variables locales soient
+      plus facilement adressables relativement à cette valeur.
+      <xref linkend="COD"/> L'adresse de retour des appels de fonction est aussi
+      stocké dans la pile, et cela est la cause des découvertes des
+      dépassements de pile puisque faire déborder une variable locale dans une
+      fonction peut écraser l'adresse de retour de cette fonction, permettant
+      potentiellement à un utilisateur malveillant d'exécuter le code qu'il ou
+      elle désire.</para>
+
+      <para>Bien que les attaques basées sur les dépassements de pile soient
+      de loin les plus communes, il serait aussi possible de faire exploser
+      la pile avec une attaque du tas (malloc/free).</para>
+
+      <para>Le langage de programmation C ne réalise pas de vérifications
+      automatiques des limites sur les tableaux ou pointeurs comme d'autres
+      langages le font. De plus, la librairie standard du C est remplie d'une
+      poignée de fonctions très dangereuses.</para>
+
+      <informaltable>
+        <tgroup cols="2">
+          <tbody>
+          <row><entry><function>strcpy</function>(char *dest, const char
+          *src)</entry>
+          <entry><simpara>Peut faire déborder le tampon dest</simpara></entry>
+          </row>
+
+          <row><entry><function>strcat</function>(char *dest, const char
+          *src)</entry>
+          <entry><simpara>Peut faire déborder le tampon dest</simpara></entry>
+          </row>
+
+          <row><entry><function>getwd</function>(char *buf)</entry>
+          <entry><simpara>Peut faire déborder le tampon buf</simpara></entry>
+          </row>
+
+          <row><entry><function>gets</function>(char *s)</entry>
+          <entry><simpara>Peut faire déborder le tampon s</simpara></entry>
+          </row>
+
+          <row><entry><function>[vf]scanf</function>(const char *format,
+          ...)</entry>
+          <entry><simpara>Peut faire déborder ses arguments.</simpara></entry>
+          </row>
+
+          <row><entry><function>realpath</function>(char *path, char
+          resolved_path[])</entry>
+          <entry><simpara>Peut faire déborder le tampon path</simpara></entry>
+          </row>
+
+          <row><entry><function>[v]sprintf</function>(char *str, const char
+          *format, ...)</entry>
+          <entry><simpara>Peut faire déborder le tampon str.</simpara></entry>
+          </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <sect2><title>Exemple de dépassement de capacité</title>
+
+      <para>L'exemple de code suivant contient un dépassement de capacité
+      conçu pour écraser l'adresse de retour et "sauter" l'instruction suivant
+      immédiatement l'appel de la fonction. (Inspiré
+      par <xref linkend="Phrack"/>)</para>
+
+<programlisting>#include <tag>stdio.h</tag>
+
+void manipulate(char *buffer) {
+  char newbuffer[80];
+  strcpy(newbuffer,buffer);
+}
+
+int main() {
+  char ch,buffer[4096];
+  int i=0;
+
+  while ((buffer[i++] = getchar()) != '\n') {};
+
+  i=1;
+  manipulate(buffer);
+  i=2;
+  printf("La valeur de i est : %d\n",i);
+  return 0;
+}</programlisting>
+
+      <para>Examinons quel serait l'aspect de l'image mémoire de ce processus
+      si nous avions entré 160 espaces dans notre petit programme avant
+      d'appuyer sur <keycap>Entrée</keycap>.</para>
+
+      <para>[XXX Schéma ici!]</para>
+
+      <para>Evidemment une entrée plus malveillante pourrait être imaginée pour
+      exécuter des instructions déjà compilées (comme exec(/bin/sh)).</para>
+      </sect2>
+
+      <sect2><title>Eviter les dépassements de capacité</title>
+
+      <para>La solution la plus simple au problème de débordement de pile
+      est de toujours utiliser de la mémoire restreinte en taille et
+      les fonctions de copie de chaîne de caractères. <function>strncpy</function>
+      et <function>strncat</function> font parties de la libraire standard du
+      C. Ces fonctions acceptent une valeur de longueur comme paramètre qui
+      qui ne devrait pas être plus grande que la taille du tampon de
+      destination. Ces fonctions vont ensuite copier `taille' octets de la
+      source vers la destination. Toutefois, il y a un certain nombre de
+      problèmes avec ces fonctions. Aucune fonction ne garantit une terminaison
+      par le caractère NULL si la taille du tampon d'entrée est aussi grand
+      que celui de destination. Le paramètre taille est aussi utilisé de façon
+      illogique entre <function>strncpy</function> et <function>strncat</function>
+      aussi il est facile pour les programmeurs d'être déroutés sur leur
+      utilisation convenable. Il y a aussi une perte significative des
+      performances comparé à <function>strcpy</function> lorsque l'on copie
+      une courte chaîne dans un grand tampon puisque <function>strncpy</function>
+      remplit de caractères NULL jusqu'à la taille spécifiée.</para>
+
+      <para>Dans OpenBSD, une autre implémentation de la copie de mémoire
+      a été créée pour contourner ces problèmes. Les fonctions <function>strlcpy</function>
+      et <function>strlcat</function> garantissent qu'elles termineront
+      toujours le tampon de destination par un caractère NULL losque l'argument
+      de taille est différent de zéro. Pour plus d'informations sur ces
+      fonctions, voir <xref linkend="OpenBSD"/>. Les fonctions <function>strlcpy</function> et
+      <function>strlcat</function> d'OpenBSD ont été inclues dans FreeBSD
+      depuis la version 3.5.</para>
+
+        <sect3><title>V#233;rifications des limites en fonctionnement basées sur le compilateur</title>
+        <!--Compiler based run-time bounds -->
+
+        <para>Malheureusement il y a toujours un très important assortiment de
+        code en utilisation publique qui copie aveuglément la mémoire sans
+        utiliser une des routines de copie limitée dont nous venons juste de
+        discuter. Heureusement, il y a une autre solution.  Plusieurs produits
+        complémentaires pour compilateur et librairies existent pour faire
+        de la vérification de limites pendant le fonctionnement en C/C++.</para>
+
+        <para>StackGuard est un de ces produits qui est implémenté comme un
+        petit correctif ("patch") pour le générateur de code gcc. Extrait du
+        site Internet de StackGuard, http://immunix.org/stackguard.html :
+        <blockquote><para>"StackGuard détecte et fait échouer les attaques
+        par débordement de pile en empêchant l'adresse de retour sur la pile
+        d'être altérée. StackGuard place un mot "canari"
+        <footnote><para>NDT : Jaune de préférence pour être bien visible</para></footnote>
+        à côté de l'adresse de retour quand la fontion est appelée. Si le mot
+        "canari" a été altéré au retour de la fonction, alors une attaque par
+        débordement de pile a été tentée et le programme répond en envoyant
+        une alerte d'intrusion dans la trace système (syslog) et
+        s'arrête alors."</para></blockquote>
+
+        <blockquote><para>"StackGuard est implémenté comme un petit correctif
+        au générateur de code gcc, spécifiquement sur les routines
+        function_prolog() et function_epilog().  function_prolog() a été
+        amélioré pour laisser des "canaris" sur la pile quand les fonctions
+        démarrent, et function_epilog vérifie l'intégrité des "canaris" quand
+        la fonction se termine. Tout essai pour corrompre l'adresse de retour
+        est alors détectée avant que la fonction ne retourne."</para></blockquote>
+        </para>
+
+        <para>Recompiler votre application avec StackGuard est un
+        moyen efficace pour stopper la plupart des attques par dépassement de
+        capacité, mais cela peut toujours être compromis.</para>
+
+        </sect3>
+
+        <sect3><title>Vérifications des limites en fonctionnement basées sur les librairies</title>
+
+        <para>Les mécanismes basés sur le compilateur sont totalement inutiles
+        pour logiciel seulement binaire que vous ne pouvez recompiler. Pour
+        ces situations, il existe un nombre de librairies qui re-implémente
+        les fonctions peu sûres de la librairie C
+        (<function>strcpy</function>, <function>fscanf</function>,
+        <function>getwd</function>, etc..) et assurent que ces
+        fonctions ne peuvent pas écrire plus loin que le pointeur de pile.</para>
+
+        <itemizedlist>
+        <listitem><simpara>libsafe</simpara></listitem>
+        <listitem><simpara>libverify</simpara></listitem>
+        <listitem><simpara>libparnoia</simpara></listitem>
+        </itemizedlist>
+
+	<para>Malheureusement ces défenses basées sur les librairies possèdent
+	un certain nombre de défauts. Ces librairies protègent seulement d'un
+        très petit ensemble de problèmes liés à la sécurité et oublient de
+        réparer le problème actuel. Ces défenses peuvent échouer si
+        l'application a été compilée avec -fomit-frame-pointer. De même, les
+        variables d'environnement LD_PRELOAD et LD_LIBRARY_PATH peuvent être
+        réécrites/non définies par l'utilisateur.</para>
+        </sect3>
+
+        </sect2>
+      </sect1>
+
+      <sect1><title>Les problèmes liés à SetUID</title>
+
+      <para>Il y a au moins 6 differents ID (identifiants) associés à un
+      processus donné. A cause de cela, vous devez être très attentif avec
+      l'accès que votre processus possède à un instant donné. En particulier,
+      toutes les applications ayant reçu des privilèges par seteuid doivent
+      les abandonnés dès qu'ils ne sont plus nécessaires.</para>
+
+      <para>L'identifiant de l'utilisateur réel (real user ID) peut seulement
+      être changé par un processus super-utilisateur. Le programme <application>login</application>
+      met celui à jour quand un utilisateur se connecte et il est rarement
+      changé.</para>
+
+      <para>L'identifiant de l'utilisateur effectif (effective user ID) est mis
+      à jour par les fonctions <function>exec()</function> si un programme
+      possède son bit seteuid placé. Une application peut appeler
+      <function>seteuid()</function> à n'importe quel moment pour règler
+      l'identifiant de l'utilisateur effectif sur l'identifiant d'un
+      utilisateur réel ou sur le "set-user-ID" sauvé.
+      Quand l'identifiant de l'utilisateur effectif est placé par les
+      fonctions <function>exec()</function>, la valeur précédente est sauvée
+      dans le "set-user-ID" sauvé.</para>
+
+      </sect1>
+
+      <sect1 xml:id="chroot"><title>Limiter l'environnement de votre programme</title>
+
+      <para>La méthode traditionnelle pour restreindre l'accès d'un processus
+      se fait avec l'appel système <function>chroot()</function>. Cet appel
+      système change le répertoire racine depuis lequel tous les autres chemins
+      sont référencés pour un processus et ses fils. Pour que cet appel
+      réussisse, le processus doit avoir exécuté (recherché)
+      la permission dans le répertoire référencé. Le nouvel environnement
+      environment ne prend pas effet que lorsque vous appelez <function>chdir()</function>
+      dans celui-ci.
+      Il doit être aussi noté qu'un processus peut facilement s'échapper
+      d'un environnement chroot s'il a les privilèges du super-utilisateur.
+      Cela devrait être accompli en créant des fichiers spéciaux de
+      périphérique pour la mémoire du noyau, en attachant un dévermineur à un
+      processus depuis l'extérieur de sa "prison", ou par d'autres manières
+      créatrices.</para>
+
+      <para>Le comportement de l'appel système <function>chroot()</function>
+      peut être un peu contrôlé avec la commande <command>sysctl</command> et
+      la variable kern.chroot_allow_open_directories.
+      Quand cette valeur est règlée à 0, <function>chroot()</function> échouera
+      avec EPERM s'il y a un répertoire d'ouvert. Si la variable est règlée sur
+      la valeur par défaut 1, alors <function>chroot()</function> échouera
+      avec EPERM s'il y a un répertoire d'ouvert et que le processus est déjà
+      sujet à un appel <function>chroot()</function>. Pour toute autre valeur, la
+      vérification des répertoires ouverts sera totalement court-circuitée.</para>
+
+      <sect2><title>La fonctionnalité "prison" de FreeBSD</title>
+
+      <para>Le concept de Prison ("Jail") étend
+      <function>chroot()</function> en limitant les droits du
+      super-utilisateur pour créer un véritable `serveur virtuel'. Une fois
+      qu'une prison est mise en place, toute communication réseau doit avoir lieu
+      au travers de l'adresse IP spécifiée, et le droit du
+      "privilège super-utilisateur" dans cette prison est sévèrement gêné.</para>
+
+      <para>Tant qu'il se trouve en prison, tout test avec les droits du
+      super-utilisateur dans le noyau au travers d'un appel à
+      <function>suser()</function> échouera.
+      Toutefois, quelques appels à <function>suser()</function> ont été
+      changés par la nouvelle interface <function>suser_xxx()</function>.
+      Cette fonction est responsable de fournir ou de retirer les accès
+      aux droits du super-utilisateur pour les processus emprisonnés.</para>
+
+      <para>Un processus super-utilisateur dans un environnement emprisonné
+      a le pouvoir de : </para>
+      <itemizedlist>
+      <listitem><simpara>Manipuler les identitifications avec
+        <function>setuid</function>, <function>seteuid</function>,
+        <function>setgid</function>, <function>setegid</function>,
+        <function>setgroups</function>, <function>setreuid</function>,
+        <function>setregid</function>, <function>setlogin</function></simpara></listitem>
+      <listitem><simpara>Règler les limites en ressources avec <function>setrlimit</function></simpara></listitem>
+      <listitem><simpara>Modifier quelques variables du noyau par sysctl
+        (kern.hostname)</simpara></listitem>
+      <listitem><simpara><function>chroot()</function></simpara></listitem>
+      <listitem><simpara>Règler les paramètres d'un noeud virtuel (vnode):
+        <function>chflags</function>,
+        <function>fchflags</function></simpara></listitem>
+      <listitem><simpara>Règler les attributs d'un noeud virtuel comme
+      les permissions d'un fichier, le propriétaire, le groupe, la taille,
+      la date d'accès, et la date de modification.</simpara></listitem>
+      <listitem><simpara>Se lier à des ports privilégiés sur Internet
+        (ports &lt; 1024)</simpara></listitem>
+      </itemizedlist>
+
+      <para><function>Jail</function> est un outil très utile pour exécuter
+      des applications dans un environnement sécurisé mais il a des
+      imperfections. Actuellement, les mécanismes IPC (Inter-Process
+      Communications) n'ont pas été convertis pour utiliser <function>suser_xxx</function>
+      aussi des applications comme MySQL ne peuvent être exécutée dans une prison.
+      L'accès super-utilisateur peut avoir un sens très limité dans une prison,
+       mais il n'y aucune façon de spécifier exactement ce que très limité
+      veut dire.</para>
+      </sect2>
+
+      <sect2><title>Les capacitès des processus POSIX.1e</title>
+
+      <para>Posix a réalisé un document de travail qui ajoute l'audit
+      d'évènement, les listes de contrôle d'accès, les privilèges fins,
+      l'étiquetage d'information, et le contrôle d'accès mandaté.</para>
+      <para>Il s'agit d'un travail en cours et c'est l'objectif du projet <link xlink:href="http://www.trustedbsd.org">TrustedBSD</link>. Une partie
+      du travail initial a été intégré dans FreeBSD-current
+      (cap_set_proc(3)).</para>
+
+      </sect2>
+
+      </sect1>
+
+      <sect1><title>La confiance</title>
+
+      <para>Une application ne devrait jamais supposer que tout est sain
+      dans l'environnement des utilisateurs. Cela inclut (mais n'est
+      certainement pas limité à) : la saisie de l'utilisateur, les signaux,
+      les variables d'environnement, les ressources, les communication
+      inter-processus, les mmaps, le répertoire de travail du système de
+      fichiers, les descripteurs de fichier, le nombre de fichiers ouverts,
+      etc.</para>
+
+      <para>Vous ne devriez jamais supposer que vous pouvez gérer toutes les
+      formes de saisie invalide qu'un utilisateur peut entrer. Votre
+      application devrait plutôt utiliser un filtrage positif pour
+      seulement permettre un sous-ensemble spécifique que vous jugez
+      sain. Une mauvaise validation des entrées a été la cause de beaucoup
+      découvertes de bogues, spécialement avec les scripts CGI sur le web.
+       Pour les noms de fichier, vous devez être tout particulièrement attentif
+      aux chemins ("../", "/"), liens symboliques et caractères d'échappement
+      de l'interpréteur de commandes.</para>
+
+      <para>Perl possède une caractéristique tès sympathique appelée mode
+      "Taint" qui peut être utilisée pour empêcher les scripts d'utiliser
+      des données externes au programme par un moyen non sûr. Ce mode vérifiera
+      les arguments de la ligne de commandes, les variables d'environnement,
+      les informations localisées (propres aux pays), les résultats de certains
+      appels système (<function>readdir()</function>,
+      <function>readlink()</function>,
+      <function>getpwxxx()</function>) et toute entrée de fichier.</para>
+
+      </sect1>
+
+      <sect1><title>Les conditions de course</title>
+
+      <para>Une condition de course est un comportement anormal causé par
+      une dépendance inattendue sur le séquencement relatif des évènements. En
+      d'autres mots, un programmeur a supposé à tort qu'un évènement
+      particulier se passerait avant un autre.</para>
+
+      <para>Quelques causes habituelles de conditions de course sont les
+      signaux, les vérifications d'accès et les fichiers ouverts.
+      Les signaux sont des évènements asynchrones par nature aussi un soin
+      particulier doit être pris pour les utiliser.
+      Vérifier les accès avec <function>access(2)</function> puis
+      <function>open(2)</function> n'est clairement pas atomique.
+      Les utilisateurs peuvent déplacer des fichiers entre les deux appels.
+      Les applications privilégiées devraient plutôt faire un appel à
+      <function>seteuid()</function> puis appeler <function>open()</function>
+      directement. Dans le même esprit, une application devrait toujours règler
+      un umask correct avant un appel à <function>open()</function> pour
+      prévenir le besoin d'appels non valides à <function>chmod()</function>.</para>
+
+      </sect1>
+
+     </chapter>
+
+
+  </part>
+
+  <part xml:id="kernel">
+    <title>Le noyau</title>
+
+    <chapter xml:id="kernelhistory">
+      <title>Histoire du noyau Unix</title>
+
+      <para>Un peu d'histoire sur le noyau Unix/BSD, les appels système, comment
+        fonctionnent les processus, bloquer, planifier, les threads (noyau),
+        le basculement de contexte, les signaux, les interruptions, les modules, etc.</para>
+
+      <para/>
+    </chapter>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+     The FreeBSD SMP Next Generation Project
+     $Id: chapter.xml,v 1.2 2002-12-11 16:31:20 gioria Exp $
+     Original revision: 1.3
+     $FreeBSD$
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="locking">
+  <title>Notes sur le verrouillage</title>
+
+  <para><emphasis>Ce chapître est maintenu par The FreeBSD SMP Next
+    Generation Project. Envoyez leur directement les commentaires et
+    les suggestions à <link href="http://lists.FreeBSD.org/mailman/listinfo/freebsd-smp">liste de diffusion concernant le traitement symétrique multiprocesseurs (SMP) sous FreeBSD</link>.</emphasis></para>
+
+  <para>Ce document souligne le verrouillage utilisé dans le noyau FreeBSD
+    pour permettre d'utiliser du vrai multi-processeur à l'intérieur du noyau.
+    Le verrouillage peut être réalisé par différents moyens.
+    Les structures de données puvent être protégées par des mutex ou <citerefentry><refentrytitle>lockmgr</refentrytitle><manvolnum>9</manvolnum></citerefentry> verrous.
+    Quelques variables sont protégées simplement par l'utilisation continuelle d'opérations
+    atomiques pour y accéder.
+   </para>
+
+  <sect1>
+    <title>Les mutex</title>
+
+    <para>Un mutex est simplement un verrou utilisé pour garantir exclusion mutuelle.
+      Spécifiquement, un mutex ne peut appartenir qu'à une entité à la fois.
+      Si une autre entité désire obtenir un mutex déjà pris
+      , elle doit attendre jusqu'à ce que le mutex soit relaché. Dans le noyau
+      FreeBSD, les mutex appartiennent aux processus.</para>
+
+    <para>Les mutex peuvent être acquis récursivement, mais ils sont conçus
+      pour n'être pris que pendant une courte période. Spécifiquement, le détenteur
+      ne doit pas se suspendre pendant qu'il retient un mutex. Si vous avez besoin de
+      maintenir un verrouillage pendant une suspension, utilisez un <citerefentry><refentrytitle>lockmgr</refentrytitle><manvolnum>9</manvolnum></citerefentry> verrou ("lock").</para>
+
+    <para>Chaque mutex a plusieurs intérêts :</para>
+
+    <variablelist>
+	<varlistentry>
+	<term>Nom de la variable</term>
+	<listitem>
+	  <para>Nom de la variable <type>struct mtx</type> dans
+	    le code source du noyau.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>Nom logique</term>
+	<listitem>
+	  <para>Le nom du mutex lui est assigné par
+	    <function>mtx_init</function>. Ce nom est affiché dans
+	    les messages de trace KTR, témoigne des erreurs et avertissements et est
+	    utilisé pour distinguer les mutex dans les traces.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>Type</term>
+	<listitem>
+	  <para>Le type du mutex en termes de constantes nommées
+	    <constant>MTX_*</constant>.  La signification de chaque
+	    constante nommée est documentée dans <citerefentry><refentrytitle>mutex</refentrytitle><manvolnum>9</manvolnum></citerefentry>.</para>
+
+	  <variablelist>
+	    <varlistentry>
+	      <term><constant>MTX_DEF</constant></term>
+	      <listitem>
+		<para>Un mutex endormi</para>
+	      </listitem>
+	    </varlistentry>
+
+	    <varlistentry>
+	      <term><constant>MTX_SPIN</constant></term>
+	      <listitem>
+		<para>Un mutex tournant</para>
+	      </listitem>
+	    </varlistentry>
+
+	    <varlistentry>
+	      <term><constant>MTX_COLD</constant></term>
+	      <listitem>
+		<para>Ce mutex est initialisé très tard.  Toutefois, il
+		  doit être déclaré via
+		  <function>MUTEX_DECLARE</function>, et la constante nommée
+		  <constant>MTX_COLD</constant> doit être passée à
+		  <function>mtx_init</function>.</para>
+	      </listitem>
+	    </varlistentry>
+
+	    <varlistentry>
+	      <term><constant>MTX_TOPHALF</constant></term>
+	      <listitem>
+		<para>Ce mutex tournant ne désactive pas les
+		  interruptions.</para>
+	      </listitem>
+	    </varlistentry>
+
+	    <varlistentry>
+	      <term><constant>MTX_NORECURSE</constant></term>
+	      <listitem>
+		<para>Ce mutex n'a pas la permission d'être recursif.</para>
+	      </listitem>
+	    </varlistentry>
+	  </variablelist>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>Protégés</term>
+	<listitem>
+	  <para>Une liste de structures de données ou des membres de structure de données
+	    que cette entrée protège.  Pour les membres de structures de données,
+	    le nom sera de la forme <varname remap="structname">structure name</varname>.<varname remap="structfield">member name</varname>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>Fonctions dépendantes</term>
+	<listitem>
+	  <para>Les fonctions qui peuvent seulement être appelées si ce mutex est
+	    pris.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <table frame="all" colsep="1" rowsep="1" pgwide="1">
+      <title>Liste du mutex</title>
+
+      <tgroup cols="5">
+	<thead>
+	  <row>
+	    <entry>Nom de la variable</entry>
+	    <entry>Nom logique</entry>
+	    <entry>Type</entry>
+	    <entry>Protégés</entry>
+	    <entry>Fonctions dépendantes</entry>
+	  </row>
+	</thead>
+
+	<!-- The scheduler lock -->
+	<tbody>
+	  <row>
+	    <entry>sched_lock</entry>
+	    <entry><quote>sched lock</quote></entry>
+	    <entry>
+	      <constant>MTX_SPIN</constant> |
+	      <constant>MTX_COLD</constant>
+	    </entry>
+	    <entry>
+	      <varname>_gmonparam</varname>,
+	      <varname>cnt.v_swtch</varname>,
+	      <varname>cp_time</varname>,
+	      <varname>curpriority</varname>,
+	      <varname remap="structname">mtx</varname>.<varname remap="structfield">mtx_blocked</varname>,
+	      <varname remap="structname">mtx</varname>.<varname remap="structfield">mtx_contested</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_contested</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_blocked</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_flag</varname>
+		(<constant>P_PROFIL</constant> XXX,
+		 <constant>P_INMEM</constant>,
+	         <constant>P_SINTR</constant>,
+	         <constant>P_TIMEOUT</constant>,
+	         <constant>P_SWAPINREQ</constant> XXX,
+	         <constant>P_INMEN</constant> XXX),
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_nice</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_procq</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_blocked</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_estcpu</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_nativepri</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_priority</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_usrpri</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_rtprio</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_rqindex</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_stats-&gt;p_prof</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_stats-&gt;p_ru</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_stat</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_cpticks</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_iticks</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_uticks</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_sticks</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_swtime</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_slptime</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_runtime</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_pctcpu</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_oncpu</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_asleep</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_wchan</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_wmesg</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_slpq</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_vmspace</varname>
+		(XXX - in <function>statclock</function>),
+	      <varname>pscnt</varname>,
+	      <varname>slpque</varname>,
+	      <varname>itqueuebits</varname>,
+	      <varname>itqueues</varname>,
+	      <varname>rtqueuebits</varname>,
+	      <varname>rtqueues</varname>,
+	      <varname>queuebits</varname>,
+	      <varname>queues</varname>,
+	      <varname>idqueuebits</varname>,
+	      <varname>idqueues</varname>,
+	      <varname>switchtime</varname>,
+	    </entry>
+	    <entry>
+	      <function>setrunqueue</function>,
+	      <function>remrunqueue</function>,
+	      <function>mi_switch</function>,
+	      <function>chooseproc</function>,
+	      <function>schedclock</function>,
+	      <function>resetpriority</function>,
+	      <function>updatepri</function>,
+	      <function>maybe_resched</function>,
+	      <function>cpu_switch</function>,
+	      <function>cpu_throw</function>
+	    </entry>
+	  </row>
+
+	  <!-- The vm86 pcb lock -->
+	  <row>
+	    <entry>vm86pcb_lock</entry>
+	    <entry><quote>vm86pcb lock</quote></entry>
+	    <entry>
+	      <constant>MTX_DEF</constant> |
+	      <constant>MTX_COLD</constant>
+	    </entry>
+	    <entry>
+	      <varname>vm86pcb</varname>
+	    </entry>
+	    <entry>
+	      <function>vm86_bioscall</function>
+	    </entry>
+	  </row>
+
+	  <!-- Giant -->
+	  <row>
+	    <entry>Giant</entry>
+	    <entry><quote>Giant</quote></entry>
+	    <entry>
+	      <constant>MTX_DEF</constant> |
+	      <constant>MTX_COLD</constant>
+	    </entry>
+	    <entry>nearly everything</entry>
+	    <entry>lots</entry>
+	  </row>
+
+	  <!-- The callout lock -->
+	  <row>
+	    <entry>callout_lock</entry>
+	    <entry><quote>callout lock</quote></entry>
+	    <entry>
+	      <constant>MTX_SPIN</constant>
+	    </entry>
+	    <entry>
+	      <varname>callfree</varname>,
+	      <varname>callwheel</varname>,
+	      <varname>nextsoftcheck</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_itcallout</varname>,
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_slpcallout</varname>,
+	      <varname>softticks</varname>,
+	      <varname>ticks</varname>
+	    </entry>
+	    <entry>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </table>
+  </sect1>
+
+  <sect1>
+    <title>Les verrous du gestionnaire de verrous (Lock Manager)</title>
+
+    <para>Les verrous qui sont fournis par l'interface <citerefentry><refentrytitle>lockmgr</refentrytitle><manvolnum>9</manvolnum></citerefentry>
+      sont les verrous du gestionnaire de verrous. Ces verrous sont des verrous
+       lecture-écriture et peuvent être retenus par un process suspendu.
+    </para>
+
+    <table>
+      <title><citerefentry><refentrytitle>lockmgr</refentrytitle><manvolnum>9</manvolnum></citerefentry> List de verrou</title>
+
+      <tgroup cols="4">
+	<thead>
+	  <row>
+	    <entry>Nom de la variable</entry>
+	    <entry>Protégés</entry>
+	    <entry/><entry/>
+	  </row>
+	</thead>
+	<tbody>
+	  <row>
+	    <entry><varname>allproc_lock</varname></entry>
+	    <entry>
+	      <varname>allproc</varname>
+	      <varname>zombproc</varname>
+	      <varname>pidhashtbl</varname>
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_list</varname>
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_hash</varname>
+	      <varname>nextpid</varname>
+	    </entry>
+	    <entry><varname>proctree_lock</varname></entry>
+	    <entry>
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_children</varname>
+	      <varname remap="structname">proc</varname>.<varname remap="structfield">p_sibling</varname>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </table>
+  </sect1>
+
+  <sect1>
+    <title>Variables protégées atomiquement</title>
+
+    <para>Une variable protégée atomiquement est une variable spéciale qui
+      n'est pas protégé par un verrou explicite. Toutefois, tous les accès de
+      données aux variables utilisent des opérations atomiques spéciales
+      comme décrit dans <citerefentry><refentrytitle>atomic</refentrytitle><manvolnum>9</manvolnum></citerefentry>. Très peu de variables sont traitées
+      de cette façon, bien que les autres primitives de synchronisation comme
+      les mutex soient implémentées avec des variables protégées atomiquement.</para>
+
+    <itemizedlist>
+      <listitem>
+	<para><varname>astpending</varname></para>
+      </listitem>
+
+      <listitem>
+	<para><varname remap="structname">mtx</varname>.<varname remap="structfield">mtx_lock</varname></para>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+</chapter>
+
+
+  </part>
+
+  <part xml:id="memory">
+    <title>Mémoire et mémoire virtuelle</title>
+
+    <chapter xml:id="virtualmemory">
+      <title>La mémoire virtuelle</title>
+
+      <para>MV, gestion par page, gestion sur disque, allouer de la mémoire, tester les
+        fuites de mémoires, mmap, vnodes, etc.</para>
+
+      <para/>
+    </chapter>
+  </part>
+
+  <part xml:id="iosystem">
+    <title>Système E/S (Entrées/Sorties)</title>
+
+    <chapter xml:id="ufs">
+      <title>UFS</title>
+
+      <para>UFS, FFS, Ext2FS, JFS, inodes, mémoire tampon, mettre à jour les données d'un disque,
+        verrouillage, metadata, soft-updates, LFS, portalfs, procfs,
+        vnodes, partage de mémoire, objets en mémoire, TLBs, mettre en cache</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="ipc">
+    <title>Communication InterProcessus (IPC)</title>
+
+    <chapter xml:id="signals">
+      <title>Les signaux</title>
+
+      <para>Signaux, tubes, sémaphores, files de message, segments de mémoire partagée,
+        ports, prises, portes</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="networking">
+    <title>Le réseau</title>
+
+    <chapter xml:id="sockets">
+      <title>Les prises</title>
+
+      <para>Prises, bpf, IP, TCP, UDP, ICMP, OSI, ponts,
+        pare-feux, translation d'adresses (NAT), séparation de réseaux, etc</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="networkfs">
+    <title>Systèmes de fichiers en réseau</title>
+
+    <chapter xml:id="afs">
+      <title>AFS</title>
+
+      <para>AFS, NFS, SANs etc]</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="terminal">
+    <title>Gestion du terminal</title>
+
+    <chapter xml:id="syscons">
+      <title>Syscons</title>
+
+      <para>Syscons, tty, PCVT, console en liaison série, économiseurs d'écran,
+        etc</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="sound">
+    <title>Le son</title>
+
+    <chapter xml:id="oss">
+      <title>OSS</title>
+
+      <para>OSS, formes d'ondes, etc</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="devicedrivers">
+    <title>Pilotes de périphérique</title>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $FreeBSD$
+     $Id: chapter.xml,v 1.2 2003-01-12 12:16:07 blackend Exp $
+     Original revision: 1.5
+
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="driverbasics">
+  <title>Ecrire des pilotes de périphériques pour FreeBSD</title>
+
+  <para>Ce chapitre a été écrit par Murray Stokely avec des sélections
+    depuis une variété de codes source inclus dans la page de manuel d'<citerefentry><refentrytitle>intro</refentrytitle><manvolnum>4</manvolnum></citerefentry> de Joerg
+    Wunsch.</para>
+
+  <sect1>
+    <title>Introduction</title>
+    <para>Ce chapitre fournit une brève introduction sur l'écriture
+      de pilotes de périphériques pour FreeBSD.
+      Un périphérique, dans ce contexte, est un terme utilisé
+      le plus souvent pour tout ce qui est lié au matériel et qui dépend
+      du système, comme les disques, imprimantes, ou un écran avec son clavier.
+      Un pilote de périphérique est un composant logiciel du système
+      d'exploitation qui contrôle un périphérique spécifique.  Il y a aussi
+      ce que l'on appelle les pseudo-périphériques (“pseudo-devices”) où un pilote
+      de périphérique émule le comportement d'un périphérique dans un logiciel sans
+      matériel particulier sous-jacent. Les pilotes de périphériques peuvent être compilés
+      dans le système statiquement ou chargé à la demande via l'éditeur de liens dynamique du
+      noyau “kld”.</para>
+
+    <para>La plupart des périphériques dans un système d'exploitation de type Unix
+      sont accessibles au travers de fichiers spéciaux de périphérique (device-nodes), appelés parfois
+      fichiers spéciaux. Ces fichiers sont habituellement stockés dans le répertoire
+      <filename>/dev</filename> de la hiérarchie du système de fichiers. Jusqu'à ce que
+      devfs soit totalement intégré dans FreeBSD, chaque fichier spécial de périphérique doit être
+      créé statiquement et indépendamment de l'existence du pilote de périphérique associé.
+      La plupart des fichiers spéciaux de périphérique du système sont créés en exécutant <command>MAKEDEV</command>.</para>
+
+    <para>Les pilotes de périphérique peuvent être en gros séparés en deux catégories;
+      les pilotes de périphérique en mode caractère et les pilotes de périphériques réseau.</para>
+
+  </sect1>
+
+  <sect1>
+    <title>L'éditeur de liens dynamiques du noyau - KLD</title>
+    <!-- Traduction &agrave; vérifier
+    Dynamic Kernel Linker Facility - KLD</title> -->
+
+    <para>L'interface kld permet aux administrateurs système d'ajouter
+      et d'enlever dynamiquement une fonctionnalité à un système en marche.
+      Cela permet aux développeurs de pilote de périphérique de charger leurs nouveaux changements
+      dans le noyau en fonctionnement sans redémarrer constamment pour tester ces derniers.
+    </para>
+
+    <para>L'interface kld est utilisé au travers des commandes d'administrateur suivantes :
+
+    <itemizedlist>
+      <listitem><simpara><command>kldload</command> - charge un nouveau module dans le noyau</simpara></listitem>
+      <listitem><simpara><command>kldunload</command> - décharge un module du noyau</simpara></listitem>
+      <listitem><simpara><command>kldstat</command> - liste les modules chargés dans le noyau</simpara></listitem>
+    </itemizedlist>
+    </para>
+
+    <para>Structure squelettique d'un module de noyau</para>
+
+<programlisting>/*
+ * Squelette KLD
+ * Inspiré de l'article d'Andrew Reiter paru sur Daemonnews
+ */
+
+#include &lt;sys/types.h&gt;
+#include &lt;sys/module.h&gt;
+#include &lt;sys/systm.h&gt;  /* uprintf */
+#include &lt;sys/errno.h&gt;
+#include &lt;sys/param.h&gt;  /* defines utilise dans kernel.h */
+#include &lt;sys/kernel.h&gt; /* types utilise dans le module d'initialisation */
+
+/*
+ * charge le gestionnaire quit traite du chargement et déchargement d'un KLD.
+ */
+
+static int
+skel_loader(struct module *m, int what, void *arg)
+{
+  int err = 0;
+
+  switch (what) {
+  case MOD_LOAD:                /* kldload */
+    <!-- Désolé, les accents n'existent pas dans la console alors je ne les ai pas mis l&agrave; non plus
+    -->
+    uprintf("Skeleton KLD charge.\n");
+    break;
+  case MOD_UNLOAD:
+    uprintf("Skeleton KLD decharge.\n");
+    break;
+  default:
+    err = EINVAL;
+    break;
+  }
+  return(err);
+}
+
+/* Declare ce module au reste du noyau */
+
+DECLARE_MODULE(skeleton, skel_loader, SI_SUB_KLD, SI_ORDER_ANY);</programlisting>
+
+
+    <sect2>
+      <title>Makefile</title>
+
+      <para>FreeBSD fournit un fichier d'inclusion "makefile" que vous pouvez utiliser pour
+	compiler rapidement votre ajout au noyau.</para>
+
+      <programlisting>SRCS=skeleton.c
+KMOD=skeleton
+
+.include &lt;bsd.kmod.mk&gt;</programlisting>
+
+      <para>Lancer simplement la commande <command>make</command> avec ce fichier Makefile
+        créera un fichier <filename>skeleton.ko</filename> qui peut
+        être chargé dans votre système en tapant :
+<screen> <prompt>#</prompt>
+	  kldload -v ./skeleton.ko
+</screen>
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Accéder au pilote d'un périphérique</title>
+
+    <para>Unix fournit un ensemble d'appels système communs utilisable par
+      les applications de l'utilisateur. Les couches supérieures du noyau renvoient
+      ces appels au pilote de périphérique correspondant quand un utilisateur
+      accède au fichier spécial de périphérique.  Le script <command>/dev/MAKEDEV</command>
+      crée la plupart des fichiers spéciaux de périphérique pour votre système mais si vous
+      faites votre propre développement de pilote, il peut être nécessaire de créer
+      vos propres fichiers spéciaux de périphérique avec la commande <command>mknod</command>
+    </para>
+
+    <sect2>
+      <title>Créer des fichiers spéciaux de périphériques statiques</title>
+
+      <para>La commande <command>mknod</command> nécessite quatre
+	arguments pou créer un fichier spécial de périphérique.  Vous devez spécifier le nom
+	de ce fichier spécial de périphérique, le type de périphérique, le numéro majeur
+	et le numéro mineur du périphérique.</para>
+    </sect2>
+
+    <sect2>
+      <title>Les fichiers spéciaux de périphérique dynamiques</title>
+
+      <para>Le périphérique système de fichiers, ou devfs, fournit l'accès à
+	l'espace des noms des périphériques du noyau dans l'espace du système de fichiers global.
+	Ceci élimine les problèmes de pilote sans fichier spécial statique, ou de fichier spécial sans pilote installé.
+	Devfs est toujours un travail en cours mais il fonctionne déjà assez bien.</para>
+    </sect2>
+
+  </sect1>
+
+  <sect1>
+    <title>Les périphériques caractères</title>
+
+    <para>Un pilote de périphérique caractère est un pilote qui transfère les données
+      directement au processus utilisateur ou vers celui-ci. Il s'agit du plus commun
+      des types de pilote de périphérique et il y en a plein d'exemples simples dans
+      l'arbre des sources.</para>
+
+    <para>Cet exemple simple de pseudo-périphérique enregistre toutes les valeurs
+      que vous lui avez écrites et peut vous les renvoyer quand vous les lui
+      demandez.</para>
+
+<programlisting>/*
+ * un simple pseudo-périphérique `echo' KLD
+ *
+ * Murray Stokely
+ */
+
+#define MIN(a,b) (((a) &lt; (b)) ? (a) : (b))
+
+#include &lt;sys/types.h&gt;
+#include &lt;sys/module.h&gt;
+#include &lt;sys/systm.h&gt; /* uprintf */
+#include &lt;sys/errno.h&gt;
+#include &lt;sys/param.h&gt;  /* defines utilises dans kernel.h */
+#include &lt;sys/kernel.h&gt; /* types utilises dans me module d'initialisation */
+#include &lt;sys/conf.h&gt;   /* cdevsw struct */
+#include &lt;sys/uio.h&gt;    /* uio struct */
+#include &lt;sys/malloc.h&gt;
+
+#define BUFFERSIZE 256
+
+/* Prototypes des fonctions */
+d_open_t      echo_open;
+d_close_t     echo_close;
+d_read_t      echo_read;
+d_write_t     echo_write;
+
+/* Points d'entrée du périphérique Caractère */
+static struct cdevsw echo_cdevsw = {
+  echo_open,
+  echo_close,
+  echo_read,
+  echo_write,
+  noioctl,
+  nopoll,
+  nommap,
+  nostrategy,
+  "echo",
+  33,                   /* reserve pour lkms - /usr/src/sys/conf/majors */
+  nodump,
+  nopsize,
+  D_TTY,
+  -1
+};
+
+typedef struct s_echo {
+  char msg[BUFFERSIZE];
+  int len;
+} t_echo;
+
+/* variables */
+static dev_t sdev;
+static int len;
+static int count;
+static t_echo *echomsg;
+
+MALLOC_DECLARE(M_ECHOBUF);
+MALLOC_DEFINE(M_ECHOBUF, "echobuffer", "cache pour le module echo");
+
+/*
+ * Cette fonction est appelee par les appels systeme kld[un]load(2) pour
+ * determiner quelles actions doivent etre faites quand le
+ * module est charge ou decharge
+ */
+
+static int
+echo_loader(struct module *m, int what, void *arg)
+{
+  int err = 0;
+
+  switch (what) {
+  case MOD_LOAD:                /* kldload */
+    sdev = make_dev(<literal>&amp;</literal>echo_cdevsw,
+		    0,
+		    UID_ROOT,
+		    GID_WHEEL,
+		    0600,
+		    "echo");
+    /* aloocation de mémoire noyau pour l'utilisation de ce module */
+    /*    malloc(256,M_ECHOBUF,M_WAITOK); */
+    MALLOC(echomsg, t_echo *, sizeof(t_echo), M_ECHOBUF, M_WAITOK);
+    printf("Peripherique Echo charge.\n");
+    break;
+  case MOD_UNLOAD:
+    destroy_dev(sdev);
+    FREE(echomsg,M_ECHOBUF);
+    printf("Peripherique Echo decharge.\n");
+    break;
+  default:
+    err = EINVAL;
+    break;
+  }
+  return(err);
+}
+
+int
+echo_open(dev_t dev, int oflags, int devtype, struct proc *p)
+{
+  int err = 0;
+
+  uprintf("Peripherique \"echo\" ouvert avec succes.\n");
+  return(err);
+}
+
+int
+echo_close(dev_t dev, int fflag, int devtype, struct proc *p)
+{
+  uprintf("Fermeture du peripherique \"echo.\"\n");
+  return(0);
+}
+
+/*
+ * La fonction read prend juste comme parametre
+ * le cache qui a ete sauve par l'appel à echo_write()
+ * et le retourne a l'utilisateur pour acces.
+ * uio(9)
+ */
+
+int
+echo_read(dev_t dev, struct uio *uio, int ioflag)
+{
+  int err = 0;
+  int amt;
+
+  /* De quelle taille est cette operation read ?  Aussi grande que l'utilisateur le veut,
+     ou aussi grande que les donnees restantes */
+  amt = MIN(uio-&gt;uio_resid, (echomsg-&gt;len - uio-&gt;uio_offset &gt; 0) ? echomsg-&gt;len - uio-&gt;uio_offset : 0);
+  if ((err = uiomove(echomsg-&gt;msg + uio-&gt;uio_offset,amt,uio)) != 0) {
+    uprintf("uiomove echoue!\n");
+  }
+
+  return err;
+}
+
+/*
+ * echo_write prend un caractere en entree et le sauve
+ * dans le cache pour une utilisation ulterieure.
+ */
+
+int
+echo_write(dev_t dev, struct uio *uio, int ioflag)
+{
+  int err = 0;
+
+  /* Copie la chaine d'entree de la memoire de l'utilisateur a la memoire du noyau*/
+  err = copyin(uio-&gt;uio_iov-&gt;iov_base, echomsg-&gt;msg, MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE));
+
+  /* Maintenant nous avons besoin de terminer la chaine par NULL */
+  *(echomsg-&gt;msg + MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE)) = 0;
+  /* Enregistre la taille */
+  echomsg-&gt;len = MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE);
+
+  if (err != 0) {
+    uprintf("Ecriture echouee: mauvaise adresse!\n");
+  }
+
+  count++;
+  return(err);
+}
+
+DEV_MODULE(echo,echo_loader,NULL);</programlisting>
+
+    <para>Pour installer ce pilote, vous devrez d'abord créer un fichier spécial dans
+      votre système de fichiers avec une commande comme : </para>
+
+<screen>
+	<prompt>#</prompt> mknod /dev/echo c 33 0
+</screen>
+
+    <para>Avec ce pilote chargé, vous devriez maintenant être capable de taper
+      quelque chose comme :</para>
+
+<screen>
+        <prompt>#</prompt> echo -n "Test Donnees" &gt; /dev/echo
+        <prompt>#</prompt> cat /dev/echo
+	Test Donnees
+</screen>
+
+    <para>Périphériques réels dans le chapitre suivant.</para>
+
+    <para>Informations additionnelles
+    <itemizedlist>
+      <listitem><simpara><link xlink:href="http://www.daemonnews.org/200010/blueprints.html">Dynamic
+	Kernel Linker (KLD) Facility Programming Tutorial</link> -
+	<link xlink:href="http://www.daemonnews.org">Daemonnews</link> October 2000</simpara></listitem>
+      <listitem><simpara><link xlink:href="http://www.daemonnews.org/200007/newbus-intro.html">How
+	to Write Kernel Drivers with NEWBUS</link> - <link xlink:href="http://www.daemonnews.org">Daemonnews</link> July
+	2000</simpara></listitem>
+    </itemizedlist>
+    </para>
+  </sect1>
+
+  <sect1>
+    <title>Pilotes Réseau</title>
+
+    <para>Les pilotes pour périphérique réseau n'utilisent pas les fichiers spéciaux pour
+      pouvoir être accessibles.  Leur sélection est basée sur d'autres décisions
+      faites à l'intérieur du noyau et plutôt que d'appeler open(), l'utilisation
+      d'un périphérique réseau se fait généralement en se servant de l'appel système
+      <citerefentry><refentrytitle>socket</refentrytitle><manvolnum>2</manvolnum></citerefentry>.</para>
+
+    <para>man ifnet(), périphérique "en boucle", drivers de Bill Paul,
+      etc..</para>
+
+  </sect1>
+
+</chapter>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $Id: chapter.xml,v 1.1 2002-02-14 14:25:02 gioria Exp $
+     Original revision: 1.3
+     $FreeBSD$
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="pci">
+  <title>Les périphériques PCI</title>
+
+  <para>Ce chapître traitera des mécanismes de FreeBSD pour
+    écrire un pilote de périphérique pour un périphérique sur
+    bus PCI.</para>
+
+  <sect1>
+    <title>Rechercher et rattacher</title>
+
+    <para>Informations ici sur comment le code du bus PCI fait un cycle
+      sur les périphériques non rattachés et voir si le nouvellement chargé
+      pilote de périphérique chargeable dans le noyau (kld)
+       sera rattaché à l'un d'eux.</para>
+
+<programlisting>/*
+ * Simple KLD pour jouer avec les fonctions PCI.
+ *
+ * Murray Stokely
+ */
+
+#define MIN(a,b) (((a) &lt; (b)) ? (a) : (b))
+
+#include &lt;sys/types.h&gt;
+#include &lt;sys/module.h&gt;
+#include &lt;sys/systm.h&gt;  /* uprintf */
+#include &lt;sys/errno.h&gt;
+#include &lt;sys/param.h&gt;  /* defines used in kernel.h */
+#include &lt;sys/kernel.h&gt; /* types used in module initialization */
+#include &lt;sys/conf.h&gt;   /* cdevsw struct */
+#include &lt;sys/uio.h&gt;    /* uio struct */
+#include &lt;sys/malloc.h&gt;
+#include &lt;sys/bus.h&gt;	/* structs, prototypes for pci bus stuff */
+
+#include &lt;pci/pcivar.h&gt; /* For get_pci macros! */
+
+/* Prototypes des fonctions */
+d_open_t      mypci_open;
+d_close_t     mypci_close;
+d_read_t      mypci_read;
+d_write_t     mypci_write;
+
+/* Points d'entrée du pilote de périphérique caractère */
+
+static struct cdevsw mypci_cdevsw = {
+  mypci_open,
+  mypci_close,
+  mypci_read,
+  mypci_write,
+  noioctl,
+  nopoll,
+  nommap,
+  nostrategy,
+  "mypci",
+  36,                   /* reserved for lkms - /usr/src/sys/conf/majors */
+  nodump,
+  nopsize,
+  D_TTY,
+  -1
+};
+
+/* variables */
+static dev_t sdev;
+
+/* Nous sommes plus interresses dans la recherche/attachement
+que dans l'ouverture/fermeture/lecture/ecriture a ce point */
+
+int
+mypci_open(dev_t dev, int oflags, int devtype, struct proc *p)
+{
+  int err = 0;
+
+  uprintf("Peripherique \"monpci\" ouvert avec succes.\n");
+  return(err);
+}
+
+int
+mypci_close(dev_t dev, int fflag, int devtype, struct proc *p)
+{
+  int err=0;
+
+  uprintf("Peripherique \"monpci.\ "ferme\n");
+  return(err);
+}
+
+int
+mypci_read(dev_t dev, struct uio *uio, int ioflag)
+{
+  int err = 0;
+
+  uprintf("lecture dans monpci!\n");
+  return err;
+}
+
+int
+mypci_write(dev_t dev, struct uio *uio, int ioflag)
+{
+  int err = 0;
+
+  uprintf("Ecriture dans monpci!\n");
+  return(err);
+}
+
+/* PCI Support Functions */
+
+/*
+ * Retourne la chaine d'identification si ce peripherique est le notre
+ */
+static int
+mypci_probe(device_t dev)
+{
+  uprintf("MonPCI Probe\n"
+	  "ID Fabricant: 0x%x\n"
+	  "ID Peripherique : 0x%x\n",pci_get_vendor(dev),pci_get_device(dev));
+
+  if (pci_get_vendor(dev) == 0x11c1) {
+    uprintf("Nous avons le WinModem, recherche reussi!\n");
+    return 0;
+  }
+
+  return ENXIO;
+}
+
+/* La fonction Attach n'est appelée que si
+la recherche est reussie*/
+
+static int
+mypci_attach(device_t dev)
+{
+  uprintf("Rattachement de MonPCI pour: ID Peripherique: 0x%x\n",pci_get_vendor(dev));
+  sdev = make_dev(<literal>&amp;</literal>mypci_cdevsw,
+		  0,
+		  UID_ROOT,
+		  GID_WHEEL,
+		  0600,
+		  "monpci");
+  uprintf("Peripherique Monpci charge.\n");
+  return ENXIO;
+}
+
+/* Detach le peripherique. */
+
+static int
+mypci_detach(device_t dev)
+{
+  uprintf("Monpci detache!\n");
+  return 0;
+}
+
+/* Appele lors de l'arret du systeme apres sync. */
+
+static int
+mypci_shutdown(device_t dev)
+{
+  uprintf("Monpci arrete!\n");
+  return 0;
+}
+
+/*
+ * routine de suspension du peripherique
+ */
+static int
+mypci_suspend(device_t dev)
+{
+  uprintf("Monpci suspendu!\n");
+  return 0;
+}
+
+/*
+ * routine de reprise du peripherique
+ */
+
+static int
+mypci_resume(device_t dev)
+{
+  uprintf("Monpci resume!\n");
+  return 0;
+}
+
+static device_method_t mypci_methods[] = {
+	/* Interface Peripherique*/
+	DEVMETHOD(device_probe,		mypci_probe),
+	DEVMETHOD(device_attach,	mypci_attach),
+	DEVMETHOD(device_detach,	mypci_detach),
+	DEVMETHOD(device_shutdown,	mypci_shutdown),
+	DEVMETHOD(device_suspend,	mypci_suspend),
+	DEVMETHOD(device_resume,	mypci_resume),
+
+	{ 0, 0 }
+};
+
+static driver_t mypci_driver = {
+	"monpci",
+	mypci_methods,
+	0,
+	/*	sizeof(struct mypci_softc), */
+};
+
+static devclass_t mypci_devclass;
+
+DRIVER_MODULE(mypci, pci, mypci_driver, mypci_devclass, 0, 0);</programlisting>
+
+    <para>Informations complémentaires
+    <itemizedlist>
+      <listitem><simpara><link xlink:href="http://www.pcisig.org">PCI
+	Special Interest Group</link></simpara></listitem>
+
+      <listitem><simpara>PCI System Architecture, Fourth Edition by
+	Tom Shanley, et al.</simpara></listitem>
+
+    </itemizedlist>
+    </para>
+  </sect1>
+
+  <sect1>
+    <title>Les ressources du bus</title>
+
+    <para>FreeBSD fournit un mécanisme orienté objet pour demander
+      des ressources du bus parent.  Pratiquement tous les périphériques
+      seront un fils membre d'un type de bus (PCI, ISA, USB, SCSI, etc)
+      et ces périphériques nécessite des ressources issues de leur bus parent
+      (comme des segments de mémoire, des interruptions or des canaux DMA).</para>
+
+    <sect2>
+      <title>Registres d'adresse de base</title>
+
+      <para>Pour faire de particulièrement utile avec un périphérique PCI,
+      vous aurez besoin d'obtenir les <emphasis>registres d'adresse de base</emphasis>
+       (Base Address Registers ou BARs) de l'espace de configuration PCI.
+      Les détails spécifiques au PCI sur l'obtention du registre d'adresse de base
+      sont masqués dans la fonction <function>bus_alloc_resource()</function>.</para>
+
+      <para>Par exemple, un pilote typique aura sa fonction <function>attach()</function>
+      similaire à ceci : </para>
+
+<programlisting>    sc-&gt;bar0id = 0x10;
+    sc-&gt;bar0res = bus_alloc_resource(dev, SYS_RES_MEMORY, &amp;(sc-&gt;bar0id),
+				  0, ~0, 1, RF_ACTIVE);
+    if (sc-&gt;bar0res == NULL) {
+        uprintf("Allocation memoire du registre PCI de base 0 echouee!\n");
+        error = ENXIO;
+        goto fail1;
+    }
+
+    sc-&gt;bar1id = 0x14;
+    sc-&gt;bar1res = bus_alloc_resource(dev, SYS_RES_MEMORY, &amp;(sc-&gt;bar1id),
+				  0, ~0, 1, RF_ACTIVE);
+    if (sc-&gt;bar1res == NULL) {
+        uprintf("Allocation memoire du registre PCI de base 1 echouee!\n");
+        error =  ENXIO;
+        goto fail2;
+    }
+    sc-&gt;bar0_bt = rman_get_bustag(sc-&gt;bar0res);
+    sc-&gt;bar0_bh = rman_get_bushandle(sc-&gt;bar0res);
+    sc-&gt;bar1_bt = rman_get_bustag(sc-&gt;bar1res);
+    sc-&gt;bar1_bh = rman_get_bushandle(sc-&gt;bar1res);
+
+</programlisting>
+
+      <para>Des références pour chaque registre d'adresse de base sont gardées
+      dans la structure <varname remap="structname">softc</varname> afin qu'elle puisse
+      être utilisée pour écrire dans le périphérique plus tard.</para>
+
+      <para>Ces références peuvent alors être utilisées pour lire ou écrire
+      	dans les registres du périphérique avec les fonctions <function>bus_space_*</function>.
+      	Par exemple, un pilote peut contenir une fonction raccourci
+        pour lire dans un registre spécifique à une carte comme cela :
+        </para>
+
+<programlisting>uint16_t
+board_read(struct ni_softc *sc, uint16_t address) {
+    return bus_space_read_2(sc-&gt;bar1_bt, sc-&gt;bar1_bh, address);
+}
+</programlisting>
+
+      <para>De façon similaire, une autre peut écrire dans les registres avec : </para>
+
+<programlisting>void
+board_write(struct ni_softc *sc, uint16_t address, uint16_t value) {
+    bus_space_write_2(sc-&gt;bar1_bt, sc-&gt;bar1_bh, address, value);
+}
+</programlisting>
+
+      <para>Ces fonctions existent en versions 8bit, 16bit et 32bit
+        et vous devriez utiliser
+        <function>bus_space_{read|write}_{1|2|4}</function>
+        en conséquence.</para>
+
+    </sect2>
+    <sect2>
+      <title>Les interruptions</title>
+
+      <para>Les interruptions sont alloués à partir du code orienté objet du
+         bus de façon similaire aux ressources mémoire. D'abord une ressource
+         IRQ doit être allouée à partir du bus parent, et alors le
+        gestionnaire d'interruption doit être règlé pour traiter cet IRQ.</para>
+
+      <para>A nouveau, un exemple de fonction
+        <function>attach()</function> en dit plusqu'un long discours.</para>
+
+<programlisting>/* Recupere la ressource IRQ */
+
+    sc-&gt;irqid = 0x0;
+    sc-&gt;irqres = bus_alloc_resource(dev, SYS_RES_IRQ, &amp;(sc-&gt;irqid),
+				  0, ~0, 1, RF_SHAREABLE | RF_ACTIVE);
+    if (sc-&gt;irqres == NULL) {
+	uprintf("Allocation IRQ echouee!\n");
+	error = ENXIO;
+	goto fail3;
+    }
+
+    /* Maitnenant nous choisissons notre gestionnaire d'interruption */
+
+    error = bus_setup_intr(dev, sc-&gt;irqres, INTR_TYPE_MISC,
+			   my_handler, sc, &amp;(sc-&gt;handler));
+    if (error) {
+	printf("Ne peut regler l'IRQ\n");
+	goto fail4;
+    }
+
+    sc-&gt;irq_bt = rman_get_bustag(sc-&gt;irqres);
+    sc-&gt;irq_bh = rman_get_bushandle(sc-&gt;irqres);
+</programlisting>
+
+    </sect2>
+
+    <sect2>
+      <title>DMA</title>
+      <para>Sur les PC, les périphériques qui veulent utiliser la gestion de
+      bus DMA doivent travailler avec des adresses physiques. C'est un problème
+      puisque FreeBSD utilise une mémoire virtuelle et travaille presque
+      exclusivement avec des adresses virtuelles. Heureusement, il y a une
+      fonction <function>vtophys()</function> pour nous aider.</para>
+
+<programlisting>#include &lt;vm/vm.h&gt;
+#include &lt;vm/pmap.h&gt;
+
+#define vtophys(virtual_address) (...)
+</programlisting>
+
+      <para>La solution est toutefois un peu différente sur Alpha, et
+        ce que nous voulons réellement est une fonction appelée
+        <function>vtobus()</function>.</para>
+
+<programlisting>#if defined(__alpha__)
+#define vtobus(va)      alpha_XXX_dmamap((vm_offset_t)va)
+#else
+#define vtobus(va)      vtophys(va)
+#endif
+</programlisting>
+
+    </sect2>
+
+    <sect2>
+      <title>Désallouer les resources</title>
+
+      <para>Il est très important de désallouer toutes les ressources
+        qui furent allouées pendant <function>attach()</function>.
+        Unsoin tout particulier doit être pris pour désallouer
+        les bonnes choses même lors d'un échec afin que le système reste
+        utilisable lorsque votre driver meurt.</para>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $Id: chapter.xml,v 1.1 2002-02-14 14:25:02 gioria Exp $
+     Original revision: 1.3
+     $FreeBSD$
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="scsi">
+
+  <title>Contrôleurs SCSI Common Access Method (CAM) **</title>
+  <sect1><title>En cours de traduction</title>
+  <para>En cours de traduction</para>
+  </sect1>
+</chapter>
+
+    
+<!--
+     The FreeBSD Documentation Project
+     The FreeBSD French Documentation Project
+
+     $Id: chapter.xml,v 1.1 2002-02-14 14:25:03 gioria Exp $
+     Original revision: 1.1
+     $FreeBSD$
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="usb">
+  <title>Périphériques USB ***</title>
+
+  <para><emphasis>Ce chapître a été écrit par Nick Hibma. Les modifications pour le
+  manuel par Murray Stokely.</emphasis></para>
+
+  <sect1>
+    <title>Introduction</title>
+    <para>Chapître à traduire.</para>
+  </sect1>
+
+</chapter>
+
+
+    <chapter xml:id="newbus">
+      <title>NewBus</title>
+
+      <para>Ce chapître traitera de l'architecture NewBus de FreeBSD.</para>
+    </chapter>
+
+  </part>
+
+  <part xml:id="architectures">
+    <title>Architectures</title>
+
+    <chapter xml:id="ia32">
+      <title>IA-32</title>
+
+      <para>Traite des spécificités de l'architecture x86 sous FreeBSD.</para>
+
+    </chapter>
+
+    <chapter xml:id="alpha">
+      <title>Alpha</title>
+
+      <para>Traite des spécificités de l'architecture Alpha sous FreeBSD.</para>
+
+      <para>Explication des erreurs d'alignements, comment les réparer,
+      comment les ignorer.</para>
+
+      <para>Exemple de code assembleur pour FreeBSD/alpha.</para>
+    </chapter>
+
+    <chapter xml:id="ia64">
+      <title>IA-64</title>
+
+      <para>Traite des spécificités de l'architecture IA-64 sous FreeBSD.</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="debuggingpart">
+    <title>Déverminage</title>
+
+    <chapter xml:id="truss">
+      <title>Truss</title>
+
+      <para>diverses descriptions sur les méthodes de déverminage de certains aspects
+       du système utilisant truss, ktrace, gdb, kgdb, etc</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="compatibility">
+    <title>Les couches de compatibilité</title>
+
+    <chapter xml:id="linux">
+      <title>Linux</title>
+
+      <para>Linux, SVR4, etc</para>
+
+    </chapter>
+  </part>
+
+  <part xml:id="appendices">
+    <title>Bibligraphie</title>
+
+      <bibliography>
+
+      <biblioentry xml:id="COD" xreflabel="1">
+        <authorgroup>
+          <author><personname><firstname>Dave</firstname><othername role="MI">A</othername><surname>Patterson</surname></personname></author>
+          <author><personname><firstname>John</firstname><othername role="MI">L</othername><surname>Hennessy</surname></personname></author>
+        </authorgroup>
+        <copyright><year>1998</year><holder>Morgan Kaufmann Publishers,
+        Inc.</holder></copyright>
+        <biblioid class="isbn">1-55860-428-6</biblioid>
+        <publisher>
+          <publishername>Morgan Kaufmann Publishers, Inc.</publishername>
+        </publisher>
+        <citetitle>Computer Organization and Design</citetitle>
+        <subtitle>The Hardware / Software Interface</subtitle>
+        <pagenums>1-2</pagenums>
+      </biblioentry>
+
+      <biblioentry xreflabel="2">
+        <authorgroup>
+          <author><personname><firstname>W.</firstname><othername role="Middle">Richard</othername><surname>Stevens</surname></personname></author>
+        </authorgroup>
+        <copyright><year>1993</year><holder>Addison Wesley Longman,
+        Inc.</holder></copyright>
+        <biblioid class="isbn">0-201-56317-7</biblioid>
+        <publisher>
+          <publishername>Addison Wesley Longman, Inc.</publishername>
+        </publisher>
+        <citetitle>Advanced Programming in the Unix Environment</citetitle>
+        <pagenums>1-2</pagenums>
+      </biblioentry>
+
+      <biblioentry xreflabel="3">
+        <authorgroup>
+          <author><personname><firstname>Marshall</firstname><othername role="Middle">Kirk</othername><surname>McKusick</surname></personname></author>
+          <author><personname><firstname>Keith</firstname><surname>Bostic</surname></personname></author>
+          <author><personname><firstname>Michael</firstname><othername role="MI">J</othername><surname>Karels</surname></personname></author>
+          <author><personname><firstname>John</firstname><othername role="MI">S</othername><surname>Quarterman</surname></personname></author>
+        </authorgroup>
+        <copyright><year>1996</year><holder>Addison-Wesley Publishing Company,
+        Inc.</holder></copyright>
+        <biblioid class="isbn">0-201-54979-4</biblioid>
+        <publisher>
+          <publishername>Addison-Wesley Publishing Company, Inc.</publishername>
+        </publisher>
+        <citetitle>The Design and Implementation of the 4.4 BSD Operating System</citetitle>
+        <pagenums>1-2</pagenums>
+      </biblioentry>
+
+      <biblioentry xml:id="Phrack" xreflabel="4">
+        <authorgroup>
+          <author><personname><firstname>Aleph</firstname><surname>One</surname></personname></author>
+        </authorgroup>
+        <citetitle>Phrack 49; "Smashing the Stack for Fun and Profit"</citetitle>
+      </biblioentry>
+
+      <biblioentry xml:id="StackGuard" xreflabel="5">
+        <authorgroup>
+          <author><personname><firstname>Chrispin</firstname><surname>Cowan</surname></personname></author>
+          <author><personname><firstname>Calton</firstname><surname>Pu</surname></personname></author>
+          <author><personname><firstname>Dave</firstname><surname>Maier</surname></personname></author>
+        </authorgroup>
+        <citetitle>StackGuard; Automatic Adaptive Detection and Prevention of
+        Buffer-Overflow Attacks</citetitle>
+      </biblioentry>
+
+      <biblioentry xml:id="OpenBSD" xreflabel="6">
+        <authorgroup>
+	  <author><personname><firstname>Todd</firstname><surname>Miller</surname></personname></author>
+	  <author><personname><firstname>Theo</firstname><surname>de Raadt</surname></personname></author>
+	</authorgroup>
+	<citetitle>strlcpy and strlcat -- consistent, safe string copy and
+	concatenation.</citetitle>
+      </biblioentry>
+
+      </bibliography>
+
+  </part>
+
+</book>

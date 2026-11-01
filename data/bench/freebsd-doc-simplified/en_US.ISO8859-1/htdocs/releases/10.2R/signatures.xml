@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD 10.2 Release Checksum Signatures</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+  </head>
+
+  <body class="navinclude.download">
+
+    <h1>Signed Checksum Signatures</h1>
+
+    <p>This page contains links to the PGP-signed checksum files for
+      FreeBSD 10.2.</p>
+
+    <p>Please note, the <tt>MD5</tt> checksums are provided to quickly
+      test for image corruption during download.  The <tt>MD5</tt>
+      checksums alone should <em>not</em> be used to fully verify the
+      images.  The <tt>SHA256</tt> checksums should always be used to
+      fully verify the image.</p>
+
+    <h1>Installation Image Checksums</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>Architecture</th>
+	  <th><tt>SHA256</tt></th>
+	  <th><tt>MD5</tt></th>
+	</tr>
+	<tr>
+	  <td>amd64 (x86_64)</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-amd64.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-amd64.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>i386</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-i386.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-i386.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>ia64</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-ia64.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-ia64.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>powerpc</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-powerpc.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-powerpc.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>powerpc64</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-powerpc-powerpc64.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-powerpc-powerpc64.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>sparc64</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-sparc64.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-sparc64.asc">MD5</a></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <br/>
+
+    <h1>Virtual Machine Image Checksums</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>Architecture</th>
+	  <th><tt>SHA256</tt></th>
+	  <th><tt>MD5</tt></th>
+	</tr>
+	<tr>
+	  <td>amd64 (x86_64)</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-amd64-vm.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-amd64-vm.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>i386</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-i386-vm.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-i386-vm.asc">MD5</a></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <br/>
+
+    <h1>SD Card Image Checksums</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>Board Name</th>
+	  <th><tt>SHA256</tt></th>
+	  <th><tt>MD5</tt></th>
+	</tr>
+	<tr>
+	  <td>BEAGLEBONE</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-BEAGLEBONE.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-BEAGLEBONE.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>CUBOX/HUMMINGBOARD</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-CUBOX-HUMMINGBOARD.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-CUBOX-HUMMINGBOARD.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>GUMSTIX</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-GUMSTIX.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-GUMSTIX.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>PANDABOARD</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-PANDABOARD.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-PANDABOARD.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>RPI-B</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-RPI-B.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-RPI-B.asc">MD5</a></td>
+	</tr>
+	<tr>
+	  <td>WANDBOARD</td>
+	  <td><a href="./releases/10.2R/CHECKSUM.SHA256-FreeBSD-10.2-RELEASE-arm-armv6-WANDBOARD.asc">SHA256</a></td>
+	  <td><a href="./releases/10.2R/CHECKSUM.MD5-FreeBSD-10.2-RELEASE-arm-armv6-WANDBOARD.asc">MD5</a></td>
+	</tr>
+      </tbody>
+    </table>
+  </body>
+</html>

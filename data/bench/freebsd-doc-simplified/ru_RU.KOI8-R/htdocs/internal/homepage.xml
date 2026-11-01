@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Russian Documentation Project -->
+<!-- $FreeBSDru: frdp/www/ru/internal/homepage.xml,v 1.6 2006/02/10 12:57:39 marck Exp $ -->
+<!-- Original revision: 1.7 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD.org: домашние страницы</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+<ol>
+
+</ol>
+
+<p/><a href="internal.html">Внутренняя информация FreeBSD</a>
+</body>
+</html>

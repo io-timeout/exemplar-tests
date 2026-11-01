@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD Summer of Code 2005</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+<p>The FreeBSD Project is proud to have taken part in the Google <a href="http://code.google.com/summerofcode05.html">Summer of Code
+  2005</a>.  By all accounts, the FreeBSD participation in this
+  program was an unqualified success.  We received over 350
+  applications for student projects, amongst which 19 were selected
+  for funding.  These student projects included improved installation
+  tools, filesystem enhancements, new utilities, and more.  Many of
+  the students have continued working on their FreeBSD projects even
+  after the official close of the program.  We are happy to see
+  continued development in our source code repository by these
+  talented young programmers and we look forward to working with more
+  students in the future.</p>
+
+<a name="students"/>
+<h2>2005 Student Projects</h2>
+
+<table border="0"><tr><td>Student:</td><td>Anders Persson </td></tr>
+<tr><td>Summary:</td><td> FreeBSD userland/kernel interface cleanups</td></tr>
+<tr><td>Mentor:</td><td>  Brooks Davis <email xmlns="http://docbook.org/ns/docbook">brooks@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Andrew Turner </td></tr>
+<tr><td>Summary:</td><td> BSD Installer integration</td></tr>
+<tr><td>Mentor:</td><td>  re@FreeBSD.org, Ruslan Ermilov <email xmlns="http://docbook.org/ns/docbook">ru@FreeBSD.org</email>, John Baldwin <email xmlns="http://docbook.org/ns/docbook">jhb@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Brian Wilson </td></tr>
+<tr><td>Summary:</td><td> UFS Journalling</td></tr>
+<tr><td>Mentor:</td><td>  Scott Long <email xmlns="http://docbook.org/ns/docbook">scottl@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Chris Jones </td></tr>
+<tr><td>Summary:</td><td> Gvinum 'move', 'rename', etc..</td></tr>
+<tr><td>Mentor:</td><td>  Lukas Ertl <email xmlns="http://docbook.org/ns/docbook">le@FreeBSD.org</email>, Poul-Henning Kamp <email xmlns="http://docbook.org/ns/docbook">phk@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Christoph Mathys </td></tr>
+<tr><td>Summary:</td><td> Rewriting CVSup in C, the Csup project</td></tr>
+<tr><td>Mentor:</td><td>  Maxime Henrion <email xmlns="http://docbook.org/ns/docbook">mux@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Csaba Henk </td></tr>
+<tr><td>Summary:</td><td> SSH based networking filesystem</td></tr>
+<tr><td>Mentor:</td><td>  Scott Long <email xmlns="http://docbook.org/ns/docbook">scottl@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Dario Freni </td></tr>
+<tr><td>Summary:</td><td> FreeSBIE integration</td></tr>
+<tr><td>Mentor:</td><td>  Murray Stokely <email xmlns="http://docbook.org/ns/docbook">murray@FreeBSD.org</email> / re@FreeBSD.org</td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Emiliano Mennucci </td></tr>
+<tr><td>Summary:</td><td> pluggable disk scheduler</td></tr>
+<tr><td>Mentor:</td><td>  Luigi Rizzo <email xmlns="http://docbook.org/ns/docbook">luigi@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Ivan Voras </td></tr>
+<tr><td>Summary:</td><td> GEOM Journaling Layer (gjournal),</td></tr>
+<tr><td>Mentor:</td><td>  Poul-Henning Kamp <email xmlns="http://docbook.org/ns/docbook">phk@FreeBSD.org</email>, Paweł Jakub Dawidek <email xmlns="http://docbook.org/ns/docbook">pjd@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Michael Bushkov </td></tr>
+<tr><td>Summary:</td><td> nsswitch / caching daemon</td></tr>
+<tr><td>Mentor:</td><td>  Brooks Davis <email xmlns="http://docbook.org/ns/docbook">brooks@FreeBSD.org</email>, Jacques Vidrine <email xmlns="http://docbook.org/ns/docbook">nectar@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Paolo Pisati </td></tr>
+<tr><td>Summary:</td><td> libalias improvements</td></tr>
+<tr><td>Mentor:</td><td>  Luigi Rizzo <email xmlns="http://docbook.org/ns/docbook">luigi@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> R. Tyler Ballance </td></tr>
+<tr><td>Summary:</td><td> Implement MacOS launchd(8) for FreeBSD</td></tr>
+<tr><td>Mentor:</td><td>  Murray Stokely <email xmlns="http://docbook.org/ns/docbook">murray@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> RuGang Xu </td></tr>
+<tr><td>Summary:</td><td> K kernel meta-language project</td></tr>
+<tr><td>Mentor:</td><td>  George V. Neville-Neil <email xmlns="http://docbook.org/ns/docbook">gnn@FreeBSD.org</email>, Poul-Henning Kamp <email xmlns="http://docbook.org/ns/docbook">phk@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Samy Al Bahra </td></tr>
+<tr><td>Summary:</td><td> Mandatory Access Control (MAC)</td></tr>
+<tr><td>Mentor:</td><td>  Robert Watson <email xmlns="http://docbook.org/ns/docbook">rwatson@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Victor Cruceru </td></tr>
+<tr><td>Summary:</td><td> SNMP monitoring</td></tr>
+<tr><td>Mentor:</td><td>  Hartmut Brandt <email xmlns="http://docbook.org/ns/docbook">harti@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Yanjun Wu </td></tr>
+<tr><td>Summary:</td><td> SEBSD</td></tr>
+<tr><td>Mentor:</td><td>  Robert Watson <email xmlns="http://docbook.org/ns/docbook">rwatson@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Emily Boyd </td></tr>
+<tr><td>Summary:</td><td> Website improvements</td></tr>
+<tr><td>Mentor:</td><td>  Murray Stokely <email xmlns="http://docbook.org/ns/docbook">murray@FreeBSD.org</email></td></tr>
+<tr><td colspan="2"> </td></tr>
+
+<tr><td>Student:</td><td> Shteryana Shopova </td></tr>
+<tr><td>Summary:</td><td> bsnmp </td></tr>
+<tr><td>Mentor:</td><td>  Philip Paeps <email xmlns="http://docbook.org/ns/docbook">philip@FreeBSD.org</email></td></tr>
+</table>
+
+<a name="press"/>
+<h2>FreeBSD Summer of Code 2005 in the Press</h2>
+
+<ul>
+  <li><a href="https://www.freebsdfoundation.org/press/2005Dec-newsletter.shtml">FreeBSD Foundation December 2005 Newsletter</a></li>
+
+  <li><a href="http://wiki.freebsd.org/moin.cgi/SummerOfCode2005">FreeBSD Summer of Code 2005 Wiki</a> - with links to student project pages.</li>
+
+  <li><a href="http://www.ddj.com/documents/s=9914/ddj0512i/0512i.html">Dr. Dobbs Journal - Google's Summer of Code</a></li>
+</ul>
+
+</body>
+</html>

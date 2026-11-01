@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Traditional Chinese Documentation Project -->
+<!-- Original Revision: 1.34 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+      <title>如何獲得 FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+      </head>
+
+  <body class="navinclude.about">
+    <p>這一頁中的內容，已被整合到 <a href="./index.html">FreeBSD 首頁當中</a>。 您會在數秒內轉到該頁。
+      如果沒有的話，請點擊前述連結，並更新您的書籤。</p>
+
+    <p>我們對因此所引致的不便，表示歉意。</p>
+  </body>
+</html>

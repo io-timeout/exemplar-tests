@@ -1,0 +1,200 @@
+{
+  "freebsd-doc-source": {
+    "title": "FreeBSD documentation sources",
+    "version": "release/12.2.0 (6525fd04)",
+    "licence": "FreeBSD Documentation License; xmlcharent under its OASIS notice",
+    "sources": [
+      {
+        "kind": "archive",
+        "url": "https://codeload.github.com/freebsd/freebsd-doc/tar.gz/6525fd047a7eeae8aa689f924032f5adddeb94cb",
+        "include": "\\.(?:xml|ent|dtd)$"
+      },
+      {
+        "kind": "files",
+        "base": "https://www.oasis-open.org/docbook/xmlcharent/0.3/",
+        "target": "xmlcharent/",
+        "files": [
+          "iso-amsa.ent",
+          "iso-amsb.ent",
+          "iso-amsc.ent",
+          "iso-amsn.ent",
+          "iso-amso.ent",
+          "iso-amsr.ent",
+          "iso-box.ent",
+          "iso-cyr1.ent",
+          "iso-cyr2.ent",
+          "iso-dia.ent",
+          "iso-grk1.ent",
+          "iso-grk2.ent",
+          "iso-grk3.ent",
+          "iso-grk4.ent",
+          "iso-lat1.ent",
+          "iso-lat2.ent",
+          "iso-num.ent",
+          "iso-pub.ent",
+          "iso-tech.ent"
+        ]
+      },
+      {
+        "kind": "generated",
+        "path": "xmlcharent/catalog.xml",
+        "text": "<?xml version=\"1.0\"?>\n<catalog xmlns=\"urn:oasis:names:tc:entity:xmlns:xml:catalog\">\n  <rewriteSystem systemIdStartString=\"http://www.oasis-open.org/docbook/xmlcharent/current/\" rewritePrefix=\"./\"/>\n</catalog>\n"
+      }
+    ]
+  },
+  "freebsd-doc": {
+    "title": "FreeBSD docs",
+    "about": [
+      "The FreeBSD documentation as published at release 12.2.0, with its LF line endings turned into CRLF, so that reading normalizes them.",
+      "Internal subsets, eight encodings including Japanese in EUC-JP, and documents of every size.",
+      "Read standalone, as every dataset is: no library reads the external DocBook and FreeBSD DTDs, so references to the entities they declare, such as `&os;`, are not expanded.",
+      "Where such a reference makes a document malformed, preparation leaves the document out; where an unread part of the DTD could declare it, the reference is skipped, as the XML specification allows."
+    ],
+    "version": "release/12.2.0 (6525fd04), LF turned into CRLF",
+    "licence": "FreeBSD Documentation License",
+    "documents": "^(?!xmlcharent/).*\\.xml$",
+    "sources": [{ "kind": "derived", "from": "freebsd-doc-source", "transform": "crlf" }]
+  },
+  "freebsd-doc-simplified": {
+    "title": "FreeBSD docs (simplified)",
+    "about": [
+      "The FreeBSD docs documents rewritten by xmllint as plain XML, so that every library can read the same content. As published, they need DTDs that most libraries cannot read, so those libraries fail on most documents.",
+      "xmllint first checks each document with its DTDs, read through the DocBook and FreeBSD catalogs, and replaces every entity with its text.",
+      "The DOCTYPE, with its internal subset, is removed.",
+      "Every document is re-encoded as UTF-8, the Japanese ones in EUC-JP included.",
+      "Each namespace is declared once, where it comes into force, rather than on every element, as the DTDs' attribute defaults would give it.",
+      "Line endings are LF, as reading normalizes them.",
+      "Left out, and counted in preparation: documents xmllint finds malformed when read with their DTDs, or that use entities no DTD declares, or that need a DTD the archive does not hold, and documents with references Xerces cannot resolve once the DOCTYPE is gone. Documents without a DOCTYPE are not rewritten: most are parts of books that other documents include."
+    ],
+    "version": "release/12.2.0 (6525fd04), entities resolved and DOCTYPE removed by xmllint",
+    "licence": "FreeBSD Documentation License",
+    "documents": "^(?!xmlcharent/).*\\.xml$",
+    "sources": [{ "kind": "derived", "from": "freebsd-doc", "transform": "simplified" }]
+  },
+  "postgresql-doc-source": {
+    "title": "PostgreSQL documentation sources",
+    "version": "REL_18_0",
+    "licence": "PostgreSQL Licence",
+    "sources": [
+      {
+        "kind": "archive",
+        "url": "https://codeload.github.com/postgres/postgres/tar.gz/refs/tags/REL_18_0",
+        "include": "^doc/src/sgml/.*\\.(?:sgml|xml)$"
+      },
+      {
+        "kind": "files",
+        "base": "https://www.oasis-open.org/docbook/xml/4.5/",
+        "target": "docbook-4.5/",
+        "files": [
+          "docbookx.dtd",
+          "dbpoolx.mod",
+          "dbhierx.mod",
+          "dbnotnx.mod",
+          "dbcentx.mod",
+          "dbgenent.mod",
+          "htmltblx.mod",
+          "calstblx.dtd",
+          "soextblx.dtd",
+          "catalog.xml",
+          "ent/isoamsa.ent",
+          "ent/isoamsb.ent",
+          "ent/isoamsc.ent",
+          "ent/isoamsn.ent",
+          "ent/isoamso.ent",
+          "ent/isoamsr.ent",
+          "ent/isobox.ent",
+          "ent/isocyr1.ent",
+          "ent/isocyr2.ent",
+          "ent/isodia.ent",
+          "ent/isogrk1.ent",
+          "ent/isogrk2.ent",
+          "ent/isogrk3.ent",
+          "ent/isogrk4.ent",
+          "ent/isolat1.ent",
+          "ent/isolat2.ent",
+          "ent/isonum.ent",
+          "ent/isopub.ent",
+          "ent/isotech.ent"
+        ]
+      },
+      {
+        "kind": "generated",
+        "path": "doc/src/sgml/version.sgml",
+        "text": "<!ENTITY version \"18.0\">\n<!ENTITY majorversion \"18\">\n"
+      }
+    ]
+  },
+  "postgresql-book": {
+    "title": "PostgreSQL book",
+    "version": "REL_18_0, assembled into one document by xmllint",
+    "licence": "PostgreSQL Licence",
+    "documents": "^doc/src/sgml/postgres\\.sgml$",
+    "sources": [{ "kind": "derived", "from": "postgresql-doc-source", "transform": "expanded" }]
+  },
+  "openstack-manuals": {
+    "title": "OpenStack manuals",
+    "version": "juno-eol (304d14ff)",
+    "licence": "Apache-2.0, CC BY 3.0 and CC BY-SA 3.0, by book",
+    "documents": "\\.xml$",
+    "sources": [
+      {
+        "kind": "archive",
+        "url": "https://codeload.github.com/openstack/openstack-manuals/tar.gz/304d14ffb99ea4ddec5db30fecb13cbb30ce688f",
+        "include": "^doc/.*\\.(?:xml|ent)$",
+        "exclude": "/locale/"
+      }
+    ]
+  },
+  "xmark": {
+    "title": "XMark",
+    "version": "xmlgen from CWI, factor 1",
+    "licence": "Unclear; generated locally and never redistributed",
+    "documents": "^xmark-1\\.xml$",
+    "sources": [{ "kind": "xmark", "url": "https://projects.cwi.nl/xmark/Assets/unix.c", "factors": [1] }]
+  },
+  "expat-largefiles": {
+    "title": "Expat recordsets",
+    "version": "libexpat b8fedbbf",
+    "licence": "MIT",
+    "documents": "^(?:ns_att_test|recset)\\.xml$",
+    "sources": [
+      {
+        "kind": "files",
+        "base": "https://raw.githubusercontent.com/libexpat/libexpat/b8fedbbfd826c220dca5cd758816cc8be1b68897/testdata/largefiles/",
+        "files": ["ns_att_test.xml", "recset.xml"]
+      }
+    ]
+  },
+  "dtd": {
+    "title": "DocBook DTD with entity sets",
+    "about": [
+      "Twenty copies of a one-element document whose DTD is large and real: DocBook 5.0, with FreeBSD's author and manual-page entity sets and the 19 ISO character entity sets of xmlcharent, 2.3 MB of declarations read from files. Nearly all the time goes to the DTD, so the `dtd` workload alone reads it, and the copies give V8 the parses it needs to optimize.",
+      "The element takes its namespace from DocBook's attribute defaults and holds an author's name and three characters, so a library that does not read the DTD expands nothing and counts differently.",
+      "Speeds count the DTD files with each copy, as the bytes each parse reads."
+    ],
+    "version": "release/12.2.0 (6525fd04); xmlcharent 0.3",
+    "licence": "FreeBSD Documentation License; xmlcharent under its OASIS notice",
+    "documents": "^document-\\d+\\.xml$",
+    "configuration": "external",
+    "workloads": ["dtd"],
+    "sources": [
+      {
+        "kind": "derived",
+        "from": "freebsd-doc-source",
+        "transform": "copy",
+        "include": "^(share/xml/(docbook50\\.dtd|authors\\.ent|man-refs\\.ent)|xmlcharent/iso-[a-z0-9]+\\.ent)$"
+      },
+      {
+        "kind": "generated",
+        "path": "all.dtd",
+        "text": "<!-- DocBook 5.0, FreeBSD's author and manual-page entities, and the ISO character entity sets. -->\n<!ENTITY % docbook SYSTEM \"share/xml/docbook50.dtd\">\n%docbook;\n<!ENTITY % authors SYSTEM \"share/xml/authors.ent\">\n%authors;\n<!ENTITY % man SYSTEM \"share/xml/man-refs.ent\">\n%man;\n<!ENTITY % iso-amsa SYSTEM \"xmlcharent/iso-amsa.ent\">\n%iso-amsa;\n<!ENTITY % iso-amsb SYSTEM \"xmlcharent/iso-amsb.ent\">\n%iso-amsb;\n<!ENTITY % iso-amsc SYSTEM \"xmlcharent/iso-amsc.ent\">\n%iso-amsc;\n<!ENTITY % iso-amsn SYSTEM \"xmlcharent/iso-amsn.ent\">\n%iso-amsn;\n<!ENTITY % iso-amso SYSTEM \"xmlcharent/iso-amso.ent\">\n%iso-amso;\n<!ENTITY % iso-amsr SYSTEM \"xmlcharent/iso-amsr.ent\">\n%iso-amsr;\n<!ENTITY % iso-box SYSTEM \"xmlcharent/iso-box.ent\">\n%iso-box;\n<!ENTITY % iso-cyr1 SYSTEM \"xmlcharent/iso-cyr1.ent\">\n%iso-cyr1;\n<!ENTITY % iso-cyr2 SYSTEM \"xmlcharent/iso-cyr2.ent\">\n%iso-cyr2;\n<!ENTITY % iso-dia SYSTEM \"xmlcharent/iso-dia.ent\">\n%iso-dia;\n<!ENTITY % iso-grk1 SYSTEM \"xmlcharent/iso-grk1.ent\">\n%iso-grk1;\n<!ENTITY % iso-grk2 SYSTEM \"xmlcharent/iso-grk2.ent\">\n%iso-grk2;\n<!ENTITY % iso-grk3 SYSTEM \"xmlcharent/iso-grk3.ent\">\n%iso-grk3;\n<!ENTITY % iso-grk4 SYSTEM \"xmlcharent/iso-grk4.ent\">\n%iso-grk4;\n<!ENTITY % iso-lat1 SYSTEM \"xmlcharent/iso-lat1.ent\">\n%iso-lat1;\n<!ENTITY % iso-lat2 SYSTEM \"xmlcharent/iso-lat2.ent\">\n%iso-lat2;\n<!ENTITY % iso-num SYSTEM \"xmlcharent/iso-num.ent\">\n%iso-num;\n<!ENTITY % iso-pub SYSTEM \"xmlcharent/iso-pub.ent\">\n%iso-pub;\n<!ENTITY % iso-tech SYSTEM \"xmlcharent/iso-tech.ent\">\n%iso-tech;\n"
+      },
+      {
+        "kind": "generated",
+        "path": "document.xml",
+        "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE book SYSTEM \"all.dtd\">\n<book>&a.fjoe;, caf&eacute; &mdash; &frac12;</book>\n",
+        "copies": 20
+      }
+    ]
+  }
+}

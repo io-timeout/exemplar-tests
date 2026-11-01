@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Italian Documentation Project
+
+     $FreeBSD$
+     Original revision: 1.354
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>Supporto su FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+    <p>FreeBSD offre agli utenti una grande varietà di scelta di supporto sia dalla comunità che commerciale.
+      La sezione sulla <a href="./community.html">Comunità</a> di questo sito web descrive le opzioni di
+      supporto disponibili per gli utenti della comunità di FreeBSD, tra cui un certo numero di
+      <a href="./../community/mailinglists.html">mailing list</a>.</p>
+
+    <p>Il supporto commerciale è inoltre disponibile da uno dei tanti <a href="./../commercial/">venditori</a>
+      che offrono prodotti commerciali, servizi, e/o consulenza su FreeBSD.</p>
+
+    <h2>Comunicare un Problema</h2>
+
+    <p>Hai trovato un bug in FreeBSD? Hai notato un errore nella documentazione? Se non è stato già segnalato,
+      faccelo sapere.</p>
+
+    <p>Per scoprirlo, puoi
+      <a href="//www.FreeBSD.org/cgi/query-pr-summary.cgi?query">ricercare tra le segnalazioni di problemi correnti</a>
+      (e vederli per categoria, assegnatario, e così via),
+      <a href="//www.FreeBSD.org/cgi/query-pr.cgi">vedere una singola segnalazione di un problema</a>, oppure
+      <a href="//www.FreeBSD.org/cgi/query-pr-summary.cgi">vedere tutte le segnalazioni di problemi aperti</a>.</p>
+
+    <p>Se il bug non è già stato segnalato, per favore leggi le
+      nostre <a href="./../support/bugreports.html">linee guida per la comunicazione dei problemi</a>
+      e poi avvisaci tramite il nostro <a href="./send-pr.html">form di segnalazione di un problema</a>.</p>
+
+  </body>
+</html>

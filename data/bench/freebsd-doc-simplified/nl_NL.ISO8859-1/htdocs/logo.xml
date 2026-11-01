@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vertaald door: Rene Ladan
+     %SOURCE%	en_US.ISO8859-1/htdocs/logo.xml
+     %SRCID%	39632
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD Logo</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <ul>
+    <li><a href="#guideline">Gebruiksrichtlijnen</a></li>
+    <li><a href="#resource">Bronnen</a></li>
+    <li><a href="#sample">Voorbeeld</a></li>
+  </ul>
+
+  <p/>
+
+  <h2 id="guideline">Gebruiksrichtlijnen</h2>
+
+  <p>FreeBSD is een geregistreerd handelsmerk van The FreeBSD Foundation.  Het FreeBSD
+    logo en The Power to Serve zijn handelsmerken van The FreeBSD Foundation.</p>
+
+  <p>Alle afbeeldingen genoemd onder de kop "Bronnen" zijn beschikbaar voor
+    gebruik onder licentie van The FreeBSD Foundation.</p>
+
+  <p>Voor meer informatie over hoe toestemming te krijgen voor gebruik van het
+    logo wordt naar de FreeBSD Logo Usage Guidelines op <a href="http://www.freebsdfoundation.org/documents/Guidelines.shtml">The
+    FreeBSD Foundation</a> verwezen.</p>
+
+  <h2 id="resource">Bronnen</h2>
+
+  <h3>Standaard Logo (fullcolor)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-full.png"><img src="./../logo/logo-full-thumb.png" alt=""/></a></p>
+
+  <h3>Standaard Logo (fullcolor voor donkere achtergrond)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-reverse.png"><img src="./../logo/logo-reverse-thumb.png" alt=""/></a></p>
+
+  <!-- h3>Standaard Logo (grijsschaal)</h3 -->
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <h3>Standaard Logo (zwart-wit)</h3>
+
+  <!-- p>Format: <a>Adobe(r) Illustrator(r)</a>, <a>SVG</a>, <a>EPS</a></p -->
+
+  <p><a href="./../logo/logo-bw.png"><img src="./../logo/logo-bw-thumb.png" alt=""/></a></p>
+
+  <h3>Vectorformaten</h3>
+
+  <p>Formaat: <a href="./../logo/logo-basic.ai">Adobe(r) Illustrator(r)</a>,
+    <a href="./../logo/logo-basic.svg">SVG</a></p>
+
+  <p><a href="./../logo/logo-basic.png"><img src="./../logo/logo-basic-thumb.png" alt=""/></a></p>
+
+  <h2 id="sample">Voorbeeld</h2>
+
+  <p>NOOT: "free<font color="red">BSD</font>" tekst in deze afbeeldingen
+    waren gemaakt naar aanleiding van een kladversie van de logowedstrijd.
+    De correcte versie van deze tekst dient te worden weergegeven door
+    één zwarte kleur, niet twee kleuren en het eerste "f"-teken
+    dient als hoofdletter "F" gespeld te worden.</p>
+
+  <h3>CD/DVD-pakket</h3>
+
+  <p><a href="./../logo/cd.jpg"><img src="./../logo/cd-thumb.jpg" alt=""/></a></p>
+
+  <h3>Ansichtkaart</h3>
+
+  <div><a href="./../logo/postcard1.jpg"><img style="margin:0.5em;     border:2px solid black;" src="./../logo/postcard1-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard2.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard2-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard3.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard3-thumb.jpg" alt=""/></a></div>
+
+  <div style="float:left;"><a href="./../logo/postcard4.jpg"><img style="margin:0.5em; border:2px solid black;" src="./../logo/postcard4-thumb.jpg" alt=""/></a></div>
+
+  <div style="clear:left;"> </div>
+
+  <h3>Behang</h3>
+
+  <p>Hier zijn voorbeelden van behang.</p>
+
+  <p><a href="./../logo/wall1.jpg"><img src="./../logo/wall1-thumb.jpg" alt=""/></a></p>
+
+  <p><a href="./../logo/wall2.jpg"><img src="./../logo/wall2-thumb.jpg" alt=""/></a></p>
+
+  <p><a href="./../logo/wall3.jpg"><img src="./../logo/wall3-thumb.jpg" alt=""/></a></p>
+
+  </body>
+</html>

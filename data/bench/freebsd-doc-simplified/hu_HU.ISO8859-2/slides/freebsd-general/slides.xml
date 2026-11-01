@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $FreeBSD$ -->
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/freebsd-general/slides.xml
+     %SRCID%	1.4
+-->
+<?dbhtml graphics-dir="/usr/local/share/xsl/slides/graphics" css-stylesheet-dir="/usr/local/share/xsl/slides/browser"?>
+<?dbhtml script-dir="/usr/local/share/xsl/slides/browser"?>
+<slides lang="hu">
+
+<!-- PUBLIC "-//Norman Walsh//DTD Slides XML V3.3.1//EN"
+  "http://docbook.sourceforge.net/releases/slides/3.3.1/slides.dtd"  -->
+
+<slidesinfo>
+  <title>Bevezetés a FreeBSD-be</title>
+  <titleabbrev>FreeBSD</titleabbrev>
+
+  <!-- Speaker's name goes here. -->
+
+  <author>
+    <firstname>Kövesdán</firstname>
+    <surname>Gábor</surname>
+    <email>gabor@FreeBSD.org</email></author>
+    <pubdate>2008. január 3., csütörtök</pubdate>
+    <copyright>
+      <year>2004-2008</year>
+      <holder>FreeBSD Mall, Inc.</holder>
+    </copyright>
+</slidesinfo>
+
+<foil id="intro-outline">
+  <title>Kivonat</title>
+
+  <itemizedlist>
+    <listitem>Mi az a FreeBSD?</listitem>
+    <listitem>Ki használ FreeBSD-t?</listitem>
+    <listitem>A FreeBSD fejlesztési model</listitem>
+    <listitem>FreeBSD kiadások / elágazások terminológiája</listitem>
+    <listitem>Újabb FreeBSD kiadások</listitem>
+
+<!--  XXX  To Add : Gallery of FreeBSD users, comparisons with Linux, -->
+<!--  much more. -->
+
+  </itemizedlist>
+</foil>
+
+<!-- Include the 'What is FreeBSD' slides. -->
+<!-- Include slides -->
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/what-is-freebsd.xml
+     %SRCID%	1.2
+-->
+
+<foil>
+  <title>Mi az a FreeBSD?</title>
+
+  <itemizedlist>
+    <listitem>A FreeBSD egy ipari minőségű
+     operációs rendszer, amely a BSD UNIX-on alapul.
+      <itemizedlist>
+        <listitem>Széles körben használt, mint komponens
+	  és mint önálló termék.
+	  <itemizedlist>
+	    <listitem>Munkaállomások, kiszolgálók
+	      és magas színvonalú beágyazott
+	      rendszerek piaca.</listitem>
+	  </itemizedlist>
+	</listitem>
+
+	<listitem>A Berkeley megengedi a széles kereskedelmi
+	  felhasználást a nyílt- és zárt
+	  forrású termékekben.</listitem>
+
+	<listitem>amd64, i386, ia64, pc98, powerpc, sparc64</listitem>
+
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+</foil>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/freebsd-users.xml
+     %SRCID%	1.4
+-->
+
+<foilgroup>
+  <foil>
+    <title>Ki használ FreeBSD-t?</title>
+
+    <para>Sokan a világ legnagyobb vállalatai és
+      legforgalmasabb internetes oldalai közül FreeBSD-t
+      használnak.</para>
+
+    <itemizedlist>
+      <listitem>Yahoo!, Apache, Sony Japan, Netcraft, Weathernews,
+        Supervalue.</listitem>
+
+      <listitem>Az Apple a Linux-szal szemben a FreeBSD-t választotta a
+        Mac OS X rendszer Unix magjának.</listitem>
+
+      <listitem>A Netcraft szerint közel 2,5 millió
+	aktív oldal használ FreeBSD-t hálózati
+	kiszolgálóként -- körülbelül
+	egy millióan többen, mint Red Hat
+	Linuxot<footnote><ulink url="http://www.techworld.com/opsys/news/index.cfm?newsid=1908"/>
+	</footnote><footnote><ulink url="http://www.internetnews.com/dev-news/article.php/3367381"/>
+	</footnote>.</listitem>
+
+      <listitem>Csak az előző évben körülbelül
+	egy millió új FreeBSD kiszolgálót
+	számolt össze a Netcraft, ez egy hihetetlen
+	növekedési arány a Linux gyakoribb
+	médiaszereplésének ellenére.</listitem>
+
+    </itemizedlist>
+  </foil>
+
+  <foil>
+    <title>FreeBSD a bankszektorban</title>
+
+    <itemizedlist>
+      <listitem>A világ legnagyobb kereskedelmi bankjai közül
+	sok FreeBSD-t használ a vállalatok közötti
+	tranzakciók feldolgozására.</listitem>
+
+      <listitem>Összességében, ezek a rendszerek
+	hozzávetőlegesen 1,5 trillió amerikai dollárt
+	dolgoznak fel évente és ez az érték
+	tovább növekszik.  Felhasználják a jail
+	rendszert, az X11, Apache, Perl és rengeteg egyéb
+	szabad szoftvert.</listitem>
+
+      <listitem>Tényezők, amelyek segítenek:
+	<itemizedlist>
+	  <listitem>Stabilitás</listitem>
+
+	  <listitem>A forráskód elérhetősége,
+	    amely segít megérteni és javítani a
+	    felbukkanó problémákat (a rendszer
+	    forráskódja segít megérteni, hogy az
+	    adott alkalmazás miért nem az
+	    elvárásoknak megfelelően
+	    működik)</listitem>
+
+	  <listitem>Jó teljesítmény</listitem>
+
+	  <listitem>Könnyű hardverfejlesztési
+	    lehetőségek</listitem>
+
+	  <listitem>Az alkalmazás sok szerver közt van megosztva.
+	    Nagyobb teljesítmény szükséges?  Adjon
+	    hozzá több FreeBSD szervert.</listitem>
+	</itemizedlist>
+
+	<para>A PC hardver néha nem tökéletes, de a PC
+	  hardverárak mellett a hot spare megoldások
+	  praktikusak.</para>
+        </listitem>
+    </itemizedlist>
+  </foil>
+
+
+  <foil>
+    <title>FreeBSD az Internet infrastruktúrában</title>
+
+    <itemizedlist>
+      <listitem>A BSD az 1970-es évek második felétől
+	létezik és a TCP/IP referencia
+	implementációja és tesztágya
+	volt.</listitem>
+
+      <listitem>Az Internet Software Consortium (ISC)
+	kizárólagosan FreeBSD-t használ az f-root
+	domain szervereken (már 21 városban,
+	általában városonként 3
+	szerverrel.)</listitem>
+
+      <listitem>A modern FreeBSD meglehetősen kifinomult és
+	kiforrott.</listitem>
+
+      <listitem>A FreeBSD a Netcraft "uptime" listáiban, amelyekkel a
+	világ legforgalmasabb szervereinek stabilitását
+	mérik, a vezető helyeket foglalja el.</listitem>
+   </itemizedlist>
+  </foil>
+
+  <foil>
+    <title>FreeBSD a beágyazott rendszereken</title>
+
+    <itemizedlist>
+      <listitem>A FreeBSD-t gyakran használják beágyazott
+	hálózati rendszerek alapjaként, beleértve
+	az IBM, Inktomi, Juniper Networks, GTA és a Network Alchemy
+	(egy Nokia vállalat) termékeit.  <footnote><ulink url="http://www.hyperchip.com/Coverage/ICD/router_makers_speak_out.htm"/>
+	</footnote></listitem>
+
+      <listitem>A Weather Channel FreeBSD-t használ, hogy valós
+	idejű audio/video tartalmat szolgáljon ki az Egyesült
+	Államokban kábeles és műholdas
+	előfizetők millióinak.</listitem>
+
+      <listitem>A BSD licenc megengedi ezt a kereskedelmi beágyazott
+	felhasználást.</listitem>
+    </itemizedlist>
+  </foil>
+</foilgroup>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/freebsd-dev-model.xml
+     %SRCID%	1.5
+-->
+
+<foilgroup id="freebsd-dev-model">
+
+  <foil id="freebsd-dev-model-general">
+    <title>A FreeBSD fejlesztési model -
+      Áttekintés</title>
+
+    <itemizedlist>
+      <listitem>A FreeBSD fejlesztése két párhuzamos
+	ágon történik: FreeBSD-CURRENT és
+	FreeBSD-STABLE.</listitem>
+
+      <listitem>A FreeBSD-CURRENT a CVS repository fő ága.
+	Minden új fejlesztésnek itt kell
+	történnie.</listitem>
+
+      <listitem>A FreeBSD-STABLE az az ág, amelyből a főbb
+	kiadások készülnek.  A változások
+	változó irammal kerülnek be ide, azzal a
+	feltétellel, hogy a -CURRENT ágat futtató
+	közösség már megfelelelően
+	tesztelte azokat.</listitem>
+    </itemizedlist>
+  </foil>
+
+<!-- FIXME: past the chart here
+  <foil id="freebsd-dev-model-release-diagram">
+    <title>A FreeBSD kiadási diagram</title>
+
+    <para>A releng diagram jön ide.</para>
+  </foil>
+-->
+
+  <foil id="freebsd-dev-model-organization">
+    <title>A FreeBSD fejlesztési model - A csapat</title>
+
+    <itemizedlist>
+      <listitem>Fejlesztők ezrei világszerte
+	hozzájárulnak a FreeBSD
+	fejlődéséhez.</listitem>
+
+      <listitem>Csak a <quote>committerek</quote> rendelkeznek
+	írási joggal a CVS repository-hoz.</listitem>
+
+      <listitem>353 committer összesen (beleértve a
+	forrás, dokumentáció és ports
+	jogokat)</listitem>
+
+      <listitem>181 aktív committer az src/ területen
+	az elmúlt 12 hónapban</listitem>
+
+      <listitem>147 aktív committer az src/sys/ területen
+	az elmúlt 12 hónapban</listitem>
+    </itemizedlist>
+  </foil>
+
+  <foil id="freebsd-dev-model-bugs">
+    <title>A FreeBSD fejlesztési model - A hibák
+      kezelése</title>
+
+    <itemizedlist>
+      <listitem>A felhasználók és a
+	külső, közvetlen CVS
+	hozzáféréssel nem rendelkező
+	fejlesztők a GNATS rendszerén keresztül
+	küldhetnek hibajavításokat,
+	fejlesztési javaslatokat vagy
+	hibajelentéseket.</listitem>
+
+      <listitem>Formái: interneten keresztül, a FreeBSD
+	rendszereken alapból elérhető
+	<command>send-pr</command> paranccsal stb.</listitem>
+    </itemizedlist>
+  </foil>
+</foilgroup>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/freebsd-organization.xml
+     %SRCID%	1.2
+-->
+
+  <foil id="freebsd-organization">
+    <title>A FreeBSD szervezeti felépítése</title>
+
+    <itemizedlist>
+      <listitem>Néhány különleges
+	felelősséggel bíró bizottságot hoztunk
+	létre a FreeBSD Projekten belül, hogy biztosítsuk,
+	hogy a projekt pozitív irányban fejlődjön
+	tovább.</listitem>
+
+      <listitem>A FreeBSD <emphasis>Port Management Team</emphasis>
+	felelős a FreeBSD Portgyűjtemény
+	működőképességének,
+	frissességének és
+	sokszínűségének
+	megőrzéséért.  Emellett felügyeli
+	a rajta dolgozó committerek és fejlesztők
+	munkáját.</listitem>
+
+      <listitem>A FreeBSD <emphasis>Documentation Engineering
+	Team</emphasis> felelős a Dokumentációs
+	Projektben dolgozó committerek számára
+	kitűzött célok
+	meghatározásáért és
+	felügyeletéért.</listitem>
+
+      <listitem>A FreeBSD <emphasis>Core Team</emphasis> egy 9
+	fejlesztőből álló csoport, amelyet a
+	committerek választanak 2 évre.</listitem>
+
+      <listitem>A FreeBSD <emphasis>Release Engineering Team</emphasis>
+	fejlesztők egy kisebb csoportja, amely a kiadási
+	folyamat szervezéséért felel.</listitem>
+
+      <listitem>A FreeBSD <emphasis>Security Team</emphasis> tagjai
+	felelősek azért, hogy felhívják a
+	közösség figyelmét a FreeBSD src
+	és portok forrásait érintő
+	hibákra, biztonsági résekre és
+	veszélyekre, illetve a FreeBSD rendszerek
+	biztonságos üzemeltetésével
+	kapcsolatos információkat gyűjtik össze
+	és közvetítik.  Emellett még a FreeBSD
+	biztonságosságát fenyegető
+	hibák elhárításáért
+	és biztonsági figyelmeztetések
+	összeállításáért
+	felelnek.</listitem>
+    </itemizedlist>
+  </foil>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/freebsd-release-process.xml
+     %SRCID%	1.2
+-->
+
+  <foil id="freebsd-release-process-general">
+    <title>A FreeBSD kiadási folyamata</title>
+
+    <itemizedlist>
+      <listitem>A <quote>Stabil</quote> kiadások 4 havonta a
+	-STABLE fejlesztési ágból
+	készülnek.</listitem>
+
+      <listitem>A nagyobb verziók (6.0, 7.0 stb.) 18 havonta
+	jelennek meg.</listitem>
+
+      <listitem>Az átmeneti időszakban az előző fő
+	verziói alverziói továbbra is megjelennek,
+	amíg az új fő verzió eléggé
+	stabillá nem válik. (Pl. a 4.8, 4.9 és 4.10 az
+	5.0 után jelentek meg.)</listitem>
+    </itemizedlist>
+  </foil>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en_US.ISO8859-1/slides/common/freebsd-recent-releases.xml
+     %SRCID%	1.3
+-->
+
+<foil>
+  <title>Újabb kiadások</title>
+
+  <itemizedlist>
+    <listitem>A FreeBSD 6.<replaceable>X</replaceable>-STABLE
+      továbbra is fejlődik funkcionalitásában,
+      teljesítményében és
+      stabilitásában.
+      <itemizedlist>
+	<listitem>FreeBSD 6.1 (2006. május)</listitem>
+	<listitem>FreeBSD 6.2 (2007. január)</listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>A FreeBSD 7.<replaceable>X</replaceable>-STABLE a
+      legfrissebb stabil fejlesztési ág, rengeteg izgalmas
+      tesztelnivaló újítással.
+    <itemizedlist>
+	<listitem>FreeBSD 7.0 (2008. január)</listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>A FreeBSD 8.<replaceable>X</replaceable>-CURRENT
+      kockázatosabb fejlesztésen megy keresztül, a
+      -STABLE állapot közelében
+      jár.</listitem>
+  </itemizedlist>
+</foil>
+
+
+
+<!-- $FreeBSD$ -->
+
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: PALI, Gabor <pgj@FreeBSD.org>
+     %SOURCE%    en_US.ISO8859-1/slides/common/freebsd-more-information.xml
+     %SRCID%     1.1
+-->
+
+<foil id="freebsd-mmore-information">
+  <title>Bővebb információ</title>
+
+  <itemizedlist>
+    <listitem><ulink url="http://www.FreeBSD.org"/></listitem>
+    <listitem><ulink url="http://www.FreeBSD.org/handbook">FreeBSD Handbook</ulink></listitem>
+    <listitem><ulink url="http://www.FreeBSDMall.com">FreeBSD Mall, Inc.</ulink></listitem>
+  </itemizedlist>
+</foil>
+
+
+</slides>

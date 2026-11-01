@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Japanese Documentation Project -->
+<!-- Original revision: 1.16 -->
+<!-- $FreeBSD$ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="refresh" content="5;url=./platforms/amd64.html"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP"/>
+
+      <title>FreeBSD/x86-64 プロジェクト</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+      </head>
+
+  <body class="navinclude.developers">
+    <p>FreeBSD の x86-64 への移植は、<a href="./platforms/amd64.html">amd64</a> に改名されました。
+      数秒以内に、新しいプロジェクトのページに変更されます。
+      そうならない場合は、お手数ですがリンクをたどって、
+      ブックマークを更新してください。</p>
+
+    <p>ご不便をおかけして申し訳ありません。</p>
+  </body>
+</html>

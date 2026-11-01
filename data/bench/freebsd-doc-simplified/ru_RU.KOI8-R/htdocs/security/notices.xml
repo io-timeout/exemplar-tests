@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSD$
+
+     Original revision: 1.1
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Уведомления об исправлениях FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+  <body class="navinclude.support">
+
+  <p>Данная веб страница содержит список выпущенных уведомлений
+    об исправлениях FreeBSD.</p>
+
+  
+
+</body>
+</html>

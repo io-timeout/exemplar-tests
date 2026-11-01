@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/news/pressreleases.xml
+     %SRCID%	1.15
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD sajtókiadványok</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <!--
+    <img src="&imgbase;/gifs/news.jpg" alt="&os; hírek" align="right"
+      border="0" alt="&os; hírek">
+    <p></p>
+   -->
+
+  <p>A legfrissebb sajtóközleményeket most már
+    a <a href="http://www.FreeBSDFoundation.org/press/">FreeBSD
+      Alapítvány</a> honlapján olvashatjuk.</p>
+
+  <dl>
+    <dt>2005. november 25.</dt>
+    <dd>
+      <a href="./../news/press-rel-9.html">A Hewlett-Packard egy Blade klasztert adományozott a FreeBSD-nek</a>
+    </dd>
+
+    <dt>2005. november 4.</dt>
+    <dd>
+      <a href="./../news/press-rel-8.html">A FreeBSD Projekt útjára indította a FreeBSD 6.0-t</a>
+    </dd>
+
+    <dt>2003. január 6.</dt>
+    <dd>
+      <a href="./../news/press-rel-7.html">A FreeBSD Projekt bejelentette a FreeBSD 5.0-t</a>
+    </dd>
+
+    <dt>2002. október 31.</dt>
+    <dd>
+      <a href="./../news/press-rel-6.html">Az Opera démona: Az Opera kiadta a szoftverét FreeBSD-re</a>
+    </dd>
+
+    <dt>2000. október 18.: Új vezetés</dt>
+    <dd>
+      <a href="./../news/press-rel-5.html">Az első FreeBSD Core Team választás</a>
+    </dd>
+
+    <dt>2000. március 9.</dt>
+    <dd>
+      <a href="./../news/press-rel-4.html">A BSD kereskedők egyesülnek, hogy a világ legnépszerűbb internetes operációs rendszerét nyújtsák</a>
+    </dd>
+
+    <dt>1999. június 7.</dt>
+    <dd>
+      <a href="./../news/press-rel-3.html">A BSD közösség üdvözli az Apple új nyílt forrású operációs rendszerét</a>
+    </dd>
+
+    <dt>1999. április 29.</dt>
+    <dd>
+      <a href="./../news/press-rel-2.html">Teljes XML fejlesztőkörnyezetet integráltak a FreeBSD-be</a>
+    </dd>
+
+    <dt>1999. április 22.: A Mátrix</dt>
+    <dd>
+      <a href="./../news/press-rel-1.html">A FreeBSD-t használta a Warner Bros. <em>A Mátrix</em> című filmjének látványos effektjeihez</a>
+    </dd>
+  </dl>
+
+  </body>
+</html>

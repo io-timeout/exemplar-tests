@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/internet.xml
+     %SRCID%	1.39
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+      <title>A FreeBSD hálózatkezelése</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+    <h2>A FreeBSD-t az internethez tervezték</h2>
+
+      <p>A FreeBSD szerves része az a 4.4 BSD TCP/IP
+	protokollkészlete, amelyet sokan a TCP/IP <i>referencia</i>
+	implementációjának tekintenek,
+	ezáltal ideális körülményeket
+	nyújt a hálózati és internetes
+	szoftverek számára.  A FreeBSD 7.0 mindezek
+	mellett már tartalmazza az SCTP referencia
+	implementációját is, aminek
+	köszönhetően tőkéletesen megfelel a
+	telefonos és egyéb, adatfolyam
+	használatát igénylő
+	alkalmazások számára.</p>
+
+    <h2>A FreeBSD támogatja az összes szabványos TCP/IP
+	protokollt</h2>
+
+      <p>A FreeBSD a legtöbb UNIX® rendszer hasonlóan
+	lehetővé teszi, hogy:</p>
+
+      <ul>
+	<li>HTTP protokollon keresztül statikusan és
+	  dinamikusan szolgáltasson webes tartalmat;</li>
+
+	<li>NFS állományrendszeren keresztül osszuk
+	  meg adatainkat;</li>
+
+	<li>NIS segítségével kezeljük
+	  hálózati adatainkat;</li>
+
+	<li>STMP, IMAP és POP3 használatával
+	  elektronikus levelezést üzemeltessünk;</li>
+
+	<li>SSH és rsh protokollokon keresztül
+	  távolról elérhessük a
+	  rendszerünket;</li>
+
+	<li>távoli konfigurációs és
+	  felügyeleti munkákat végezzünk az SNMP
+	  segítségével;</li>
+
+	<li>állományokat szolgáltassunk
+	  FTP-vel;</li>
+
+	<li>interneten regisztrált hálózati neveket
+	  kezeljünk a DNS/BIND használatával;</li>
+
+	<li>csomagokat irányítsunk több
+	  interfész közt, beleértve a PPP és
+	  SLIP vonalakat;</li>
+
+	<li>IP Multicast (MBONE) szolgáltatásokat
+	  használjunk;</li>
+
+	<li>IPv6 szolgáltatásokat nyújtsunk.</li>
+      </ul>
+
+      <p>A FreeBSD a hozzájáró szoftverek
+	révén egy PC-ből WWW-, levelező- vagy
+	Usenet szervert képes faragni.  Még
+	állományrendszereket és nyomtatókat
+	is meg tudunk osztani Microsoft® Windows® rendszerekkel
+	a szintén benne található SAMBA
+	segítségével, a PCNFS
+	hitelesítési démonnal pedig PC/NFS
+	szolgáltatásokat futtató
+	számítógépeket támogathatunk.
+	A FreeBSD ugyanakkor (a megfelelő kereskedelmi csomagok
+	telepítésével) támogatja az
+	Appletalk és Novell kliens/szerver típusú
+	hálózatkezelést, amivel valódi
+	<q>intranetes</q> megoldássá tehető.</p>
+
+      <p>A FreeBSD ezenkívül még a TCP
+	különböző kiterjesztéseit kezeli, mint
+	például a nagy teljesítményt
+	szavatoló <a href="http://www.ietf.org/rfc/rfc1323.txt">RFC-1323</a>
+	kiterjesztést, illetve PPP és dial-on-demand SLIP
+	szolgáltatásokat.  Így a FreeBSD
+	egyaránt alkalmas otthoni szörfölésre
+	és vállalati felhasználásra is.</p>
+
+    <h2>A FreeBSD hálózatkezelése
+	megbízható és gyors</h2>
+
+      <p>Ha egy megbízható és nagy terhelés
+	mellett is a legjobb teljesítményt
+	nyújtó internetes szerverplatformra van
+	szükségünk, mindenképpen fontoljunk meg
+	a FreeBSD választását.  A FreeBSD-t az
+	alábbi cégek használják nap mint
+	nap:</p>
+
+      <ul>
+	<li>A Walnut Creek CD-ROM kizárólagosan FreeBSD
+	  alapokon üzemeltette az egyik legnépszerűbb FTP
+	  szervert az interneten, az ftp.cdrom.com-ot.  Egy
+	  egyszerű FreeBSD szerver volt, amely 6000 kapcsolatot volt
+	  egyidejűleg kiszolgálni és havonta
+	  közel 30 terabyte-nyi (igen, <i>terabyte</i>!) adatot
+	  szolgáltatott (1999 júniusában)
+	  több, mint 10 millió embernek.</li>
+
+	<li>A <a href="http://www.yahoo.com/">Yahoo Inc.</a> egy hatalmas
+	  tárgymutatóval rendelkezik az egész
+	  internetről, így szolgálja ki a neten
+	  kóborlók
+	  információigényét a
+	  világhálóval kapcsolatban.  A Yahoo,
+	  ahogyan a Yahoot reklámozó cégek is, a
+	  FreeBSD segítségével nyújtják
+	  a megbízható
+	  szolgáltatásaikat.</li>
+
+	<li>A <a href="http://www.netcraft.com/">Netcraft</a> az interneten
+	  megtalálható webszerverek vezető
+	  kutatója.  Honlapjuk
+	  kiszolgálásához a FreeBSD-t és az
+	  Apache webszervert használják.  Az internetes
+	  adattáruk kezelését pedig a FreeBSD/Perl
+	  páros látja el.
+	</li>
+      </ul>
+
+      <p>A FreeBSD leginkább a következő
+	szolgáltatások számára
+	tökéletes platform:</p>
+
+      <ul>
+	<li>Vállalati, vagy egész világra
+	  kiterjedő WWW szolgáltatások</li>
+
+	<li>Proxy WWW szolgáltatás</li>
+
+	<li>Anonim FTP szolgáltatás</li>
+
+	<li>Vállalati állomány-, nyomtató-
+	  és e-mail szolgáltatások</li>
+
+	<li>Útválasztók, tűzfalak és
+	  behatolásjelző rendszerek</li>
+      </ul>
+
+      <p>A FreeBSD <a href="./../ports/index.html">Portgyűjteménye</a>
+	olyan egyszerűen telepíthető szoftvereket
+	tartalmaz, amelyek megkönnyítik a saját
+	internetes szerverünk
+	beállítását.</p>
+
+    <h2>Nagy teljesítmény <em>és</em>
+	biztonság</h2>
+
+      <p>A FreeBSD fejlesztői ugyanúgy ügyelnek a
+	biztonságra, mint magára a
+	teljesítményre.  A FreeBSD rendszermagja
+	támogatja az IP-tűzfalakat
+	létrehozását, valamint egyéb
+	szolgáltatásokat, mint például
+	IP-proxy átjárók használatát.
+	Ha a vállalati hálózatunkat az internethez
+	akarjuk kapcsolni, a külső támadások
+	kivédésére bármely FreeBSD-t
+	futtató számítógépünk
+	üzemeltethető hálózati
+	tűzfalként.</p>
+
+      <p>Emellett még kriptográfiai szoftverek,
+	biztonságos shellek, Kerberos, végpontok közti
+	titkosítás és biztonságos RPC
+	megoldások is elérhetőek.</p>
+
+      <p>A FreeBSD csapata mindezeken túl aktívan dolgozik a
+	biztonsági problémák
+	felderítésén és
+	javításán, valamint a
+	hibajelentéseken.  Ebben nagy segítséget
+	nyújt a <a href="mailto:security-officer@FreeBSD.org">Security Officer</a>
+	és a Computer Emergency Response Team (<a href="http://www.cert.org/">CERT</a>)-mel fenntartott
+	kapcsolat.</p>
+
+    <h2>Amit a szakértők mondanak...</h2>
+
+      <p><i>"A FreeBSD...  a létező talán legjobb
+	és legmegbízhatóbb TCP/IP
+	protokollkészlettel rendelkezik..."</i></p>
+
+	<div align="right"><p>-- Michael O'Brien, <i>SunExpert </i>1996.
+	  augusztus, 7.  kötet, 8.  szám</p></div>
+
+  </body>
+</html>

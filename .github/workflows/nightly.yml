@@ -1,0 +1,100 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: exemplar-tests
+
+jobs:
+  benchmarks:
+    # The fixed machine whose numbers exemplar publishes.
+    runs-on: [self-hosted, exemplar-bench]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: exemplar-tests
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository_owner }}/exemplar
+          path: exemplar
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: exemplar-tests/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: exemplar-tests/.node-version
+      # The differential's Xerces harness runs on the JDK.
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      # The XML suite is downloaded on first use, as its licence requires; the cache keeps it between runs.
+      - uses: actions/cache@v6
+        with:
+          path: exemplar-tests/data/conformance/xmlts
+          key: w3c-xmlts-${{ hashFiles('exemplar-tests/tools/conformance/suites.json') }}
+      - name: Build exemplar
+        working-directory: exemplar
+        run: pnpm install --frozen-lockfile && pnpm compile
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm compile
+      - run: pnpm conformance
+      - name: Differentials against libxml2, Xerces and javax.xml.catalog
+        run: pnpm differential
+      - name: Long fuzz run
+        env:
+          EXEMPLAR_FUZZ_SCALE: '300'
+        run: pnpm --filter @exemplarjs/conformance exec vitest run test/fuzz.test.ts
+      - name: Fuzz differential against libxml2
+        run: pnpm fuzz --runs 200000
+      - name: Full benchmark matrix
+        run: pnpm --filter @exemplarjs/bench exec node --expose-gc src/index.ts full
+      - uses: actions/upload-artifact@v7
+        with:
+          name: bench-full
+          path: |
+            exemplar-tests/tools/bench/reports/
+            exemplar-tests/tools/conformance/reports/
+
+  runtimes:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: exemplar-tests
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository_owner }}/exemplar
+          path: exemplar
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: exemplar-tests/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: exemplar-tests/.node-version
+          cache: pnpm
+          cache-dependency-path: '*/pnpm-lock.yaml'
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: 2.9.7
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.4
+      # The XML suite is downloaded on first use, as its licence requires; the cache keeps it between runs.
+      - uses: actions/cache@v6
+        with:
+          path: exemplar-tests/data/conformance/xmlts
+          key: w3c-xmlts-${{ hashFiles('exemplar-tests/tools/conformance/suites.json') }}
+      - name: Build exemplar
+        working-directory: exemplar
+        run: pnpm install --frozen-lockfile && pnpm compile
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm compile
+      - name: The XML suite on Deno
+        run: deno run -A tools/conformance/src/cli.ts exemplar
+      - name: The XML suite on Bun
+        run: bun tools/conformance/src/cli.ts exemplar

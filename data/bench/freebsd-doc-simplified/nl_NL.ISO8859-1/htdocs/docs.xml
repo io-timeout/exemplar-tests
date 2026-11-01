@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vertaald door: Siebrand Mazeland
+     %SOURCE%	en_US.ISO8859-1/htdocs/docs.xml
+     %SRCID%	39632
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>FreeBSD Documentatie</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <img src="./../gifs/doc.jpg" alt="BSD Daemon leest documentatie" align="right" border="0" width="274" height="163"/>
+
+    <p>Er is bijzonder veel documentatie beschikbaar over FreeBSD op deze
+      website, op andere websites en in winkels.</p>
+
+  </body>
+</html>

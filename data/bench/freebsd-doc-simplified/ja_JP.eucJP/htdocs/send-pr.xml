@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Japanese Documentation Project -->
+<!-- Original revision: r46391 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD 障害報告の提出</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    <meta http-equiv="refresh" content="0; url=https://bugs.freebsd.org/submit/"/>
+  </head>
+
+  <body class="navinclude.support">
+    <p><a href="https://bugs.freebsd.org/submit/">bugzilla 障害報告フォーム</a> に移動します。</p>
+  </body>
+</html>

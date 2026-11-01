@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $FreeBSD$ -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteSystem systemIdStartString="http://www.FreeBSD.org/XML/cwd/" rewritePrefix="./"/>
+  <rewriteURI uriStartString="http://www.FreeBSD.org/XML/cwd/" rewritePrefix="./"/>
+
+  <public publicId="-//FreeBSD//ENTITIES FreeBSD Automatically Generated Entities//EN" uri="autogen.ent"/>
+</catalog>

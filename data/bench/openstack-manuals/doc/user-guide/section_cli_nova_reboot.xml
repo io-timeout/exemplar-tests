@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="reboot">
+    <title>Reboot an instance</title>
+<para>You can soft or hard reboot a running instance. A soft reboot
+        attempts a graceful shut down and restart of the instance. A
+        hard reboot power cycles the instance.</para>
+   <procedure> <step><para>By default, when you reboot a server, it is a soft reboot.</para>
+<screen><prompt>$</prompt> <userinput>nova reboot <replaceable>SERVER</replaceable></userinput></screen></step></procedure>
+<para>To perform a hard reboot, pass the <parameter>--hard</parameter>
+    parameter, as follows:</para><screen><prompt>$</prompt> <userinput>nova reboot --hard <replaceable>SERVER</replaceable></userinput></screen></section>

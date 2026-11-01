@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Changes to this list MUST NOT be committed without approval of the
+  Release Engineering Team (re@FreeBSD.org) (for general items) or
+  Documentation Engineering Team (doceng@FreeBSD.org) (for doc-related
+  items).
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD 7.0 Open Issues</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+<p>This is a list of open issues that need to be resolved for FreeBSD
+  7.0.  If you have any updates for this list, please e-mail
+  re@FreeBSD.org.</p>
+
+<ul>
+  <li><a href="#major">Major issues</a></li>
+  <li><a href="#minor">Minor issues</a></li>
+  <li><a href="#testing">Testing foci</a></li>
+  <li><a href="#stresstest">Problems Discovered by Kernel Stress Test Suite</a></li>
+</ul>
+
+<h3>Major issues for 7.0-RELEASE</h3>
+
+<a name="major"/>
+<table class="tblbasic">
+  <tr class="heading">
+    <th>Issue</th>
+    <th>Status</th>
+    <th>Responsible</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>routed not working</td>
+    <td><font color="green">Done</font></td>
+    <td>Robert Watson</td>
+    <td>Routed should have been updated because of updates made to the
+      underlying network infrastructure. The old interface was added
+      back in but marked as depreciated.</td>
+  </tr>
+
+  <tr>
+    <td>TCP accept race condition</td>
+    <td><font color="green">Done</font></td>
+    <td>Gleb Smirnoff, Robert Watson</td>
+    <td>A race in TCP will lead to very occasional returning of 0.0.0.0:0
+      rather than the correct IP address via the socket address returned by
+      accept().  A patch has been merged to HEAD, RELENG_7 and RELENG_7_0.
+      </td>
+  </tr>
+
+  <tr>
+    <td>sleepq race condition</td>
+    <td><font color="green">Done</font></td>
+    <td>John Baldwin</td>
+    <td>Races in the sleepq implementation will occasionally result in
+      sleeps with timeouts failing to wake up, as well as other symptoms.  A
+      patch has been merged to HEAD, RELENG_7, and RELENG_7_0.</td>
+  </tr>
+
+  <tr>
+    <td>pty race condition</td>
+    <td><font color="green">Done</font></td>
+    <td>Konstantin Belousov</td>
+    <td>Multiple race conditions in the tty/pty code have lead to
+      occasional panics.  One set of problems has been fixed, but others
+      are still being explored  It is aniticipated that the remaining
+      problems will be fixed for 7.0RC2.</td>
+  </tr>
+
+  <tr>
+    <td>amd64 minidump race condition</td>
+    <td><font color="green">Done</font></td>
+    <td>Ruslan Ermilov</td>
+    <td>A race condition during minidump generation on SMP amd64 could lead
+      trashed file systems due to writing outside of the swap area.  A patch
+      has been merged to HEAD, RELENG_7, and RELENG_7_0.</td>
+  </tr>
+
+  <tr>
+    <td>libkse fork process wedge</td>
+    <td><font color="green">Done</font></td>
+    <td>Julian Elischer, Daniel Eischen</td>
+    <td>A bug in libkse could lead the processes hanging after fork if they
+      fork while running multiple threads.  A patch has been committed to
+      HEAD that properly reinitializes internal thread library locks after
+      fork; it has been merged to RELENG_7 and RELENG_7_0.</td>
+  </tr>
+
+</table>
+
+<h3>Minor issues for 7.0-RELEASE</h3>
+
+<a name="minor"/>
+<table class="tblbasic">
+  <tr class="heading">
+    <th>Issue</th>
+    <th>Status</th>
+    <th>Responsible</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>sparc64 has a problem building OpenSP so it can't finish a release
+      build with docs</td>
+    <td><font color="green">Done</font></td>
+    <td>Marius Strobl</td>
+    <td>Fixed.</td>
+  </tr>
+
+</table>
+
+<h3>Testing foci for 7.0-RELEASE</h3>
+
+<a name="testing"/>
+<table class="tblbasic">
+  <tr class="heading">
+    <th>Issue</th>
+    <th>Status</th>
+    <th>Responsible</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>TCP timers</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Mike Silbersack</td>
+    <td/>
+  </tr>
+
+  <tr>
+    <td>MAC Framework</td>
+    <td/>
+    <td>Robert Watson</td>
+    <td>A code sync with Mac OS X Leopard for the MAC framework was
+      committed.</td>
+  </tr>
+
+  <tr>
+    <td>TCP issues</td>
+    <td><font color="green">Done</font></td>
+    <td>Mike Silbersack</td>
+    <td>Turned out to not be TCP issues after all, problems with
+      signal handling in mountd.</td>
+  </tr>
+</table>
+
+<h3>Stress Test Panics</h3>
+
+<a name="stresstest"/>
+<p>The system is continuously being subjected to Peter Holm's <a href="http://www.holm.cc/stress/">Kernel Stress Test Suite</a>.  The
+  following issues have recently been discovered from this test
+  suite.</p>
+
+  </body>
+</html>

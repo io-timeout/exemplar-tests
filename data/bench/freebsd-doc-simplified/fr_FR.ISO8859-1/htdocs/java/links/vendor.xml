@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.5
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Projet Java® pour FreeBSD : Liens revendeurs</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+    <p>Cette page contient des liens triés par revendeurs.</p>
+    <ul>
+      <li> Sun Microsystems</li>
+	<li><ul>
+	  <li><a href="http://www.javasoft.com">Principal site web de JavaSoft</a><br/>
+	    C'est LA ressource pour Java. Directement de l'inventeur.</li>
+	  <li><a href="http://developer.java.sun.com/developer/">Groupe des développeurs Java</a><br/> Enregistrez-vous gratuitement et accédez en primeur aux dernières versions ainsi qu'à bien d'autres choses encore.</li>
+	</ul></li>
+      <li> IBM</li>
+	<li><ul>
+	  <li><a href="http://www.ibm.com/java">developerWorks - Zone sur la technologie Java</a><br/> Site principal sur Java</li>
+	  <li><a href="http://www.alphaworks.ibm.com">Alphaworks</a><br/>Etudes technologiques, accès aux dernières versions</li>
+	  <li><a href="http://www10.software.ibm.com/developerworks/opensource/jikes/">Jikes</a><br/>
+	    Compilateur Java très rapide et en open-source</li>
+	</ul></li>
+    </ul>
+</body>
+</html>

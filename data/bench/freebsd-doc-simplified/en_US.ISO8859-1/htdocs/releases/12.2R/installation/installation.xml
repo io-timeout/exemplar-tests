@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:id="top">
+
+  <info>
+    <title>FreeBSD 12.2-RELEASE Installation
+      Instructions</title>
+
+    <author>
+      <orgname>The FreeBSD Project</orgname>
+    </author>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <copyright>
+      <year>2020</year>
+      <holder role="mailto:doc@FreeBSD.org">The FreeBSD Documentation
+	Project</holder>
+    </copyright>
+
+    <legalnotice xml:id="trademarks" role="trademarks">
+      <para>FreeBSD is a registered trademark of
+  the FreeBSD Foundation.</para>
+      <para>Intel, Celeron, Centrino, Core, EtherExpress, i386,
+  i486, Itanium, Pentium, and Xeon are trademarks or registered
+  trademarks of Intel Corporation or its subsidiaries in the United
+  States and other countries.</para>
+      <para>SPARC, SPARC64, and
+  UltraSPARC are trademarks of SPARC International, Inc in the United
+  States and other countries.  SPARC International, Inc owns all of the
+  SPARC trademarks and under licensing agreements allows the proper use
+  of these trademarks by its members.</para>
+      <para>Many of the designations used by
+  manufacturers and sellers to distinguish their products are claimed
+  as trademarks.  Where those designations appear in this document,
+  and the FreeBSD Project was aware of the trademark claim, the
+  designations have been followed by the <quote>™</quote> or the
+  <quote>®</quote> symbol.</para>
+    </legalnotice>
+
+    <abstract>
+      <para>This article gives some brief instructions on installing
+	FreeBSD 12.2-RELEASE and upgrading the systems running
+	earlier releases.</para>
+    </abstract>
+  </info>
+
+  <sect1 xml:id="install">
+    <title>Installing FreeBSD</title>
+
+    <para>The <uri xlink:href="@@URL_RELPREFIX@@/doc/en_US.ISO8859-1/books/handbook/bsdinstall.html">Installing
+	FreeBSD</uri> chapter of the <uri xlink:href="@@URL_RELPREFIX@@/doc/en_US.ISO8859-1/books/handbook/">FreeBSD Handbook</uri>
+      provides more in-depth information about the installation
+      program itself, including a guided walk-through with
+      screenshots.</para>
+  </sect1>
+
+  <sect1 xml:id="upgrade">
+    <title>Upgrading FreeBSD</title>
+
+    <para>If you are upgrading from a previous release of FreeBSD, please
+      read <uri xlink:href="http://www.FreeBSD.org/releases/12.2R/relnotes.html#upgrade">upgrading
+      section in the Release Notes</uri> for notable
+      incompatibilities carefully.</para>
+
+    <sect2 xml:id="upgrade-source">
+      <title>Upgrading from Source</title>
+
+      <para>The procedure for doing a source code based update is
+	described in <uri xlink:href="@@URL_RELPREFIX@@/doc/en_US.ISO8859-1/books/handbook/makeworld.html">Updating
+	  FreeBSD from Source</uri>.</para>
+
+      <para>For SVN use the <filename>releng/12.2</filename>
+	branch which will be where any upcoming Security Advisories or
+	Errata Notices will be applied.</para>
+    </sect2>
+
+    <sect2 xml:id="upgrade-binary">
+      <title>Upgrading Using <quote>FreeBSD Update</quote></title>
+
+      <para>The <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility supports binary
+	upgrades of i386 and amd64 systems running
+	earlier FreeBSD releases.  Systems running
+	<literal>11.3-RELEASE</literal> or
+	<literal>12.0-RELEASE</literal> can upgrade as follows:</para>
+
+      <screen><prompt>#</prompt> freebsd-update fetch
+<prompt>#</prompt> freebsd-update install</screen>
+
+      <para>Now the <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> utility can fetch bits
+	belonging to 12.2-RELEASE.  During this process
+	<citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> will ask for help in merging
+	configuration files.</para>
+
+      <screen><prompt>#</prompt> freebsd-update upgrade -r 12.2-RELEASE</screen>
+
+      <screen><prompt>#</prompt> freebsd-update install</screen>
+
+      <para>The system must now be rebooted with the newly installed
+	kernel before the non-kernel components are updated.</para>
+
+      <screen><prompt>#</prompt> shutdown -r now</screen>
+
+      <para>After rebooting, <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> needs to be run
+	again to install the new userland components:</para>
+
+      <screen><prompt>#</prompt> freebsd-update install</screen>
+
+      <para>At this point, users of systems being upgraded from
+	earlier FreeBSD releases will be prompted by
+	<citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> to rebuild all third-party applications
+	(e.g., ports installed from the ports tree) due to updates in
+	system libraries.</para>
+
+      <para>After updating installed third-party applications (and
+	again, only if <citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> printed a message
+	indicating that this was necessary), run
+	<citerefentry><refentrytitle>freebsd-update</refentrytitle><manvolnum>8</manvolnum></citerefentry> again so that it can delete the old (no
+	longer used) system libraries:</para>
+
+      <screen><prompt>#</prompt> freebsd-update install</screen>
+
+      <para>Finally, reboot into 12.2-RELEASE</para>
+
+      <screen><prompt>#</prompt> shutdown -r now</screen>
+    </sect2>
+  </sect1>
+</article>

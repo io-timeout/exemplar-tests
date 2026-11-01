@@ -1,0 +1,37 @@
+{
+  "name": "@exemplarjs/conformance",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "clean:output": "rimraf .turbo .vitest coverage reports",
+    "typecheck": "tsc --noEmit",
+    "conformance": "vitest run --passWithNoTests",
+    "differential": "node src/differential.ts",
+    "lint": "oxlint",
+    "fuzz": "node src/fuzz.ts",
+    "conformance:browser": "vitest run --config vitest.browser.config.ts"
+  },
+  "dependencies": {
+    "@exemplarjs/adapters": "workspace:*",
+    "@exemplarjs/canonical": "catalog:",
+    "@exemplarjs/catalog": "catalog:",
+    "@exemplarjs/dom": "catalog:",
+    "@exemplarjs/encodings-cjk": "catalog:",
+    "@exemplarjs/validation": "catalog:",
+    "@exemplarjs/xinclude": "catalog:",
+    "@exemplarjs/xml": "catalog:",
+    "stax-xml": "catalog:"
+  },
+  "devDependencies": {
+    "@exemplarjs/build-config": "workspace:*",
+    "@fast-check/vitest": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "fast-check": "catalog:",
+    "playwright": "catalog:"
+  }
+}

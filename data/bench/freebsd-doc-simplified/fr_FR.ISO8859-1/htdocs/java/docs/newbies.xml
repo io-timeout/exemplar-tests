@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.5
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Projet Java® pour FreeBSD : Guide pour les débutants</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+<p>Quel sorte de "débutant" êtes-vous ?</p>
+
+<p><b>Débutant sur le JDK® de FreeBSD ?</b> -- <a href="../install.html">Apprenez comment installer le JDK</a></p>
+<p><b>Débutant en Java® ?</b> -- Apprenez Java en utilisant un <a href="tutorials.html">guide</a> ou un <a href="documentation.html">livre</a>. Un des ouvrages le plus souvent recommandé est <a href="http://www.eckelobjects.com/TIJ2/index.html">Thinking in Java</a> de Bruce Eckel.</p>
+
+</body>
+</html>

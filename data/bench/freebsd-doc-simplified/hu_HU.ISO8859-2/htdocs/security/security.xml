@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $FreeBSD$ -->
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: PALI, Gabor <pgj@FreeBSD.org>
+     %SOURCE%	en/security/security.xml
+     %SRCID%	1.214
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD biztonsági információk</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+  <h2>Bevezetés</h2>
+
+  <p>Ezt az oldalt azért hoztuk létre, hogy a FreeBSD
+    biztonsági problémáival kapcsolatban
+    segítséget nyújtsunk az új és
+    tapasztalt felhasználóknak egyaránt.  A FreeBSD
+    Projekt tagjai nagyon komolyan veszik a biztonsági
+    hibákat és folyamatosan azon dolgoznak, hogy az
+    operációs rendszert a lehető
+    legbiztonságosabbá tegyék.</p>
+
+  <h2>Tartalomjegyzék</h2>
+
+  <ul>
+    <li><a href="#how">Hogyan és kinek jelentsük a FreeBSD
+	biztonsági hibáit</a></li>
+    <li><a href="#sec">Röviden a FreeBSD Security Officer
+	feladatáról</a></li>
+    <li><a href="#pol">Adatkezelési házirend</a></li>
+    <li><a href="#sup">Támogatott FreeBSD kiadások</a></li>
+  </ul>
+
+  <h2>Egyéb biztonsággal kapcsolatos linkek</h2>
+
+  <ul>
+    <li><a href="charter.html">A Security Officer és
+	csapatának szabadalomlevele</a></li>
+    <li><a href="advisories.html">A FreeBSD biztonsági
+	figyelmeztetéseinek listája</a></li>
+    <li><a href="./doc/hu/books/handbook/security-advisories.html">
+	A FreeBSD biztonsági figyelmeztetései</a></li>
+  </ul>
+
+  <a name="how"/>
+  <h2>Hogyan és kinek jelentsük a FreeBSD biztonsági
+    hibáit</h2>
+
+  <p>A FreeBSD biztonsági hibáit közvetlenül a <a href="mailto:secteam@FreeBSD.org">FreeBSD Security Team</a>
+    részére kell küldeni, illetve bizalmas
+    információk esetén a <a href="../../../security/so_public_key.asc">Security Officer
+      PGP-kulcsával</a> írhatunk egy PGP
+      titkosítású levelet a <a href="mailto:security-officer@FreeBSD.org">Security Officer
+      Team</a> címére.  A jelentéseknek minden
+    esetben tartalmazniuk kell a következő adatokat:</p>
+
+  <ul>
+    <li>A sebezhetőség leírása.</li>
+    <li>Amennyiben lehetséges, a hiba által
+      érintett összes FreeBSD verzió
+      megjelölése.</li>
+    <li>Bármilyen kézenfekvő megoldás.</li>
+    <li>Amennyiben lehetséges, példakód a hiba
+      kihasználhatóságának
+      bemutatására.</li>
+  </ul>
+
+  <p>A megadott információk közlése
+    után a Security Officer vagy a Security Team valamelyik
+    képviselője visszaigazolást fog küldeni.</p>
+
+  <h3>A levélszemét szűrése</h3>
+
+  <p>Mivel a biztonsági problémákkal kapcsolatos
+    levelezési címekre tömegesen érkezik a
+    kéretlen levélszemét, a forgalmukat
+    folyamatosan szűrjük.  Amennyiben vélthetően
+    emiatt nem sikerülne elérnünk a FreeBSD Security vagy
+    a FreeBSD Security Officer csapatok tagjait, küldjünk egy
+    levelet a <tt>security-officer-<em>XXX</em>@FreeBSD.org</tt>
+    címre, ahol az <em>XXX</em> rész helyére a
+    <tt>3432</tt> szöveget kell beírni.  Ez a cím
+    bizonyos időszakonként változik, ezért a
+    levél elküldése előtt ezen az oldalon
+    tájékozódni a legfrissebb
+    állapotáról.  Az ide elküldött
+    levelek a FreeBSD Security Officer Team tagjaihoz fognak befutni.</p>
+
+  <a name="sec"/>
+  <h2>A FreeBSD Security Officer Team és a FreeBSD Security Team</h2>
+
+  <p>Annak érdekében, hogy a beküldött
+    sebezhetőségekre a FreeBSD Projekt időben
+    érdemben reagálni tudjon, három tag
+    érhető el jelenleg a Security Officer
+    címén: maga a Security Officer, a Security Officer
+    helyettese és a Core Team egy tagja.  Ennek megfelelően
+    a <a href="mailto:security-officer@FreeBSD.org">&lt;security-officer@FreeBSD.org&gt;</a>
+    címére küldött levelek a
+    következő személyeknek fognak
+    továbbítódni:</p>
+
+  <table>
+    <tr valign="top">
+      <td>Colin Percival <a href="mailto:cperciva@FreeBSD.org">&lt;cperciva@FreeBSD.org&gt;</a></td>
+      <td>Security Officer</td>
+    </tr>
+    <tr valign="top">
+      <td>Simon L. B. Nielsen <a href="mailto:simon@FreeBSD.org">&lt;simon@FreeBSD.org&gt;</a></td>
+      <td>Security Officer-helyettes</td>
+    </tr>
+    <tr valign="top">
+      <td>Robert Watson <a href="mailto:rwatson@FreeBSD.org">&lt;rwatson@FreeBSD.org&gt;</a></td>
+      <td>A FreeBSD Core Team kapcsolattartója, a Release
+	Engineering kapcsolattartója, a TrustedBSD Projekt
+	kapcsolattartója, valamint rendszerbiztonsági
+	szakértő<br/></td>
+    </tr>
+  </table>
+
+  <p>A Security Officer munkáját a <a href="./administration.html#t-secteam">FreeBSD Security
+      Team</a> <a href="mailto:secteam@FreeBSD.org">&lt;secteam@FreeBSD.org&gt;</a>
+    segíti, amely a Security Officer által felügyelt
+    committerek egy kisebb csoportja.</p>
+
+  <a name="pol"/>
+  <h2>Adatkezelési házirend</h2>
+
+  <p>Miután a szóbanforgó
+    sebezhetőséget sikerült megfelelő módon
+    elemezni és javítani, valamint a
+    javítást tesztelni és szükség
+    esetén egyeztetni további partnerekkel, a FreeBSD
+    Security Officer igyekszik a vele kapcsolatos
+    információkat nyilvánosságra hozni.</p>
+
+  <p>A Security Officer értesíteni <em>fogja</em> a FreeBSD
+    klaszter rendszergazdáit minden olyan
+    sebezhetőségről, amely a FreeBSD Projekt
+    erőforrásait közvetlenül
+    veszélyezteti.</p>
+
+  <p>A Security Officer kérheti további FreeBSD
+    fejlesztők vagy egyéb külsős fejlesztők
+    segítségét, amennyiben az adott
+    sebezhetőség pontos feltárásához
+    szükséges a támogatásuk.  Ebben az esetben
+    a sebezhetőséggel kapcsolatos minden
+    információ szigorúan bizalmasnak
+    tekintendő, ezzel igyekszünk elkerülni a hiba
+    idő előtti elterjedését.  Ezért
+    minden, a témában érintett
+    fejlesztőtől elvárjuk, hogy a Security Officer
+    házirendjének megfelelően járjon el.
+    Korábban már többször kértünk
+    fel szakértőket az operációs rendszer
+    különféle bonyolultabb elemeinek, többek
+    közt az FFS, a virtuális memória vagy a
+    hálózati protokollkészlet
+    működésével kapcsolatban.</p>
+
+  <p>Ha a bejelentés időpontjában éppen egy
+    FreeBSD kiadás előkészítése zajlik,
+    akkor a FreeBSD Release Engineer is értesítést kap
+    a sebezhetőség létezéséről
+    és annak súlyosságáról.  A kapott
+    információk birtokában így képes
+    lesz mérlegelni, hogy az adott probléma milyen
+    változtatásokat igényel a kiadási ciklus
+    szervezésében, illetve a következő
+    kiadást milyen mértékben érinti.
+    Szükség esetén a Security Officer a
+    sebezhetőség jellegét már nem osztja meg a
+    Release Engineer felé, ezzel is igyekszik csökkenteni az
+    információ kiszivárgásának
+    kockázatát.</p>
+
+  <p>A FreeBSD Security Officer más szervezetekkel is szoros
+    együttműködésben dolgozik, többek
+    közt olyan külső fejlesztőkkel, amelyekkel a
+    FreeBSD kódjának valamelyik részét
+    közösen használják (az OpenBSD, NetBSD,
+    DragonFlyBSD projektek, az Apple, valamint a FreeBSD alapú
+    rendszereket fejlesztő cégek és linuxos
+    biztonsági listák), illetve a
+    különböző biztonsági
+    sebezhetőségeket és incidenseket
+    nyilvántartó szervezetekkel, mint
+    például a CERT.  Gyakran előfordul, hogy a
+    sebezhetőségek nem kizárólag csak a FreeBSD
+    implementációját érintik és
+    (viszont már nem olyan gyakran) további
+    kihatással vannak az egész világ
+    hálózati forgalmára.  Ilyen esetekben a
+    Security Officer igyekszik megosztani a tudomására
+    jutott adatokat az érintett szervezetekkel.  Amennyiben ehhez
+    nem járulunk hozzá, jelezzük már a
+    jelentés beküldése során.</p>
+
+  <p>Amennyiben a bejelentőnek bármilyen konkrét
+    adatkezelési megkötése van, kérjük,
+    mindenképpen pontosan tájékoztassa róla
+    a Security Officert.</p>
+
+  <p>Amennyiben a bejelentő szeretne együttműködni a
+    sebezhetőség nyilvánosságra
+    hozásában, esetleg más egyéb
+    gyártókkal együtt, kérjük ilyen
+    jellegű szándékát nyíltan
+    előre jelezni.  Ennek hiányában a
+    kérdéses sebezhetőség
+    nyilvánosságra hozásával kapcsolatban a
+    FreeBSD Security Officer olyan ütemezést fog
+    választani, amely lehetővé teszi az időben
+    történő értesítést és a
+    javítások megfelelő tesztelését.  A
+    bejelentőnek ezenkívül még tisztában
+    kell lennie azzal is, hogy ha az adott sebezhetőség
+    már kikerül valamilyen publikus helyre (mint
+    például hibakövető rendszerekbe) és
+    történnek vele kapcsolatban visszaélések,
+    akkor a Security Officernek a felhasználói
+    közösségék maximális védelme
+    érdekében jogában áll eltérni az
+    előre egyeztetett menetrendektől.</p>
+
+  <p>A bejelentések PGP titkosítással
+    védhetőek.  Amennyiben szükséges, a
+    válaszokat is PGP titkosítással
+    küldjük.</p>
+
+  <a name="sup"/>
+  <h2>Támogatott FreeBSD kiadások</h2>
+
+  <p>A FreeBSD Security Officer egyszerre a FreeBSD több
+    fejlesztési vonalához is bocsát ki
+    biztonsági figyelmeztetéseket.  Vannak <em>-STABLE
+    ágak</em> és külön <em>biztonsági
+    javításokat tartalmazó ágak</em>.
+    (Biztonsági figyelmeztetések nem készülnek
+    a <em>-CURRENT ághoz</em>.)</p>
+
+  <ul>
+    <li><p>A -STABLE ágakat például
+      <tt>RELENG_7</tt> címkével nevezik el.  Az ennek
+      megfelelő változat neve pedig a <tt>FreeBSD
+      7.0-STABLE</tt>.</p></li>
+
+    <li><p>Minden FreeBSD kiadáshoz tartozik egy
+      kizárólag biztonsági javítások
+      tartalmazó ág.  A hozzájuk tartozó
+      ágakat például a <tt>RELENG_7_0</tt>
+      címkével azonosítják.  A neki
+      megfelelő változat pedig a <tt>FreeBSD
+      7.0-RELEASE-p1</tt>.</p></li>
+  </ul>
+
+  <p>A FreeBSD Portgyűjteményt érintő
+      hibákat <a href="http://vuxml.FreeBSD.org/">a FreeBSD VuXML
+      dokumentumban</a> találhatjuk.</p>
+
+  <p>A Security Officer az egyes ágakhoz csak korlátozott
+    ideig nyújt támogatást, ezek típusa lehet
+    `<em>kipróbálásra</em>`,
+    `<em>egyszerű</em>` vagy `<em>bővített</em>`.  Az
+    egyes típusú ágak élettartamára
+    vonatkozó útmutatások a
+    következőek:</p>
+
+  <dl>
+    <dt>Kipróbálásra</dt>
+
+    <dd>A -CURRENT ágból készült
+      kiadásokat a Security Officer legalább 6
+      hónapig támogatja.</dd>
+
+    <dt>Egyszerű</dt>
+
+    <dd>A -STABLE ágból készült
+      kiadásokat a Security Officer legalább 12
+      hónapig támogatja, illetve ezen túl
+      még (szükség esetén) addig, amíg
+      a soronkövetkező egyszerű
+      támogatású kiadások közül a
+      legfrissebb 3 hónapos el nem múlik.</dd>
+
+    <dt>Bővített</dt>
+
+    <dd>Különböző válogatott kiadások
+      (általában minden második kiadás,
+      illetve az egyes -STABLE ágak legutolsó
+      kiadása), amelyeket a Security Officer legalább 24
+      hónapig támogat, illetve ezen túl még
+      (szükség esetén) addig, amíg a
+      soronkövetkező bővített
+      támogatású kiadások közül a
+      legfrissebb 3 hónapos el nem múlik.</dd>
+  </dl>
+
+  <a name="supported-branches"/>
+
+  <p>A jelenleg támogatott ágak pillanatnyi
+    besorolását és támogatásuk
+    becsült idejét az alábbi
+    táblázatban foglaltuk össze.  Itt a
+    <em>Támogatás várható vége</em>
+    című oszlopban tüntettük fel az adott
+    ágak beszüntetésének
+    valószínűsíthető
+    időpontját.  Ezek a dátumok a jövőben
+    azonban változhatnak, habár bizonyos
+    enyhítő körülmények mentén
+    előfordulhat, hogy egy adott ág támogatása
+    a kiírtnál hamarabb befejeződik.</p>
+
+  <table class="tblbasic">
+    <tr>
+      <th>Ág</th>
+      <th>Kiadás</th>
+      <th>Típus</th>
+      <th>Megjelenés ideje</th>
+      <th>Támogatás várható vége</th>
+    </tr>
+    <tr>
+      <td>RELENG_6</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2010. november 30.</td>
+    </tr>
+    <tr>
+      <td>RELENG_6_4</td>
+      <td>6.4-RELEASE</td>
+      <td>bővített</td>
+      <td>2008. november 28.</td>
+      <td>2010. november 30.</td>
+    </tr>
+    <tr>
+      <td>RELENG_7</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>utolsó kiadás + 2 év</td>
+    </tr>
+    <tr>
+      <td>RELENG_7_1</td>
+      <td>7.1-RELEASE</td>
+      <td>bővített</td>
+      <td>2009. január 4.</td>
+      <td>2011. január 31.</td>
+    </tr>
+    <tr>
+      <td>RELENG_7_3</td>
+      <td>7.3-RELEASE</td>
+      <td>bővített</td>
+      <td>2010. március 23.</td>
+      <td>2012. március 31.</td>
+    </tr>
+    <tr>
+      <td>RELENG_8</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>utolsó kiadás + 2 év</td>
+    </tr>
+    <tr>
+      <td>RELENG_8_0</td>
+      <td>8.0-RELEASE</td>
+      <td>egyszerű</td>
+      <td>2009. november 25.</td>
+      <td>2010. november 30.</td>
+    </tr>
+    <tr>
+      <td>RELENG_8_1</td>
+      <td>8.1-RELEASE</td>
+      <td>bővített</td>
+      <td>2010. július 23.</td>
+      <td>2012. július 31.</td>
+    </tr>
+  </table>
+
+  <p>A felsorolásban nem szereplő, régebbi
+    kiadásokat már nem tartjuk karban.  Ezért
+    kérünk mindenkit, hogy lehetőleg frissítsen
+    valamelyik támogatott változatra.</p>
+
+  <p>A biztonsági figyelmeztetéseket az alábbi FreeBSD
+    levelezési listákra szokták küldeni:</p>
+
+  <ul>
+    <li>FreeBSD-security-notifications@FreeBSD.org</li>
+    <li>FreeBSD-security@FreeBSD.org</li>
+    <li>FreeBSD-announce@FreeBSD.org</li>
+  </ul>
+
+  <p>Az eddig kiadott figyelmeztetések
+    megtalálhatóak a <a href="advisories.html">FreeBSD
+      bizonsági figyelmeztetések</a> oldalán.</p>
+
+  <p>A figyelmeztetéseket mindig a FreeBSD Security Officer <a href="../../../security/so_public_key.asc">PGP-kulcsával</a>
+    írják alá, majd <a href="http://security.FreeBSD.org/">http://security.FreeBSD.org/</a>
+    honlapon a hozzá tartozó javításokkal
+    együtt feltöltik az <a href="http://security.FreeBSD.org/advisories/">advisories</a>
+    (<q>figyelmeztetések</q>) és <a href="http://security.FreeBSD.org/patches/">patches</a>
+    (<q>javítások</q>) könyvtárakba.</p>
+
+</body>
+</html>

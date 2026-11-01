@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: PALI, Gabor <pgj@FreeBSD.org>
+     %SOURCE%   share/xml/press.xml
+     %SRCID%    1.93
+-->
+<press>
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">
+      $FreeBSD$
+    </cvs:keyword>
+
+  <year>
+    <name>2010</name>
+
+    <month>
+      <name>8</name>
+
+      <story>
+	<name>A PC-BSD 8.1 bemutatása</name>
+	<url>http://www.linuxbsdos.com/2010/08/17/pc-bsd-8-1-review/</url>
+	<site-name>LinuxBSDos.com</site-name>
+	<site-url>http://www.linuxbsdos.com/</site-url>
+	<date>2010. augusztus 17.</date>
+	<author>LinuxBSDos.com</author>
+	<p>A LinuxBSDos.com górcső alá veszi a
+	  PC-BSD 8.1 telepítését,
+	  beállítási és
+	  rendszerkarbantartási lehetőségeit
+	  (beleértve a PC-BSD PBI rendszerén
+	  keresztül telepíthető
+	  különböző szoftverek
+	  telepítését).</p>
+      </story>
+    </month>
+
+    <month>
+      <name>2</name>
+
+      <story>
+	<name>Nagyvizit: FreeBSD — Az ismeretlen óriás</name>
+	<url>http://www.h-online.com/open/features/Health-Check-FreeBSD-The-unknown-giant-920248.html</url>
+	<site-name>The H</site-name>
+	<site-url>http://www.h-online.com/</site-url>
+	<date>2010. február 4.</date>
+	<author>Richard Hillesley</author>
+	<p>Richard Hillesley írásában
+	  feleveníti a FreeBSD keletkezésének
+	  történetét, bemutatja a BSD licencet
+	  és a FreeBSD 8.0 újdonságait.</p>
+      </story>
+    </month>
+  </year>
+
+  <year>
+    <name>2009</name>
+
+    <month>
+      <name>11</name>
+
+      <story>
+	<name>A FreeNAS 0.7 ZFS támogatással érkezik</name>
+	<url>http://www.h-online.com/open/news/item/FreeNAS-0-7-adds-ZFS-support-853475.html</url>
+	<site-name>The H</site-name>
+	<site-url>http://www.h-online.com/</site-url>
+	<date>2009. november 9.</date>
+	<author>crve</author>
+	<p>A FreeBSD alapú FreeNAS projekt 0.7-es
+	  kiadásának újdonságainak
+	  bemutatása.</p>
+      </story>
+
+      <story>
+	<name>Hogyan frissítsük szoftvereinket egy FreeBSD
+	  rendszeren</name>
+	<url>http://blogs.techrepublic.com.com/security/?p=2615</url>
+	<site-name>Tech Republic</site-name>
+	<site-url>http://www.techrepublic.com/</site-url>
+	<date>2009. november 9.</date>
+	<author>Chad Perrin</author>
+	<p>Chad Perrin bemutatja miként szokta frissíteni
+	  FreeBSD rendszerét.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>8</name>
+
+      <story>
+	<name>A FreeBSD 8 új útválasztási
+	  architektúrát kap</name>
+	<url>http://www.internetnews.com/dev-news/article.php/3835746</url>
+	<site-name>InternetNews.com ‐ WebMediaBrands Inc.</site-name>
+	<site-url>http://www.internetnews.com/</site-url>
+	<date>2009. augusztus 21.</date>
+	<author>Sean Michael Kerner</author>
+	<p>A cikk bemutatja Qing Li, a Blue Coat hálózati
+	  tervezőmérnökének a FreeBSD
+	  legújabb változatának
+	  útválasztási
+	  architektúráján végzett
+	  munkáját.  Az elsődleges cél a FreeBSD
+	  hálózati
+	  útválasztásért felelős
+	  részeinek párhuzamosítása
+	  és ezáltal hatékonyabbá
+	  tétele.</p>
+      </story>
+
+      <story>
+	<name>FreeNAS: Adattárolás egyszerűen</name>
+	<url>http://www.radioworld.com/article/85170</url>
+	<site-name>Radio World</site-name>
+	<site-url>http://www.radioworld.com/</site-url>
+	<date>2009. augusztus 11.</date>
+	<author>Todd Dixon</author>
+	<p>A szerző lenyűgözötten méltatja a
+	  FreeBSD alapokon üzemelő FreeNAS sebességét
+	  és alacsony
+	  erőforrásigényét.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>7</name>
+
+      <story>
+	<name>Miért nem kell a FreeBSD 8 miatt
+	  újraírni a könyvet?</name>
+	<url>http://www.internetnews.com/dev-news/article.php/3830041</url>
+	<site-name>InternetNews.com ‐ WebMediaBrands Inc.</site-name>
+	<site-url>http://www.internetnews.com/</site-url>
+	<date>2009. július 15.</date>
+	<author>Sean Michael Kerner</author>
+	<p>A cikk a FreeBSD legújabb, 8.0
+	  kiadásáról szól, amellyel
+	  kapcsolatban megszólal benne többek közt
+	  Michael Lucas, az Absolute FreeBSD című könyv
+	  szerzője, valamint Matt Olander az iXsystems és
+	  Kris Moore a PC-BSD részéről.  A
+	  cikkből megtudhatjuk, hogy a FreeBSD miként marad
+	  majdnem ugyanaz a rendszer még a nagyobb verziók
+	  közt is, és miként hoz magával
+	  újításokat és
+	  fejlesztéseket a felhasználók
+	  paradigmaváltásra
+	  kényszerítése nélkül.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>6</name>
+
+      <story>
+	<name>2009 májusának legmegbízhatóbb
+	  szolgáltatói</name>
+	<url>http://news.netcraft.com/archives/2009/06/02/most_reliable_hosting_company_sites_in_may_2009.html</url>
+	<site-name>Netcraft Ltd.</site-name>
+	<site-url>http://www.netcraft.com/</site-url>
+	<date>2009. június 2.</date>
+	<author>Paul Mutton</author>
+	<p>A Netcraft felmérése szerint az öt
+	  legmegbízhatóbb szolgáltató
+	  közül három a FreeBSD rendszerét
+	  használja.</p>
+      </story>
+
+      <story>
+	<name>Hálózati szolgáltatások
+	  védelme FreeBSD jailekkel</name>
+	<url>http://www.packtpub.com/article/securing-network-services-with-freebsd-jails</url>
+	<site-name>Packt Publishing</site-name>
+	<site-url>http://www.packtpub.com/</site-url>
+	<date>2009. június</date>
+	<author>Christer Edwards</author>
+	<p>A cikkből megtudhatjuk, hogy miként
+	  alkalmazhatunk FreeBSD jaileket hálózati
+	  szolgáltatások biztonságosabbá
+	  tételére.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>5</name>
+
+      <story>
+	<name>Megjelent a FreeBSD 7.2, benne a szuperlapok
+	  támogatásával</name>
+	<url>http://www.h-online.com/open/FreeBSD-7-2-released-now-with-Superpages--/news/113204</url>
+	<site-name>The H</site-name>
+	<site-url>http://www.h-online.com/</site-url>
+	<date>2009. május 4.</date>
+	<author>djwm</author>
+	<p>Egy rövid összefoglaló a FreeBSD 7.2
+	  kiadásáról.</p>
+      </story>
+
+      <story>
+	<name>A FreeBSD 7.2 bemutatása: fejlettebb
+	  virtualizáció</name>
+	<url>http://www.cyberciti.biz/tips/freebsd-72-review-improved-virtualization.html</url>
+	<site-name>nixCraft</site-name>
+	<site-url>http://www.cyberciti.biz/</site-url>
+	<date>2009. május 2.</date>
+	<author>Vivek Grite</author>
+	<p>A FreeBSD 7.2 kiadásában, a jail alrendszerben
+	  megjelent újítások bemutatása.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>4</name>
+
+      <story>
+	<name>A Great Bay Software most már BSD rendszert
+	  használ Linux helyett</name>
+	<url>http://www.marketwire.com/press-release/Great-Bay-Software-975478.html</url>
+	<site-name>Great Bay Software</site-name>
+	<site-url>http://www.greatbaysoftware.com/</site-url>
+	<date>2009. április 16.</date>
+	<author>Bob Durkee</author>
+	<p>A nagyvállalati végpontok
+	  teljesítményhangolásával
+	  foglalkozó Great Bay Sofware a korábban erre a
+	  célra kifejlesztett eszközeit Linux
+	  alapokról a FreeBSD rendszerére helyezte át,
+	  többek közt a Beacon Endpoint Profiler 3.0
+	  nevű termékét.</p>
+      </story>
+
+      <story>
+	<name>A PC-BSD 7.1 első pillantásra</name>
+	<url>http://distrowatch.com/weekly.php?issue=20090413#feature</url>
+	<site-name>Distro Watch</site-name>
+	<site-url>http://www.distrowatch.com/</site-url>
+	<date>2009. április 13.</date>
+	<p>A cikk írója a PC-BSD 7.1
+	  kiadásával tesz egy próbát.</p>
+      </story>
+
+      <story>
+	<name>A FreeBSD és a Debian ötvözése
+	  — egy még szabadabb szoftver</name>
+	<url>http://www.linux-mag.com/id/7295</url>
+	<site-name>Linux Magazine</site-name>
+	<site-url>http://www.linux-mag.com/</site-url>
+	<date>2009. április 9.</date>
+	<author>Nathan Willis</author>
+	<p>A FreeBSD rendszermagját használó GNU
+	  operációs rendszer, a Debian GNU/kFreeBSD
+	  bemutatása.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>3</name>
+
+      <story>
+	<name>A Tomahawk Desktop Linuxról BSD rendszerre
+	  vált</name>
+	<url>http://www.tomahawkcomputers.com/fund-raising/phase-one.html</url>
+	<site-name>Tomahawk Computers</site-name>
+	<site-url>http://www.tomahawkcomputers.com</site-url>
+	<date>2009. március 10.</date>
+	<author>Sagara Wijetunga</author>
+	<p>A Tomahawk Desktop operációs rendszer új
+	  változatának
+	  elkészítéséhez a Tomahawk
+	  Computers Pte Ltd.  Linuxról a FreeBSD rendszerére
+	  váltott.</p>
+      </story>
+    </month>
+
+    <month>
+      <name>1</name>
+
+      <story>
+	<name>A Coyote Point a FreeBSD segítségével
+	  gyorsít be</name>
+	<url>http://www.internetnews.com/infra/article.php/3795791</url>
+	<site-name>Internet News</site-name>
+	<site-url>http://www.internetnews.com/</site-url>
+	<date>2009. január 13.</date>
+	<author>Sean Michael Kerner</author>
+	<p>FreeBSD a Coyote Point eszközeinek lelke.</p>
+      </story>
+
+      <story>
+	<name>A Sun egyengeti a FreeBSD 7.1 útját</name>
+	<url>http://www.internetnews.com/dev-news/article.php/3794561</url>
+	<site-name>Internet News</site-name>
+	<site-url>http://www.internetnews.com/</site-url>
+	<date>2009. január 6.</date>
+	<author>Sean Michael Kerner</author>
+	<p>Ebből a cikkből megtudhatjuk, milyen
+	  technológiákat oszt meg egymást közt a
+	  Sun és a FreeBSD Projekt, illetve milyen
+	  újításokat tartogat a FreeBSD 7.1
+	  kiadása.</p>
+      </story>
+    </month>
+  </year>
+</press>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD Homepages</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+  </head>
+
+  <body class="navinclude.docs">
+
+    <ol>
+      
+    </ol>
+
+    <p><a href="internal.html">FreeBSD Internal Home</a></p>
+  </body>
+</html>

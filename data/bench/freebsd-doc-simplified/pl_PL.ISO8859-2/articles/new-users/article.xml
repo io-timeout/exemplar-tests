@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Polish Documentation Project
+
+     $FreeBSD$
+     Original revision: 1.33
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:its="http://www.w3.org/2005/11/its" version="5.0" xml:lang="pl">
+  <info><title>Wprowadzenie do FreeBSD i Uniksa</title>
+    
+
+    <authorgroup>
+      <author><personname><firstname>Annelise</firstname><surname>Anderson</surname></personname><affiliation>
+	  <address><email>andrsn@andrsn.stanford.edu</email></address>
+	</affiliation></author>
+    </authorgroup>
+
+    <pubdate>$FreeBSD$</pubdate>
+
+    <releaseinfo>$FreeBSD$</releaseinfo>
+
+    <abstract>
+      <para>Niniejsze wprowadzenie przeznaczone jest dla osób
+        nie znających ani FreeBSD, ani Uniksa; omówione są tu
+	zagadnienia podstawowe. Zakładam, że korzystasz z
+	FreeBSD w wersji 2.0.5 lub późniejszej, a twój system
+	ma (przynajmniej na razie) jednego użytkownika (ciebie).
+	Powinieneś też dość dobrze znać DOS-a/Windows lub
+	OS/2.</para>
+    </abstract>
+  </info>
+
+  <sect1>
+    <title>Logowanie się i wychodzenie z systemu</title>
+
+    <para>Gdy ujrzysz komunikat <prompt>login:</prompt>, zaloguj
+      się jako użytkownik utworzony podczas instalacji lub jako
+      <firstterm>root</firstterm> (konto root jest już w systemie;
+      root może dostać się wszędzie i robić co mu się podoba, także
+      usuwać ważne pliki, więc trzeba z nim uważać). Znaki
+      <prompt>%</prompt> i <prompt>#</prompt> są znakami gotowości (mogą
+      wyglądać inaczej), przy czym <prompt>%</prompt> odpowiada zwykłemu
+      użytkownikowi, a <prompt>#</prompt> kontu roota.</para>
+
+    <para>Aby się wylogować (i powrócić do komunikatu
+      <prompt>login:</prompt>), napisz:</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>exit</userinput></screen>
+    </informalexample>
+
+    <para>Oczywiście, wydane polecenia potwierdza się wciskając
+      <keysym>enter</keysym>. Trzeba także pamiętać, że Unix
+      rozróżnia małe i duże litery, więc <command>exit</command>
+      i <command>EXIT</command> to nie to samo.</para>
+
+    <para>By wyłączyć komputer, napisz</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>/sbin/shutdown -h now</userinput></screen>
+    </informalexample>
+
+    <para>By natomiast uruchomić go ponownie</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>/sbin/shutdown -r now</userinput></screen>
+    </informalexample>
+
+    <para>lub</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>/sbin/reboot</userinput></screen>
+    </informalexample>
+
+    <para>Ponowne uruchomienie można też wykonać za pomocą
+      <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>Delete</keycap></keycombo>.
+      W obecnych wydaniach FreeBSD jest to odpowiednik
+      <command>/sbin/reboot</command>, i korzystanie z niego jest
+      o wiele lepszym rozwiązaniem od używania przycisku reset.
+      Nie masz przecież ochoty na ponowną instalację,
+      prawda?</para>
+  </sect1>
+
+  <sect1>
+    <title>Dodawanie użytkownika z uprawnieniami roota</title>
+
+    <para>Jeżeli nie dodawałeś użytkowników podczas instalacji
+      systemu, i jesteś zalogowany jako root, powinieneś teraz
+      utworzyć użytkownika poleceniem</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>adduser</userinput></screen>
+    </informalexample>
+
+    <para>Przy pierwszym korzystaniu z adduser mogą pojawić się
+      pytania o pewne ustawienia domyślne. Na przykład jako
+      domyślną powłokę możesz wybrać <citerefentry><refentrytitle>csh</refentrytitle><manvolnum>1</manvolnum></citerefentry> zamiast
+      <citerefentry><refentrytitle>sh</refentrytitle><manvolnum>1</manvolnum></citerefentry>, jeśli proponowana będzie <command>sh</command>.
+      Aby zaakceptować sugerowane ustawienia, wciśnij po prostu
+      enter. Domyślne ustawienia trafiają do pliku
+      <filename>/etc/adduser.conf</filename>, który można
+      samodzielnie edytować.</para>
+
+    <para>Dla przykładu, chcesz dodać użytkownika
+      <systemitem class="username">marek</systemitem> o nazwisku <emphasis>Marek
+      Piegus</emphasis>. Dla bezpieczeństwa przydziel markowi
+      hasło (choćby w obawie przed wszędobylskimi dzieciakami).
+      Gdy zobaczysz pytanie, do jakich innych grup ma należeć
+      marek, wpisz <systemitem class="groupname">wheel</systemitem></para>
+
+    <informalexample>
+      <screen>Login group is ``marek''. Invite marek into other groups: <userinput>wheel</userinput></screen>
+    </informalexample>
+
+    <para>Dzięki temu po zalogowaniu się jako
+      <systemitem class="username">marek</systemitem> będzie można skorzystać z
+      polecenia <citerefentry><refentrytitle>su</refentrytitle><manvolnum>1</manvolnum></citerefentry> by zostać rootem. Nie będziesz już
+      teraz besztany za logowanie się jako root.</para>
+
+    <para>Możesz przerwać <command>adduser</command> w dowolnym
+      momencie wciskając
+      <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>,
+      na koniec będziesz też mieć możliwość zatwierdzenia nowego
+      użytkownika lub odrzucenia go, wpisując <keycap>n</keycap>.
+      Jeśli chcesz, możesz dodać drugiego użytkownika; gdy
+      będziesz zmieniać ustawienia konta marka i coś pójdzie nie
+      tak, będziesz mieć zapas.</para>
+
+    <para>Po wykonaniu powyższych czynności, wpisz
+      <command>exit</command> aby móc znów się zalogować, i
+      zaloguj się jako <systemitem class="username">marek</systemitem>. Należy raczej
+      pracować jako zwykły użytkownik, jeśli nie są potrzebne
+      uprawnienia roota (i związane z nimi ryzyko).</para>
+
+    <para>Jeśli wcześniej dodałeś użytkownika i chcesz dać mu
+      możliwość zostania rootem za pomocą <command>su</command>,
+      możesz to zrobić logując się jako root i modyfikując plik
+      <filename>/etc/group</filename>; dopisz marka w pierwszej
+      linii tego pliku (grupa <systemitem class="groupname">wheel</systemitem>).
+      Wcześniej jednak powinieneś zapoznać się z edytorem
+      <citerefentry><refentrytitle>vi</refentrytitle><manvolnum>1</manvolnum></citerefentry>, lub skorzystać z prostszego edytora <citerefentry><refentrytitle>ee</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      dostępnego w nowych wersjach FreeBSD.</para>
+
+
+    <para>Użytkownika usuwa się poleceniem
+      <command>rmuser</command>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Rozglądanie się</title>
+
+    <para>Zaloguj się jako zwykły użytkownik, rozejrzyj się
+      wokoło i spróbuj skorzystać z kilku poleceń służących
+      uzyskiwaniu informacji i pomocy.</para>
+
+    <para>Oto niektóre polecenia z krótkim opisem:</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><command>id</command></term>
+
+	<listitem>
+	  <para>Pokazuje kim jesteś.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>pwd</command></term>
+
+	<listitem>
+	  <para>Pokazuje gdzie jesteś, czyli bieżący
+	    katalog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ls</command></term>
+
+	<listitem>
+	  <para>Wyświetla listę plików w bieżącym katalogu.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ls -F</command></term>
+
+	<listitem>
+	  <para>Wyświetla listę plików w bieżącym katalogu,
+	    znakiem <literal>*</literal> oznaczając pliki
+	    wykonywalne, znakiem <literal>/</literal>
+	    katalogi, a znakiem <literal>@</literal> dowiązania
+	    symboliczne.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ls -l</command></term>
+
+	<listitem>
+	  <para>Wyświetla listę plików w długim formacie,
+	    pokazując rozmiar, datę, uprawnienia.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ls -a</command></term>
+
+	<listitem>
+	  <para>Wyświetla również pliki ukryte (o nazwie
+	    rozpoczynającej się kropką). Gdy jesteś rootem,
+	    pliki ukryte są pokazywane bez stosowania opcji
+	    <option>-a</option>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>cd</command></term>
+
+	<listitem>
+	  <para>Zmiana katalogu. <command>cd
+	    ..</command> przechodzi o
+	    jeden poziom wyżej; uwaga na odstęp po
+	    <command>cd</command>. <command>cd
+	    /usr/local</command> przejdzie
+	    do wskazanego katalogu. <command>cd
+	    ~</command> przechodzi do
+	    domowego katalogu obecnego użytkownika, np.
+	    <filename>/usr/home/marek</filename>. Poleceniem
+	    <command>cd /cdrom</command>,
+	    a następnie <command>ls</command> możesz przekonać
+	    się, czy Twój CDROM jest zamontowany i czy
+	    działa.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>view
+	    nazwapliku</command></term>
+
+	<listitem>
+	  <para>Pokazuje zawartość pliku (o nazwie
+	    <replaceable>nazwapliku</replaceable>) bez
+	    możliwości dokonywania zmian. Spróbuj napisać
+	    <command>view
+	    /etc/fstab</command>.
+	    Wpisz <command>:q</command> by zakończyć.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>cat
+	    nazwapliku</command></term>
+
+	<listitem>
+	  <para>Pokazuje na ekranie zawartość pliku
+	    <replaceable>nazwapliku</replaceable>. Jeśli jest
+	    on zbyt duży i widać tylko koniec, wciśnij
+	    <keycap>ScrollLock</keycap> i posłuż się
+	    <keycap>strzałką w górę</keycap> by przesunąć się
+	    wstecz. <keycap>ScrollLock</keycap> może być też
+	    stosowany przy przeglądaniu dokumentacji systemowej.
+	    By zakończyć przewijanie, ponownie wciśnij
+	    <keycap>ScrollLock</keycap>. Możesz wypróbować
+	    <command>cat</command> na ukrytych plikach w Twoim
+	    katalogu domowym:
+	      <command>cat .cshrc</command>,
+	      <command>cat .login</command>,
+	      <command>cat
+	      .profile</command>.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>W <filename>.cshrc</filename> znajdziesz aliasy dla
+      polecenia <command>ls</command> (są bardzo wygodne).
+      Własne aliasy możesz tworzyć modyfikując plik
+      <filename>.cshrc</filename>. Gdy chcesz udostępnić aliasy
+      wszystkim użytkownikom, umieść je w pliku konfiguracyjnym
+      <command>csh</command> dla całego systemu,
+      <filename>/etc/csh.cshrc</filename>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Gdzie szukać pomocy i informacji</title>
+
+    <para>Oto niektóre przydatne źródła pomocy.
+      <replaceable>Tekst</replaceable> oznacza coś, co wpisałeś;
+      zwykle będzie to jakieś polecenie lub nazwa pliku.</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><command>apropos
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Wszystkie wystąpienia
+	    <replaceable>tekstu</replaceable> w
+	    <database>bazie danych whatis</database>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>man
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Dokumentacja systemowa na temat
+	    <replaceable>tekstu</replaceable>. Jest to podstawowe
+	    źródło informacji w systemach Un*ksowych. Przykładowo
+	    <command>man ls</command>
+	    podpowie, jak korzystać z polecenia
+	    <command>ls</command>. Naciśnij <keycap>Enter</keycap>
+	    by przejść dalej,
+	    <keycombo><keycap>Ctrl</keycap><keycap>B</keycap></keycombo>
+	    by zobaczyć poprzednią stronę,
+	    <keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo>
+	    by zobaczyć następną, <keycap>q</keycap> albo
+	    <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+	    aby zakończyć.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>which
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Znajduje <replaceable>tekst</replaceable> w
+	    ścieżce użytkownika.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>locate
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Pokazane będą wszystkie ścieżki, w których
+	    znaleziony został
+	    <replaceable>tekst</replaceable>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>whatis
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Informuje, jak działa polecenie
+	    <replaceable>tekst</replaceable> i na której stronie
+	    dokumentacji systemowej znajduje się jego opis.
+	    Wpisując <command>whatis *</command> otrzymasz opis
+	    wszystkich plików w bieżącym katalogu.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>whereis
+	    tekst</command></term>
+
+	<listitem>
+	  <para>Odnajduje plik <replaceable>tekst</replaceable>
+	    i podaje jego pełną ścieżkę.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Spróbuj użyć <command>whatis</command> by otrzymać
+      opisy najczęściej używanych poleceń, na przykład
+      <command>cat</command>, <command>more</command>,
+      <command>grep</command>, <command>mv</command>,
+      <command>find</command>, <command>tar</command>,
+      <command>chmod</command>, <command>chown</command>,
+      <command>date</command> i <command>script</command>.
+      <command>more</command> pozwala na oglądanie kolejnych
+      stron jedna po drugiej (znane z DOS'a), na przykład
+      <command>ls -l | more</command> lub
+      <command>more
+      nazwapliku</command>.
+      Znak <literal>*</literal> działa jak szablon, np.
+      polecenie <command>ls w*</command> pokaże pliki o nazwach
+      zaczynających się literą <literal>w</literal>.</para>
+
+    <para>Niektóre z powyższych poleceń mogą działać nie całkiem
+      prawidłowo. Działanie <citerefentry><refentrytitle>locate</refentrytitle><manvolnum>1</manvolnum></citerefentry> i <citerefentry><refentrytitle>whatis</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      uzależnione jest od bazy danych, która aktualizowana jest
+      raz na tydzień. Jeżeli nie planujesz zostawiać włączonego
+      komputera (z uruchomionym FreeBSD) na weekend, powinieneś
+      co jakiś czas uruchomić polecenia codziennej,
+      cotygodniowej i comiesięcznej obsługi. Uruchamiaj je jako
+      root i daj każdemu z nich nieco czasu na wykonanie pracy
+      przed uruchomieniem kolejnego.</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>periodic daily</userinput>
+<lineannotation>pominięto wyniki</lineannotation>
+<prompt>#</prompt> <userinput>periodic weekly</userinput>
+<lineannotation>pominięto wyniki</lineannotation>
+<prompt>#</prompt> <userinput>periodic monthly</userinput>
+<lineannotation>pominięto wyniki</lineannotation></screen>
+    </informalexample>
+
+    <para>Jeżeli nudzi cię czekanie, wciśnij
+      <keycombo><keycap>Alt</keycap><keycap>F2</keycap></keycombo>
+      by przejść do następnej <firstterm>konsoli
+      wirtualnej</firstterm> i ponownie się zalogować; w końcu
+      to system wielodostępny i wielozadaniowy. Tak czy inaczej,
+      uruchomione polecenia będą zapewne wypisywać na ekranie
+      komunikaty; możesz wyczyścić ekran wpisując
+      <command>clear</command>. Gdy polecenia obsługi zakończą
+      pracę, możesz zajrzeć do
+      <filename>/var/mail/root</filename> i
+      <filename>/var/log/messages</filename>.</para>
+
+    <para>Wykonywanie tego typu poleceń jest częścią
+      administracji systemem - a jako samodzielny użytkownik
+      systemu jesteś administratorem sam dla siebie. Właściwie
+      wszystko, co wymaga uprawnień roota, to administracja
+      systemem. Zagadnienia z tym związane nie są zbyt dobrze
+      omówione nawet w opasłych księgach o Uniksie, gdzie często
+      wiele miejsca poświęcone jest omówieniu rozwijanych menu w
+      menedżerach okien. Jeśli chcesz, możesz zaopatrzyć się
+      w jedną z dwóch najpopularniejszych książek o
+      administrowaniu systemem, pierwsza z nich to
+      <citetitle>UNIX System Administration Handbook</citetitle>
+      autorstwa Evi Nemeth i in. (Prentice-Hall, 1995, ISBN
+      0-13-15051-7), wydanie drugie z czerwoną okładką; druga
+      napisana przez Æleen Frisch
+      <citetitle>Essential System Administration</citetitle>
+      (O'Reilly &amp; Associates, 1993, ISBN 0-937175-80-3).
+      Ja korzystałam z tej pierwszej.</para>
+  </sect1>
+
+  <sect1>
+    <title>Edycja tekstu</title>
+
+    <para>Konfigurowanie systemu wiąże się z edytowaniem plików
+      tekstowych. Większość z nich znajduje się w katalogu
+      <filename>/etc</filename>; do ich modyfikacji wymagane
+      będą uprawnienia roota. Możesz posługiwać się prostym
+      edytorem <command>ee</command>, jednakże na dłuższą metę
+      warto nauczyć się obsługi edytora <command>vi</command>.
+      Znakomite wprowadzenie do vi można znaleźć w
+      <filename>/usr/src/contrib/nvi/docs/tutorial</filename>;
+      jeśli go tam nie ma, możesz pobrać je przez FTP z
+      <systemitem>ftp.cdrom.com</systemitem> z katalogu
+      FreeBSD/FreeBSD-current/src/contrib/nvi/docs/tutorial.</para>
+
+    <para>Zanim zabierzesz się za edycję pliku, dobrze byłoby
+      zrobić jego kopię zapasową. Jeżeli na przykład chcesz
+      edytować <filename>/etc/rc.conf</filename>, możesz
+      przejść do katalogu <filename>/etc</filename>
+      poleceniem <command>cd /etc</command> i napisać:</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>cp rc.conf rc.conf.orig</userinput></screen>
+    </informalexample>
+
+    <para>W rezultacie plik <filename>rc.conf</filename> zostałby
+      skopiowany jako <filename>rc.conf.orig</filename>. Mógłbyś
+      później przywrócić oryginalny plik kopiując
+      <filename>rc.conf.orig</filename> jako
+      <filename>rc.conf</filename>. Jeszcze lepszym wyjściem
+      jest przeniesienie pliku (zmiana nazwy) i późniejsze
+      skopiowanie go z powrotem:</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>mv rc.conf rc.conf.orig</userinput>
+<prompt>#</prompt> <userinput>cp rc.conf.orig rc.conf</userinput></screen>
+    </informalexample>
+
+    <para>Polecenie <command>mv</command> zachowuje oryginalną
+      datę i właściciela pliku. Możesz już edytować
+      <filename>rc.conf</filename>. Gdy zechcesz powrócić do
+      poprzedniego pliku, napisz
+      <userinput>mv rc.conf rc.conf.moje</userinput> (o ile
+      chcesz również zachować swoją wersję), a następnie</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>mv rc.conf.orig rc.conf</userinput></screen>
+    </informalexample>
+
+    <para>Powrócisz w ten sposób do poprzedniego stanu.</para>
+
+    <para>Edycję pliku rozpoczyna się poleceniem</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>vi nazwapliku</userinput></screen>
+    </informalexample>
+
+    <para>Do poruszania się w tekście użyj klawiszy
+      strzałek. Klawisz <keycap>Esc</keycap> powoduje
+      przełączenie <command>vi</command> w tryb poleceń.
+      Oto niektóre z poleceń:</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><command>x</command></term>
+
+	<listitem>
+	  <para>usunięcie litery pod kursorem</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>dd</command></term>
+
+	<listitem>
+	  <para>usunięcie całego wiersza</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>i</command></term>
+
+	<listitem>
+	  <para>wstawianie tekstu w miejscu kursora</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>a</command></term>
+
+	<listitem>
+	  <para>wstawianie tekstu za kursorem</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Po wpisaniu <command>i</command> lub <command>a</command>
+      możesz wprowadzac tekst. Klawiszem <keycap>Esc</keycap>
+      powracasz do trybu poleceń, oto kolejne z nich</para>
+
+    <variablelist>
+      <varlistentry>
+	<term><command>:w</command></term>
+
+	<listitem>
+	  <para>zapisanie pliku na dysku i powrót do edycji</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>:wq</command></term>
+
+	<listitem>
+	  <para>zapisanie pliku i wyjście z edytora</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>:q!</command></term>
+
+	<listitem>
+	  <para>wyjście bez zapisywania zmian</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>/tekst</command></term>
+
+	<listitem>
+	  <para>przeniesienie kursora do
+	    <replaceable>tekstu</replaceable>;
+	    <command>/Enter</command> (klawisz
+	    enter) znajduje kolejne wystąpienie
+	    <replaceable>tekstu</replaceable>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>G</command></term>
+
+	<listitem>
+	  <para>przejście na koniec pliku</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>nG</command></term>
+
+	<listitem>
+	  <para>przejście do linii o numerze
+	    <replaceable>n</replaceable></para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><keycombo><keycap>Ctrl</keycap><keycap>L</keycap></keycombo></term>
+
+	<listitem>
+	  <para>przerysowanie ekranu</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><keycombo><keycap>Ctrl</keycap><keycap>b</keycap></keycombo> i
+	  <keycombo><keycap>Ctrl</keycap><keycap>f</keycap></keycombo></term>
+
+	<listitem>
+	  <para>przejście wstecz i do przodu o jeden ekran,
+	    podobnie jak w <command>more</command> i
+	    <command>view</command>.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Możesz poćwiczyć korzystanie z <command>vi</command>
+      w katalogu domowym; utwórz nowy plik poleceniem
+      <command>vi nazwapliku</command>,
+      spróbuj wpisać i usunąć tekst, zapisać plik i następnie
+      go wczytać. <command>vi</command> może niekiedy sprawiać
+      niespodzianki, gdyż jest w gruncie rzeczy bardzo
+      skomplikowany. Czasami zdarza się, że niechcący wydasz
+      polecenie, które zachowa się inaczej niż oczekiwałeś.
+      (Niektórzy naprawdę lubią <command>vi</command>, jest
+      o wiele potężniejszy od DOS-owego edytora EDIT;
+      poszukaj informacji o poleceniu <command>:r</command>.)
+      Jeśli będziesz mieć kłopoty, wciskając <keycap>Esc</keycap>
+      wróć do trybu poleceń i spróbuj jeszcze raz; często
+      zapisuj poleceniem <command>:w</command>, i używaj
+      <command>:q!</command> by wyjść i zacząć od nowa (od
+      ostatniego użycia <command>:w</command>) jeśli to
+      konieczne.</para>
+
+    <para>Możesz teraz, przy pomocy <command>cd</command>,
+      przejść do <filename>/etc</filename> i zostać rootem
+      korzystając z <command>su</command>. Uruchom
+      <command>vi</command> i zmodyfikuj plik
+      <filename>/etc/group</filename> dodając użytkownika
+      do grupy wheel, by mógł on otrzymywać uprawnienia roota.
+      Dopisz przecinek i nazwę użytkownika na końcu pierwszego
+      wiersza pliku, następnie wciśnij <keycap>Esc</keycap> i
+      wpisz <command>:wq</command> by zapisać plik i zakończyć
+      edycję. Efekt natychmiastowy. (Nie wstawiłeś spacji za
+      przecinkiem, zgadza się?)</para>
+  </sect1>
+
+  <sect1>
+    <title>Drukowanie plików w DOS-ie</title>
+
+    <para>Zapewne twoja drukarka nie jest jeszcze gotowa do pracy
+      w FreeBSD, by więc wydrukować plik trzeba będzie przenieść
+      go na dyskietkę i wydrukować w DOS-ie. Załóżmy, iż
+      chciałbyś uważnie przeczytać stronę dokumentacji
+      omawiającą dokonywanie zmian w prawach dostępu do plików
+      (co jest dosyć ważnym zagadnieniem); możesz ją zobaczyć
+      wpisując <command>man chmod</command>. Natomiast
+      polecenie</para>
+    <informalexample>
+      <screen><prompt>%</prompt> <userinput>man chmod | col -b &gt; chmod.txt</userinput></screen>
+    </informalexample>
+
+    <para>spowoduje usunięcie znaczników formatujących i
+      zamiast pokazywać stronę dokumentacji na ekranie,
+      zapisze ją w pliku <filename>chmod.txt</filename>. Włóż
+      teraz sformatowaną dyskietkę do stacji A, skorzystaj z
+      <command>su</command> by zostać rootem, i wpisz</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>/sbin/mount -t msdos /dev/fd0 /mnt</userinput></screen>
+    </informalexample>
+
+    <para>Powyższe polecenie zamontuje stację dyskietek
+      w katalogu <filename>/mnt</filename>.</para>
+
+    <para>Uprawnienia roota nie są już potrzebne, możesz więc
+      wpisać <command>exit</command> by z powrotem korzystać
+      z konta marka. Przejdź teraz do katalogu, w którym
+      utworzyłeś plik <filename>chmod.txt</filename> i skopiuj
+      go na dyskietkę poleceniem:</para>
+
+    <informalexample>
+      <screen><prompt>%</prompt> <userinput>cp chmod.txt /mnt</userinput></screen>
+    </informalexample>
+
+    <para>Po wpisaniu <command>ls /mnt</command> powinieneś
+      zobaczyć, że w katalogu <filename>/mnt</filename> znajduje
+      się plik <filename>chmod.txt</filename>.</para>
+
+    <para>Niekiedy warto zapisać w pliku to, co wyświetla
+      <filename>/sbin/dmesg</filename>. Można to zrobić
+      wpisując</para>
+
+    <informalexample>
+      <screen><prompt>%</prompt> <userinput>/sbin/dmesg &gt; dmesg.txt</userinput></screen>
+    </informalexample>
+
+    <para>Potem można skopiować <filename>dmesg.txt</filename>
+      na dyskietkę. <command>/sbin/dmesg</command> pokazuje
+      komunikaty wyświetlane podczas ładowania systemu; można
+      dzięki temu prześledzić przebieg procesu ładowania
+      FreeBSD. Kiedy zadajesz pytaniena <!-- &a.pl.questions.ms; -->
+      lub na grupie USENET, na przykład: <quote>FreeBSD nie
+      chce wykryć mojego dysku, co zrobić?</quote>, wówczas
+      inni będą chcieli dowiedzieć się, co pokazuje
+      <command>dmesg</command>.</para>
+
+    <para>Możesz już odmontować stację dyskietek (jako root),
+      wydając polecenie</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>/sbin/umount /mnt</userinput></screen>
+    </informalexample>
+
+    <para>Dyskietkę możesz już wyjąć. Uruchom komputer ponownie
+      by załadować DOS-a. Skopiuj pliki z dyskietki do jakiegoś
+      katalogu i otwórz je przy pomocy DOS-owego EDIT-a,
+      Notatnika Windows albo WordPada, dokonaj jakiejś drobnej
+      zmiany aby wymusić zapisanie pliku, po czym wydrukuj go
+      w sposób tradycyjny dla DOS-a lub Windows. Udało się?
+      Strony dokumentacji systemowej najlepiej jest drukować
+      korzystając z DOS-wego polecenia
+      <command>print</command>. (Kopiowanie plików z FreeBSD
+      na zamontowaną partycję DOS-a ciągle jeszcze bywa
+      niebezpieczne.)</para>
+
+    <para>Aby korzystać z drukarki w FreeBSD, należy dodać
+      odpowiedni wpis w <filename>/etc/printcap</filename>
+      oraz utworzyć katalog buforowania w
+      <filename>/var/spool/output</filename>. Jeśli drukarka
+      jest podłączona do portu <hardware>lpt0</hardware>
+      (oznaczonego <hardware>LPT1</hardware> w DOS-ie), być
+      może wystarczy tylko przejść do
+      <filename>/var/spool/output</filename> i (będąc rootem)
+      utworzyć katalog <filename>lpd</filename> za pomocą
+      polecenia: <command>mkdir lpd</command> (chyba, że taki
+      katalog już tam jest). Od tej chwili drukarka powinna się
+      zgłaszać podczas ładowania systemu, jeśli jest włączona,
+      a drukowanie plików powinno być możliwe dzięki poleceniu
+      <command>lp</command> lub <command>lpr</command>.
+      Konfiguracja drukowania opisana jest w
+      <link xlink:href="../../books/handbook/index.html">Podręczniku
+      FreeBSD</link>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Inne przydatne polecenia</title>
+
+    <variablelist>
+      <varlistentry>
+	<term><command>df</command></term>
+
+	<listitem>
+	  <para>pokazuje zamontowane systemy plików i
+	    zajmowaną przestrzeń.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ps aux</command></term>
+
+	<listitem>
+	  <para>lista działających procesów.
+	    <command>ps ax</command> wyświetla
+	    bardziej zwięzłą postać listy.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>rm nazwapliku</command></term>
+
+	<listitem>
+	  <para>usunięcie pliku <replaceable>nazwapliku</replaceable>.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>rm -R katalog</command></term>
+
+	<listitem>
+	  <para>usunięcie katalogu
+	    <replaceable>katalog</replaceable> wraz z
+	    podkatalogami. (ostrożnie!)</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>ls -R</command></term>
+
+	<listitem>
+	  <para>lista plików w katalogu bieżącym i wszystkich
+	    jego podkatalogach. Swego czasu stosowałam
+	    <command>ls -AFR &gt; where.txt</command> aby
+	    sporządzić listę wszystkich plików w
+	    <filename>/</filename> oraz (oddzielnie)
+	    <filename>/usr</filename>, zanim poznałam lepsze
+	    sposoby wyszukiwania plików.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>passwd</command></term>
+
+	<listitem>
+	  <para>zmiana hasła użytkownika (lub roota)</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><command>man hier</command></term>
+
+	<listitem>
+	  <para>dokumentacja Uniksowego systemu plików</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Aby odnaleźć plik <filename>nazwapliku</filename>
+      w <filename>/usr</filename> lub jego podkatalogach,
+      skorzystaj z polecenia <command>find</command>:</para>
+
+    <informalexample>
+      <screen><prompt>%</prompt> <userinput>find /usr -name "nazwapliku"</userinput></screen>
+    </informalexample>
+
+    <para>Możesz wykorzystać znak <literal>*</literal> jako
+      wzorzec nazwy
+      <parameter>"<replaceable>nazwapliku</replaceable>"</parameter>
+      (wówczas należy ją ująć w cudzysłów). Jeśli wybierzesz,
+      by <command>find</command> szukało w katalogu
+      <filename>/</filename> zamiast <filename>/usr</filename>,
+      wówczas poszukiwania obejmą wszystkie zamontowane
+      systemy plików, w tym CDROM i partycje DOS-owe.</para>
+
+    <para>Polecenia i programy narzędziowe Uniksa są omówione
+      w znakomitej książce <citetitle>Unix for the
+      Impatient</citetitle> (wyd. drugie, Addison-Wesley, 1996),
+      autorstwa Abrahamsa i Larsona. Jest także mnóstwo
+      informacji na ten temat w Internecie, przykładem może być
+      <link xlink:href="http://www.geek-girl.com/unix.html">Unix
+      Reference Desk</link>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Co dalej</title>
+
+    <para>Masz już wszystko, co będzie potrzebne by sprawnie
+      posługiwać się systemem i edytować pliki, możesz więc
+      zająć się dostosowywaniem systemu do własnych potrzeb.
+      Wiele przydatnych informacji można
+      znaleźć w podręczniku FreeBSD (który zapewne masz na dysku)
+      oraz na <link xlink:href="../../../../index.html">stronie
+      FreeBSD</link>. Na stronie, a także na CDROM-ie,
+      dostępny jest również pokaźny zbiór pakietów i portów.
+      O tym, jak z nich korzystać, można dowiedzieć się z
+      podręcznika (znajdź potrzebny pakiet, dodaj go poleceniem
+      <command>pkg_add
+      /cdrom/packages/All/nazwapakietu</command>,
+      przy czym <replaceable>nazwapakietu</replaceable> jest
+      nazwą pliku pakietu). Listę pakietów i portów wraz z krótkim
+      opisem można znaleźć na CDROM-ie, w
+      <filename>cdrom/packages/index</filename>,
+      <filename>cdrom/packages/index.txt</filename>, oraz
+      <filename>cdrom/ports/index</filename>; dokładniejsze
+      opisy znajdują się w
+      <filename>/cdrom/ports/*/*/pkg/DESCR</filename>, przy czym
+      znaki <literal>*</literal> oznaczają odpowiednio rodzaj
+      programu i jego nazwę.</para>
+
+    <para>Jeżeli opis instalacji portów z CDROM-u zawarty w
+      podręczniku wydaje ci się zbyt skomplikowany (przez jakieś
+      <command>lndir</command>, czy coś), możesz spróbować
+      poniższego sposobu:</para>
+
+    <para>Znajdź port, który chcesz zainstalować, powiedzmy, że
+      będzie to <command>kermit</command>. Na CDROM-ie
+      znajdziesz jego katalog. Skopiuj ten katalog do
+      <filename>/usr/local</filename> (to dobre miejsce na
+      dodatkowe programy, które mają być dostępne dla wszystkich
+      użytkowników) poleceniem:</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>cp -R /cdrom/ports/comm/kermit /usr/local</userinput></screen>
+    </informalexample>
+
+    <para>W efekcie powinien powstać katalog
+      <filename>/usr/local/kermit</filename> zawierający te same
+      pliki, co katalog <command>kermita</command> na
+      CDROM-ie.</para>
+
+    <para>Następnie korzystając z polecenia
+      <command>mkdir</command> utwórz katalog
+      <filename>/usr/ports/distfiles</filename>, chyba że już
+      taki istnieje. Sprawdź teraz, czy w katalogu
+      <filename>/cdrom/ports/distfiles</filename> znajduje się
+      plik o nazwie odpowiadającej instalowanemu portowi.
+      Skopiuj go do <filename>/usr/ports/distfiles</filename>;
+      w obecnych wersjach nie trzeba tego robić, ponieważ
+      zajmuje się tym samo FreeBSD. W przypadku
+      <command>kermita</command> pliku nie ma.</para>
+
+    <para>Teraz poleceniem <command>cd</command> przejdź do
+      podkatalogu <filename>/usr/local/kermit</filename>
+      zawierającego plik <filename>Makefile</filename>.
+      Napisz</para>
+
+    <informalexample>
+      <screen><prompt>#</prompt> <userinput>make all install</userinput></screen>
+    </informalexample>
+
+    <para>Spowoduje to, iż wszystkie potrzebne pliki, których
+      nie ma na CDROM-ie lub w
+      <filename>/usr/ports/distfiles</filename>, zostaną
+      pobrane przez FTP. Jeżeli jeszcze nie skonfigurowałeś
+      sieci, a w <filename>/cdrom/ports/distfiles</filename>
+      nie ma pliku potrzebnego do instalacji, będziesz musiał
+      uzyskać ten plik korzystając z innego komputera i
+      skopiować go do <filename>/usr/ports/distfiles</filename>
+      z dyskietki albo partycji DOS-a. Zajrzyj do
+      <filename>Makefile</filename> (poleceniem
+      <command>cat</command>, <command>more</command> lub
+      <command>view</command>) by dowiedzieć się, skąd wziąć
+      potrzebny plik (lokalizacja w sieci) i jak się on nazywa.
+      Jeżeli ściągasz plik korzystając z DOS-a, jego nazwa
+      zostanie obcięta, tak więc po umieszczeniu go w
+      <filename>/usr/ports/distfiles</filename> będziesz musiał
+      zmienić nazwę pliku (poleceniem
+      <command>mv</command>) na prawidłową. (Pamiętaj, by
+      pobierać pliki w trybie binarnym!) Przejdź z powrotem do
+      <filename>/usr/local/kermit</filename>, odnajdź katalog
+      zawierający <filename>Makefile</filename>, i wpisz
+      <command>make all install</command>.</para>
+
+    <para>Może się zdarzyć, że do instalacji jakiegoś portu
+      bądź pakietu wymagany będzie jakiś inny program. Jeżeli
+      instalacja zostanie przerwana komunikatem <errorname>can't
+      find unzip</errorname> (nie znaleziono unzip) lub podobnym,
+      prawdopodobnie trzeba będzie zainstalować pakiet lub port
+      unzip by móc kontynuować instalację.</para>
+
+    <para>Po instalacji wpisz <command>rehash</command> aby
+      uwzględnić ewentualne zmiany ścieżki. (Jeżeli używając
+      <command>whereis</command> lub <command>which</command>
+      często trafiasz na komunikat
+      <errorname>path not found</errorname> (nie znaleziono
+      ścieżki), powinieneś uzupełnić katalogi umieszczone w
+      ścieżce w pliku <filename>.cshrc</filename> w katalogu
+      domowym. Ścieżka pełni w Uniksie taką samą rolę jak w
+      DOS-ie, z tym, że (domyślnie) nie zawiera katalogu
+      bieżącego ze względów bezpieczeństwa; chcąc uruchomić
+      plik z bieżącego katalogu, należy przed jego nazwą
+      napisać <filename>./</filename>; bez spacji po znaku
+      ukośnika.)</para>
+
+
+    <para>Być może zechcesz ściągnąć najnowszą wersję przeglądarki
+      Netscape z ich <link xlink:href="ftp://ftp.netscape.com/">serwera
+      FTP</link>. (Netscape wymaga zainstalowanego X Window
+      System.) Dostępna jest wersja dla FreeBSD, więc poszukaj
+      jej. Rozpakuj plik poleceniami <command>gunzip
+      nazwapliku</command> oraz
+      <command>tar xvf
+      nazwapliku</command> i przenieś
+      otrzymany plik wykonywalny do
+      <filename>/usr/local/bin</filename>
+      lub podobnego. Wykonaj <command>rehash</command>, oraz
+      dodaj następujące polecenia do plików
+      <filename>.cshrc</filename> w katalogu domowym każdego
+      użytkownika, lub (szybciej) do pliku
+      <filename>/etc/csh.cshrc</filename>, głównego
+      pliku konfiguracyjnego <command>csh</command>:</para>
+
+    <informalexample>
+      <programlisting>setenv XKEYSYMDB /usr/X11R6/lib/X11/XKeysymDB
+setenv XNLSPATH /usr/X11R6/lib/X11/nls</programlisting>
+    </informalexample>
+
+    <para>Zakładamy tu, że plik <filename>XKeysymDB</filename> i
+      katalog <filename>nls</filename> znajdują się w
+      <filename>/usr/X11R6/lib/X11</filename>; jeśli tak nie jest,
+      odnajdź je i umieść tam.</para>
+
+    <para>Jeżeli początkowo zainstalowałeś Netscape jako port
+      z CDROM-u (lub FTP), nie umieszczaj nowego pliku wykonywalnego
+      w miejscu starego <filename>/usr/local/bin/netscape</filename>;
+      jest to zwykły skrypt powłoki zajmujący się przygotowaniem
+      zmiennych środowiskowych. Zamiast tego zmień nazwę nowego
+      pliku na <filename>netscape.bin</filename> i zastąp
+      poprzedni plik wykonywalny
+      <filename>/usr/local/netscape/netscape</filename>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Własne środowisko pracy</title>
+
+    <para>Najważniejszym elementem środowiska pracy jest
+      powłoka. W DOS-ie rolę powłoki pełni command.com. Powłoka
+      zajmuje się przetwarzaniem poleceń wpisywanych w linii
+      poleceń, jest więc pośrednikiem w komunikacji z systemem
+      operacyjnym. Może także wykonywać skypty, podobne do
+      znanych z DOS-a plików wsadowych, składające się z serii
+      poleceń wykonywanych bez ingerencji użytkownika.</para>
+
+    <para>W FreeBSD zainstalowane są dwie powłoki:
+      <command>csh</command> i <command>sh</command>.
+      <command>csh</command> dobrze obsługuje linię poleceń,
+      skrypty powinny być jednak pisane w
+      <command>sh</command> (lub <command>bash</command>).
+      Wpisując <command>echo $SHELL</command> możesz dowiedzieć
+      się, z jakiej powłoki korzystasz.</para>
+
+    <para>Powłoka <command>csh</command> jest niezła, jednakże
+      <command>tcsh</command> potrafi wszystko to, co
+      <command>csh</command> i jeszcze więcej. Umożliwia
+      wywoływanie wcześniej wpisanych poleceń za pomocą klawiszy
+      strzałek. Pozwala uzupełniać nazwy plików przy pomocy
+      klawisza <keycap>Tab</keycap> (<command>csh</command>
+      wykorzystuje do tego <keycap>Esc</keycap>), jak również
+      powrót do ostatnio odwiedzonego katalogu poleceniem
+      <command>cd -</command>. W <command>tcsh</command> można
+      też w prosty sposób zmienić swój znak zachęty. Wszystko to
+      bardzo ułatwia życie.</para>
+    <para>Nową powłokę instaluje się w następujący sposób:</para>
+
+    <procedure>
+      <step>
+	<para>Zaintaluj powłokę w postaci portu lub pakietu.
+	  Wpisz <command>rehash</command>, a potem
+	  <command>which tcsh</command> (zakładając, że
+	  instalujesz <command>tcsh</command>), by mieć pewność,
+	  że instalacja powiodła się.</para>
+      </step>
+
+      <step>
+	<para>Działając jako root, dopisz w pliku
+	  <filename>/etc/shells</filename> wiersz odpowiadający
+	  nowej powłoce, w naszym przypadku
+	  <filename>/usr/local/bin/tcsh</filename>, i zapisz
+	  zmiany. (W przypadku niektórych portów może być to
+	  zrobione automatycznie.)</para>
+      </step>
+
+      <step>
+	<para>Aby na stałe zmienić swoją powłokę na
+	  <command>tcsh</command>, skorzystaj z polecenia
+	  <command>chsh</command>. Możesz także wpisać
+	  <command>tcsh</command> w linii poleceń, by zmienić
+	  powłokę bez powtórnego logowania się.</para>
+      </step>
+    </procedure>
+
+    <note>
+      <para>Zmiana powłoki roota na inną niż
+        <command>sh</command> lub <command>csh</command>
+	we wczesnych wersjach FreeBSD i wielu wersjach Uniksa
+	może okazać się niebezpieczna, ponieważ może prowadzić
+	do braku działającej powłoki w trybie jednego
+	użytkownika. Można sobie z tym poradzić stosując
+	<command>su -m</command> do zostania rootem, dzięki
+	czemu możliwe jest korzystanie z <command>tcsh</command>,
+	gdyż powłoka jest elementem środowiska. Aby takie
+	rozwiązanie było stosowane na stałe, utwórz alias w
+	<filename>.tcshrc</filename> dopisując polecenie
+	<command>alias su su -m</command></para>
+    </note>
+
+    <para>Podczas uruchamiania, <command>tcsh</command>
+      odczytuje pliki <filename>/etc/csh.cshrc</filename>
+      i <filename>/etc/csh.login</filename>, podobnie jak to
+      robi <command>csh</command>. Ponadto wczytywane są
+      pliki <filename>.login</filename> i
+      <filename>.cshrc</filename>, chyba, że istnieje plik
+      <filename>.tcshrc</filename>. Można go utworzyć
+      kopiując po prostu plik <filename>.cshrc</filename>
+      jako <filename>.tcshrc</filename>.</para>
+
+    <para>Gdy powłoka <command>tcsh</command> jest już
+      zainstalowana, możesz zająć się wyborem odpowiadającego ci
+      znaku zachęty. Szczegółowo jest to opisane w dokumentacji
+      <command>tcsh</command>, przykładowe polecenie
+      przedstawione poniżej wpisane do
+      <filename>.tcshrc</filename> spowoduje, iż znak zachęty
+      będzie informował o tym, ile wydałeś poleceń, która jest
+      godzina, oraz jaki jest bieżący katalog. Na końcu pojawi
+      się znak <literal>&gt;</literal>, jeśli jesteś zwykłym
+      użytkownikiem, lub znak <literal>#</literal>, jeśli jesteś
+      rootem:</para>
+
+    <para><command>set prompt = "%h %t %~ %# "</command></para>
+
+    <para>Powyższy wiersz umieść w miejscu starego "set
+      prompt", albo pod "if($?prompt) then". Poprzedni wiersz
+      zamień w komentarz, dzięki temu będziesz mógł do niego
+      wrócić, jeśli zechcesz. Przepisz dokładnie spacje i
+      cudzysłowy. Aby plik <filename>.tcshrc</filename> został
+      przeczytany ponownie, wpisz
+      <command>source .tcshrc</command>.</para>
+
+    <para>Listę innych zmiennych środowiskowych uzyskać można
+      korzystając z polecenia <command>env</command>. Lista zawiera
+      domyślny edytor, program do przeglądania plików tekstowych,
+      typ terminala i wiele innych. Jeżeli logujesz się do systemu
+      przez sieć i jakiś program nie daje się uruchomić z powodu
+      nieodpowiedniego terminala, przydatne może okazać się
+      polecenie <command>setenv TERM vt100</command>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Na koniec</title>
+
+    <para>Mając uprawnienia roota, można odmontować CDROM
+      poleceniem <command>/sbin/umount /cdrom</command>, następnie
+      wyjąć płytę z napędu, włożyć inną i zamontować ją poleceniem
+      <command>/sbin/mount_cd9660 /dev/cd0a /cdrom</command> (o
+      ile <hardware>cd0a</hardware> odpowiada napędowi CDROM).
+      Najnowsze wersje FreeBSD pozwalają na montowanie CDROM-u
+      poleceniem <command>/sbin/mount /cdrom</command>.</para>
+
+    <para>Jeśli masz do dyspozycji niewiele miejsca na dysku,
+      możesz skorzystać z bezpośredniego systemu plików na drugiej
+      płycie CD FreeBSD. Jej zawartość zmienia się z każdym
+      nowym wydaniem systemu. Spróbuj na przykład zagrać w jedną
+      z gier umieszczonych na CDROM-ie. Przyda się przy tym
+      <command>lndir</command>, instalowane wraz z X Window System,
+      aby powiadomić programy gdzie znajdują się potrzebne im
+      pliki, ponieważ są one w systemie plików
+      <filename>/cdrom</filename>, a nie jak zazwyczaj w
+      <filename>/usr</filename> i jego podkatalogach. Skorzystaj z
+      <command>man lndir</command>.</para>
+  </sect1>
+
+  <sect1>
+    <title>Uwagi mile widziane</title>
+
+    <para>Jeśli skorzystałeś z niniejszego wprowadzenia, chętnie
+      dowiem się, czy w czymś ci ono pomogło, co było
+      niedostatecznie wyjaśnione i czego brakowało.
+      Dziękuję profesorowi Eugene W. Stark z SUNY-Stony
+      Brook, oraz Johnowi Fieberowi za pomocne uwagi.</para>
+
+    <para>Annelise Anderson,
+	<email>andrsn@andrsn.stanford.edu</email></para>
+  </sect1>
+</article>

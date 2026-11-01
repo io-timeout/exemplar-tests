@@ -1,0 +1,5 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://example.com/next-2.dtd" uri="next-2.dtd"/>
+  <system systemId="http://deleg.example/unmatched.dtd" uri="after-delegation.dtd"/>
+  <public publicId="-//DELEG//DTD Unmatched//EN" uri="after-public-delegation.dtd"/>
+</catalog>

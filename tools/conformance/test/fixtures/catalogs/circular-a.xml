@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://example.com/circular-a.dtd" uri="circular-a.dtd"/>
+  <nextCatalog catalog="circular-b.xml"/>
+</catalog>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.13
+
+  Version francaise : Regis GRAF <fructili@pt.lu>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Projet FreeBSD/ia64</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+  <p>Les pages sur la plateforme FreeBSD/ia64 ont été déplacées
+    <a href="ia64/index.html">ici</a>. Veuillez mettre à jour vos signets.</p>
+
+  </body>
+</html>

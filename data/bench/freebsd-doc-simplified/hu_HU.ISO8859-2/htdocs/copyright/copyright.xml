@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FreeBSD Hungarian Documentation Project
+     Translated by: Gabor Kovesdan <gabor@FreeBSD.org>
+     %SOURCE%	en/copyright/copyright.xml
+     %SRCID%	1.12
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD copyright és jogi
+  információi</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+  <h2><a href="./../copyright/freebsd-license.html">A FreeBSD licenc</a>
+    </h2>
+
+  <h2><a href="./../copyright/freebsd-doc-license.html">A FreeBSD dokumentációs licenc</a>
+    </h2>
+
+  <h2><a href="./../copyright/trademarks.html">A védjegyek jegyzéke</a>
+    </h2>
+
+  <h2><a href="./../copyright/license.html">A BSD licenc</a></h2>
+
+  <h2><a href="./../copyright/daemon.html">A BSD démon</a>
+    </h2>
+
+  <h2><a href="./../copyright/LEGAL">A FreeBSD portok terjesztésének korlátozásai</a>
+    </h2>
+
+  <h2><a href="./../copyright/COPYING">GNU GENERAL PUBLIC LICENSE</a>
+    </h2>
+
+  <h2><a href="./../copyright/COPYING.LIB">GNU LIBRARY GENERAL PUBLIC LICENSE</a>
+    </h2>
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://example.com/a b é.dtd" uri="spaces.dtd"/>
+  <system systemId="http://example.com/escaped%20c.dtd" uri="escaped.dtd"/>
+  <uri name="http://example.com/{braces}.xml" uri="braces.xml"/>
+  <public publicId="-//OASIS//DTD DocBook XML V4.1.2//EN" uri="docbook.dtd"/>
+  <public publicId="
+     -//EX//DTD    Lines//EN
+  " uri="lines.dtd"/>
+</catalog>

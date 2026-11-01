@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     $FreeBSD$
+
+     Original revision: r47265
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <title>Установка Коллекции портов FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+
+<form method="get" action="http://www.FreeBSD.org/cgi/ports.cgi">
+Поиск портов:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">Все</option>
+<option value="name">Название пакета</option>
+<option value="text">Описание</option>
+<option value="pkgdescr">Полное описание</option>
+<option value="maintainer">Сопровождающий</option>
+<option value="requires">Зависимости</option>
+</select>
+<input type="submit" value="Искать"/>
+</form>
+
+<hr/>
+
+<p>Программа установки FreeBSD позволяет установить Коллекцию Портов
+  вместе с установкой операционной системы.  Обратитесь к странице
+  Справочника <a href="./../cgi/man.cgi?query=bsdinstall"><tt>bsdinstall</tt></a>
+  для FreeBSD 9.X и более новых версий, или <a href="./../cgi/man.cgi?query=sysinstall"><tt>sysinstall</tt></a>
+  для FreeBSD 8.X и более старых версий.</p>
+
+<p>Если Коллекция Портов изначально не установлена, вы можете её
+  добавить с помощью <a href="./../doc/ru_RU.KOI8-R/books/handbook/ports-using.html"><tt>portsnap</tt></a>
+  или <a href="./../doc/ru_RU.KOI8-R/books/handbook/svn.html">Subversion</a>.</p> 
+</body>
+</html>

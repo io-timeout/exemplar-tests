@@ -1,0 +1,44 @@
+{
+  "name": "exemplar-tests-workspace",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/io-timeout/exemplar-tests.git"
+  },
+  "type": "module",
+  "scripts": {
+    "clean:output": "pnpm -r run clean:output && rimraf .turbo",
+    "typecheck": "turbo run typecheck",
+    "compile": "turbo run compile",
+    "test": "turbo run test",
+    "conformance": "turbo run conformance",
+    "conformance:browser": "pnpm --filter @exemplarjs/conformance conformance:browser",
+    "differential": "pnpm --filter @exemplarjs/conformance differential",
+    "fuzz": "pnpm --filter @exemplarjs/conformance fuzz",
+    "bench": "turbo run bench",
+    "bench:remote": "pnpm --filter @exemplarjs/bench bench:remote",
+    "lint": "turbo run lint lint:root",
+    "lint:ci": "turbo run lint lint:root --continue",
+    "lint:root": "oxlint .github .pnpmfile.mjs",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "reset": "pnpm clean:output && pnpm clean -r"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "eslint-plugin-sonarjs": "catalog:",
+    "eslint-plugin-turbo": "catalog:",
+    "lefthook": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "rimraf": "catalog:",
+    "tsdown": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "packageManager": "pnpm@12.9.1"
+}

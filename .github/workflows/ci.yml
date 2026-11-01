@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # exemplar's own CI runs these tests too, on each of its changes.
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: exemplar-tests
+
+jobs:
+  checks:
+    runs-on: ubuntu-26.04
+    steps:
+      # The lockfile links exemplar's packages to a checkout beside this one.
+      - uses: actions/checkout@v7
+        with:
+          path: exemplar-tests
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository_owner }}/exemplar
+          path: exemplar
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: exemplar-tests/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: exemplar-tests/.node-version
+          cache: pnpm
+          cache-dependency-path: '*/pnpm-lock.yaml'
+      - name: Install xmllint
+        run: sudo apt-get install --yes libxml2-utils
+      # The XML suite is downloaded on first use, as its licence requires; the cache keeps it between runs.
+      - uses: actions/cache@v6
+        with:
+          path: exemplar-tests/data/conformance/xmlts
+          key: w3c-xmlts-${{ hashFiles('exemplar-tests/tools/conformance/suites.json') }}
+      - name: Build exemplar
+        working-directory: exemplar
+        run: pnpm install --frozen-lockfile && pnpm compile
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format:check
+      - run: pnpm lint:ci
+      - run: pnpm typecheck
+      - run: pnpm conformance
+
+  browsers:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: exemplar-tests
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository_owner }}/exemplar
+          path: exemplar
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: exemplar-tests/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: exemplar-tests/.node-version
+          cache: pnpm
+          cache-dependency-path: '*/pnpm-lock.yaml'
+      # The XML suite is downloaded on first use, as its licence requires; the cache keeps it between runs.
+      - uses: actions/cache@v6
+        with:
+          path: exemplar-tests/data/conformance/xmlts
+          key: w3c-xmlts-${{ hashFiles('exemplar-tests/tools/conformance/suites.json') }}
+      - name: Build exemplar
+        working-directory: exemplar
+        run: pnpm install --frozen-lockfile && pnpm compile
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium firefox webkit
+        working-directory: exemplar-tests/tools/conformance
+      - run: pnpm compile
+      - name: The XML suite in Chromium, Firefox and WebKit
+        run: pnpm conformance:browser

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <title>FreeBSD Ports -- References</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.ports">
+
+<form method="get" action="//www.FreeBSD.org/cgi/ports.cgi">
+Search ports for:
+<input name="query" value=""/>
+<select name="stype">
+<option value="all">All</option>
+<option value="name">Package Name</option>
+<option value="text">Description</option>
+<option value="pkgdescr">Long description</option>
+<option value="maintainer">Maintainer</option>
+<option value="requires">Requires</option>
+</select>
+<input type="submit" value="Submit"/>
+</form>
+
+<hr/>
+
+<p>To start learning more about ports and packages, see
+  <a href="./doc/en_US.ISO8859-1/books/handbook/ports.html">
+  Installing Applications: Packages and Ports</a>, a section of the
+  <a href="./doc/en_US.ISO8859-1/books/handbook/index.html">
+  FreeBSD Handbook</a>.
+</p>
+
+<p>The
+  <a href="./doc/en_US.ISO8859-1/books/porters-handbook/index.html">
+  Porter's Handbook</a> is the master reference for both creating new
+  ports and maintaining existing ports, including a section on
+  <a href="./doc/en_US.ISO8859-1/books/porters-handbook/keeping-up.html">
+  Keeping Up</a>.  It also contains more detail about the topics below, as
+  well as more references for further study.
+</p>
+
+<p>You may also find the following to be useful:</p>
+
+<ul>
+  <li>The archives of the
+    <a href="https://docs.FreeBSD.org/mail/current/freebsd-ports.html">
+    FreeBSD ports mailing list</a>.
+  </li>
+
+  <li>The article
+    <a href="./doc/en_US.ISO8859-1/articles/contributing/ports-contributing.html">
+    Contributing to the FreeBSD Ports Collection</a>.
+  </li>
+
+  <li>
+    <a href="https://www.FreshPorts.org">FreshPorts.org</a> is a
+    valuable tool for further information about individual ports,
+    such as current version, last checkin, and many other useful
+    statistics.  You may subscribe to a mailing list to get the
+    latest information about your favorite ports.
+  </li>
+<!--
+ <li>Here is a graph of the
+   <a href="growth/status.png">rapid rate of growth</a>
+   of the Ports Collection.</li>
+-->
+
+  <li>The manual pages for
+    <a href="./cgi/man.cgi?query=ftp"><tt>ftp</tt></a>,
+    <a href="./cgi/man.cgi?query=pkg&amp;sektion=8"><tt>pkg</tt></a>, and
+    <a href="./cgi/man.cgi?query=ports"><tt>ports</tt></a>.
+  </li>
+
+  <li>The
+    <a href="./portmgr/">Ports Management Team</a> (portmgr) pages.
+  </li>
+
+  <li>The
+    <a href="https://svnweb.FreeBSD.org/ports">
+    Web Interface to the Source Repository</a>
+    allows you to browse the files in the source repository.  Changes
+    that affect the entire port system are now documented in the
+    <a href="https://svnweb.FreeBSD.org/ports/head/CHANGES?view=markup">CHANGES</a> file.
+    Changes that affect individual ports are now documented in the
+    <a href="https://svnweb.FreeBSD.org/ports/head/UPDATING?view=markup">UPDATING</a> file.
+    However, the definitive answer to any question is undoubtedly to read
+    the source code of <a href="https://svnweb.FreeBSD.org/ports/head/Mk/bsd.port.mk?view=markup">
+    bsd.port.mk</a>, and associated files.
+  </li>
+</ul>
+
+</body>
+</html>

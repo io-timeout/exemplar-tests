@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.7
+
+  Version francaise : Stephane Legrand <stephane@freebsd-fr.org>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Création des versions de FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+
+<h1>Document déplacé !</h1>
+
+<p>Ce document n'est plus disponible ici.</p>
+
+<p>Le document sur le processus de création des versions FreeBSD a été amélioré et fait
+maintenant parti du Projet de Documentation FreeBSD. Vous le trouverez <a href="./../doc/en_US.ISO8859-1/articles/releng/article.html">ici</a>.</p>
+
+
+  </body>
+</html>

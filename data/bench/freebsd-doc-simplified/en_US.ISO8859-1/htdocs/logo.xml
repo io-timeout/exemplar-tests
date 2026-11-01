@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FreeBSD Logo</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+  </head>
+
+  <body class="navinclude.about">
+
+    <h2 id="guideline">Usage Guideline</h2>
+
+    <p>FreeBSD is a registered trademark of The FreeBSD Foundation.  The
+      FreeBSD logo and The Power to Serve are trademarks of The FreeBSD
+      Foundation.</p>
+
+    <p>For logo image files, Trademark Usage Terms and Conditions, and
+      more information on how to obtain permission to use the logo,
+      please refer to the FreeBSD Project Logo page at <a href="https://www.freebsdfoundation.org/about/project/">The FreeBSD
+      Foundation.</a></p>
+  </body>
+</html>

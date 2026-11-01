@@ -1,0 +1,5 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" xml:base="http://base.example/root/">
+  <group xml:base="sub/">
+    <system systemId="http://example.com/relative-base.dtd" uri="relative-base.dtd"/>
+  </group>
+</catalog>

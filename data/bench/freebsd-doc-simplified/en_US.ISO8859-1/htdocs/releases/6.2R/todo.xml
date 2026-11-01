@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Changes to this list MUST NOT be committed without approval of the
+  Release Engineering Team (re@FreeBSD.org) (for general items) or
+  Documentation Engineering Team (doceng@FreeBSD.org) (for doc-related
+  items).
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>FreeBSD 6.2 Open Issues</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+<p>This is a list of open issues that need to be resolved for FreeBSD
+  6.2.  If you have any updates for this list, please e-mail
+  re@FreeBSD.org.</p>
+
+<ul>
+  <li><a href="#major">Major issues</a></li>
+  <li><a href="#testing">Testing foci</a></li>
+  <li><a href="#stresstest">Problems Discovered by Kernel Stress Test Suite</a></li>
+</ul>
+
+<h3>Major issues for 6.2-RELEASE</h3>
+
+<a name="major"/>
+<table class="tblbasic">
+  <tr class="heading">
+    <th>Issue</th>
+    <th>Status</th>
+    <th>Responsible</th>
+    <th>Description</th>
+  </tr>
+
+  <tr><td colspan="4">No pending major issues.</td></tr>
+</table>
+
+<h3>Testing foci for 6.2-RELEASE</h3>
+
+<a name="testing"/>
+<table class="tblbasic">
+  <tr class="heading">
+    <th>Issue</th>
+    <th>Status</th>
+    <th>Responsible</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>bce(4) stability fixes</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Scott Long</td>
+    <td>Several stability fixes for bce(4) were merged from HEAD to
+      RELENG_6 around 20061024.  Initial testing results have been
+      promising, but more testing reports would be useful.</td>
+  </tr>
+
+  <tr>
+    <td>em(4) stability fixes</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Scott Long, Jack F. Vogel, Gleb Smirnoff, Kris Kennaway</td>
+    <td>Several difficult-to-diagnose stability issues have been
+      observed in the em(4) driver since August.  As of 20061027, a
+      newer driver provided by Intel (version 6.2.9) has been
+      committed to RELENG_6 for testing.
+      <b>UPDATE</b>:  Additional changes committed 20061110 fix some
+      other observed stability problems and restore missing jumbo
+      frame functionality.</td>
+  </tr>
+
+  <tr>
+    <td>sysinstall(8) kernel selection fix</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Erwin Lansing</td>
+    <td>A bug in sysinstall(8) could result in it failing to install a
+      kernel on a new disk if the user did not choose a distribution
+      from the distribution menu.  This is believed to have been
+      fixed as of 20061029, but could use more testing.</td>
+  </tr>
+
+  <tr>
+    <td>ggated(8)</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Paweł Jakub Dawidek</td>
+    <td>A recently-committed patch to ggated(8) is believed to fix
+      some fairly serious problems, as reported in PR
+      <a href="http://www.FreeBSD.org/cgi/query-pr.cgi?pr=104829">kern/104829</a>.</td>
+  </tr>
+
+  <tr>
+    <td>devfs(5) fixes</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Konstantin Belousov</td>
+    <td>Several deadlocks and locking bugs have been fixed in devfs(5).</td>
+  </tr>
+
+  <tr>
+    <td>tty(4) fixes</td>
+    <td><font color="orange">Needs testing</font></td>
+    <td>Martin Blapp</td>
+    <td>Several workarounds have been committed for known problems in
+      the tty(4) layer.</td>
+  </tr>
+
+</table>
+
+<h3>Stress Test Panics</h3>
+
+<a name="stresstest"/>
+<p>The system is continuously being subjected to Peter Holm's <a href="http://www.holm.cc/stress/">Kernel Stress Test Suite</a>.  The
+  following issues have recently been discovered from this test
+  suite.</p>
+
+
+  </body>
+</html>

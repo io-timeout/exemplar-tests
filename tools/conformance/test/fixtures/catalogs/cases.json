@@ -1,0 +1,698 @@
+[
+  {
+    "id": "system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/a.dtd"
+  },
+  {
+    "id": "system-relative",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "rel.dtd"
+  },
+  {
+    "id": "system-first-wins",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/first.dtd"
+  },
+  {
+    "id": "rewrite-longest",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/r/deep/x/y.dtd"
+  },
+  {
+    "id": "rewrite-shorter",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/r/other/y.dtd"
+  },
+  {
+    "id": "rewrite-tie-first",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/tie/z.dtd"
+  },
+  {
+    "id": "suffix-longest",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "file:/C|/local/backup/4.3/x.dtd"
+  },
+  {
+    "id": "suffix-shorter",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "file:/C|/local/x.dtd"
+  },
+  {
+    "id": "rewrite-before-suffix",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/order/order.dtd"
+  },
+  {
+    "id": "public-normalized",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "  -//EX//DTD   Spaced//EN ",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "public-only",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Spaced//EN"
+  },
+  {
+    "id": "system-before-public",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Both//EN",
+    "systemId": "http://example.com/both.dtd"
+  },
+  {
+    "id": "public-after-system-fails",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Both//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-system-group-with-system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Grouped//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-system-group-alone",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Grouped//EN"
+  },
+  {
+    "id": "group-base",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/grouped.dtd"
+  },
+  {
+    "id": "entry-base",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/base.dtd"
+  },
+  {
+    "id": "delegate-system-longest",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://deleg.example/long/long.dtd"
+  },
+  {
+    "id": "delegate-system-list",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://deleg.example/long/in-short.dtd"
+  },
+  {
+    "id": "delegate-system-next",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://deleg.example/long/next.dtd"
+  },
+  {
+    "id": "delegate-system-short",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://deleg.example/short.dtd"
+  },
+  {
+    "id": "delegate-no-resume",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://deleg.example/unmatched.dtd"
+  },
+  {
+    "id": "delegate-system-drops-public",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Ignored In Delegation//EN",
+    "systemId": "http://deleg.example/long/nothing.dtd"
+  },
+  {
+    "id": "delegate-public",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//DELEG//DTD X//EN"
+  },
+  {
+    "id": "delegate-public-with-system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//DELEG//DTD X//EN",
+    "systemId": "http://nomatch.example/x.dtd"
+  },
+  {
+    "id": "delegate-public-drops-system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//DELEG//DTD Y//EN",
+    "systemId": "http://example.com/system-in-public-delegation-not.dtd"
+  },
+  {
+    "id": "delegate-public-no-resume",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//DELEG//DTD Unmatched//EN",
+    "systemId": "http://nomatch.example/y.dtd"
+  },
+  {
+    "id": "delegate-public-prefer-system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//GROUPDELEG//DTD G//EN",
+    "systemId": "http://nomatch.example/g.dtd"
+  },
+  {
+    "id": "other-namespace",
+    "files": [
+      "other-namespace.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/hidden.dtd"
+  },
+  {
+    "id": "before-other-namespace",
+    "files": [
+      "other-namespace.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/before-other.dtd"
+  },
+  {
+    "id": "after-other-namespace",
+    "files": [
+      "other-namespace.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/after-other.dtd"
+  },
+  {
+    "id": "unknown-element",
+    "files": [
+      "unknown-element.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/unknown.dtd"
+  },
+  {
+    "id": "after-unknown-element",
+    "files": [
+      "unknown-element.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/after-unknown.dtd"
+  },
+  {
+    "id": "next-catalog",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/next.dtd"
+  },
+  {
+    "id": "current-before-next",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/a.dtd"
+  },
+  {
+    "id": "next-nested",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/nested.dtd"
+  },
+  {
+    "id": "next-nested-before-later-next",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/next-2.dtd"
+  },
+  {
+    "id": "not-catalog-ignored",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/not-catalog.dtd"
+  },
+  {
+    "id": "no-match",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://nothing.example/nothing.dtd"
+  },
+  {
+    "id": "urn-system",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "urn:publicid:-:EX:DTD+Spaced:EN"
+  },
+  {
+    "id": "urn-system-same-public",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Spaced//EN",
+    "systemId": "urn:publicid:-:EX:DTD+Spaced:EN"
+  },
+  {
+    "id": "urn-system-other-public",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//Other//EN",
+    "systemId": "urn:publicid:-:EX:DTD+Spaced:EN"
+  },
+  {
+    "id": "urn-public",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "entity",
+    "publicId": "urn:publicid:-:OASIS:DTD+DocBook+XML+V4.1.2:EN"
+  },
+  {
+    "id": "normalize-spaces",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/a b é.dtd"
+  },
+  {
+    "id": "normalize-escaped-input",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/a%20b%20%C3%A9.dtd"
+  },
+  {
+    "id": "normalize-escaped-entry",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/escaped c.dtd"
+  },
+  {
+    "id": "normalize-public-lines",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Lines//EN"
+  },
+  {
+    "id": "prefer-system-file",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Outer//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-system-file-alone",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Outer//EN"
+  },
+  {
+    "id": "prefer-public-inner-group",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Inner//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-invalid-inherits",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Nonsense//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-first-eligible",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Twice//EN",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "prefer-first-any",
+    "files": [
+      "prefer-system.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//PS//DTD Twice//EN"
+  },
+  {
+    "id": "prefer-option-system",
+    "files": [
+      "second.xml",
+      "main.xml"
+    ],
+    "kind": "entity",
+    "publicId": "-//EX//DTD Spaced//EN",
+    "prefer": "system",
+    "systemId": "http://nomatch.example/"
+  },
+  {
+    "id": "file-list-order",
+    "files": [
+      "second.xml",
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/a.dtd"
+  },
+  {
+    "id": "file-list-second",
+    "files": [
+      "second.xml",
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/next.dtd"
+  },
+  {
+    "id": "missing-file-first",
+    "files": [
+      "missing.xml",
+      "second.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/second.dtd"
+  },
+  {
+    "id": "circular-found-first",
+    "files": [
+      "circular-a.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/circular-b.dtd"
+  },
+  {
+    "id": "circular",
+    "files": [
+      "circular-a.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/none.dtd"
+  },
+  {
+    "id": "circular-eager",
+    "files": [
+      "circular-a.xml"
+    ],
+    "kind": "entity",
+    "defer": false,
+    "systemId": "http://example.com/circular-a.dtd"
+  },
+  {
+    "id": "eager",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "defer": false,
+    "systemId": "http://deleg.example/long/next.dtd"
+  },
+  {
+    "id": "relative-base",
+    "files": [
+      "base-relative.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/relative-base.dtd"
+  },
+  {
+    "id": "incomplete-entry",
+    "files": [
+      "incomplete.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/complete.dtd"
+  },
+  {
+    "id": "uri",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/u.xml"
+  },
+  {
+    "id": "uri-relative-name",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "u-rel.xml"
+  },
+  {
+    "id": "uri-fragment",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/frag#part"
+  },
+  {
+    "id": "uri-fragment-unseen",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/u.xml#x"
+  },
+  {
+    "id": "uri-rewrite-fragment-unseen",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/ru/p/q.xml#frag"
+  },
+  {
+    "id": "system-fragment",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/r/deep/x.dtd#f"
+  },
+  {
+    "id": "uri-rewrite-longest",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/ru/deep/p/q.xml"
+  },
+  {
+    "id": "uri-rewrite-shorter",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/ru/p/q.xml"
+  },
+  {
+    "id": "uri-suffix-longest",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://any.example/long/s.xml"
+  },
+  {
+    "id": "uri-suffix-shorter",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://any.example/x/s.xml"
+  },
+  {
+    "id": "uri-delegate",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://deleguri.example/d.xml"
+  },
+  {
+    "id": "uri-delegate-no-match",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://deleguri.example/none.xml"
+  },
+  {
+    "id": "uri-next-catalog",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/next-u.xml"
+  },
+  {
+    "id": "uri-urn",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "urn:publicid:-:EX:DTD+Spaced:EN"
+  },
+  {
+    "id": "uri-normalized",
+    "files": [
+      "normalize.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/{braces}.xml"
+  },
+  {
+    "id": "uri-no-match",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://nothing.example/x.xml"
+  },
+  {
+    "id": "uri-not-system-entries",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/a.dtd"
+  },
+  {
+    "id": "entity-not-uri-entries",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/u.xml"
+  },
+  {
+    "id": "uri-relative-made-absolute",
+    "files": [
+      "main.xml"
+    ],
+    "kind": "uri",
+    "base": "http://example.com/",
+    "href": "u.xml"
+  },
+  {
+    "id": "uri-own-kind-first",
+    "files": [
+      "kinds-first.xml"
+    ],
+    "kind": "uri",
+    "href": "http://example.com/kind.xml"
+  },
+  {
+    "id": "entity-own-kind-first",
+    "files": [
+      "kinds-first.xml"
+    ],
+    "kind": "entity",
+    "systemId": "http://example.com/kind.dtd"
+  }
+]

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="user-requirements-storage-focus">
+    <?dbhtml stop-chunking?>
+    <title>User requirements</title>
+    <para>Storage-focused clouds are defined by their requirements for
+        data including, but not limited to, performance, access
+        patterns, and data structures. A balance between cost and user
+        requirements dictate what methods and technologies will be
+        used in a cloud architecture.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Cost</term>
+        <listitem>
+            <para>The user pays only for the storage they
+                actually use. This limit typically reflects average
+                user consumption during a month. This does not mean
+                that cloud storage is less expensive, only that it
+                incurs operating expenses rather the capital expenses.
+                From a business perspective, it should be beneficial
+                for the solution to scale properly to prevent the
+                up-front purchase of a large amount of storage that
+                goes underutilized.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Legal requirements</term>
+        <listitem>
+            <para>Multiple jurisdictions have
+                legislative and regulatory requirements governing the
+                storage and management of data in cloud environments.
+                Common areas of regulation include data retention
+                policies and data ownership policies.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <section xml:id="legal-requirements-storage-focus">
+      <title>Legal requirements</title>
+    <para>Many jurisdictions have legislative and regulatory
+        requirements governing the storage and management of data in
+        cloud environments. Common areas of regulation include:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Data retention</term>
+        <listitem>
+            <para>Policies ensuring storage of
+                persistent data and records management to meet data
+                archival requirements.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Data ownership</term>
+        <listitem>
+            <para>Policies governing the possession
+                and responsibility for data.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Data sovereignty</term>
+        <listitem>
+            <para>Policies governing the storage of
+                data in foreign countries or otherwise separate
+                jurisdictions.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Data compliance</term>
+        <listitem>
+            <para>Policies governing types of
+                information that are required to reside in certain
+                locations due to regular issues and cannot reside in
+                other locations for the same reason.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+      Examples of such legal frameworks include the <link
+      xlink:href="http://ec.europa.eu/justice/data-protection/">data
+      protection framework</link> of the European Union and the
+      requirements of the <link
+      xlink:href="http://www.finra.org/Industry/Regulation/FINRARules/">Financial
+      Industry Regulatory Authority</link> in the United
+      States. Consult a local regulatory body for more information.
+    </para>
+    </section>
+    <section xml:id="technical-requirements-storage-focus">
+      <title>Technical requirements</title>
+    <para>The following are some technical requirements that could be
+        incorporated into the architecture design.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Storage proximity</term>
+        <listitem>
+            <para>In order to provide high
+                performance or large amounts of storage space the
+                design may have to accommodate storage that is each of
+                the hypervisors or served from a central storage
+                device.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Performance</term>
+        <listitem>
+            <para>To boost performance the organization
+                may want to make use of different technologies to
+                cache disk activity.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Availability</term>
+        <listitem>
+            <para>Specific requirements regarding
+                availability will influence the technology used to
+                store and protect data. These requirements will be
+                influence the cost and solution that will be
+                implemented.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Security</term>
+        <listitem>
+            <para>Data will need to be protected both in
+                transit and at rest.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+</section>

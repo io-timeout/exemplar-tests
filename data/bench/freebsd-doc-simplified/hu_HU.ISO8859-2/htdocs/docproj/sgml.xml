@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Hungarian Documentation Project
+     Translated by: Peter Terbe <sncdev@gmail.com>
+     %SOURCE%	en/docproj/sgml.xml
+     %SRCID%	1.28
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>A FreeBSD Dokumentációs Projekt: SGML</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <p>A dokumentációs munkákhoz a
+      Dokumentációs Projekt az SGML nyelvet
+      használja mint alapvető eszközt.</p>
+
+    <p>Az SGML jelentése: <b>S</b>tandard <b>G</b>eneralized
+      <b>M</b>arkup <b>L</b>anguage.</p>
+
+    <p>Dióhéjban (és elnézést
+      kérünk mindenki SGML szakértőtől, akit
+      sért a következő kijelentés) úgy
+      foglalhatnánk össze, hogy az SGML egy olyan nyelv,
+      amellyel további nyelveket hozhatunk létre.</p>
+
+    <p>Talán már mi magunk is használtuk az SGML-t
+      anélkül, hogy tudtunk volna róla.  A honlapok
+      készítésére használt HTML nyelv
+      például olyan formális
+      leírással rendelkezik, amely az SGML nyelven
+      íródott.  Természetesen ez <b>nem</b> azt
+      jelenti, hogy amikor HTML nyelven írunk valamit, akkor az
+      SGML nyelvet használjuk (és fordítva sem).
+      Ez csupán egy olyan nyelv, amelynek szabályait az
+      SGML segítségével fektették le.</p>
+
+    <p>Sok leíró nyelv létezik, melynek alapjait
+      SGML nyelven írták.  A HTML az egyik ezek
+      közül.  Egy másik példa erre a
+      <q>DocBook</q>.  Ez egy olyan nyelv, melyet kifejezetten műszaki
+      leírások írásához terveztek,
+      és mint ilyen, a megfelelő formázáshoz
+      nagyon sok ilyen típusú (tehát
+      <tt>&lt;a tag tartalma&gt;</tt> alakú) taggel
+      rendelkezik.  A FreeBSD Dokumentációs Projekt ezt
+      használja, és a nagyon pontosság
+      érdekében még kiegészítette
+      néhány új elemmel is.</p>
+
+    <p>A következő példa bemutatja hogyan
+      írhatunk meg egy bekezdést a HTML nyelv
+      segítségével (a tartalom most nem fontos,
+      csak a tagek):</p>
+
+    <pre><![CDATA[
+    <p>A rendszer a jelszavak tárolására az
+      <tt>/etc/passwd</tt> állományt használja.
+      Ennek módosításához a
+      <b><tt>vipw</tt></b> használata ajánlott.
+      Amennyiben csak egy új felhasználót akarunk
+      felvenni a rendszerbe, használjuk az
+      <b><tt>adduser</tt></b> parancsot.</p>
+]]></pre>
+
+    <p>Ugyanez a bekezdés a DocBook leírónyelvet
+      használva így néz ki:</p>
+
+    <pre><![CDATA[
+    <para>A rendszer a jelszavak tárolására az
+      <filename>/etc/passwd</filename> állományt
+      használja.  Ennek módosításához
+      a <command>vipw</command> használata ajánlott.
+      Amennyiben csak egy új felhasználót akarunk
+      felvenni a rendszerbe, használjuk az
+      <command>adduser</command> parancsot.</para>
+]]></pre>
+
+    <p>Láthatjuk, hogy a DocBook sokkal <q>kifejezőbb</q> a
+      HTML-nél.  A HTML példában az
+      állománynév megjelenítése
+      <q>typewriter</q> betűtípussal történik.
+      A DocBook ugyanezt
+      <q>állománynévként</q> képes
+      kezelni függetlenül attól, hogy az
+      állománynevek formázását itt
+      nem tárgyaljuk.</p>
+
+    <p>Ennek a sokkal kifejezőbb jelölési rendszernek
+      rengeteg előnye van:</p>
+
+    <ul>
+      <li>
+	<p>Nem félreérthető vagy
+	  ellentmondásos.</p>
+
+	<p>Nem töltünk el időt feleslegesen azon
+	  gondolkodva, hogy <q>Hmm, vajon egy állomány
+	  megjelenítéséhez a 'tt', 'b', vagy 'em'
+	  lenne megfelelőbb?</q></p>
+
+	<p>Ehelyett egyszerűen csak a megfelelő taget
+	  használjuk a megfelelő helyen.</p>
+
+	<p>Biztosak lehetünk benne, hogy a minden &lt;filename&gt;
+	  taggel megjelölt rész ugyanúgy fog
+	  kinézni, amikor DocBookból más
+	  formátumokba (HTML, PostScript® stb.)
+	  alakítjuk át.</p>
+      </li>
+
+      <li>
+	<p>Nem kell a dokumentum megjelenésével
+	  foglalkoznunk, így kizárólag a tartalomra
+	  tudunk koncentrálni.</p>
+      </li>
+
+      <li>
+	<p>Mivel a dokumentáció
+	  leírásának módja
+	  egyáltalán nem kötött, ugyanaz a
+	  dokumentáció több más
+	  formátumban is könnyedén
+	  előállítható — egyszerű
+	  szöveg, HTML, PostScript®, RTF, PDF stb.</p>
+     </li>
+
+      <li>
+	<p>A dokumentáció is így sokkal
+	  <q>intelligensebb</q>, tehát bonyolultabb is feladatokra
+	  felhasználható.  Például
+	  lehetséges egy olyan tárgymutató
+	  automatikus előállítása, amely a
+	  dokumentáció összes parancsát
+	  tartalmazza.</p>
+      </li>
+    </ul>
+
+    <p>Ez olyan, mint a Microsoft® Word stíluslapjai, csak
+      mérhetetlenül sokoldalúbb.</p>
+
+    <p>Természetesen ennek a sokoldalúságnak
+      ára an:</p>
+
+    <ul>
+      <li>
+	<p>Mivel a használható tagek száma sokkal
+	  nagyobb, tovább tart megtanulásuk és
+	  alkalmazásuk hatékony
+	  elsajátítása is.</p>
+
+	<p>Egy jó módszer az SGML és a DocBook
+	  elsajátítására az, ha a
+	  dokumentációk forrásaiban
+	  megfigyeljük, más szerzők hogyan írtak
+	  le hasonló információt.</p>
+      </li>
+
+      <li>
+	<p>Az átalakítás nem egyszerű.</p>
+      </li>
+    </ul>
+
+    <h2>Mi a teendő, ha nem ismerjük a DocBook rendszert?
+      Hozzá tudunk járulni mással is?</h2>
+
+    <p>Természetesen igen, hiszen bármely
+      dokumentáció jobb a nem létező
+      dokumentációnál.  Ne aggódjunk, ha a
+      közlésre szánt dokumentáció nem
+      DocBook nyelven íródott!</p>
+
+    <p>Az eddig megszokottakhoz hasonlóan <a href="submitting.html">küldjünk el</a> a
+      dokumentációt.  A projekt egy másik tagja
+      elő fogja venni a javasolt dokumentációt,
+      elvégzi a konvertálást és
+      közzéteszi.  Kis szerencsével az így
+      elkészült szöveget is visszaküldik!  Ez
+      hasznos lehet, mert így láthatjuk a
+      dokumentáció <q>előtte és
+      utána</q> változatát, és
+      remélhetően tanulhatunk egy keveset a
+      folyamatról.</p>
+
+    <p>Ez nyilvánvalóan lelassítja a
+      közzétételi folyamatot, mivel a
+      beküldött dokumentációt még
+      konvertálni kell.  Így pár
+      órába, vagy pár napba is beletelhet, mire
+      elbírálásra kerül.</p>
+
+    <h2>További információk az SGML és a
+      DocBook nyelvekről</h2>
+
+    <p>Elsőként olvassuk el a <a href="./../doc/hu/books/fdp-primer/index.html"><b>A FreeBSD Dokumentációs Projekt irányelvei kezdőknek</b></a>
+      című könyvet.  Ennek célja, hogy
+      átfogó leírást nyújtson minden,
+      a FreeBSD dokumentációja kapcsán
+      felmerülő kérdések
+      megválaszolásához.  Igen hosszú
+      leírás, amely kisebb részekre szedtek
+      szét, de lehetőségünk van megtekinteni
+      akár <a href="./../doc/hu/books/fdp-primer/book.html"><b>egészben</b></a>
+      is.</p>
+
+    <dl>
+      <dt><a href="http://www.oasis-open.org/cover/sgml-xml.html"><b>http://www.oasis-open.org/cover/sgml-xml.html</b></a>
+	</dt>
+
+      <dd>
+	<p>Az SGML/XML honlapja.  Számtalan hivatkozás
+	  szól az SGML nyelvről.</p>
+	</dd>
+
+      <dt><a href="http://www-sul.stanford.edu/tools/tutorials/html2.0/gentle.html"><b>http://www-sul.stanford.edu/tools/tutorials/html2.0/gentle.html</b></a>
+	</dt>
+
+      <dd>
+	<p>"Gentle Introduction to SGML".  Ajánlott
+	  olvasmány mindenkinek, aki az SGML nyelvvel a
+	  kezdők szemszögéből nézve
+	  szeretne közelebbről megismerkedni.</p>
+      </dd>
+
+      <dt><a href="http://www.oasis-open.org/docbook/"><b>http://www.oasis-open.org/docbook/</b></a>
+	</dt>
+
+      <dd>
+	<p>A DocBook DTD-t az OASIS tartja karban.  Ezek az oldalak
+	  azoknak szólnak, akik az SGML nyelvet már
+	  elsajátították és a DocBook
+	  nyelvet is tanulmányoznák.</p>
+      </dd>
+    </dl>
+
+    <a href="docproj.html">A FreeBSD Dokumentációs Projekt kezdőlapja</a>
+
+  </body>
+</html>

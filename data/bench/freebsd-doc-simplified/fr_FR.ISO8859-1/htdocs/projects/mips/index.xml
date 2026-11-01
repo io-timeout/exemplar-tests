@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+      <title>Projet FreeBSD/MIPS</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+    <link rel="stylesheet" href="./style.css"/>
+      </head>
+
+  <body class="navinclude.developers">
+    <img src="./../gifs/project_goal.png" width="229" height="36" alt="Project Goal"/>
+
+    <p class="main">Le Projet FreeBSD/MIPS a pour but de porter FreeBSD sur
+      processeurs MIPS R4000 et supérieurs, avec le support des plates-formes
+      pour postes de travail (ex. SGI MIPS) et pour systèmes embarqués. L'idéal serait
+      que ce port soit le plus "propre" que possible, avec le moins possible
+      d'erreurs historiques, et de fournir des ports sur les principales plates-formes
+      où il semble logique que FreeBSD soit disponible tout en apportant
+      une bonne base de travail aux tierces parties qui voudraient concevoir leurs
+      propres plates-formes sous FreeBSD/MIPS.</p>
+
+    <img src="./../gifs/project_plan.png" width="229" height="36" alt="Project Plan"/>
+
+    <p class="main">Pour commencer, le développement se déroule dans le dépô Perforce
+      de FreeBSD. Mais, une fois que le port aura atteint un niveau suffisant
+      de fonctionnement, il sera intégré à la branche CURRENT de FreeBSD.
+      Les changements apportés qui ne sont pas spécifiques au port MIPS mais qui sont
+      indispensables pour ce port seront intégrés progressivement.</p>
+
+    <img src="./../gifs/how_to_contribute.png" width="229" height="36" alt="How to Contribute"/>
+
+    <p class="main">Le projet est toujours à la recherche de participants. Si vous
+      désirez participer, la meilleure façon de se tenir au courant de ce qui se passe
+      est de s'inscrire à la <a href="#mailinglist">liste de diffusion
+      freebsd-mips</a>. Si vous travaillez sur une tâche liée
+      au projet, vous devriez contacter
+      <a href="mailto:jmallett@FreeBSD.org">jmallett@FreeBSD.org</a> avec une
+      description de ce que vous faites afin que votre travail soit ajouté
+      ci-dessous.</p>
+
+    <img src="./../gifs/resources_and_links.png" width="229" height="36" alt="Resources and Links"/>
+
+    <ul class="list">
+      <li><p>Des informations d'ordre général sur MIPS sont disponibles sur
+            <a href="http://www.mips.com">MIPS Technologies, Inc.</a></p></li>
+      <li><p><a name="mailinglist">La plupart des discussions relatives à</a>
+            ce projet prennent place sur la liste de diffusion <a href="mailto:freebsd-mips@FreeBSD.org">freebsd-mips@FreeBSD.org</a>.
+            Pour vous inscrire à la liste, envoyez un message à <a href="mailto:freebsd-mips-subscribe@FreeBSD.org">freebsd-mips-subscribe@FreeBSD.org</a>.</p></li>
+    </ul>
+
+    <img src="./../gifs/status_board.png" width="229" height="36" alt="Status Board"/><br/><br/>
+
+    <!-- Tasks should be sorted in order of most complete, then reverse -->
+    <!-- chronological order. -->
+
+    <table class="tblbasic">
+      <tr>
+	<th class="heading"> Tâche </th>
+	<th class="heading"> Responsable </th>
+	<th class="heading"> Dernière mise à jour </th>
+	<th class="heading"> Statut </th>
+      </tr>
+
+      <tr>
+	<td> Mise à jour des logiciels tiers pour les outils de développement. </td>
+	<td> Juli Mallett </td>
+	<td> 08 Novembre 2002 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Intégration des outils de développement FreeBSD/MIPS. </td>
+	<td> Juli Mallett </td>
+	<td> 08 Novembre 2002 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Intégration du gestionnaire noyau ARCBIOS depuis NetBSD. </td>
+	<td> Justin Wojdacki </td>
+	<td> 08 Novembre 2002 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Ecriture d'un module GEOM pour les disques SGI labélisés fx. </td>
+	<td> Juli Mallett </td>
+	<td> 08 Février 2003 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Création des fichiers d'en-têtes noyau de base. </td>
+	<td> Juli Mallett </td>
+	<td> 13 Février 2003 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Création des bases pour toutes les fonctions MD. </td>
+	<td> Juli Mallett </td>
+	<td> 14 Février 2003 </td>
+	<td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+      </tr>
+
+      <tr>
+        <td> Obtenir un noyau qui boote sur du vrai matériel. </td>
+	<td> Juli Mallett </td>
+	<td> 14 Février 2003 </td>
+	<td> <img src="./../gifs/in_progress.png" width="22" height="22" alt="In progress"/> </td>
+      </tr>
+
+      <tr>
+        <td> Intégration de la configuration FreeBSD/MIPS dans l'arbre des sources GCC de la FSF. </td>
+	<td>  </td>
+	<td> 08 Novembre 2002 </td>
+	<td> <img src="./../gifs/not_started.png" width="22" height="22" alt="Not Started"/> </td>
+      </tr>
+
+      <tr>
+        <td> Ajout du support ARC à loader(8). </td>
+	<td>  </td>
+	<td> 08 Novembre 2002 </td>
+	<td> <img src="./../gifs/not_started.png" width="22" height="22" alt="Not Started"/> </td>
+      </tr>
+
+<!--
+      <tr>
+	<td> Brief description. </td>
+	<td> Responsible </td>
+	<td> Last updated </td>
+	<td> Status </td>
+      </tr>
+-->
+
+    </table><br/><br/>
+
+    <table class="tblbasic">
+      <tr>
+	<th colspan="2" class="heading">Légende</th>
+      </tr>
+      <tr>
+        <td> <img src="./../gifs/not_started.png" width="22" height="22" alt="Not Started"/> </td>
+        <td> Pas encore commencé </td>
+      </tr><tr>
+        <td> <img src="./../gifs/blocked.png" width="22" height="22" alt="Blocked"/> </td>
+        <td> En attente de la fin d'une autre tâche </td>
+      </tr><tr>
+        <td> <img src="./../gifs/in_progress.png" width="22" height="22" alt="In progress"/> </td>
+        <td> En cours </td>
+      </tr><tr>
+        <td> <img src="./../gifs/done.png" width="22" height="22" alt="Done"/> </td>
+        <td> Tâche achevée </td>
+      </tr><tr>
+        <td> <img src="./../gifs/not_planned.png" width="22" height="22" alt="Not Planned"/> </td>
+        <td> A planifier </td>
+      </tr>
+    </table>
+    <p><img src="./../gifs/news.png" width="229" height="36" alt="News"/></p>
+
+    <p class="main">Le reste de cette page est composé à la manière d'un
+      fichier de log dans un ordre chronologique inverse.</p>
+
+    <b>08 Novembre 2002</b>
+    <ul class="list">
+      <li>
+	<p>Création de cette page web.</p>
+      </li>
+    </ul>
+    <p><small>La mise en forme originale pour cette page web provient du
+      projet FreeBSD C99. Copyright Démon BSD 1988 par Marshall
+      Kirk McKusick. Tous droits réservés.</small></p>
+  </body>
+</html>

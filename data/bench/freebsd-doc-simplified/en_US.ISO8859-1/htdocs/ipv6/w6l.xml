@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>FreeBSD and World IPv6 Launch</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+  
+<div id="catnav">
+  <h4>Category Navigation</h4>
+  <ul>
+    <li><a href="./ipv6/">IPv6 in FreeBSD</a></li>
+    <li><a href="./ipv6/w6l.html">World IPv6 Launch</a></li>
+    <li><a href="./ipv6/w6d.html">World IPv6 Day</a></li>
+    <li><ul>
+      <li><a href="./ipv6/w6d-www-stats.html">www stats</a></li>
+    </ul></li>
+  </ul>
+</div> <!-- CATNAV -->
+    <!-- img src="World_IPv6_launch_badge_256.png"
+       alt="ISOC World IPv6 Launch Badge"
+       style="float:right; border-style:none; margin-left:30px;" -->
+
+    <h2>FreeBSD on World IPv6 Launch</h2>
+
+    <p>FreeBSD supported World IPv6 Day in 2011 and we continue to help to
+      spread the word about IPv6 with World IPv6 Launch on 6 June 2012.</p>
+
+    <p>Stay tuned for more news.</p>
+
+    <p>
+      Meanwhile you can find more information about World IPv6 Launch on
+      The Internet Society's web page
+      <a href="http://www.worldipv6launch.org/">www.worldipv6launch.org</a>.
+    </p>
+
+  </body>
+</html>

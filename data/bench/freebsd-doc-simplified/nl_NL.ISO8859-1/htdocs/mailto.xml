@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vertaald door: Rene Ladan
+     %SOURCE%	en_US.ISO8859-1/htdocs/mailto.xml
+     %SRCID%	40901
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>Contact opnemen met FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+    <h2>Vragen over FreeBSD...</h2>
+
+    <p>Vragen over FreeBSD dienen gericht te worden aan de FreeBSD Vragen
+      mailinglijst, <a href="mailto:freebsd-questions@FreeBSD.org">freebsd-questions@FreeBSD.org</a>.</p>
+
+    <p><a href="./../community/mailinglists.html">Mailinglijsten</a> zijn
+      de primaire ondersteuningskanalen voor gebruikers van FreeBSD, met
+      verschillende mailinglijsten die verschillende onderwerpsgebieden
+      behandelen.  Er zijn ook verschillende niet-Engelstalige mailinglijsten
+      beschikbaar.</p>
+
+    <h2>Vragen over de inhoud van deze webserver...</h2>
+
+    <p>Vragen of opmerkingen over onze documentatie (<a href="./../doc/nl_NL.ISO8859-1/books/handbook/index.html">Handboek</a>,
+      <a href="./../doc/en_US.ISO8859-1/books/faq/index.html">FAQ</a>,
+      <a href="./docs.html">Boeken &amp; artikelen</a>) dienen gericht
+      te worden aan de FreeBSD Documentatie Project mailinglijst, <a href="mailto:freebsd-doc@FreeBSD.org">freebsd-doc@FreeBSD.org</a>.</p>
+
+    <h2>Slakkenpost, telefoon en fax</h2>
+
+    <p>Voor CDROM-bestellingen: <a href="http://www.freebsdmall.com/">The
+	FreeBSD Mall</a></p>
+
+    <p>Voor commerciële ondersteuning: <a href="http://www.freebsdmall.com/">The FreeBSD Mall</a></p>
+
+    <h2><a href="./administration.html">Wie is waarvoor
+      verantwoordelijk</a></h2>
+
+    <p>Marketing, Bugmeister, Beveiligingsofficier,
+    Postmeester, Webmaster etc.</p>
+
+  </body>
+</html>

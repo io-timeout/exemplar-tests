@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="refresh" content="5;url=./platforms/amd64.html"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+      <title>FreeBSD/x86-64 Project</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+
+      </head>
+
+
+  <body class="navinclude.developers">
+    <p>The FreeBSD x86-64 port has been renamed <a href="./platforms/amd64.html">amd64</a>.  You should be
+      automatically redirected to the new project page in a few
+      seconds.  If not, please follow the link and update your
+      bookmarks.</p>
+
+    <p>We apologize for the inconvenience.</p>
+  </body>
+</html>

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The FreeBSD Traditional Chinese Documentation Project -->
+<!-- Original Revision: r51914 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>取得 FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+    <a name="choose-version"/>
+
+    <a name="choose-arch"/>
+
+    <h2>選擇一個架構</h2>
+
+    <p>大多數 FreeBSD 使用者所擁有的硬體設備是 amd64,
+      i386, 或是 armv6 其中一種架構。</p>
+
+    <p>最新的個人電腦使用 amd64 架構，包含
+        Intel® 的處理器。擁有超過 3 GB 記憶體的電腦應該使用 amd64 架構。
+      如果電腦比較舊型，僅支援 32 位元，請使用 i386。
+      對於嵌入式和單板電腦(SBC) 像是 Raspberry Pi、 Beagle
+      Bone Black、 Panda Board 和 Zed Board，請使用支援 ARMv6 和 ARMv7 處理器的
+      armv6 SD 卡映像檔。
+    </p>
+
+    <p>所有其他的使用者應參考支援 FreeBSD 平台的
+      <a href="./platforms/index.html">完整清單</a>
+    </p>
+
+    <a name="choose-image"/>
+
+    <h2>選擇一個映像檔</h2>
+
+    <p>FreeBSD 安裝程式有許多不同的格式可供下載，包含
+      CD (disc1)、DVD (dvd1) 及網路安裝 (bootonly) 大小的 ISO
+      光碟映像檔，以及一般或迷你大小的隨身碟映像檔。最近版本的 FreeBSD 也提供
+      可延展的虛擬機映像檔與嵌入式平台使用的 SD 卡映像檔。</p>
+
+    <a name="help-statistics"/>
+
+    <h2>FreeBSD 部署統計資訊</h2>
+
+    <p>雖然 FreeBSD 不蒐集部屬統計資訊，但擁有這些統計資訊卻相當重要。
+      請考慮安裝<a href="http://www.freshports.org/sysutils/bsdstats/">sysutils/bsdstats</a>
+      來蒐集硬體與軟體統計資訊，協助開發人員了解該如何最好的集中精力。收集的資訊可以在<a href="http://bsdstats.org">bsdstats.org</a>網站取得。</p>
+
+    <a name="download"/>
+
+    <a name="download-rel121"/>
+
+    <h1>FreeBSD 12.1-RELEASE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/amd64/amd64/ISO-IMAGES/12.1/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/i386/i386/ISO-IMAGES/12.1/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc/ISO-IMAGES/12.1/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc64/ISO-IMAGES/12.1/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/sparc64/sparc64/ISO-IMAGES/12.1/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/12.1/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/README.txt">README</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.1-RELEASE/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.1-RELEASE/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.1-RELEASE/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv6-RPI-B.img.xz">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-BANANAPI.img.xz">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-BEAGLEBONE.img.xz">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-CUBIEBOARD.img.xz">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-CUBIEBOARD2.img.xz">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-CUBOX-HUMMINGBOARD.img.xz">CUBOX-HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-GENERICSD.img.xz">GENERICSD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-RPI2.img.xz">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-PANDABOARD.img.xz">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv7/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm-armv7-WANDBOARD.img.xz">WANDBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm64-aarch64-PINE64.img.xz">PINE64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm64-aarch64-PINE64-LTS.img.xz">PINE64-LTS</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/12.1/FreeBSD-12.1-RELEASE-arm64-aarch64-RPI3.img.xz">RPI3</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="./releases/index.html#current">發行於</a>: November, 2019</li>
+	      <li><a href="./releases/12.1R/relnotes.html">發行說明</a></li>
+	      <li><a href="./releases/12.1R/readme.html">Readme</a></li>
+	      <li><a href="./releases/12.1R/hardware.html">硬體相容性表</a></li>
+	      <li><a href="./releases/12.1R/installation.html">安裝說明</a></li>
+	      <li><a href="./releases/12.1R/errata.html">勘誤</a></li>
+	      <li><a href="./releases/12.1R/signatures.html">校驗值</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <br/>
+
+    <a name="download-rel"/>
+
+    <h1>FreeBSD 12.0-RELEASE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/amd64/amd64/ISO-IMAGES/12.0/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/i386/i386/ISO-IMAGES/12.0/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc/ISO-IMAGES/12.0/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc64/ISO-IMAGES/12.0/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/sparc64/sparc64/ISO-IMAGES/12.0/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/12.0/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/README.txt">README</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.0-RELEASE/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.0-RELEASE/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/12.0-RELEASE/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/arm/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-GUMSTIX.img.xz">GUMSTIX</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-BANANAPI.img.xz">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-BEAGLEBONE.img.xz">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-CUBIEBOARD.img.xz">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-CUBIEBOARD2.img.xz">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-CUBOX-HUMMINGBOARD.img.xz">CUBOX-HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-RPI-B.img.xz">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-RPI2.img.xz">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-PANDABOARD.img.xz">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-arm-armv6-WANDBOARD.img.xz">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="./releases/index.html#current">發行於</a>： 2018 年  6 月</li>
+	      <li><a href="./../releases/12.0R/relnotes.html">發行說明</a></li>
+	      <li><a href="./../releases/12.0R/readme.html">Readme</a></li>
+	      <li><a href="./../releases/12.0R/hardware.html">硬體相容性表</a></li>
+	      <li><a href="./../releases/12.0R/installation.html">安裝說明</a></li>
+	      <li><a href="./../releases/12.0R/errata.html">勘誤</a></li>
+	      <li><a href="./../releases/12.0R/signatures.html">校驗值</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <br/>
+
+    <a name="download-rel1"/>
+
+    <h1>FreeBSD 11.3-RELEASE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/amd64/amd64/ISO-IMAGES/11.3/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/i386/i386/ISO-IMAGES/11.3/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc/ISO-IMAGES/11.3/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/powerpc/powerpc64/ISO-IMAGES/11.3/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/sparc64/sparc64/ISO-IMAGES/11.3/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm64/aarch64/ISO-IMAGES/11.3/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/README.txt">README</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/11.3-RELEASE/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/11.3-RELEASE/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/VM-IMAGES/11.3-RELEASE/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-BANANAPI.img.xz">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-BEAGLEBONE.img.xz">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-CUBIEBOARD.img.xz">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-CUBIEBOARD2.img.xz">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-CUBOX-HUMMINGBOARD.img.xz">CUBOX-HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-GUMSTIX.img.xz">GUMSTIX</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-RPI-B.img.xz">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-RPI2.img.xz">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-PANDABOARD.img.xz">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/releases/arm/armv6/ISO-IMAGES/11.3/FreeBSD-11.3-RELEASE-arm-armv6-WANDBOARD.img.xz">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="./releases/index.html#current">發行於</a>： 2017 年  7 月</li>
+	      <li><a href="./../releases/11.3R/relnotes.html">發行說明</a></li>
+	      <li><a href="./../releases/11.3R/readme.html">Readme</a></li>
+	      <li><a href="./../releases/11.3R/hardware.html">硬體相容性表</a></li>
+	      <li><a href="./../releases/11.3R/installation.html">安裝說明</a></li>
+	      <li><a href="./../releases/11.3R/errata.html">勘誤</a></li>
+	      <li><a href="./../releases/11.3R/signatures.html">校驗值</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <br/>
+
+    <?ignore <a name="download-rel2"></a>
+
+    <h1>&os; &rel2.current;-RELEASE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.rel;/amd64/amd64/ISO-IMAGES/&rel2.current;/">amd64</a></li>
+	      <li><a href="&url.rel;/i386/i386/ISO-IMAGES/&rel2.current;/">i386</a></li>
+	      <li><a href="&url.rel;/ia64/ia64/ISO-IMAGES/&rel2.current;/">ia64</a></li>
+	      <li><a href="&url.rel;/powerpc/powerpc/ISO-IMAGES/&rel2.current;/">powerpc</a></li>
+	      <li><a href="&url.rel;/powerpc/powerpc64/ISO-IMAGES/&rel2.current;/">powerpc64</a></li>
+	      <li><a href="&url.rel;/sparc64/sparc64/ISO-IMAGES/&rel2.current;/">sparc64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.rel;/VM-IMAGES/README.txt">README</a></li>
+	      <li><a href="&url.rel;/VM-IMAGES/&rel2.current;-RELEASE/amd64/Latest/">amd64</a></li>
+	      <li><a href="&url.rel;/VM-IMAGES/&rel2.current;-RELEASE/i386/Latest/">i386</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-BEAGLEBONE.img.xz">BEAGLEBONE</a></li>
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-CUBOX-HUMMINGBOARD.img.xz">CUBOX-HUMMINGBOARD</a></li>
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-GUMSTIX.img.xz">GUMSTIX</a></li>
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-RPI-B.img.xz">RPI-B</a></li>
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-PANDABOARD.img.xz">PANDABOARD</a></li>
+	      <li><a href="&url.rel;/arm/armv6/ISO-IMAGES/&rel2.current;/&os;-&rel2.current;-RELEASE-arm-armv6-WANDBOARD.img.xz">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="&base;/releases/index.html#current">發行於</a>： &rel2.current.date;</li>
+	      <li><a href="&u.rel2.notes;">發行說明</a></li>
+	      <li><a href="&u.rel2.readme;">Readme</a></li>
+	      <li><a href="&u.rel2.hardware;">硬體相容性表</a></li>
+	      <li><a href="&u.rel2.installation;">安裝說明</a></li>
+	      <li><a href="&u.rel2.errata;">勘誤</a></li>
+	      <li><a href="&u.rel2.signatures;">校驗值</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <br />
+    ?>
+    
+    
+  <div>
+    <a name="helptest"/>
+    <h2>為即將發佈的 FreeBSD 版本提供幫助</h2>
+
+    <p>我們的開發人員和 release engineers 目前正在為 FreeBSD
+      接下來的版本努力工作； 如果您希望幫助進行測試， 請下載最新編譯的版本。
+      請注意這些光碟鏡像是設計用於測試目的， 因而不應在正式環境中使用。</p>
+
+    <table class="tblbasic">
+      <thead>
+        <tr style="text-align: center;">
+          <td colspan="2">版本 &amp; 平台</td>
+          <td>發行版安裝檔案</td>
+          <td title="ISO9660 CD image"><a href="./../doc/zh_TW.UTF-8/books/handbook/install-diff-media.html#INSTALL-CDROM">ISO</a></td>
+          <td>計劃</td>
+          <td>待解決問題列表</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">FreeBSD 12.2-BETA2</td>
+          <td colspan="2"/>
+          <td rowspan="8"><a href="./../releases/12.2R/schedule.html">[查看]</a></td>
+          <td rowspan="8"><a href="./../releases/12.2R/todo.html">[查看]</a></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>alpha</td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/alpha/12.2-BETA2">[安裝檔案]</a></td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/alpha/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>amd64</td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/amd64/12.2-BETA2">[安裝檔案]</a></td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/amd64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>i386</td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/i386/12.2-BETA2">[安裝檔案]</a></td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/i386/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>ia64</td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/ia64/12.2-BETA2">[安裝檔案]</a></td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/ia64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>ppc</td>
+        </tr>
+        <tr>
+          <td/>
+          <td>sparc64</td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/sparc64/12.2-BETA2">[安裝檔案]</a></td>
+          <td><a href="https://download.FreeBSD.org/ftp/releases/sparc64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+  </div>
+
+    
+
+    <a name="download-snapshots"/>
+
+    <h1>開發快照</h1>
+
+    <p>如果您對僅針對開發者和骨灰級測試人員的 FreeBSD-CURRENT (也就是 13.0-CURRENT) 純實驗性
+      <strong>快照</strong> 版本感興趣，請參考 <a href="./snapshots/">FreeBSD 的快照版本</a> 頁面。
+      想大致了解更多關於過去、現在及未來的發行版本的發行資訊，請參考 <a href="./releases/index.html">發行版本資訊</a>頁面。</p>
+
+    <h1>FreeBSD 13.0-CURRENT</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/amd64/amd64/ISO-IMAGES/13.0/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/i386/i386/ISO-IMAGES/13.0/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc/ISO-IMAGES/13.0/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc64/ISO-IMAGES/13.0/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/sparc64/sparc64/ISO-IMAGES/13.0/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/arm/ISO-IMAGES/13.0/">arm</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/13.0/">armv6</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">armv7</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/13.0/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/13.0-CURRENT/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/13.0-CURRENT/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/13.0-CURRENT/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">CUBOX/HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/arm/ISO-IMAGES/13.0/">GUMSTIX</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/13.0/">PINE64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/13.0/">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/13.0/">RPI3</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/13.0/">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="./relnotes/13.0R/relnotes.html">發行說明</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+
+    <h1>FreeBSD 12.1-STABLE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/amd64/amd64/ISO-IMAGES/12.1/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/i386/i386/ISO-IMAGES/12.1/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc/ISO-IMAGES/12.1/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc64/ISO-IMAGES/12.1/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpcspe/ISO-IMAGES/12.1/">powerpcspe</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/sparc64/sparc64/ISO-IMAGES/12.1/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/12.1/">armv6</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">armv7</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/12.1/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/12.1-STABLE/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/12.1-STABLE/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/12.1-STABLE/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">CUBOX/HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">GENERICSD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/12.1/">PINE64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/12.1/">PINE64-LTS</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/12.1/">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/12.1/">RPI3</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv7/ISO-IMAGES/12.1/">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <?ignore <li><a href="&base;/relnotes/&rel121.current.major;-STABLE/relnotes/article.html">Release Notes</a></li>
+	      ?>
+	      <li> </li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p> </p>
+
+    <h1>FreeBSD 11.3-STABLE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>Installer Images</th>
+	  <th>Virtual Machine Images</th>
+	  <th>SD Card Images</th>
+	  <th>Documentation</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/amd64/amd64/ISO-IMAGES/11.3/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/i386/i386/ISO-IMAGES/11.3/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc/ISO-IMAGES/11.3/">powerpc</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpc64/ISO-IMAGES/11.3/">powerpc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/powerpc/powerpcspe/ISO-IMAGES/11.3/">powerpcspe</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/sparc64/sparc64/ISO-IMAGES/11.3/">sparc64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">armv6</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm64/aarch64/ISO-IMAGES/11.3/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/11.3-STABLE/amd64/Latest/">amd64</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/11.3-STABLE/i386/Latest/">i386</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/VM-IMAGES/11.3-STABLE/aarch64/Latest/">aarch64</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">BANANAPI</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">BEAGLEBONE</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">CUBIEBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">CUBIEBOARD2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">CUBOX/HUMMINGBOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">PANDABOARD</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">RPI2</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">RPI-B</a></li>
+	      <li><a href="https://download.FreeBSD.org/ftp/snapshots/arm/armv6/ISO-IMAGES/11.3/">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="./relnotes/11-STABLE/relnotes/article.html">Release Notes</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+
+    <?ignore <h1>&os; &rel2.current;-STABLE</h1>
+
+    <table class="tblbasic tblwide tbldownload">
+      <tbody>
+	<tr>
+	  <th>安裝程式映像檔</th>
+	  <th>虛擬機映像檔</th>
+	  <th>SD 卡映像檔</th>
+	  <th>文件</th>
+	</tr>
+	<tr>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.snapshot;/amd64/amd64/ISO-IMAGES/&rel2.current;/">amd64</a></li>
+	      <li><a href="&url.snapshot;/i386/i386/ISO-IMAGES/&rel2.current;/">i386</a></li>
+	      <li><a href="&url.snapshot;/ia64/ia64/ISO-IMAGES/&rel2.current;/">ia64</a></li>
+	      <li><a href="&url.snapshot;/powerpc/powerpc/ISO-IMAGES/&rel2.current;/">powerpc</a></li>
+	      <li><a href="&url.snapshot;/powerpc/powerpc64/ISO-IMAGES/&rel2.current;/">powerpc64</a></li>
+	      <li><a href="&url.snapshot;/sparc64/sparc64/ISO-IMAGES/&rel2.current;/">sparc64</a></li>
+	      <li><a href="&url.snapshot;/arm/arm/ISO-IMAGES/&rel2.current;/">arm</a></li>
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">armv6</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.snapshot;/VM-IMAGES/&rel2.current;-STABLE/amd64/Latest/">amd64</a></li>
+	      <li><a href="&url.snapshot;/VM-IMAGES/&rel2.current;-STABLE/i386/Latest/">i386</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdownloadlist">
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">BEAGLEBONE</a></li>
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">CUBOX/HUMMINGBOARD</a></li>
+	      <li><a href="&url.snapshot;/arm/arm/ISO-IMAGES/&rel2.current;/">GUMSTIX</a></li>
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">PANDABOARD</a></li>
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">RPI-B</a></li>
+	      <li><a href="&url.snapshot;/arm/armv6/ISO-IMAGES/&rel2.current;/">WANDBOARD</a></li>
+	    </ul>
+	  </td>
+	  <td>
+	    <ul class="txtdocslist">
+	      <li><a href="&enbase;/relnotes/&rel2.current.major;-STABLE/relnotes/article.html">發行說明</a></li>
+	    </ul>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    ?>
+
+    <p>如果您打算從 HTTP 或 FTP 取得 FreeBSD，請查閱手冊中的<a href="./../doc/zh_TW.UTF-8/books/handbook/mirrors-ftp.html"><strong>鏡像站點</strong></a>清單來找尋
+    是否有更靠近您的鏡像站</p>
+
+    <a name="install"/>
+
+    <h2>安裝 FreeBSD</h2> 
+
+    <p>安裝 FreeBSD 有許多選擇，包含從
+      CD-ROM, DVD, USB 隨身碟或甚至直接使用
+      匿名 FTP, HTTP 或 NFS。在下載完整的 FreeBSD 之前，請先閱讀<a href="./../doc/zh_TW.UTF-8/books/handbook/bsdinstall.html">FreeBSD
+      安裝說明</a>
+    </p>
+
+    <a name="distribution"/>
+
+    <h2>購買 FreeBSD</h2>
+
+    <p>FreeBSD 可以在 <a href="http://www.freebsdmall.com/">FreeBSD Mall</a> 或其他的 <a href="./../doc/zh_TW.UTF-8/books/handbook/mirrors.html">CD-ROM
+	與 DVD 發行商</a>那裡取得 CD-ROM 或 DVD。</p>
+
+    <a name="past"/>
+
+    <h2>過去的發行版</h2>
+
+    <p>欲下載過去的發行版，請至 <a href="http://ftp-archive.FreeBSD.org/pub/FreeBSD-Archive/old-releases/">FTP
+	存檔</a>下載。</p>
+
+    <a name="derived"/>
+
+    <h2>FreeBSD衍生的作業系統發行版</h2>
+
+    <p>FreeBSD 被廣泛用作其他商業及開源作業系統的建構模塊。以下的項目
+    被廣泛使用且特別令 FreeBSD 使用者感興趣。</p>
+
+    <ul class="txtdownloadlist">
+      <li><p><a href="http://www.freenas.org">FreeNAS</a> 是一個基於 FreeBSD 的
+      開源儲存平台，其支援在 Windows、 Apple 與 UNIX-like 作業系統上共用。</p></li>
+
+      <li><p><a href="https://www.trueos.org">TrueOS</a> （前身為 
+	<a href="https://pcbsd.org">PC-BSD</a>）是一個具備圖形化安裝界面的 FreeBSD
+    衍生作業系統，其桌面選項安裝
+    <a href="https://lumina-desktop.org">Lumina 桌面環境</a>，
+	一個完全 BSD 許可的桌面環境, 其令人印象深刻的桌面工具旨在方便一般電腦使用者使用。
+	</p></li>
+
+      <li><p><a href="http://www.pfsense.org">pfSense</a> 是一個 
+	基於 FreeBSD 訂製發行版，專門用作防火牆與路由器。</p></li>
+    </ul>
+
+    <a name="apps"/>
+
+    <h2>應用和實用軟體</h2>
+
+    <h3>Ports 套件庫</h3>
+
+    <p>FreeBSD Ports 套件庫是各種已經移植到 FreeBSD 的軟體和應用軟體集合。</p>
+
+    <p>請見使用手冊中的<a href="./../doc/zh_TW.UTF-8/books/handbook/ports.html">
+      <strong>安裝應用程式：套件與 Port</strong></a>
+      章節</p>
+
+    <ul class="txtdownloadlist">
+      <li><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/">下載 FreeBSD
+	  Ports 套件庫</a></li>
+
+      <li><a href="./../ports/index.html">Ports 套件庫的網頁界面</a></li>
+
+      <li><a href="http://www.freshports.org/">FreshPorts - 一個更進階的 Ports 套件庫網頁界面</a></li>
+    </ul>
+
+    <p>想知道 <em>您</em> 如何將
+      <em>您</em> 喜愛的軟體加入到 Ports 套件庫，請參考 <em><a href="./../doc/zh_TW.UTF-8/books/porters-handbook/index.html">The
+	  Porter's Handbook</a></em> 以及 <em><a href="./../doc/zh_TW.UTF-8/articles/contributing/index.html">為 FreeBSD 貢獻</a></em>這篇文章。</p>
+
+  </body>
+</html>

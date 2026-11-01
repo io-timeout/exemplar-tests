@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.7
+
+  Version francaise : Mickael Maindron <mike@iskream.com>
+  Version francaise (mise a jour) : Vincent Tougait <viny@scientiae.net>
+  Version francaise (mise a jour) : Antoine Brodin <antoine.brodin@laposte.net>
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Projet Java® pour FreeBSD : Comment réaliser un port</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+<p>Des instructions plus générales peuvent être trouvées dans le
+    <a href="./../doc/en_US.ISO8859-1/books/porters-handbook/index.html">Manuel du Porteur d'Applications</a>.</p>
+<p>Pour les ports Java®, veuillez vous référer à la section
+    <a href="./../doc/en_US.ISO8859-1/books/porters-handbook/using-java.html">Utiliser Java</a>.</p>
+<p>Plus nous aurons d'applications portées, mieux ce sera.</p>
+
+</body>
+</html>

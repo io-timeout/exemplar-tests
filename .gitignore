@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+reports/
+.turbo/
+.idea/
+.vitest/
+*.tsbuildinfo
+.DS_Store
+
+# Generated on first use: XMark's licence does not allow redistributing it, and the synthetic documents are quick to build.
+/data/bench/xmark/
+/data/bench/tools/
+/data/bench/synthetic-*/
+
+# Downloaded on first use: the XML suite's collections may be redistributed only as their authors publish them.
+/data/conformance/xmlts/
+/data/conformance/*.unpacking-*/

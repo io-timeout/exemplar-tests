@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSDru: frdp/www/ru/platforms/ia64.xml,v 1.9 2006/06/04 14:07:20 gad Exp $
+
+     Original revision: 1.12
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Проект FreeBSD/ia64</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+  <body class="navinclude.developers">
+
+  <p>Информация о платформе FreeBSD/ia64 была перемещена
+    <a href="ia64/index.html">сюда</a>. Пожалуйста, обновите закладки.</p>
+
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Einen FreeBSD-Problembericht abschicken</title>
+
+    <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    <meta http-equiv="refresh" content="0; url=https://bugs.freebsd.org/submit/"/>
+  </head>
+
+  <body class="navinclude.support">
+    <p>Sie werden weitergeleitet zum <a href="https://bugs.freebsd.org/submit/"> Bugzilla Bug Submission Formular</a>.</p>
+  </body>
+</html>

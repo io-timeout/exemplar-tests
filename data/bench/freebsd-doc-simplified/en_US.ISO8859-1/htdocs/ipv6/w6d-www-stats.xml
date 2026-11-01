@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Page hits per minute and address family on www.freebsd.org</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+  
+<div id="catnav">
+  <h4>Category Navigation</h4>
+  <ul>
+    <li><a href="./ipv6/">IPv6 in FreeBSD</a></li>
+    <li><a href="./ipv6/w6l.html">World IPv6 Launch</a></li>
+    <li><a href="./ipv6/w6d.html">World IPv6 Day</a></li>
+    <li><ul>
+      <li><a href="./ipv6/w6d-www-stats.html">www stats</a></li>
+    </ul></li>
+  </ul>
+</div> <!-- CATNAV -->
+
+    <h2>IPv6 hits from 2011-06-07 12:00 to 2011-06-09 11:59</h2>
+    <a href="w6d-www-stats-v6-large.png" target="_blank"><img src="w6d-www-stats-v6.png" alt="IPv6 hits from 2011-06-07 12:00 to 2011-06-09 11:59"/></a>
+
+    <h2>IPv4 and IPv6 hits from 2011-06-07 12:00 to 2011-06-09 11:59</h2>
+    <a href="w6d-www-stats-large.png" target="_blank"><img src="w6d-www-stats.png" alt="IPv4 and IPv6 hits from 2011-06-07 12:00 to 2011-06-09 11:59"/></a>
+
+<!--
+    <h2>IPv4 and IPv6 hits from 2011-03-31 00:00 to now</h2>
+    <a href="www-stats-large.png" target="_blank"><img
+      src="www-stats.png"
+      alt="IPv4 and IPv6 hits from 2011-03-31 00:00 to now"/></a>
+-->
+
+  </body>
+</html>

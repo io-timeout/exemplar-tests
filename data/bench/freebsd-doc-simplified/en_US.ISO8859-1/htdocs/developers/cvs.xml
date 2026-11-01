@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Source code repositories</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.developers">
+
+    <h2>Subversion</h2>
+
+    <p><a href="https://subversion.apache.org/">Subversion</a>
+      (SVN for short)
+      is the tool the FreeBSD Project uses for keeping its sources
+      under control.  Every change (with an accompanying log message
+      explaining its purpose) is stored.  It can be
+      easily viewed from the web interface mentioned below.</p>
+
+    <p>In June 2008, development of the base system migrated from CVS to
+      Subversion.  The <a href="https://svnweb.FreeBSD.org/base/">web
+      interface</a> is available for browsing the repository.</p>
+
+    <p>In May 2012, the FreeBSD Documentation Project moved from CVS
+      to Subversion.
+      There is a <a href="https://svnweb.FreeBSD.org/doc/">web interface</a>
+      available for browsing the contents of the FreeBSD Documentation
+      Project SVN repository.</p>
+
+    <p>In July 2012, the FreeBSD Ports tree moved from CVS to
+      Subversion.  There is a <a href="https://svnweb.FreeBSD.org/ports/">web interface</a> for
+      browsing the repository.</p>
+
+</body>
+</html>

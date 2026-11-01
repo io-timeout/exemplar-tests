@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>Documentazione su FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.docs">
+
+    <img src="./../gifs/doc.jpg" alt="Il Demone BSD che legge la documentazione" align="right" border="0" width="274" height="163"/>
+
+    <p>Una grande varietà di documentazione è disponibile per FreeBSD, sia su
+      questo sito web, sia su altri siti.</p>
+
+  </body>
+</html>

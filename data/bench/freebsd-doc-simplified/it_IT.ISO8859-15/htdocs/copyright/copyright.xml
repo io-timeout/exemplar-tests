@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title>Copyright e Informazioni Legali su FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.about">
+
+<p/>
+
+<h2><a href="./../copyright/freebsd-license.html">Il Copyright di FreeBSD</a></h2>
+<h2><a href="./../copyright/freebsd-doc-license.html">La Licenza sulla Documentazione di FreeBSD</a></h2>
+<h2><a href="./../copyright/trademarks.html">Legenda dei Marchi</a></h2>
+<h2><a href="./../copyright/license.html">Il Copyright di BSD</a></h2>
+<h2><a href="./../copyright/daemon.html">Il Demone BSD</a></h2>
+<h2><a href="./../copyright/LEGAL">Restrizioni sulla ridistribuzione dei Port di FreeBSD</a></h2>
+<h2><a href="./../copyright/COPYING">GNU GENERAL PUBLIC LICENSE</a></h2>
+<h2><a href="./../copyright/COPYING.LIB">GNU LIBRARY GENERAL PUBLIC LICENSE</a></h2>
+<p/>
+
+</body>
+</html>

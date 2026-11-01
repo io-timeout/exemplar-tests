@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The FreeBSD Russian Documentation Project
+
+     $FreeBSDru: frdp/www/ru/where.xml,v 1.17 2006/07/19 09:33:24 den Exp $
+
+     Original revision: 38826
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Получение FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.download">
+
+    <a name="releases"/>
+
+    <h2><a href="./releases/index.html">Информация о релизах</a></h2>
+
+    <p>Подробное описание уже вышедших, текущих и планируемых релизов.
+      Обращайтесь сюда, чтобы узнать, какая версия FreeBSD является самой
+      последней.</p>
+
+    <a name="install"/>
+
+    <h2><a href="./../doc/ru_RU.KOI8-R/books/handbook/install.html">
+      Установка FreeBSD</a></h2>
+
+    <p>Существует много вариантов установки FreeBSD, включая инсталляцию
+      с компакт-диска, DVD, дискет, раздела MS-DOS®, магнитной ленты,
+      анонимного FTP сервера и NFS.  Пожалуйста, взгляните на <a href="./../doc/ru_RU.KOI8-R/books/handbook/install.html">руководство по
+      установке</a>, прежде чем скачивать полный дистрибутив FreeBSD.</p>
+
+    <a name="distribution"/>
+
+    <h2>Покупка FreeBSD</h2>
+
+    <p>FreeBSD можно приобрести на компакт-диске или DVD у <a href="http://www.freebsdmall.com/">FreeBSD Mall</a> или
+      у других <a href="./../doc/ru_RU.KOI8-R/books/handbook/mirrors.html">издателей
+	компакт-дисков и DVD</a>.</p>
+
+    <a name="download"/>
+
+    <h2>Загрузка FreeBSD</h2>
+
+    <table class="tblbasic">
+      <thead>
+	<tr style="text-align: center;">
+	  <td colspan="2">Версия и платформа</td>
+	  <td>Дистрибутив</td>
+	  <td title="ISO9660 CD image"><a href="./../doc/ru_RU.KOI8-R/books/handbook/install-diff-media.html#INSTALL-CDROM">ISO</a></td>
+	  <td>Информация<br/>о релизе</td>
+	  <td>Аппаратная<br/>совместимость</td>
+	  <td>Заметки по<br/>установке</td>
+	  <td>Исправления<br/>и дополнения</td>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <td colspan="2">FreeBSD 12.0-RELEASE</td>
+	  <td colspan="2"/>
+	  <td rowspan="7"><a href="./../releases/12.0R/relnotes.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../releases/12.0R/hardware.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../releases/12.0R/installation.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../releases/12.0R/errata.html">[Смотреть]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>amd64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/amd64/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>i386</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/i386/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/i386/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>ia64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/ia64/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/ia64/ia64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>powerpc</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>powerpc64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc64/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/powerpc/powerpc64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>sparc64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/sparc64/12.0-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/sparc64/ISO-IMAGES/12.0/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td colspan="2">FreeBSD 11.2-RELEASE</td>
+	  <td colspan="2"/>
+	  <td rowspan="5"><a href="./../releases/11.2R/relnotes.html">[Смотреть]</a></td>
+	  <td rowspan="5"><a href="./../releases/11.2R/hardware.html">[Смотреть]</a></td>
+	  <td rowspan="5"><a href="./../doc/ru_RU.KOI8-R/books/handbook/install.html">[Смотреть]</a></td>
+	  <td rowspan="5"><a href="./../releases/11.2R/errata.html">[Смотреть]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>amd64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/11.2-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>i386</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/11.2-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>pc98</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/11.2-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>sparc64</td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/11.2-RELEASE">[Дистрибутив]</a></td>
+	  <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/ISO-IMAGES/11.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td colspan="2">FreeBSD 10.2-RELEASE</td>
+	  <td colspan="2"/>
+	  <td rowspan="7"><a href="./../releases/10.2R/relnotes.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../releases/10.2R/hardware.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../doc/ru_RU.KOI8-R/books/handbook/install.html">[Смотреть]</a></td>
+	  <td rowspan="7"><a href="./../releases/10.2R/errata.html">[Смотреть]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>amd64</td>
+	  <!--<td><a href="&url.rel;/amd64/&rel3.current;-RELEASE">[Дистрибутив]</a></td>-->
+	  <td colspan="2" align="right"><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/ISO-IMAGES/10.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>i386</td>
+	  <!--<td><a href="&url.rel;/i386/&rel3.current;-RELEASE">[Дистрибутив]</a></td>-->
+	  <td colspan="2" align="right"><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/ISO-IMAGES/10.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>pc98</td>
+	  <!--<td><a href="&url.rel;/pc98/&rel3.current;-RELEASE">[Дистрибутив]</a></td>-->
+	  <td colspan="2" align="right"><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/ISO-IMAGES/10.2/">[ISO]</a></td>
+	</tr>
+	<tr>
+	  <td/>
+	  <td>sparc64</td>
+	  <!--<td><a href="&url.rel;/sparc64/&rel3.current;-RELEASE">[Дистрибутив]</a></td>-->
+	  <td colspan="2" align="right"><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/sparc64/ISO-IMAGES/10.2/">[ISO]</a></td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p><em>Замечание:</em> Если вы сомневаетесь, какую платформу / архитектуру использовать,
+      вам скорее всего нужна <em>i386</em>.</p>
+
+    <p>Если вы собираетесь загрузить FreeBSD по FTP, проверьте, пожалуйста, список
+      <a href="./../doc/ru_RU.KOI8-R/books/handbook/mirrors-ftp.html">
+      <strong>зеркальных серверов</strong></a> в руководстве, чтобы найти
+      ближайший к вам сайт.  Кроме того, вы можете загрузить FreeBSD по протоколу BitTorrent.
+      Соответствующие <q>.torrent</q> файлы доступны на <a href="http://torrents.FreeBSD.org:8080/">FreeBSD BitTorrent Tracker</a>.</p>
+
+    
+  <div>
+    <a name="helptest"/>
+    <h2>Помощь со следующим релизом FreeBSD</h2>
+
+    <p>Наши разработчики и группа подготовки релизов работают над следующим
+      релизом FreeBSD; если вы хотите помочь с
+      тестированием, загрузите последнюю сборку.
+      Пожалуйста, обратите внимание, что эти образы изначально предназначены
+      только для тестирования и не должны использоваться в производственной среде.</p>
+
+    <table class="tblbasic">
+      <thead>
+        <tr style="text-align: center;">
+          <td colspan="2">Версия и платформа</td>
+          <td>Дистрибутив</td>
+          <td title="ISO9660 CD image"><a href="./../doc/ru_RU.KOI8-R/books/handbook/install-diff-media.html#INSTALL-CDROM">ISO</a></td>
+          <td>Статус</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">FreeBSD 12.2-BETA2</td>
+          <td colspan="2"/>
+          <td rowspan="7"><a href="http://wiki.freebsd.org/Releng/12.2TODO">[Смотреть]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>amd64</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/12.2-BETA2">[Дистрибутив]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>i386</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/12.2-BETA2">[Дистрибутив]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/i386/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+        <tr>
+          <td/>
+          <td>pc98</td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/12.2-BETA2">[Дистрибутив]</a></td>
+          <td><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/releases/pc98/ISO-IMAGES/12.2/">[ISO]</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+  </div>
+
+
+    <p>Если вы интересуетесь исключительно экспериментальным
+      <strong>снэпшотом</strong> FreeBSD-CURRENT (он же 13.0-CURRENT),
+      предназначенным только для разработчиков и тестеров, то обратитесь к
+      странице <a href="./snapshots/">снэпшот релизов FreeBSD</a>.
+      Чтобы узнать более подробную информацию о прошлых, настоящих и будущих
+      релизах в общем, посетите <a href="./releases/index.html">страничку с информацией о релизах</a>.</p>
+
+    <a name="derived"/>
+    <h2>Распространяемые FreeBSD-производные операционные системы</h2>
+
+    <p>FreeBSD широко используется в качестве составной части коммерческих
+      операционных систем и систем с открытым кодом.  Приведённые ниже проекты
+      получили большое распространение и представляют особый интерес для пользователей FreeBSD.</p>
+
+    <ul>
+      <li><p><a href="http://www.freenas.org">FreeNAS</a> - это платформа с
+	открытым кодом для построения хранилища данных, основанная на FreeBSD,
+	которая позволяет обмениваться ресурсами между Windows, Apple и
+	UNIX-подобными системами.</p></li>
+      <li><p><a href="http://www.pcbsd.org">PC-BSD</a> - это производная FreeBSD,
+	наделенная графической программой установки, впечатляющим инструментарием рабочего стола,
+	ориентированная на доступность в использовании для не искушенного
+	пользователя.</p></li>
+      <li><p><a href="http://www.pfsense.org">pfSense</a> - это свободный
+	открытый настраиваемый дистрибутив на основе FreeBSD, приспособленный
+	для использования в качестве межсетевого экрана и маршрутизатора.</p></li>
+    </ul>
+
+    <a name="apps"/>
+
+    <h2>Приложения и утилиты</h2>
+
+    <h3>Коллекция портов</h3>
+
+    <p>Коллекция портов FreeBSD - это набор разнообразных утилит и приложений,
+      портированных на FreeBSD.</p>
+
+    <ul>
+	<li><a href="ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/">Коллекция
+	  портов FreeBSD</a></li>
+
+	<li><a href="./ports/index.html">Веб-интерфейс к коллекции
+	  портов</a></li>
+
+	<li><a href="http://www.freshports.org/">FreshPorts - это более
+	  функциональный интерфейс к коллекции портов</a></li>
+    </ul>
+
+    <p>Для того, чтобы узнать о том, как <em>вы</em> можете добавить
+      <em>ваши</em> любимые программы в коллекцию портов, смотрите
+      <em><a href="./../doc/ru_RU.KOI8-R/books/porters-handbook/index.html">
+      <q>Руководство по созданию портов</q></a></em> и статью
+      <em><a href="./../doc/ru_RU.KOI8-R/articles/contributing/index.html"><q>Участие в проекте FreeBSD</q></a></em>.</p>
+
+  </body>
+</html>

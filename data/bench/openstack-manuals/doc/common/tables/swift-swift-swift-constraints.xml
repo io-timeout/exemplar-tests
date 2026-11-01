@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<para xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <!-- The tool that generated this table lives in the
+     openstack-doc-tools repository. The editions made in
+     this file will *not* be lost if you run the script again. -->
+  <table rules="all">
+    <caption>Description of configuration options for
+        <literal>[swift-constraints]</literal> in <literal>swift.conf</literal>
+    </caption>
+    <col width="50%"/>
+    <col width="50%"/>
+    <thead>
+      <tr>
+        <th>Configuration option = Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>account_listing_limit = 10000</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>container_listing_limit = 10000</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_account_name_length = 256</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_container_name_length = 256</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_file_size = 5368709122</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_header_size = 8192</td>
+        <td>max_header_size is the max number of bytes in the utf8 encoding of each header. Using 8192 as default because eventlet use 8192 as max size of header line. This value may need to be increased when using identity v3 API tokens including more than 7 catalog entries. See also include_service_catalog in proxy-server.conf-sample (documented in overview_auth.rst)</td>
+      </tr>
+      <tr>
+        <td>max_meta_count = 90</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_meta_name_length = 128</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_meta_overall_size = 4096</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_meta_value_length = 256</td>
+        <td>No help text available for this option.</td>
+      </tr>
+      <tr>
+        <td>max_object_name_length = 1024</td>
+        <td>No help text available for this option.</td>
+      </tr>
+    </tbody>
+  </table>
+</para>

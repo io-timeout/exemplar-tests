@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   The FreeBSD French Documentation Project
+   Original revision: 1.3
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Communauté FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.community">
+
+  <p>FreeBSD bénéficie d'un support important de la part
+    d'une communauté active.</p>
+
+  <p>Il existe plus d'une centaine de <a href="./community/mailinglists.html">listes de diffusion</a>
+    et plusieurs <a href="./community/newsgroups.html">forums de
+    discussion</a>.  Il existe également de nombreux <a href="./../usergroups.html">groupes d'utilisateurs</a> de
+    FreeBSD de part le monde, et aussi une communauté <a href="./community/irc.html">IRC</a> active.</p>
+
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="bk-openstack-config-reference">
+  <!--- TODO(jaegerandi) Add back to the above once Juno has branched:
+      status="draft" -->
+    <title>OpenStack Configuration Reference</title>
+    <?rax
+      status.bar.text.font.size="40px"
+      status.bar.text="Juno"?>
+    <?rax title.font.size="28px" subtitle.font.size="28px"?>
+    <titleabbrev>OpenStack Configuration Reference</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>OpenStack Foundation</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2013</year>
+            <year>2014</year>
+            <holder>OpenStack Foundation</holder>
+        </copyright>
+        <productname>OpenStack</productname>
+        <releaseinfo>juno</releaseinfo>
+        <pubdate/>
+        <legalnotice role="apache2">
+            <annotation>
+                <remark>Copyright details are filled in by the
+                    template.</remark>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This document is for system administrators who want
+                to look up configuration options. It contains lists of
+                configuration options available with OpenStack and
+                uses auto-generation to generate options and the
+                descriptions from the code for each project. It
+                includes sample configuration files.</para>
+        </abstract>
+        <revhistory>
+            <!-- ... continue adding more revisions here as you change this document using the markup shown below... -->
+            <revision>
+                <date>2014-10-15</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Updates for Juno: updated all
+                            configuration tables, include sample
+                            configuration files, add chapter for Data
+                            processing service, update and enhance
+                            driver configuration.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-04-16</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Update for Icehouse: Updated all
+                            configuration tables, include sample
+                            configuration files, add chapters for
+                            Database Service, Orchestration, and
+                            Telemetry.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-03-11</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Sorted component listing. Moved procedures to the
+                                <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">
+                                    <citetitle>Cloud Administrator Guide</citetitle></link>
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-01-09</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Removes content addressed in
+                                installation, merges duplicated
+                                content, and revises legacy
+                                references.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-10-17</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Havana release.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-08-16</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Moves Block Storage driver
+                                configuration information from the
+                                   <citetitle>Block Storage
+                                   Administration Guide</citetitle> to
+                                this reference.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-10</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Initial creation of Configuration
+                                Reference.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
+    </info>
+    <xi:include href="ch_config-overview.xml"/>
+    <!-- Block Storage -->
+    <xi:include href="ch_blockstorageconfigure.xml"/>
+    <!-- Compute -->
+    <xi:include href="ch_computeconfigure.xml"/>
+    <!-- Dashboard -->
+    <xi:include href="ch_dashboardconfigure.xml"/>
+    <!-- Database Service -->
+    <xi:include href="ch_databaseserviceconfigure.xml"/>
+    <!-- Data processing service -->
+    <xi:include href="ch_dataprocessingserviceconfigure.xml"/>
+    <!-- Identity -->
+    <xi:include href="ch_identityconfigure.xml"/>
+    <!-- Image -->
+    <xi:include href="ch_imageservice.xml"/>
+    <!-- Networking -->
+    <xi:include href="ch_networkingconfigure.xml"/>
+    <!-- Object Storage -->
+    <xi:include href="ch_objectstorageconfigure.xml"/>
+    <!-- Orchestration -->
+    <xi:include href="ch_orchestrationconfigure.xml"/>
+    <!-- Telemetry -->
+    <xi:include href="ch_telemetryconfigure.xml"/>
+    <!-- Appendices -->
+    <xi:include href="app_firewalls-ports.xml"/>
+    <!-- Support -->
+    <xi:include href="../common/app_support.xml"/>
+</book>

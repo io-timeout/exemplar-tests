@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $FreeBSD$ -->
+<!--
+  The FreeBSD French Documentation Project
+  Original revision: 1.1
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Avis de sécurité de FreeBSD</title>
+
+      <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
+    </head>
+
+    <body class="navinclude.support">
+
+  <p>Cette page contient la liste des avis de sécurité
+    de FreeBSD publiés à ce jour.  Consulter la page d'<a href="security.html">Informations sur la sécurité
+    sous FreeBSD</a> pour des informations sur la sécurité
+    sous FreeBSD.</p>
+
+  <p>Les problèmes affectant le catalogue des logiciels
+    portés de FreeBSD sont abordés dans le <a href="http://vuxml.FreeBSD.org/">document VuXML FreeBSD</a>.</p>
+
+  
+
+</body>
+</html>
